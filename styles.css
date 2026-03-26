@@ -892,8 +892,12 @@ img { max-width: 100%; display: block; }
 .legal-content p { font-size: 15px; color: var(--text-body); margin-bottom: 14px; line-height: 1.85; }
 .legal-content ul, .legal-content ol { padding-left: 22px; margin-bottom: 16px; }
 .legal-content li { font-size: 15px; color: var(--text-body); margin-bottom: 7px; line-height: 1.7; }
-.legal-content a { color: var(--blue); text-decoration: none; font-weight: 500; }
-.legal-content a:hover { text-decoration: underline; }
+.legal-content a:not(.btn) { color: var(--blue); text-decoration: none; font-weight: 500; }
+.legal-content a:not(.btn):hover { text-decoration: underline; }
+/* Keep button colours intact inside legal content */
+.legal-content .btn--blue   { color: #fff !important; }
+.legal-content .btn--green  { color: #fff !important; }
+.legal-content .btn--outline { color: var(--navy) !important; }
 .legal-content strong { color: var(--navy); font-weight: 700; }
 .legal-content em { font-style: italic; color: var(--navy); }
 .legal-content blockquote {
