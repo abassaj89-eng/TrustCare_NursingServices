@@ -339,12 +339,12 @@ function toggleBlog(btn) {
   const full = btn.previousElementSibling;
   const isOpen = full.style.display === 'block';
   full.style.display = isOpen ? 'none' : 'block';
-  btn.innerHTML = isOpen ? 'Read full guide &nbsp;›' : 'Read less &nbsp;↑';
+  btn.textContent = isOpen ? 'Read More ↓' : 'Read Less ↑';
 }
 
 function searchBlogs() {
   const query = document.getElementById('blogSearch')?.value.toLowerCase() || '';
-  document.querySelectorAll('.blog-article').forEach(card => {
+  document.querySelectorAll('.blog-card').forEach(card => {
     const text = card.textContent.toLowerCase();
     card.style.display = text.includes(query) ? '' : 'none';
   });
@@ -354,12 +354,12 @@ document.getElementById('blogSearch')?.addEventListener('keyup', (e) => {
   if (e.key === 'Enter') searchBlogs();
 });
 
-document.querySelectorAll('.blog-pill').forEach(btn => {
+document.querySelectorAll('.blog-cat').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.blog-pill').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.blog-cat').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const cat = btn.dataset.cat;
-    document.querySelectorAll('.blog-article').forEach(card => {
+    document.querySelectorAll('.blog-card').forEach(card => {
       card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
     });
     // Reset search
