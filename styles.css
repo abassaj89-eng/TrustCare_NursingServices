@@ -136,64 +136,66 @@ img { max-width: 100%; display: block; }
 .navbar__nav {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   list-style: none;
 }
 
-.navbar__nav a {
-  font-size: 14px;
+.navbar__nav > li > a {
+  font-size: 13px;
   font-weight: 500;
   color: var(--navy);
-  padding: 6px 14px;
+  padding: 6px 10px;
   border-radius: 8px;
   transition: color 0.2s, background 0.2s;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
-.navbar__nav a:hover { color: var(--blue); background: var(--bg-pale); }
+.navbar__nav > li > a:hover { color: var(--blue); background: var(--bg-pale); }
 
 /* ===== NAVBAR DROPDOWN ===== */
 .navbar__dropdown-wrap {
   position: relative;
 }
 .navbar__dropdown-toggle {
-  display: flex;
-  align-items: center;
-  gap: 4px;
   cursor: pointer;
 }
 .navbar__arrow {
-  font-size: 11px;
+  font-size: 10px;
   transition: transform 0.2s;
   display: inline-block;
+  margin-top: 1px;
 }
-.navbar__dropdown-wrap:hover .navbar__arrow {
+.navbar__dropdown-wrap.open .navbar__arrow {
   transform: rotate(180deg);
 }
 .navbar__dropdown {
   display: none;
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 6px);
   left: 0;
-  min-width: 230px;
+  min-width: 220px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0,53,136,0.13);
-  border: 1px solid rgba(38,106,251,0.10);
-  padding: 8px 0;
-  z-index: 2000;
+  box-shadow: 0 8px 32px rgba(0,53,136,0.15);
+  border: 1px solid rgba(38,106,251,0.12);
+  padding: 6px 0;
+  z-index: 3000;
 }
-.navbar__dropdown-wrap:hover .navbar__dropdown {
+.navbar__dropdown-wrap.open .navbar__dropdown {
   display: block;
 }
 .navbar__dropdown a {
   display: block;
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 9px 18px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--navy);
   border-radius: 0;
   border-left: 3px solid transparent;
   transition: background 0.15s, border-color 0.15s, color 0.15s;
+  background: none;
 }
 .navbar__dropdown a:hover {
   background: var(--bg-pale);

@@ -4,6 +4,26 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 20);
 });
 
+// ===== NAVBAR DROPDOWNS (one open at a time, close on outside click) =====
+const dropdownWraps = document.querySelectorAll('.navbar__dropdown-wrap');
+dropdownWraps.forEach(wrap => {
+  const toggle = wrap.querySelector('.navbar__dropdown-toggle');
+  toggle?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isOpen = wrap.classList.contains('open');
+    // Close all first
+    dropdownWraps.forEach(w => w.classList.remove('open'));
+    // Toggle clicked one
+    if (!isOpen) wrap.classList.add('open');
+  });
+});
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.navbar__dropdown-wrap')) {
+    dropdownWraps.forEach(w => w.classList.remove('open'));
+  }
+});
+
 // ===== MOBILE MENU =====
 const toggle = document.querySelector('.navbar__toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
