@@ -1314,30 +1314,11 @@
   <div class="wizard-page" id="page-privacy">
   <section class="section">
     <div class="container" style="max-width:800px;">
-      <div class="eyebrow">Legal</div>
-      <h2 class="section-heading">Privacy <span>Policy</span></h2>
-      <p class="section-sub">Last updated: March 2026</p>
-      <div style="margin-top:40px;line-height:1.9;color:var(--navy);">
-        <h3 style="margin-bottom:12px;">1. About This Policy</h3>
-        <p>Trust Care Nursing Services and Consulting Pty Ltd (ABN: 18 809 341 867) trading as TrustCare Support ("we", "us", "our") is committed to protecting your personal information in accordance with the <em>Privacy Act 1988</em> (Cth) and the Australian Privacy Principles (APPs). This policy explains how we collect, use, store and disclose your personal information when you interact with our website or clinical services.</p>
-        <h3 style="margin:32px 0 12px;">2. What Personal Information We Collect</h3>
-        <p>We may collect the following types of personal information: names and contact details (email, phone, address), organisation name and role, NDIS plan information (general), health and clinical information relevant to nursing care, referral details from NDIS providers and support coordinators, and any other information you provide through our website forms or direct contact.</p>
-        <h3 style="margin:32px 0 12px;">3. Sensitive Health Information</h3>
-        <p>Health information is classified as sensitive information under the <em>Privacy Act 1988</em> (Cth). We collect sensitive health information only where it is necessary for clinical triage and care delivery. Sensitive health information is collected with your explicit consent, or that of your authorised representative, prior to collection. We handle all health information with the highest standard of care and confidentiality.</p>
-        <h3 style="margin:32px 0 12px;">4. How We Collect Information</h3>
-        <p>We collect personal information through: website forms (referral, contact, complaints, and feedback forms); direct contact via phone or email; referrals from registered NDIS providers and support coordinators. We collect only the minimum information necessary for the relevant purpose.</p>
-        <h3 style="margin:32px 0 12px;">5. How We Use Your Information</h3>
-        <p>We use personal information to: conduct clinical triage and prioritise nursing referrals; deliver nursing and clinical support services; communicate with treating teams (GP, allied health) with consent; improve our services and clinical quality; and comply with legal and regulatory obligations including under the NDIS Act and AHPRA registration requirements.</p>
-        <h3 style="margin:32px 0 12px;">6. Disclosure of Information</h3>
-        <p>Your personal information is not sold or shared with third parties for marketing purposes. We may disclose information to: treating clinicians and allied health professionals (with consent); registered NDIS providers engaged in the participant's care; regulatory bodies (including AHPRA and the NDIS Quality and Safeguards Commission) where required by law. Your information is not disclosed overseas.</p>
-        <h3 style="margin:32px 0 12px;">7. Data Storage and Security</h3>
-        <p>All information submitted via our website is transmitted using HTTPS/TLS encryption. Data is stored on Australian-based servers. We take reasonable technical and organisational security measures to protect your information from misuse, interference, loss, and unauthorised access, modification, or disclosure.</p>
-        <h3 style="margin:32px 0 12px;">8. Access and Correction</h3>
-        <p>You have the right to access and correct your personal information at any time. To request access or corrections, contact us at <a href="mailto:admin@trustcaresupport.com.au" style="color:var(--blue);">admin@trustcaresupport.com.au</a>. We will respond within a reasonable timeframe.</p>
-        <h3 style="margin:32px 0 12px;">9. Complaints About Privacy</h3>
-        <p>If you have a concern about how we have handled your personal information, please contact us first at <a href="mailto:admin@trustcaresupport.com.au" style="color:var(--blue);">admin@trustcaresupport.com.au</a>. If your concern is not resolved to your satisfaction, you have the right to contact the Office of the Australian Information Commissioner (OAIC) at <a href="https://www.oaic.gov.au" target="_blank" rel="noopener noreferrer" style="color:var(--blue);">oaic.gov.au</a>.</p>
-        <h3 style="margin:32px 0 12px;">10. Contact</h3>
-        <p>📧 <a href="mailto:admin@trustcaresupport.com.au" style="color:var(--blue);">admin@trustcaresupport.com.au</a><br>📞 0432 014 162<br>🌐 <a href="https://trustcaresupport.com.au" style="color:var(--blue);">trustcaresupport.com.au</a></p>
+      <div class="eyebrow">{{ site.data.legal_privacy.eyebrow }}</div>
+      <h2 class="section-heading">{{ site.data.legal_privacy.heading_main }} <span>{{ site.data.legal_privacy.heading_highlight }}</span></h2>
+      <p class="section-sub">Last updated: {{ site.data.legal_privacy.last_updated }}</p>
+      <div class="legal-content">
+        {{ site.data.legal_privacy.content | markdownify }}
         <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;">
           <a href="#" class="btn btn--outline" data-wizard-page="page-home">← Back to Home</a>
           <a href="#" class="btn btn--blue" data-wizard-page="page-complaints-policy">Complaints Policy →</a>
@@ -1351,34 +1332,11 @@
   <div class="wizard-page" id="page-complaints-policy">
   <section class="section">
     <div class="container" style="max-width:800px;">
-      <div class="eyebrow">Policy</div>
-      <h2 class="section-heading">Complaints <span>Policy</span></h2>
-      <h3 style="font-size:20px;font-weight:600;color:var(--navy);margin-bottom:16px;">Our Commitment to Resolving Complaints</h3>
-      <p style="font-size:15px;line-height:1.8;color:#4a5568;margin-bottom:32px;">TrustCare Support is committed to a fair, transparent and timely complaints process. We welcome feedback as an opportunity to improve our services and the care we provide to participants.</p>
-      <div style="margin-top:8px;line-height:1.9;color:var(--navy);">
-        <h3 style="margin-bottom:12px;">1. How to Make a Complaint</h3>
-        <p>You can make a complaint using any of the following methods:</p>
-        <ul style="padding-left:20px;margin-bottom:16px;color:#4a5568;">
-          <li><strong>Email:</strong> <a href="mailto:admin@trustcaresupport.com.au" style="color:var(--blue);">admin@trustcaresupport.com.au</a></li>
-          <li><strong>Phone:</strong> 0432 014 162</li>
-          <li><strong>Written:</strong> Perth, Western Australia</li>
-          <li><strong>Online:</strong> Use our <a href="#" data-wizard-page="page-complaints" style="color:var(--blue);">online complaints form</a> on this website</li>
-        </ul>
-        <h3 style="margin:32px 0 12px;">2. Our Process</h3>
-        <ul style="padding-left:20px;margin-bottom:16px;color:#4a5568;">
-          <li>Acknowledge your complaint within 2 business days</li>
-          <li>Investigate and respond within 14 business days</li>
-          <li>Complex complaints may take up to 28 business days — you will be informed of any delay</li>
-          <li>Keep you informed throughout the investigation process</li>
-          <li>Provide a written outcome and any corrective actions taken</li>
-        </ul>
-        <h3 style="margin:32px 0 12px;">3. Escalation — NDIS Quality and Safeguards Commission</h3>
-        <div style="background:var(--bg-cta);border-radius:12px;padding:20px 24px;margin:16px 0;">
-          <p style="margin:0;font-size:14px;color:var(--navy);"><strong>NDIS Quality and Safeguards Commission</strong><br>
-          🌐 <a href="https://www.ndiscommission.gov.au" target="_blank" rel="noopener noreferrer" style="color:var(--blue);">www.ndiscommission.gov.au</a><br>📞 1800 035 544</p>
-        </div>
-        <h3 style="margin:32px 0 12px;">4. Confidentiality</h3>
-        <p>All complaints are treated with strict confidentiality. No adverse action will be taken against any person who makes a complaint in good faith. You have the right to have a support person, advocate, or representative assist you throughout this process.</p>
+      <div class="eyebrow">{{ site.data.legal_complaints.eyebrow }}</div>
+      <h2 class="section-heading">{{ site.data.legal_complaints.heading_main }} <span>{{ site.data.legal_complaints.heading_highlight }}</span></h2>
+      <p style="font-size:15px;line-height:1.8;color:#4a5568;margin-bottom:32px;">{{ site.data.legal_complaints.intro }}</p>
+      <div class="legal-content">
+        {{ site.data.legal_complaints.content | markdownify }}
         <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;">
           <a href="#" class="btn btn--green" data-wizard-page="page-complaints">Make a Complaint →</a>
           <a href="#" class="btn btn--outline" data-wizard-page="page-home">← Back to Home</a>
@@ -1392,33 +1350,11 @@
   <div class="wizard-page" id="page-incident">
   <section class="section">
     <div class="container" style="max-width:800px;">
-      <div class="eyebrow">Safety</div>
-      <h2 class="section-heading">Incident Management <span>Statement</span></h2>
-      <p style="font-size:15px;line-height:1.8;color:#4a5568;margin-bottom:32px;">TrustCare Support is committed to the safety and wellbeing of all participants receiving clinical nursing care.</p>
-      <div style="margin-top:8px;line-height:1.9;color:var(--navy);">
-        <h3 style="margin-bottom:12px;">1. Our Commitment</h3>
-        <p>We maintain a proactive incident management approach consistent with the <em>NDIS (Incident Management and Reportable Incidents) Rules 2018</em>. Every incident is taken seriously, documented thoroughly, and responded to promptly to protect participant safety and prevent recurrence.</p>
-        <h3 style="margin:32px 0 12px;">2. What is a Reportable Incident</h3>
-        <ul style="padding-left:20px;margin-bottom:16px;color:#4a5568;">
-          <li>Death of a participant</li><li>Serious injury to a participant</li>
-          <li>Abuse or neglect of a participant</li>
-          <li>Unlawful sexual or physical contact with a participant</li>
-          <li>Use of an unauthorised restrictive practice</li>
-        </ul>
-        <h3 style="margin:32px 0 12px;">3. Our Response</h3>
-        <ul style="padding-left:20px;margin-bottom:16px;color:#4a5568;">
-          <li>Respond immediately to ensure participant safety</li>
-          <li>Notify the relevant registered NDIS provider partner within required legislative timeframes</li>
-          <li>Document the incident thoroughly and conduct a root cause analysis</li>
-          <li>Implement corrective actions to prevent recurrence</li>
-        </ul>
-        <h3 style="margin:32px 0 12px;">4. Reporting to the NDIS Commission</h3>
-        <div style="background:var(--bg-cta);border-radius:12px;padding:20px 24px;margin:16px 0;">
-          <p style="margin:0;font-size:14px;color:var(--navy);"><strong>NDIS Quality and Safeguards Commission</strong><br>
-          🌐 <a href="https://www.ndiscommission.gov.au" target="_blank" rel="noopener noreferrer" style="color:var(--blue);">www.ndiscommission.gov.au</a></p>
-        </div>
-        <h3 style="margin:32px 0 12px;">5. Contact</h3>
-        <p>📧 <a href="mailto:admin@trustcaresupport.com.au" style="color:var(--blue);">admin@trustcaresupport.com.au</a><br>📞 0432 014 162</p>
+      <div class="eyebrow">{{ site.data.legal_incident.eyebrow }}</div>
+      <h2 class="section-heading">{{ site.data.legal_incident.heading_main }} <span>{{ site.data.legal_incident.heading_highlight }}</span></h2>
+      <p style="font-size:15px;line-height:1.8;color:#4a5568;margin-bottom:32px;">{{ site.data.legal_incident.intro }}</p>
+      <div class="legal-content">
+        {{ site.data.legal_incident.content | markdownify }}
         <div style="margin-top:40px;">
           <a href="#" class="btn btn--outline" data-wizard-page="page-home">← Back to Home</a>
         </div>
@@ -1431,26 +1367,11 @@
   <div class="wizard-page" id="page-terms">
   <section class="section">
     <div class="container" style="max-width:800px;">
-      <div class="eyebrow">Legal</div>
-      <h2 class="section-heading">Terms and <span>Conditions</span></h2>
-      <p class="section-sub">Last updated: March 2026</p>
-      <div style="margin-top:40px;line-height:1.9;color:var(--navy);">
-        <h3 style="margin-bottom:12px;">1. About This Website</h3>
-        <p>This website is operated by Trust Care Nursing Services and Consulting Pty Ltd (ABN: 18 809 341 867), trading as TrustCare Support. By using this website, you agree to these Terms and Conditions.</p>
-        <h3 style="margin:32px 0 12px;">2. Not an NDIS Registered Provider</h3>
-        <p>TrustCare Support operates as an independent Registered Nurse service. We are not an NDIS registered provider. Clinical nursing services are delivered in clinical partnership with registered NDIS providers. Nothing on this website constitutes an offer to provide NDIS services directly as a registered provider.</p>
-        <h3 style="margin:32px 0 12px;">3. Website Use</h3>
-        <p>The information on this website is provided for general informational purposes only. It does not constitute medical advice, nursing advice, or clinical recommendations for any specific individual. Always seek guidance from a qualified health professional for specific clinical questions.</p>
-        <h3 style="margin:32px 0 12px;">4. No Guarantee of Service Availability</h3>
-        <p>We endeavour to respond to all enquiries and referrals promptly. However, we cannot guarantee service availability in all geographic areas or at all times. Acceptance of a referral is subject to clinical assessment and operational capacity.</p>
-        <h3 style="margin:32px 0 12px;">5. Intellectual Property</h3>
-        <p>All content on this website, including text, images, logos, and design, is copyright &copy; 2026 Trust Care Nursing Services and Consulting Pty Ltd. All rights reserved. No content may be reproduced without written permission.</p>
-        <h3 style="margin:32px 0 12px;">6. Privacy</h3>
-        <p>Your use of this website is also governed by our <a href="#" data-wizard-page="page-privacy" style="color:var(--blue);">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
-        <h3 style="margin:32px 0 12px;">7. Governing Law</h3>
-        <p>These Terms and Conditions are governed by the laws of Western Australia and the Commonwealth of Australia. Any disputes will be subject to the exclusive jurisdiction of courts located in Western Australia.</p>
-        <h3 style="margin:32px 0 12px;">8. Contact</h3>
-        <p>📧 <a href="mailto:admin@trustcaresupport.com.au" style="color:var(--blue);">admin@trustcaresupport.com.au</a><br>📞 0432 014 162</p>
+      <div class="eyebrow">{{ site.data.legal_terms.eyebrow }}</div>
+      <h2 class="section-heading">{{ site.data.legal_terms.heading_main }} <span>{{ site.data.legal_terms.heading_highlight }}</span></h2>
+      <p class="section-sub">Last updated: {{ site.data.legal_terms.last_updated }}</p>
+      <div class="legal-content">
+        {{ site.data.legal_terms.content | markdownify }}
         <div style="margin-top:40px;">
           <a href="#" class="btn btn--outline" data-wizard-page="page-home">← Back to Home</a>
         </div>
@@ -1463,43 +1384,15 @@
   <div class="wizard-page" id="page-rights">
   <section class="section">
     <div class="container" style="max-width:800px;">
-      <div class="eyebrow">Your Rights</div>
-      <h2 class="section-heading">Participant <span>Rights Statement</span></h2>
-      <p style="font-size:15px;line-height:1.8;color:#4a5568;margin-bottom:32px;">TrustCare Support is committed to upholding the rights of every participant we support. These rights are grounded in the <em>National Disability Insurance Scheme Act 2013</em> and the NDIS Code of Conduct.</p>
-      <div style="display:flex;flex-direction:column;gap:20px;">
-        <div style="background:var(--bg-cta);border-radius:12px;padding:22px 26px;border-left:4px solid var(--blue);">
-          <h4 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">1. Dignity and Respect</h4>
-          <p style="font-size:14px;color:#4a5568;margin:0;">You have the right to be treated with dignity and respect at all times. Our nurses will always maintain professional, person-centred care that honours your individuality and humanity.</p>
+      <div class="eyebrow">{{ site.data.legal_rights.eyebrow }}</div>
+      <h2 class="section-heading">{{ site.data.legal_rights.heading_main }} <span>{{ site.data.legal_rights.heading_highlight }}</span></h2>
+      <p style="font-size:15px;line-height:1.8;color:#4a5568;margin-bottom:32px;">{{ site.data.legal_rights.intro }}</p>
+      <div class="legal-content">
+        {{ site.data.legal_rights.content | markdownify }}
+        <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="#" class="btn btn--green" data-wizard-page="page-complaints">Make a Complaint →</a>
+          <a href="#" class="btn btn--outline" data-wizard-page="page-home">← Back to Home</a>
         </div>
-        <div style="background:var(--bg-mint);border-radius:12px;padding:22px 26px;border-left:4px solid var(--green);">
-          <h4 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">2. Informed Decision-Making</h4>
-          <p style="font-size:14px;color:#4a5568;margin:0;">You have the right to make informed decisions about your own health and care. We will explain all clinical procedures clearly and seek your consent before proceeding with any intervention.</p>
-        </div>
-        <div style="background:var(--bg-pale);border-radius:12px;padding:22px 26px;border-left:4px solid var(--navy);">
-          <h4 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">3. Privacy and Confidentiality</h4>
-          <p style="font-size:14px;color:#4a5568;margin:0;">Your personal and health information is collected and stored in accordance with the <em>Privacy Act 1988</em> (Cth). It is never shared without your consent except where required by law.</p>
-        </div>
-        <div style="background:var(--bg-cta);border-radius:12px;padding:22px 26px;border-left:4px solid var(--blue);">
-          <h4 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">4. Safety and Quality Care</h4>
-          <p style="font-size:14px;color:#4a5568;margin:0;">You have the right to receive safe, high-quality nursing care delivered by an AHPRA-registered Registered Nurse in accordance with NMBA Registered Nurse Standards for Practice (2016).</p>
-        </div>
-        <div style="background:var(--bg-mint);border-radius:12px;padding:22px 26px;border-left:4px solid var(--green);">
-          <h4 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">5. Freedom from Abuse and Neglect</h4>
-          <p style="font-size:14px;color:#4a5568;margin:0;">We have zero tolerance for any form of abuse, neglect, or exploitation. All clinical staff adhere strictly to the NDIS Code of Conduct and relevant legislation.</p>
-        </div>
-        <div style="background:var(--bg-pale);border-radius:12px;padding:22px 26px;border-left:4px solid var(--navy);">
-          <h4 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">6. Make a Complaint</h4>
-          <p style="font-size:14px;color:#4a5568;margin:0;">You have the right to raise concerns or make a complaint without fear of reprisal. See our <a href="#" data-wizard-page="page-complaints-policy" style="color:var(--blue);">Complaints Policy</a> or contact the NDIS Quality and Safeguards Commission:<br>
-          🌐 <a href="https://www.ndiscommission.gov.au" target="_blank" rel="noopener noreferrer" style="color:var(--blue);">ndiscommission.gov.au</a> | 📞 1800 035 544</p>
-        </div>
-        <div style="background:var(--bg-cta);border-radius:12px;padding:22px 26px;border-left:4px solid var(--blue);">
-          <h4 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">7. Support Person</h4>
-          <p style="font-size:14px;color:#4a5568;margin:0;">You have the right to have a support person, advocate, or representative present during any assessment, consultation, or care delivery. We welcome and support this right.</p>
-        </div>
-      </div>
-      <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;">
-        <a href="#" class="btn btn--green" data-wizard-page="page-complaints">Make a Complaint →</a>
-        <a href="#" class="btn btn--outline" data-wizard-page="page-home">← Back to Home</a>
       </div>
     </div>
   </section>

@@ -214,3 +214,64 @@ collections:
               - { label: "Role / Title", name: "role", widget: "string" }
               - { label: "Bio", name: "bio", widget: "text" }
               - { label: "Photo", name: "photo", widget: "image", required: false }
+
+# ─── LEGAL & COMPLIANCE ──────────────────────────────────────────────────────
+  - name: "legal"
+    label: "⚖️ Legal & Compliance"
+    editor:
+      preview: false
+    files:
+      - label: "Privacy Policy"
+        name: "legal_privacy"
+        file: "_data/legal_privacy.yml"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Heading (before highlight)", name: "heading_main", widget: "string", hint: "e.g. 'Privacy'" }
+          - { label: "Heading Highlight", name: "heading_highlight", widget: "string", hint: "e.g. 'Policy' — shown in blue" }
+          - { label: "Eyebrow Label", name: "eyebrow", widget: "string" }
+          - { label: "Last Updated", name: "last_updated", widget: "string", hint: "e.g. March 2026" }
+          - { label: "Content", name: "content", widget: "markdown", hint: "Use ### for headings, bullet points for lists." }
+
+      - label: "Terms and Conditions"
+        name: "legal_terms"
+        file: "_data/legal_terms.yml"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Heading (before highlight)", name: "heading_main", widget: "string", hint: "e.g. 'Terms and'" }
+          - { label: "Heading Highlight", name: "heading_highlight", widget: "string", hint: "e.g. 'Conditions' — shown in blue" }
+          - { label: "Eyebrow Label", name: "eyebrow", widget: "string" }
+          - { label: "Last Updated", name: "last_updated", widget: "string", hint: "e.g. March 2026" }
+          - { label: "Content", name: "content", widget: "markdown", hint: "Use ### for headings, bullet points for lists." }
+
+      - label: "Complaints Policy"
+        name: "legal_complaints"
+        file: "_data/legal_complaints.yml"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Heading (before highlight)", name: "heading_main", widget: "string", hint: "e.g. 'Complaints'" }
+          - { label: "Heading Highlight", name: "heading_highlight", widget: "string", hint: "e.g. 'Policy' — shown in blue" }
+          - { label: "Eyebrow Label", name: "eyebrow", widget: "string" }
+          - { label: "Intro Paragraph", name: "intro", widget: "text", hint: "Short intro shown below the heading." }
+          - { label: "Content", name: "content", widget: "markdown", hint: "Use ### for headings, bullet points for lists." }
+
+      - label: "Participant Rights Statement"
+        name: "legal_rights"
+        file: "_data/legal_rights.yml"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Heading (before highlight)", name: "heading_main", widget: "string", hint: "e.g. 'Participant'" }
+          - { label: "Heading Highlight", name: "heading_highlight", widget: "string", hint: "e.g. 'Rights Statement' — shown in blue" }
+          - { label: "Eyebrow Label", name: "eyebrow", widget: "string" }
+          - { label: "Intro Paragraph", name: "intro", widget: "text", hint: "Short intro shown below the heading." }
+          - { label: "Content", name: "content", widget: "markdown", hint: "Use ### for headings, bullet points for lists." }
+
+      - label: "Incident Management Statement"
+        name: "legal_incident"
+        file: "_data/legal_incident.yml"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Heading (before highlight)", name: "heading_main", widget: "string", hint: "e.g. 'Incident Management'" }
+          - { label: "Heading Highlight", name: "heading_highlight", widget: "string", hint: "e.g. 'Statement' — shown in blue" }
+          - { label: "Eyebrow Label", name: "eyebrow", widget: "string" }
+          - { label: "Intro Paragraph", name: "intro", widget: "text", hint: "Short intro shown below the heading." }
+          - { label: "Content", name: "content", widget: "markdown", hint: "Use ### for headings, bullet points for lists." }
