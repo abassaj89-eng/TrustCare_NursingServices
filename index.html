@@ -1541,37 +1541,93 @@
 
   <!-- ============================= PAGE: CONTACT ============================= -->
   <div class="wizard-page" id="page-contact">
-    <section class="section" id="contact">
+
+    <!-- CONTACT HERO -->
+    <section class="contact-hero">
       <div class="container">
-        <div style="text-align:center;max-width:580px;margin:0 auto 24px;">
+        <div class="contact-hero__inner">
           <div class="eyebrow">Get In Touch</div>
-          <h2 class="section-heading">Book a Free <span>Consultation</span></h2>
+          <h1 class="contact-hero__h1">Let's Start a<br><span style="color:var(--blue);">Conversation.</span></h1>
+          <p class="contact-hero__sub">Whether you need clinical nursing support, want to refer a participant, or simply have a question — we're here to help. We respond within 24 hours.</p>
         </div>
-        <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;">
-          <div style="background:var(--bg-cta);border-radius:12px;padding:20px 28px;text-align:center;">
-            <div style="font-size:22px;margin-bottom:8px;">📧</div>
-            <div style="font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Referrals</div>
-            <a href="mailto:referrals@trustcaresupport.com.au" style="font-size:14px;color:var(--navy);font-weight:600;">referrals@trustcaresupport.com.au</a>
+      </div>
+    </section>
+
+    <!-- CONTACT INFO CARDS -->
+    <section class="section" style="padding-top:40px;padding-bottom:16px;" id="contact">
+      <div class="container">
+        <div class="contact-cards">
+
+          <!-- Emails card -->
+          <div class="contact-card">
+            <div class="contact-card__inner">
+              <div class="contact-card__row">
+                <div class="contact-icon-pill">📧</div>
+                <div>
+                  <div class="contact-card__label">Referrals</div>
+                  <div class="contact-card__val"><a href="mailto:referrals@trustcaresupport.com.au">referrals@trustcaresupport.com.au</a></div>
+                </div>
+              </div>
+              <div class="contact-card__row">
+                <div class="contact-icon-pill">📬</div>
+                <div>
+                  <div class="contact-card__label">General &amp; Admin</div>
+                  <div class="contact-card__val"><a href="mailto:admin@trustcaresupport.com.au">admin@trustcaresupport.com.au</a></div>
+                </div>
+              </div>
+              <div class="contact-card__row">
+                <div class="contact-icon-pill">✉️</div>
+                <div>
+                  <div class="contact-card__label">Info</div>
+                  <div class="contact-card__val"><a href="mailto:info@trustcaresupport.com.au">info@trustcaresupport.com.au</a></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div style="background:var(--bg-mint);border-radius:12px;padding:20px 28px;text-align:center;">
-            <div style="font-size:22px;margin-bottom:8px;">📧</div>
-            <div style="font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">General &amp; Admin</div>
-            <a href="mailto:admin@trustcaresupport.com.au" style="font-size:14px;color:var(--navy);font-weight:600;">admin@trustcaresupport.com.au</a>
+
+          <!-- Phone & Location card -->
+          <div class="contact-card">
+            <div class="contact-card__inner">
+              <div class="contact-card__row">
+                <div class="contact-icon-pill">📞</div>
+                <div>
+                  <div class="contact-card__label">Phone</div>
+                  <div class="contact-card__val"><a href="tel:0432014162">0432 014 162</a></div>
+                </div>
+              </div>
+              <div class="contact-card__row">
+                <div class="contact-icon-pill">📍</div>
+                <div>
+                  <div class="contact-card__label">Clinical Office</div>
+                  <div class="contact-card__val">Perth, Western Australia</div>
+                </div>
+              </div>
+              <div class="contact-card__row">
+                <div class="contact-icon-pill">🌐</div>
+                <div>
+                  <div class="contact-card__label">Service Area</div>
+                  <div class="contact-card__val">Australia Wide</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div style="background:var(--bg-pale);border-radius:12px;padding:20px 28px;text-align:center;">
-            <div style="font-size:22px;margin-bottom:8px;">📧</div>
-            <div style="font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Info</div>
-            <a href="mailto:info@trustcaresupport.com.au" style="font-size:14px;color:var(--navy);font-weight:600;">info@trustcaresupport.com.au</a>
-          </div>
-          <div style="background:#f0f4ff;border-radius:12px;padding:20px 28px;text-align:center;">
-            <div style="font-size:22px;margin-bottom:8px;">📍</div>
-            <div style="font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Location</div>
-            <div style="font-size:14px;color:var(--navy);font-weight:600;">Perth, Western Australia</div>
-          </div>
+
         </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS + FORM -->
+    <section class="section" style="padding-top:24px;">
+      <div class="container">
         <div class="process__grid">
+
+          <!-- Left: process steps -->
           <div>
-            <div class="process__steps">
+            <div class="contact-section-label">
+              <div class="contact-accent-bar"></div>
+              <h2 class="contact-steps-title">How It Works</h2>
+            </div>
+            <div class="process__steps" style="margin-top:28px;">
               <div class="process__step reveal">
                 <div class="process__step-left">
                   <div class="process__step-num">1</div>
@@ -1613,10 +1669,16 @@
               </div>
             </div>
           </div>
+
+          <!-- Right: form -->
           <div class="process__form reveal">
-            <h3>Book a Free Consultation</h3>
-            <p>Get in touch — we'll respond within 24 hours.</p>
-            <form class="contact-form" action="https://formspree.io/f/xaqlnwyw" method="POST">
+            <div class="contact-section-label" style="margin-bottom:6px;">
+              <div class="contact-accent-bar"></div>
+              <h2 class="contact-steps-title">Book a Free Consultation</h2>
+            </div>
+            <p style="font-size:14px;color:#64748b;margin-bottom:24px;">Get in touch — we'll respond within 24 hours.</p>
+
+            <form class="contact-form form-line" action="https://formspree.io/f/xaqlnwyw" method="POST">
               <input type="hidden" name="_subject" value="New Consultation Request — TrustCare Support" />
               <input type="hidden" name="_replyto" value="admin@trustcaresupport.com.au" />
               <input type="text" name="_gotcha" style="display:none;" />
@@ -1664,15 +1726,18 @@
               </div>
               <div class="form-group">
                 <label>Message</label>
-                <textarea name="message" placeholder="Briefly describe what you need help with..."></textarea>
+                <textarea name="message" rows="4" placeholder="Briefly describe what you need help with..."></textarea>
               </div>
-              <div style="margin-top:12px;display:flex;align-items:flex-start;gap:10px;width:100%;box-sizing:border-box;">
+              <div style="margin-top:4px;display:flex;align-items:flex-start;gap:10px;width:100%;box-sizing:border-box;">
                 <input type="checkbox" name="consent" required style="margin-top:4px;flex-shrink:0;min-width:16px;width:16px;height:16px;cursor:pointer;" />
                 <p style="margin:0;font-size:13px;color:#4a5568;line-height:1.6;text-transform:none;letter-spacing:normal;font-weight:400;word-break:break-word;">I consent to the collection and use of my personal information in accordance with the <a href="#" data-wizard-page="page-privacy" style="color:var(--blue);">Privacy Policy</a>.</p>
               </div>
-              <button type="submit" class="btn btn--blue" style="width:100%;justify-content:center;">Send Message</button>
+              <button type="submit" class="btn btn--gradient">
+                Send Message &nbsp;→
+              </button>
             </form>
           </div>
+
         </div>
       </div>
     </section>
