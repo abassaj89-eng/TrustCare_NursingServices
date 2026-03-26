@@ -1,0 +1,74 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# ─── BLOG POSTS ────────────────────────────────────────────────────────────────
+collections:
+  - name: "blog"
+    label: "📝 Blog Posts"
+    label_singular: "Blog Post"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "NDIS Updates", value: "ndis" }
+          - { label: "Health Tips", value: "health" }
+          - { label: "Company News", value: "news" }
+      - { label: "Tag Label", name: "tag", widget: "string", hint: "Shown on the card e.g. 'NDIS Updates'" }
+      - { label: "Icon (emoji)", name: "icon", widget: "string", default: "📋", hint: "Pick an emoji e.g. 📋 💉 🩹 🏢 🤝 💲" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Summary", name: "summary", widget: "text", hint: "Short preview shown on the blog card — 1 to 2 sentences." }
+      - { label: "Full Content", name: "body", widget: "markdown" }
+
+# ─── JOB LISTINGS ──────────────────────────────────────────────────────────────
+  - name: "jobs"
+    label: "💼 Job Listings"
+    label_singular: "Job"
+    folder: "_jobs"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Job Title", name: "title", widget: "string" }
+      - { label: "Show on Website", name: "active", widget: "boolean", default: true, hint: "Toggle off to hide without deleting." }
+      - label: "Filter Category"
+        name: "filter"
+        widget: "select"
+        options:
+          - { label: "Clinical", value: "clinical" }
+          - { label: "Support", value: "support" }
+          - { label: "Consulting", value: "consulting" }
+          - { label: "Contract", value: "contract" }
+      - { label: "Search Keywords", name: "keywords", widget: "string", hint: "Lowercase words for site search e.g. 'registered nurse perth full-time'" }
+      - { label: "Location", name: "location", widget: "string", default: "Perth, WA" }
+      - { label: "Employment Type", name: "type", widget: "string", hint: "e.g. Full-Time, Casual / Part-Time, Contract" }
+      - { label: "Team", name: "team", widget: "string", hint: "e.g. 🏥 Clinical Team, 🤝 Support Team, 📋 Consulting" }
+      - label: "Badge Text"
+        name: "badge"
+        widget: "select"
+        options:
+          - { label: "Now Hiring", value: "Now Hiring" }
+          - { label: "Contract", value: "Contract" }
+          - { label: "Closed", value: "Closed" }
+      - label: "Badge Colour"
+        name: "badge_class"
+        widget: "select"
+        options:
+          - { label: "Blue — Now Hiring", value: "career-card__badge--hiring" }
+          - { label: "Green — Contract", value: "career-card__badge--contract" }
+      - { label: "Posted Date", name: "posted", widget: "string", hint: "e.g. March 2026" }
+      - { label: "Job Description", name: "description", widget: "text" }
+      - { label: "Requirements", name: "requirements", widget: "list", hint: "One requirement per entry." }
+      - { label: "Skill Tags", name: "tags", widget: "list", hint: "e.g. AHPRA Registered, Wound Care" }
+      - { label: "Accent Colour (optional)", name: "accent_color", widget: "string", required: false, hint: "Leave blank for navy. Use CSS value e.g. var(--green)" }

@@ -1,0 +1,36 @@
+title: "TrustCare Support"
+description: "NDIS Community Nursing Perth | Complex Care RN | TrustCare Support"
+url: "https://trustcaresupport.com.au"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Exclude from Jekyll build
+exclude:
+  - .claude/
+  - node_modules/
+  - vendor/
+  - Gemfile.lock
+  - README.md
+
+# Collections
+collections:
+  jobs:
+    output: false
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: jobs
+    values:
+      active: true

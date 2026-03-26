@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} | TrustCare Support</title>
+  <meta name="description" content="{{ page.summary }}" />
+  <link rel="canonical" href="{{ page.url | prepend: site.url }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .post-wrap { max-width: 780px; margin: 0 auto; padding: 100px 24px 80px; }
+    .post-back { display: inline-flex; align-items: center; gap: 6px; color: var(--navy); font-weight: 600; font-size: 14px; text-decoration: none; margin-bottom: 32px; }
+    .post-back:hover { color: var(--blue); }
+    .post-tag { display: inline-block; background: #dce8ff; color: var(--navy); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+    .post-title { font-size: clamp(26px, 4vw, 40px); font-weight: 700; color: var(--navy); line-height: 1.25; margin-bottom: 16px; }
+    .post-date { color: #64748b; font-size: 14px; margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #e2e8f0; }
+    .post-content { line-height: 1.85; color: #374151; font-size: 16px; }
+    .post-content p { margin-bottom: 18px; }
+    .post-content a { color: var(--blue); }
+    .post-content a:hover { color: var(--navy); }
+  </style>
+</head>
+<body style="background:#f8fafc;">
+  <div class="post-wrap">
+    <a href="/" class="post-back">← Back to TrustCare Support</a>
+    <div class="post-tag">{{ page.tag }}</div>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-date">{{ page.date | date: "%-d %B %Y" }}</div>
+    <div class="post-content">
+      {{ content }}
+    </div>
+    <div style="margin-top:48px;padding-top:32px;border-top:1px solid #e2e8f0;text-align:center;">
+      <a href="/" class="btn btn--blue" style="display:inline-block;padding:14px 28px;background:#266afb;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">← Back to TrustCare Support</a>
+    </div>
+  </div>
+</body>
+</html>

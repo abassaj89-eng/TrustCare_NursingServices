@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +32,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -1090,99 +1093,22 @@
           <button class="blog-cat" data-cat="news">Company News</button>
         </div>
 
-        <!-- BLOG GRID -->
+        <!-- BLOG GRID (Jekyll — edit posts at /admin) -->
         <div class="blog__grid">
-
-          <!-- Card 1 -->
-          <div class="blog-card" data-cat="ndis">
-            <div class="blog-card__img">📋</div>
+          {% for post in site.posts %}
+          <div class="blog-card" data-cat="{{ post.category }}">
+            <div class="blog-card__img">{{ post.icon }}</div>
             <div class="blog-card__body">
-              <div class="blog-card__tag">NDIS Updates</div>
-              <h3 class="blog-card__title">Understanding NDIS High Intensity Support Descriptors</h3>
-              <p class="blog-card__excerpt">The NDIS High Intensity Support Skills Descriptors outline the knowledge and skills required for support workers delivering complex care. Understanding these is critical for providers and participants alike.</p>
+              <div class="blog-card__tag">{{ post.tag }}</div>
+              <h3 class="blog-card__title">{{ post.title }}</h3>
+              <p class="blog-card__excerpt">{{ post.summary }}</p>
               <div class="blog-card__full" style="display:none;">
-                <p>The NDIS Quality and Safeguards Commission has defined 10 High Intensity Daily Personal Activities (HIDPAs) that require specialist training and competency assessment. These include complex bowel care, enteral feeding, tracheostomy management, ventilator support, and more. Providers must ensure workers are trained and assessed by a qualified health professional — such as a Registered Nurse — before delivering these supports. TrustCare Support provides competency assessment and training for all 10 HIDPAs in Perth, WA.</p>
-                <p>For more information, visit the <a href="https://www.ndiscommission.gov.au" target="_blank" rel="noopener" style="color:var(--blue);">NDIS Quality and Safeguards Commission</a>.</p>
+                {{ post.content }}
               </div>
               <button class="blog-read-more" onclick="toggleBlog(this)">Read More ↓</button>
             </div>
           </div>
-
-          <!-- Card 2 -->
-          <div class="blog-card" data-cat="ndis">
-            <div class="blog-card__img">💲</div>
-            <div class="blog-card__body">
-              <div class="blog-card__tag">NDIS Updates</div>
-              <h3 class="blog-card__title">What Changes to the NDIS Price Guide Mean for Providers in 2025</h3>
-              <p class="blog-card__excerpt">The NDIS Support Catalogue is updated regularly, and the 2025 pricing changes have significant implications for nursing and high intensity support providers. Here is what you need to know.</p>
-              <div class="blog-card__full" style="display:none;">
-                <p>The NDIS pricing framework sets maximum hourly rates that registered providers may charge for supports. Key changes in the 2025 update include revised rates for High Intensity Daily Personal Activities, updated travel and non-face-to-face time provisions, and new line items for RN delegation activities. Providers must ensure billing aligns with the current Support Catalogue and that staff delivering supports are correctly classified under the relevant registration group.</p>
-                <p>TrustCare Support ensures all clinical services are billed in accordance with the current NDIS Support Catalogue. Contact us to discuss how our nursing partnership model can streamline your NDIS billing compliance. For the latest pricing, visit the <a href="https://www.ndis.gov.au/providers/pricing-arrangements" target="_blank" rel="noopener" style="color:var(--blue);">NDIS Pricing Arrangements page</a>.</p>
-              </div>
-              <button class="blog-read-more" onclick="toggleBlog(this)">Read More ↓</button>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="blog-card" data-cat="health">
-            <div class="blog-card__img">🩹</div>
-            <div class="blog-card__body">
-              <div class="blog-card__tag">Health Tips</div>
-              <h3 class="blog-card__title">Wound Care Best Practices for Community Nurses</h3>
-              <p class="blog-card__excerpt">Effective wound management in the community requires systematic assessment, evidence-based dressing selection, and clear documentation. This guide outlines best practice principles for NDIS nursing contexts.</p>
-              <div class="blog-card__full" style="display:none;">
-                <p>Wound assessment should follow the TIME framework — Tissue type, Infection or inflammation, Moisture balance, and Edge of wound — to guide clinical decision-making. Dressing selection must be based on wound type, exudate level, and healing phase. For NDIS participants, a current wound management plan signed by an AHPRA-registered Registered Nurse is essential for compliance and continuity of care.</p>
-                <p>Community nurses should document wound dimensions, photography (with consent), and treatment response at every visit. Where wounds are complex, chronic, or deteriorating, referral to a wound specialist or Nurse Practitioner should be considered. TrustCare Support provides comprehensive wound assessments and management plans for NDIS participants across Perth, WA.</p>
-              </div>
-              <button class="blog-read-more" onclick="toggleBlog(this)">Read More ↓</button>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="blog-card" data-cat="health">
-            <div class="blog-card__img">💉</div>
-            <div class="blog-card__body">
-              <div class="blog-card__tag">Health Tips</div>
-              <h3 class="blog-card__title">Managing Diabetes in NDIS Participants: A Clinical Guide</h3>
-              <p class="blog-card__excerpt">Diabetes management for NDIS participants requires a coordinated approach covering blood glucose monitoring, medication administration, hypoglycaemia recognition, and lifestyle support — all underpinned by RN oversight.</p>
-              <div class="blog-card__full" style="display:none;">
-                <p>Registered Nurses play a central role in diabetes management for complex NDIS participants. Key responsibilities include: developing and reviewing individualised diabetes management plans; training support workers in blood glucose monitoring technique and documentation; administering insulin and other injectable medications where required; and responding to hypoglycaemic and hyperglycaemic episodes.</p>
-                <p>Hypoglycaemia recognition is a critical safety competency for any support worker assisting a participant with diabetes. Warning signs include shakiness, sweating, confusion, and pallor. All staff must know the emergency response protocol and when to escalate to an RN or emergency services. TrustCare Support provides diabetes-specific training and RN-led management plans for NDIS participants in Perth.</p>
-              </div>
-              <button class="blog-read-more" onclick="toggleBlog(this)">Read More ↓</button>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="blog-card" data-cat="news">
-            <div class="blog-card__img">🏢</div>
-            <div class="blog-card__body">
-              <div class="blog-card__tag">Company News</div>
-              <h3 class="blog-card__title">TrustCare Support Launches Clinical Nursing Services in Perth</h3>
-              <p class="blog-card__excerpt">TrustCare Support is proud to announce the launch of our AHPRA-registered clinical nursing services, providing high intensity and complex care support to NDIS participants and providers across Perth, WA.</p>
-              <div class="blog-card__full" style="display:none;">
-                <p>TrustCare Support was founded to address a critical gap in the Perth NDIS market — the need for an AHPRA-registered Registered Nurse who can partner directly with NDIS providers to deliver complex, high intensity clinical nursing care. Our services span all 10 NDIS High Intensity Daily Personal Activities (HIDPAs), including complex bowel care, tracheostomy management, enteral feeding, ventilator support, and more.</p>
-                <p>We operate on a B2B partnership model, working alongside existing registered NDIS providers as their clinical nursing arm — without competing for their participants. If you are an NDIS provider, support coordinator, or plan manager seeking a reliable, compliant clinical nursing partner in Perth, we would love to hear from you. <a href="#" data-wizard-page="page-contact" style="color:var(--blue);">Contact us today</a> or call <a href="tel:0432014162" style="color:var(--blue);">0432 014 162</a>.</p>
-              </div>
-              <button class="blog-read-more" onclick="toggleBlog(this)">Read More ↓</button>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="blog-card" data-cat="news">
-            <div class="blog-card__img">🤝</div>
-            <div class="blog-card__body">
-              <div class="blog-card__tag">Company News</div>
-              <h3 class="blog-card__title">New Partnership Model: How We Work with NDIS Providers</h3>
-              <p class="blog-card__excerpt">TrustCare Support operates on a unique B2B model designed to complement, not compete with, existing NDIS providers. Learn how our clinical nursing partnership works and how to engage us for your participants.</p>
-              <div class="blog-card__full" style="display:none;">
-                <p>Our partnership model is straightforward: NDIS providers engage TrustCare Support as their dedicated clinical nursing partner for participants requiring complex or high intensity nursing care. We embed within your service delivery framework — attending participant homes under your service agreement, contributing to support plans, and providing competency assessment and training for your support workers.</p>
-                <p>This model means providers retain their participant relationships and case management responsibilities, while TrustCare handles the clinical nursing components that require AHPRA registration and specialist competency. We do not recruit participants away from partner providers and operate under strict confidentiality obligations. To discuss how a partnership with TrustCare Support could benefit your organisation, <a href="#" data-wizard-page="page-contact" style="color:var(--blue);">book a free consultation</a> or email <a href="mailto:info@trustcaresupport.com.au" style="color:var(--blue);">info@trustcaresupport.com.au</a>.</p>
-              </div>
-              <button class="blog-read-more" onclick="toggleBlog(this)">Read More ↓</button>
-            </div>
-          </div>
-
+          {% endfor %}
         </div><!-- /blog__grid -->
       </div>
     </section>
@@ -1238,122 +1164,49 @@
   <!-- JOB LISTINGS -->
   <section class="section" style="padding-top:0;">
     <div class="container">
+      {% assign active_jobs = site.jobs | where: "active", true %}
       <div class="careers-list-header">
         <h2 class="careers-list-title">Available Positions</h2>
-        <span class="careers-list-sort">3 roles available</span>
+        <span class="careers-list-sort">{{ active_jobs.size }} role{% if active_jobs.size != 1 %}s{% endif %} available</span>
       </div>
 
       <div class="careers-jobs" id="jobsList">
 
-        <!-- JOB 1 -->
-        <div class="career-card" data-filter="clinical" data-keywords="registered nurse hidpa high intensity perth full-time">
-          <div class="career-card__accent"></div>
+        <!-- JOB LISTINGS (Jekyll — edit at /admin) -->
+        {% for job in active_jobs %}
+        <div class="career-card" data-filter="{{ job.filter }}" data-keywords="{{ job.keywords }}">
+          <div class="career-card__accent"{% if job.accent_color %} style="background:{{ job.accent_color }};"{% endif %}></div>
           <div class="career-card__top">
             <div>
-              <h3 class="career-card__title">Registered Nurse — High Intensity Support Specialist</h3>
+              <h3 class="career-card__title">{{ job.title }}</h3>
               <div class="career-card__meta">
-                <span>📍 Perth, WA</span>
-                <span>🕐 Full-Time</span>
-                <span>🏥 Clinical Team</span>
+                <span>📍 {{ job.location }}</span>
+                <span>🕐 {{ job.type }}</span>
+                <span>{{ job.team }}</span>
               </div>
             </div>
-            <span class="career-card__badge career-card__badge--hiring">Now Hiring</span>
+            <span class="career-card__badge {{ job.badge_class }}">{{ job.badge }}</span>
           </div>
-          <p class="career-card__desc">We are seeking an experienced Registered Nurse with competency across NDIS High Intensity Daily Personal Activities to provide direct clinical care, training, and competency assessment for NDIS participants and support workers.</p>
+          <p class="career-card__desc">{{ job.description }}</p>
           <div class="career-card__requirements">
             <div class="career-card__req-title">Requirements</div>
             <ul class="career-card__req-list">
-              <li>Current AHPRA registration (RN)</li>
-              <li>Experience in NDIS High Intensity supports (HIDPA)</li>
-              <li>Competency in tracheostomy, PEG, complex bowel care</li>
-              <li>Valid NDIS Worker Screening Check</li>
-              <li>Current First Aid & CPR</li>
+              {% for req in job.requirements %}
+              <li>{{ req }}</li>
+              {% endfor %}
             </ul>
           </div>
           <div class="career-card__tags">
-            <span class="career-card__tag">AHPRA Registered</span>
-            <span class="career-card__tag">HIDPA Competent</span>
-            <span class="career-card__tag">Tracheostomy</span>
-            <span class="career-card__tag">Wound Care</span>
+            {% for tag in job.tags %}
+            <span class="career-card__tag">{{ tag }}</span>
+            {% endfor %}
           </div>
           <div class="career-card__bottom">
-            <div class="career-card__posted">📅 Posted March 2026</div>
-            <button class="btn btn--blue career-card__apply" onclick="openApplyModal('Registered Nurse — High Intensity Support Specialist')">Apply Now →</button>
+            <div class="career-card__posted">📅 Posted {{ job.posted }}</div>
+            <button class="btn btn--blue career-card__apply" onclick="openApplyModal('{{ job.title }}')">Apply Now →</button>
           </div>
         </div>
-
-        <!-- JOB 2 -->
-        <div class="career-card" data-filter="support" data-keywords="complex care support worker perth casual part-time">
-          <div class="career-card__accent"></div>
-          <div class="career-card__top">
-            <div>
-              <h3 class="career-card__title">Complex Care Support Worker</h3>
-              <div class="career-card__meta">
-                <span>📍 Perth, WA</span>
-                <span>🕐 Casual / Part-Time</span>
-                <span>🤝 Support Team</span>
-              </div>
-            </div>
-            <span class="career-card__badge career-card__badge--hiring">Now Hiring</span>
-          </div>
-          <p class="career-card__desc">We are looking for experienced support workers with a background in complex and high intensity NDIS supports. Candidates must be willing to undertake competency training and assessment prior to working with high intensity participants.</p>
-          <div class="career-card__requirements">
-            <div class="career-card__req-title">Requirements</div>
-            <ul class="career-card__req-list">
-              <li>Certificate III/IV in Disability Services or Community Care</li>
-              <li>Experience with complex care participants</li>
-              <li>Willingness to complete HIDPA competency training</li>
-              <li>Valid NDIS Worker Screening Check</li>
-              <li>Current First Aid & CPR</li>
-            </ul>
-          </div>
-          <div class="career-card__tags">
-            <span class="career-card__tag">Cert III/IV DSW</span>
-            <span class="career-card__tag">Complex Care</span>
-            <span class="career-card__tag">NDIS Worker Check</span>
-            <span class="career-card__tag">First Aid</span>
-          </div>
-          <div class="career-card__bottom">
-            <div class="career-card__posted">📅 Posted March 2026</div>
-            <button class="btn btn--blue career-card__apply" onclick="openApplyModal('Complex Care Support Worker')">Apply Now →</button>
-          </div>
-        </div>
-
-        <!-- JOB 3 -->
-        <div class="career-card" data-filter="consulting contract" data-keywords="ndis compliance consultant remote australia-wide contract">
-          <div class="career-card__accent" style="background:var(--green);"></div>
-          <div class="career-card__top">
-            <div>
-              <h3 class="career-card__title">NDIS Compliance Consultant</h3>
-              <div class="career-card__meta">
-                <span>📍 Remote (Australia-Wide)</span>
-                <span>🕐 Contract</span>
-                <span>📋 Consulting</span>
-              </div>
-            </div>
-            <span class="career-card__badge career-card__badge--contract">Contract</span>
-          </div>
-          <p class="career-card__desc">Experienced NDIS compliance professional to support policy development, internal audit preparation, and gap analysis projects for our growing client base. Flexible remote work arrangement with on-site visit requirements for specific engagements.</p>
-          <div class="career-card__requirements">
-            <div class="career-card__req-title">Requirements</div>
-            <ul class="career-card__req-list">
-              <li>Proven experience in NDIS compliance & auditing</li>
-              <li>Knowledge of NDIS Practice Standards</li>
-              <li>Experience with policy writing and mock audits</li>
-              <li>Ability to work independently and remotely</li>
-            </ul>
-          </div>
-          <div class="career-card__tags">
-            <span class="career-card__tag">NDIS Compliance</span>
-            <span class="career-card__tag">Policy Writing</span>
-            <span class="career-card__tag">Audit Experience</span>
-            <span class="career-card__tag">Remote Work</span>
-          </div>
-          <div class="career-card__bottom">
-            <div class="career-card__posted">📅 Posted March 2026</div>
-            <button class="btn btn--blue career-card__apply" onclick="openApplyModal('NDIS Compliance Consultant')">Apply Now →</button>
-          </div>
-        </div>
+        {% endfor %}
 
         <!-- NO RESULTS MESSAGE -->
         <div id="noJobsMsg" style="display:none;text-align:center;padding:48px 24px;color:#64748b;">
@@ -2150,5 +2003,14 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+      }
+    });
+  }
+</script>
 </body>
 </html>
