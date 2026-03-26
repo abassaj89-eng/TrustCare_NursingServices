@@ -1190,87 +1190,198 @@
 
   <!-- ============================= PAGE: WORK WITH US ============================= -->
   <div class="wizard-page" id="page-work">
-    <section class="section section--pale" id="work-with-us">
-      <div class="container">
-        <div class="services__header">
-          <div class="eyebrow">Join Our Team</div>
-          <h2 class="section-heading reveal">Work <span>With Us</span></h2>
-          <p class="section-sub reveal">We are always looking for dedicated, qualified clinical professionals who share our commitment to delivering the highest standard of NDIS support. Explore our current openings or sign up for job alerts below.</p>
+  <!-- CAREERS HERO -->
+  <section class="careers-hero">
+    <div class="container">
+      <div class="careers-hero__inner">
+        <div class="careers-hero__text">
+          <div class="eyebrow">JOIN OUR TEAM</div>
+          <h1 class="careers-hero__h1">Join Our <span style="color:var(--blue);">Compassionate</span> Team</h1>
+          <p class="careers-hero__sub">Shape the future of healthcare with an organisation that values clinical excellence, integrity, and dignity in disability care.</p>
+        </div>
+        <div class="careers-bento">
+          <div class="careers-bento__stat">
+            <span class="careers-bento__icon">🏥</span>
+            <div class="careers-bento__num">3+</div>
+            <div class="careers-bento__label">Open Positions</div>
+          </div>
+          <div class="careers-bento__award">
+            <span style="font-size:28px;">🏆</span>
+            <div class="careers-bento__award-title">AHPRA Compliant</div>
+            <div class="careers-bento__award-sub">Registered Nurse Led</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH & FILTER -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="careers-search-box">
+        <div class="careers-search-row">
+          <span class="careers-search-icon">🔍</span>
+          <input type="text" id="jobSearch" placeholder="Search job titles or keywords..." class="careers-search-input" oninput="filterJobs()" />
+        </div>
+        <div class="careers-filter-tabs">
+          <button class="careers-tab active" data-filter="all" onclick="setJobFilter(this,'all')">All Roles</button>
+          <button class="careers-tab" data-filter="clinical" onclick="setJobFilter(this,'clinical')">Clinical</button>
+          <button class="careers-tab" data-filter="support" onclick="setJobFilter(this,'support')">Support</button>
+          <button class="careers-tab" data-filter="consulting" onclick="setJobFilter(this,'consulting')">Consulting</button>
+          <button class="careers-tab" data-filter="contract" onclick="setJobFilter(this,'contract')">Contract</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOB LISTINGS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="careers-list-header">
+        <h2 class="careers-list-title">Available Positions</h2>
+        <span class="careers-list-sort">3 roles available</span>
+      </div>
+
+      <div class="careers-jobs" id="jobsList">
+
+        <!-- JOB 1 -->
+        <div class="career-card" data-filter="clinical" data-keywords="registered nurse hidpa high intensity perth full-time">
+          <div class="career-card__accent"></div>
+          <div class="career-card__top">
+            <div>
+              <h3 class="career-card__title">Registered Nurse — High Intensity Support Specialist</h3>
+              <div class="career-card__meta">
+                <span>📍 Perth, WA</span>
+                <span>🕐 Full-Time</span>
+                <span>🏥 Clinical Team</span>
+              </div>
+            </div>
+            <span class="career-card__badge career-card__badge--hiring">Now Hiring</span>
+          </div>
+          <p class="career-card__desc">We are seeking an experienced Registered Nurse with competency across NDIS High Intensity Daily Personal Activities to provide direct clinical care, training, and competency assessment for NDIS participants and support workers.</p>
+          <div class="career-card__requirements">
+            <div class="career-card__req-title">Requirements</div>
+            <ul class="career-card__req-list">
+              <li>Current AHPRA registration (RN)</li>
+              <li>Experience in NDIS High Intensity supports (HIDPA)</li>
+              <li>Competency in tracheostomy, PEG, complex bowel care</li>
+              <li>Valid NDIS Worker Screening Check</li>
+              <li>Current First Aid & CPR</li>
+            </ul>
+          </div>
+          <div class="career-card__tags">
+            <span class="career-card__tag">AHPRA Registered</span>
+            <span class="career-card__tag">HIDPA Competent</span>
+            <span class="career-card__tag">Tracheostomy</span>
+            <span class="career-card__tag">Wound Care</span>
+          </div>
+          <div class="career-card__bottom">
+            <div class="career-card__posted">📅 Posted March 2026</div>
+            <button class="btn btn--blue career-card__apply" onclick="openApplyModal('Registered Nurse — High Intensity Support Specialist')">Apply Now →</button>
+          </div>
         </div>
 
-        <div class="jobs-grid" id="work-jobs">
-
-          <div class="job-card reveal">
-            <div class="job-card__badge">Now Hiring</div>
-            <div class="job-card__title">Registered Nurse — High Intensity Support Specialist</div>
-            <div class="job-card__meta">
-              <span class="job-card__meta-item">📍 Perth, WA</span>
-              <span class="job-card__meta-item">🕐 Full-Time</span>
-              <span class="job-card__meta-item">💼 Clinical Team</span>
+        <!-- JOB 2 -->
+        <div class="career-card" data-filter="support" data-keywords="complex care support worker perth casual part-time">
+          <div class="career-card__accent"></div>
+          <div class="career-card__top">
+            <div>
+              <h3 class="career-card__title">Complex Care Support Worker</h3>
+              <div class="career-card__meta">
+                <span>📍 Perth, WA</span>
+                <span>🕐 Casual / Part-Time</span>
+                <span>🤝 Support Team</span>
+              </div>
             </div>
-            <p class="job-card__desc">We are seeking an experienced Registered Nurse with competency across NDIS High Intensity Daily Personal Activities to provide direct clinical care, training, and competency assessment for NDIS participants and support workers.</p>
-            <div class="job-card__skills">
-              <span class="job-skill">AHPRA Registered</span>
-              <span class="job-skill">HIDPA Competent</span>
-              <span class="job-skill">Tracheostomy</span>
-              <span class="job-skill">Wound Care</span>
-            </div>
-            <button class="btn btn--blue" style="width:100%;justify-content:center;" onclick="openApplyModal('Registered Nurse — High Intensity Support Specialist')">Apply Now →</button>
+            <span class="career-card__badge career-card__badge--hiring">Now Hiring</span>
           </div>
-
-          <div class="job-card reveal reveal-delay-1">
-            <div class="job-card__badge">Now Hiring</div>
-            <div class="job-card__title">Complex Care Support Worker</div>
-            <div class="job-card__meta">
-              <span class="job-card__meta-item">📍 Perth, WA</span>
-              <span class="job-card__meta-item">🕐 Casual / Part-Time</span>
-              <span class="job-card__meta-item">💼 Support Team</span>
-            </div>
-            <p class="job-card__desc">We are looking for experienced support workers with a background in complex and high intensity NDIS supports. Candidates must be willing to undertake competency training and assessment prior to working with high intensity participants.</p>
-            <div class="job-card__skills">
-              <span class="job-skill">Certificate III/IV DSW</span>
-              <span class="job-skill">Complex Care</span>
-              <span class="job-skill">NDIS Worker Check</span>
-              <span class="job-skill">First Aid</span>
-            </div>
-            <button class="btn btn--blue" style="width:100%;justify-content:center;" onclick="openApplyModal('Complex Care Support Worker')">Apply Now →</button>
+          <p class="career-card__desc">We are looking for experienced support workers with a background in complex and high intensity NDIS supports. Candidates must be willing to undertake competency training and assessment prior to working with high intensity participants.</p>
+          <div class="career-card__requirements">
+            <div class="career-card__req-title">Requirements</div>
+            <ul class="career-card__req-list">
+              <li>Certificate III/IV in Disability Services or Community Care</li>
+              <li>Experience with complex care participants</li>
+              <li>Willingness to complete HIDPA competency training</li>
+              <li>Valid NDIS Worker Screening Check</li>
+              <li>Current First Aid & CPR</li>
+            </ul>
           </div>
-
-          <div class="job-card reveal reveal-delay-2">
-            <div class="job-card__badge">Contract</div>
-            <div class="job-card__title">NDIS Compliance Consultant</div>
-            <div class="job-card__meta">
-              <span class="job-card__meta-item">📍 Remote (Australia-Wide)</span>
-              <span class="job-card__meta-item">🕐 Contract</span>
-              <span class="job-card__meta-item">💼 Consulting</span>
-            </div>
-            <p class="job-card__desc">Experienced NDIS compliance professional to support policy development, internal audit preparation, and gap analysis projects for our growing client base. Flexible remote work arrangement with on-site visit requirements for specific engagements.</p>
-            <div class="job-card__skills">
-              <span class="job-skill">NDIS Compliance</span>
-              <span class="job-skill">Policy Writing</span>
-              <span class="job-skill">Audit Experience</span>
-              <span class="job-skill">Remote Work</span>
-            </div>
-            <button class="btn btn--blue" style="width:100%;justify-content:center;" onclick="openApplyModal('NDIS Compliance Consultant')">Apply Now →</button>
+          <div class="career-card__tags">
+            <span class="career-card__tag">Cert III/IV DSW</span>
+            <span class="career-card__tag">Complex Care</span>
+            <span class="career-card__tag">NDIS Worker Check</span>
+            <span class="career-card__tag">First Aid</span>
           </div>
-
+          <div class="career-card__bottom">
+            <div class="career-card__posted">📅 Posted March 2026</div>
+            <button class="btn btn--blue career-card__apply" onclick="openApplyModal('Complex Care Support Worker')">Apply Now →</button>
+          </div>
         </div>
 
-        <div class="alerts-box reveal" id="work-alerts">
-          <div class="alerts-box__text">
-            <h3>Don't See the Right Role?</h3>
-            <p>Sign up for job alerts and be the first to hear about new positions as they become available. We regularly add clinical nursing and support roles in Perth, Western Australia.</p>
+        <!-- JOB 3 -->
+        <div class="career-card" data-filter="consulting contract" data-keywords="ndis compliance consultant remote australia-wide contract">
+          <div class="career-card__accent" style="background:var(--green);"></div>
+          <div class="career-card__top">
+            <div>
+              <h3 class="career-card__title">NDIS Compliance Consultant</h3>
+              <div class="career-card__meta">
+                <span>📍 Remote (Australia-Wide)</span>
+                <span>🕐 Contract</span>
+                <span>📋 Consulting</span>
+              </div>
+            </div>
+            <span class="career-card__badge career-card__badge--contract">Contract</span>
           </div>
-          <form class="alerts-box__form contact-form" action="https://formspree.io/f/maqlnwnw" method="POST">
-            <input type="hidden" name="_subject" value="Job Alert Sign-Up — TrustCare Support" />
-            <input type="text" name="_gotcha" style="display:none;" />
-            <input type="email" name="email" placeholder="Your email address" required />
-            <button type="submit">Sign Up for Alerts</button>
-          </form>
+          <p class="career-card__desc">Experienced NDIS compliance professional to support policy development, internal audit preparation, and gap analysis projects for our growing client base. Flexible remote work arrangement with on-site visit requirements for specific engagements.</p>
+          <div class="career-card__requirements">
+            <div class="career-card__req-title">Requirements</div>
+            <ul class="career-card__req-list">
+              <li>Proven experience in NDIS compliance & auditing</li>
+              <li>Knowledge of NDIS Practice Standards</li>
+              <li>Experience with policy writing and mock audits</li>
+              <li>Ability to work independently and remotely</li>
+            </ul>
+          </div>
+          <div class="career-card__tags">
+            <span class="career-card__tag">NDIS Compliance</span>
+            <span class="career-card__tag">Policy Writing</span>
+            <span class="career-card__tag">Audit Experience</span>
+            <span class="career-card__tag">Remote Work</span>
+          </div>
+          <div class="career-card__bottom">
+            <div class="career-card__posted">📅 Posted March 2026</div>
+            <button class="btn btn--blue career-card__apply" onclick="openApplyModal('NDIS Compliance Consultant')">Apply Now →</button>
+          </div>
+        </div>
+
+        <!-- NO RESULTS MESSAGE -->
+        <div id="noJobsMsg" style="display:none;text-align:center;padding:48px 24px;color:#64748b;">
+          <div style="font-size:48px;margin-bottom:12px;">🔍</div>
+          <p style="font-size:16px;font-weight:600;">No roles match your search.</p>
+          <p style="font-size:14px;margin-top:4px;">Try a different keyword or filter.</p>
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
+
+  <!-- TALENT POOL -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="careers-talent">
+        <div class="careers-talent__text">
+          <h2 class="careers-talent__h2">Not finding the right fit?</h2>
+          <p class="careers-talent__sub">Join our talent community and be the first to hear about new opportunities that match your expertise.</p>
+        </div>
+        <form class="careers-talent__form" action="https://formspree.io/f/maqlnwnw" method="POST">
+          <input type="hidden" name="_subject" value="Talent Pool Sign-Up — TrustCare Support" />
+          <input type="text" name="_gotcha" style="display:none;" />
+          <input type="email" name="email" placeholder="Your email address" required class="careers-talent__input" />
+          <button type="submit" class="btn btn--blue">Join Talent Pool</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
     <!-- Application Modal -->
     <div id="applyModal" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.6);padding:20px;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;" onclick="if(event.target===this)closeApplyModal()">

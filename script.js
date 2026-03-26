@@ -417,3 +417,32 @@ document.getElementById('applyForm')?.addEventListener('submit', async (e) => {
     setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; btn.disabled = false; }, 3000);
   }
 });
+
+// ===== CAREERS: SEARCH + FILTER =====
+let activeJobFilter = 'all';
+
+function setJobFilter(btn, filter) {
+  document.querySelectorAll('.careers-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeJobFilter = filter;
+  filterJobs();
+}
+
+function filterJobs() {
+  const query = (document.getElementById('jobSearch')?.value || '').toLowerCase();
+  const cards = document.querySelectorAll('.career-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const keywords = card.dataset.keywords || '';
+    const title = card.querySelector('.career-card__title')?.textContent.toLowerCase() || '';
+    const filterVal = card.dataset.filter || '';
+    const matchFilter = activeJobFilter === 'all' || filterVal.includes(activeJobFilter);
+    const matchSearch = !query || keywords.includes(query) || title.includes(query);
+    const show = matchFilter && matchSearch;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  document.getElementById('noJobsMsg').style.display = visible === 0 ? 'block' : 'none';
+  const sortEl = document.querySelector('.careers-list-sort');
+  if (sortEl) sortEl.textContent = visible + ' role' + (visible !== 1 ? 's' : '') + ' available';
+}
