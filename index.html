@@ -18,7 +18,7 @@
 <nav class="navbar" id="navbar">
   <div class="navbar__inner">
     <a href="#" class="navbar__logo" data-wizard-page="page-home">
-      <img src="Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="navbar__logo-img"
+      <img src="Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="navbar__logo-img logo-preview-trigger"
         onerror="this.outerHTML='<div class=\'navbar__logo-icon\'>+</div>'" />
       <span>TrustCare</span>
     </a>
@@ -1616,7 +1616,7 @@
       <div>
         <div class="footer__logo">
           <a href="#" data-wizard-page="page-home">
-          <img src="Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="footer__logo-img"
+          <img src="Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="footer__logo-img logo-preview-trigger"
             onerror="this.outerHTML='<div class=\'footer__logo-icon\'>+</div>'" />
           </a>
           <span>TrustCare</span>
@@ -1933,6 +1933,12 @@
     </div>
   </section>
 </div><!-- /page-rights -->
+
+<!-- ===== LOGO LIGHTBOX ===== -->
+<div id="logo-lightbox" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.82);align-items:center;justify-content:center;flex-direction:column;gap:16px;cursor:zoom-out;" onclick="this.style.display='none'">
+  <img src="Trustcaremainlogo.jpg.png" alt="TrustCare Logo" style="max-width:420px;width:88%;border-radius:18px;box-shadow:0 24px 64px rgba(0,0,0,0.5);background:#fff;padding:24px;"/>
+  <span style="color:#fff;font-size:13px;opacity:0.7;">Click anywhere to close</span>
+</div>
 
 <script src="script.js"></script>
 </body>

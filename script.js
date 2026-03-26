@@ -1,3 +1,20 @@
+// ===== LOGO LIGHTBOX =====
+document.addEventListener('DOMContentLoaded', () => {
+  const lightbox = document.getElementById('logo-lightbox');
+  document.querySelectorAll('.logo-preview-trigger').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      lightbox.style.display = 'flex';
+    });
+  });
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.style.display = 'none';
+  });
+});
+
 // ===== NAVBAR SCROLL =====
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
