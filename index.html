@@ -1048,141 +1048,162 @@
   <!-- ============================= PAGE: RESOURCES / BLOG ============================= -->
   <div class="wizard-page" id="page-blog">
 
-    <!-- CTA Banner -->
-    <section class="section section--blue">
+    <!-- BLOG HERO -->
+    <section class="blog-hero">
       <div class="container">
-        <div class="cta-banner reveal">
-          <div class="cta-banner__text">
-            <h2>Supporting NDIS Providers &amp; Participants Across Perth</h2>
-            <p>Whether you're a registered NDIS provider seeking a clinical nursing partner, or a support coordinator referring a participant with complex care needs — TrustCare is here. Book a free consultation today, no obligation.</p>
-          </div>
-          <div class="cta-banner__actions">
-            <a href="#" class="btn btn--white" data-wizard-page="page-contact">Book Free Consult</a>
-            <a href="tel:0432014162" class="btn btn--blue" style="background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.3);">📞 Call Now</a>
+        <div class="blog-hero__inner">
+          <span class="blog-hero__badge">✦ New Updates</span>
+          <h1 class="blog-hero__h1">Resources &amp; Guidance</h1>
+          <p class="blog-hero__sub">Find the latest information to help navigate NDIS nursing, clinical best practices, and care coordination with confidence.</p>
+          <!-- Inline search -->
+          <div class="blog-hero__search">
+            <span class="blog-hero__search-icon">🔍</span>
+            <input type="text" id="blogSearch" placeholder="Search news and resources..." class="blog-hero__search-input" />
+            <button class="blog-hero__search-btn" onclick="searchBlogs()">Search</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Blog -->
-    <section class="section" id="blog">
+    <!-- FILTER PILLS + ARTICLES -->
+    <section class="section" id="blog" style="padding-top:36px;">
       <div class="container">
-        <div style="margin-bottom:32px;">
-          <div class="eyebrow">Resources</div>
-          <h2 class="section-heading">Latest <span>NDIS</span> Insights</h2>
+
+        <!-- CATEGORY PILLS -->
+        <div class="blog-pills">
+          <button class="blog-pill active" data-cat="all">All</button>
+          <button class="blog-pill" data-cat="ndis">NDIS Updates</button>
+          <button class="blog-pill" data-cat="health">Health Tips</button>
+          <button class="blog-pill" data-cat="news">Company News</button>
         </div>
 
-        <!-- SEARCH BAR -->
-        <div class="blog-search-bar">
-          <div class="blog-search-inner">
-            <span class="blog-search-icon">🔍</span>
-            <input type="text" id="blogSearch" placeholder="Search news and resources..." class="blog-search-input" />
-            <button class="blog-search-btn" onclick="searchBlogs()" style="background:#003588;color:#fff;">FIND</button>
-          </div>
-        </div>
+        <!-- ARTICLE LIST -->
+        <div class="blog-articles">
 
-        <!-- CATEGORY TABS -->
-        <div class="blog-cats">
-          <button class="blog-cat active" data-cat="all">All</button>
-          <button class="blog-cat" data-cat="ndis">NDIS Updates</button>
-          <button class="blog-cat" data-cat="health">Health Tips</button>
-          <button class="blog-cat" data-cat="news">Company News</button>
-        </div>
-
-        <!-- BLOG GRID -->
-        <div class="blog__grid">
-
-          <!-- Card 1 -->
-          <div class="blog-card" data-cat="ndis">
-            <div class="blog-card__img">📋</div>
-            <div class="blog-card__body">
-              <div class="blog-card__tag">NDIS Updates</div>
-              <h3 class="blog-card__title">Understanding NDIS High Intensity Support Descriptors</h3>
-              <p class="blog-card__excerpt">The NDIS High Intensity Support Skills Descriptors outline the knowledge and skills required for support workers delivering complex care. Understanding these is critical for providers and participants alike.</p>
-              <div class="blog-card__full" style="display:none;">
+          <!-- Article 1 -->
+          <article class="blog-article reveal" data-cat="ndis">
+            <div class="blog-article__img blog-article__img--ndis">📋</div>
+            <div class="blog-article__body">
+              <div class="blog-article__meta">
+                <span class="blog-article__badge blog-article__badge--ndis">NDIS Updates</span>
+                <time class="blog-article__date">March 2026</time>
+              </div>
+              <h3 class="blog-article__title">Understanding NDIS High Intensity Support Descriptors</h3>
+              <p class="blog-article__excerpt">The NDIS High Intensity Support Skills Descriptors outline the knowledge and skills required for support workers delivering complex care. Understanding these is critical for providers and participants alike.</p>
+              <div class="blog-article__full" style="display:none;">
                 <p>The NDIS Quality and Safeguards Commission has defined 10 High Intensity Daily Personal Activities (HIDPAs) that require specialist training and competency assessment. These include complex bowel care, enteral feeding, tracheostomy management, ventilator support, and more. Providers must ensure workers are trained and assessed by a qualified health professional — such as a Registered Nurse — before delivering these supports. TrustCare Support provides competency assessment and training for all 10 HIDPAs in Perth, WA.</p>
                 <p>For more information, visit the <a href="https://www.ndiscommission.gov.au" target="_blank" rel="noopener" style="color:var(--blue);">NDIS Quality and Safeguards Commission</a>.</p>
               </div>
-              <button class="blog-read-more" onclick="toggleBlog(this)">Read More ↓</button>
+              <button class="blog-article__read-btn" onclick="toggleBlog(this)">Read full guide &nbsp;›</button>
             </div>
-          </div>
+          </article>
 
-          <!-- Card 2 -->
-          <div class="blog-card" data-cat="ndis">
-            <div class="blog-card__img">💲</div>
-            <div class="blog-card__body">
-              <div class="blog-card__tag">NDIS Updates</div>
-              <h3 class="blog-card__title">What Changes to the NDIS Price Guide Mean for Providers in 2025</h3>
-              <p class="blog-card__excerpt">The NDIS Support Catalogue is updated regularly, and the 2025 pricing changes have significant implications for nursing and high intensity support providers. Here is what you need to know.</p>
-              <div class="blog-card__full" style="display:none;">
-                <p>The NDIS pricing framework sets maximum hourly rates that registered providers may charge for supports. Key changes in the 2025 update include revised rates for High Intensity Daily Personal Activities, updated travel and non-face-to-face time provisions, and new line items for RN delegation activities. Providers must ensure billing aligns with the current Support Catalogue and that staff delivering supports are correctly classified under the relevant registration group.</p>
-                <p>TrustCare Support ensures all clinical services are billed in accordance with the current NDIS Support Catalogue. Contact us to discuss how our nursing partnership model can streamline your NDIS billing compliance. For the latest pricing, visit the <a href="https://www.ndis.gov.au/providers/pricing-arrangements" target="_blank" rel="noopener" style="color:var(--blue);">NDIS Pricing Arrangements page</a>.</p>
+          <!-- Article 2 -->
+          <article class="blog-article reveal reveal-delay-1" data-cat="ndis">
+            <div class="blog-article__img blog-article__img--ndis">💲</div>
+            <div class="blog-article__body">
+              <div class="blog-article__meta">
+                <span class="blog-article__badge blog-article__badge--ndis">NDIS Updates</span>
+                <time class="blog-article__date">February 2026</time>
               </div>
-              <button class="blog-read-more" onclick="toggleBlog(this)">Read More ↓</button>
+              <h3 class="blog-article__title">What Changes to the NDIS Price Guide Mean for Providers in 2025</h3>
+              <p class="blog-article__excerpt">The NDIS Support Catalogue is updated regularly, and the 2025 pricing changes have significant implications for nursing and high intensity support providers. Here is what you need to know.</p>
+              <div class="blog-article__full" style="display:none;">
+                <p>The NDIS pricing framework sets maximum hourly rates that registered providers may charge for supports. Key changes in the 2025 update include revised rates for High Intensity Daily Personal Activities, updated travel and non-face-to-face time provisions, and new line items for RN delegation activities. Providers must ensure billing aligns with the current Support Catalogue and that staff delivering supports are correctly classified under the relevant registration group.</p>
+                <p>TrustCare Support ensures all clinical services are billed in accordance with the current NDIS Support Catalogue. For the latest pricing, visit the <a href="https://www.ndis.gov.au/providers/pricing-arrangements" target="_blank" rel="noopener" style="color:var(--blue);">NDIS Pricing Arrangements page</a>.</p>
+              </div>
+              <button class="blog-article__read-btn" onclick="toggleBlog(this)">Read full guide &nbsp;›</button>
             </div>
-          </div>
+          </article>
 
-          <!-- Card 3 -->
-          <div class="blog-card" data-cat="health">
-            <div class="blog-card__img">🩹</div>
-            <div class="blog-card__body">
-              <div class="blog-card__tag">Health Tips</div>
-              <h3 class="blog-card__title">Wound Care Best Practices for Community Nurses</h3>
-              <p class="blog-card__excerpt">Effective wound management in the community requires systematic assessment, evidence-based dressing selection, and clear documentation. This guide outlines best practice principles for NDIS nursing contexts.</p>
-              <div class="blog-card__full" style="display:none;">
+          <!-- Article 3 -->
+          <article class="blog-article reveal" data-cat="health">
+            <div class="blog-article__img blog-article__img--health">🩹</div>
+            <div class="blog-article__body">
+              <div class="blog-article__meta">
+                <span class="blog-article__badge blog-article__badge--health">Health Tips</span>
+                <time class="blog-article__date">January 2026</time>
+              </div>
+              <h3 class="blog-article__title">Wound Care Best Practices for Community Nurses</h3>
+              <p class="blog-article__excerpt">Effective wound management in the community requires systematic assessment, evidence-based dressing selection, and clear documentation. This guide outlines best practice principles for NDIS nursing contexts.</p>
+              <div class="blog-article__full" style="display:none;">
                 <p>Wound assessment should follow the TIME framework — Tissue type, Infection or inflammation, Moisture balance, and Edge of wound — to guide clinical decision-making. Dressing selection must be based on wound type, exudate level, and healing phase. For NDIS participants, a current wound management plan signed by an AHPRA-registered Registered Nurse is essential for compliance and continuity of care.</p>
                 <p>Community nurses should document wound dimensions, photography (with consent), and treatment response at every visit. Where wounds are complex, chronic, or deteriorating, referral to a wound specialist or Nurse Practitioner should be considered. TrustCare Support provides comprehensive wound assessments and management plans for NDIS participants across Perth, WA.</p>
               </div>
-              <button class="blog-read-more" onclick="toggleBlog(this)">Read More ↓</button>
+              <button class="blog-article__read-btn" onclick="toggleBlog(this)">Read full guide &nbsp;›</button>
             </div>
-          </div>
+          </article>
 
-          <!-- Card 4 -->
-          <div class="blog-card" data-cat="health">
-            <div class="blog-card__img">💉</div>
-            <div class="blog-card__body">
-              <div class="blog-card__tag">Health Tips</div>
-              <h3 class="blog-card__title">Managing Diabetes in NDIS Participants: A Clinical Guide</h3>
-              <p class="blog-card__excerpt">Diabetes management for NDIS participants requires a coordinated approach covering blood glucose monitoring, medication administration, hypoglycaemia recognition, and lifestyle support — all underpinned by RN oversight.</p>
-              <div class="blog-card__full" style="display:none;">
+          <!-- Article 4 -->
+          <article class="blog-article reveal reveal-delay-1" data-cat="health">
+            <div class="blog-article__img blog-article__img--health">💉</div>
+            <div class="blog-article__body">
+              <div class="blog-article__meta">
+                <span class="blog-article__badge blog-article__badge--health">Health Tips</span>
+                <time class="blog-article__date">December 2025</time>
+              </div>
+              <h3 class="blog-article__title">Managing Diabetes in NDIS Participants: A Clinical Guide</h3>
+              <p class="blog-article__excerpt">Diabetes management for NDIS participants requires a coordinated approach covering blood glucose monitoring, medication administration, hypoglycaemia recognition, and lifestyle support — all underpinned by RN oversight.</p>
+              <div class="blog-article__full" style="display:none;">
                 <p>Registered Nurses play a central role in diabetes management for complex NDIS participants. Key responsibilities include: developing and reviewing individualised diabetes management plans; training support workers in blood glucose monitoring technique and documentation; administering insulin and other injectable medications where required; and responding to hypoglycaemic and hyperglycaemic episodes.</p>
                 <p>Hypoglycaemia recognition is a critical safety competency for any support worker assisting a participant with diabetes. Warning signs include shakiness, sweating, confusion, and pallor. All staff must know the emergency response protocol and when to escalate to an RN or emergency services. TrustCare Support provides diabetes-specific training and RN-led management plans for NDIS participants in Perth.</p>
               </div>
-              <button class="blog-read-more" onclick="toggleBlog(this)">Read More ↓</button>
+              <button class="blog-article__read-btn" onclick="toggleBlog(this)">Read full guide &nbsp;›</button>
             </div>
-          </div>
+          </article>
 
-          <!-- Card 5 -->
-          <div class="blog-card" data-cat="news">
-            <div class="blog-card__img">🏢</div>
-            <div class="blog-card__body">
-              <div class="blog-card__tag">Company News</div>
-              <h3 class="blog-card__title">TrustCare Support Launches Clinical Nursing Services in Perth</h3>
-              <p class="blog-card__excerpt">TrustCare Support is proud to announce the launch of our AHPRA-registered clinical nursing services, providing high intensity and complex care support to NDIS participants and providers across Perth, WA.</p>
-              <div class="blog-card__full" style="display:none;">
+          <!-- Article 5 -->
+          <article class="blog-article reveal" data-cat="news">
+            <div class="blog-article__img blog-article__img--news">🏢</div>
+            <div class="blog-article__body">
+              <div class="blog-article__meta">
+                <span class="blog-article__badge blog-article__badge--news">Company News</span>
+                <time class="blog-article__date">March 2026</time>
+              </div>
+              <h3 class="blog-article__title">TrustCare Support Launches Clinical Nursing Services in Perth</h3>
+              <p class="blog-article__excerpt">TrustCare Support is proud to announce the launch of our AHPRA-registered clinical nursing services, providing high intensity and complex care support to NDIS participants and providers across Perth, WA.</p>
+              <div class="blog-article__full" style="display:none;">
                 <p>TrustCare Support was founded to address a critical gap in the Perth NDIS market — the need for an AHPRA-registered Registered Nurse who can partner directly with NDIS providers to deliver complex, high intensity clinical nursing care. Our services span all 10 NDIS High Intensity Daily Personal Activities (HIDPAs), including complex bowel care, tracheostomy management, enteral feeding, ventilator support, and more.</p>
-                <p>We operate on a B2B partnership model, working alongside existing registered NDIS providers as their clinical nursing arm — without competing for their participants. If you are an NDIS provider, support coordinator, or plan manager seeking a reliable, compliant clinical nursing partner in Perth, we would love to hear from you. <a href="#" data-wizard-page="page-contact" style="color:var(--blue);">Contact us today</a> or call <a href="tel:0432014162" style="color:var(--blue);">0432 014 162</a>.</p>
+                <p>We operate on a B2B partnership model, working alongside existing registered NDIS providers as their clinical nursing arm — without competing for their participants. If you are an NDIS provider, support coordinator, or plan manager seeking a reliable, compliant clinical nursing partner in Perth, <a href="#" data-wizard-page="page-contact" style="color:var(--blue);">contact us today</a> or call <a href="tel:0432014162" style="color:var(--blue);">0432 014 162</a>.</p>
               </div>
-              <button class="blog-read-more" onclick="toggleBlog(this)">Read More ↓</button>
+              <button class="blog-article__read-btn" onclick="toggleBlog(this)">Read full guide &nbsp;›</button>
             </div>
-          </div>
+          </article>
 
-          <!-- Card 6 -->
-          <div class="blog-card" data-cat="news">
-            <div class="blog-card__img">🤝</div>
-            <div class="blog-card__body">
-              <div class="blog-card__tag">Company News</div>
-              <h3 class="blog-card__title">New Partnership Model: How We Work with NDIS Providers</h3>
-              <p class="blog-card__excerpt">TrustCare Support operates on a unique B2B model designed to complement, not compete with, existing NDIS providers. Learn how our clinical nursing partnership works and how to engage us for your participants.</p>
-              <div class="blog-card__full" style="display:none;">
+          <!-- Article 6 -->
+          <article class="blog-article reveal reveal-delay-1" data-cat="news">
+            <div class="blog-article__img blog-article__img--news">🤝</div>
+            <div class="blog-article__body">
+              <div class="blog-article__meta">
+                <span class="blog-article__badge blog-article__badge--news">Company News</span>
+                <time class="blog-article__date">February 2026</time>
+              </div>
+              <h3 class="blog-article__title">New Partnership Model: How We Work with NDIS Providers</h3>
+              <p class="blog-article__excerpt">TrustCare Support operates on a unique B2B model designed to complement, not compete with, existing NDIS providers. Learn how our clinical nursing partnership works and how to engage us for your participants.</p>
+              <div class="blog-article__full" style="display:none;">
                 <p>Our partnership model is straightforward: NDIS providers engage TrustCare Support as their dedicated clinical nursing partner for participants requiring complex or high intensity nursing care. We embed within your service delivery framework — attending participant homes under your service agreement, contributing to support plans, and providing competency assessment and training for your support workers.</p>
-                <p>This model means providers retain their participant relationships and case management responsibilities, while TrustCare handles the clinical nursing components that require AHPRA registration and specialist competency. We do not recruit participants away from partner providers and operate under strict confidentiality obligations. To discuss how a partnership with TrustCare Support could benefit your organisation, <a href="#" data-wizard-page="page-contact" style="color:var(--blue);">book a free consultation</a> or email <a href="mailto:info@trustcaresupport.com.au" style="color:var(--blue);">info@trustcaresupport.com.au</a>.</p>
+                <p>This model means providers retain their participant relationships and case management responsibilities, while TrustCare handles the clinical nursing components that require AHPRA registration and specialist competency. To discuss a partnership, <a href="#" data-wizard-page="page-contact" style="color:var(--blue);">book a free consultation</a> or email <a href="mailto:info@trustcaresupport.com.au" style="color:var(--blue);">info@trustcaresupport.com.au</a>.</p>
               </div>
-              <button class="blog-read-more" onclick="toggleBlog(this)">Read More ↓</button>
+              <button class="blog-article__read-btn" onclick="toggleBlog(this)">Read full guide &nbsp;›</button>
             </div>
-          </div>
+          </article>
 
-        </div><!-- /blog__grid -->
+        </div><!-- /blog-articles -->
+
+        <!-- NEWSLETTER SUBSCRIPTION -->
+        <div class="blog-newsletter reveal">
+          <div class="blog-newsletter__text">
+            <h3 class="blog-newsletter__h3">Stay Informed</h3>
+            <p class="blog-newsletter__sub">Get the latest NDIS updates, health tips, and TrustCare news delivered straight to your inbox.</p>
+          </div>
+          <form class="blog-newsletter__form contact-form" action="https://formspree.io/f/maqlnwnw" method="POST">
+            <input type="hidden" name="_subject" value="Newsletter Sign-Up — TrustCare Support" />
+            <input type="text" name="_gotcha" style="display:none;" />
+            <input type="email" name="email" placeholder="Your email address" required class="blog-newsletter__input" />
+            <button type="submit" class="btn btn--blue">Subscribe</button>
+          </form>
+        </div>
+
       </div>
     </section>
 
@@ -1541,93 +1562,37 @@
 
   <!-- ============================= PAGE: CONTACT ============================= -->
   <div class="wizard-page" id="page-contact">
-
-    <!-- CONTACT HERO -->
-    <section class="contact-hero">
+    <section class="section" id="contact">
       <div class="container">
-        <div class="contact-hero__inner">
+        <div style="text-align:center;max-width:580px;margin:0 auto 24px;">
           <div class="eyebrow">Get In Touch</div>
-          <h1 class="contact-hero__h1">Let's Start a<br><span style="color:var(--blue);">Conversation.</span></h1>
-          <p class="contact-hero__sub">Whether you need clinical nursing support, want to refer a participant, or simply have a question — we're here to help. We respond within 24 hours.</p>
+          <h2 class="section-heading">Book a Free <span>Consultation</span></h2>
         </div>
-      </div>
-    </section>
-
-    <!-- CONTACT INFO CARDS -->
-    <section class="section" style="padding-top:40px;padding-bottom:16px;" id="contact">
-      <div class="container">
-        <div class="contact-cards">
-
-          <!-- Emails card -->
-          <div class="contact-card">
-            <div class="contact-card__inner">
-              <div class="contact-card__row">
-                <div class="contact-icon-pill">📧</div>
-                <div>
-                  <div class="contact-card__label">Referrals</div>
-                  <div class="contact-card__val"><a href="mailto:referrals@trustcaresupport.com.au">referrals@trustcaresupport.com.au</a></div>
-                </div>
-              </div>
-              <div class="contact-card__row">
-                <div class="contact-icon-pill">📬</div>
-                <div>
-                  <div class="contact-card__label">General &amp; Admin</div>
-                  <div class="contact-card__val"><a href="mailto:admin@trustcaresupport.com.au">admin@trustcaresupport.com.au</a></div>
-                </div>
-              </div>
-              <div class="contact-card__row">
-                <div class="contact-icon-pill">✉️</div>
-                <div>
-                  <div class="contact-card__label">Info</div>
-                  <div class="contact-card__val"><a href="mailto:info@trustcaresupport.com.au">info@trustcaresupport.com.au</a></div>
-                </div>
-              </div>
-            </div>
+        <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;">
+          <div style="background:var(--bg-cta);border-radius:12px;padding:20px 28px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:8px;">📧</div>
+            <div style="font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Referrals</div>
+            <a href="mailto:referrals@trustcaresupport.com.au" style="font-size:14px;color:var(--navy);font-weight:600;">referrals@trustcaresupport.com.au</a>
           </div>
-
-          <!-- Phone & Location card -->
-          <div class="contact-card">
-            <div class="contact-card__inner">
-              <div class="contact-card__row">
-                <div class="contact-icon-pill">📞</div>
-                <div>
-                  <div class="contact-card__label">Phone</div>
-                  <div class="contact-card__val"><a href="tel:0432014162">0432 014 162</a></div>
-                </div>
-              </div>
-              <div class="contact-card__row">
-                <div class="contact-icon-pill">📍</div>
-                <div>
-                  <div class="contact-card__label">Clinical Office</div>
-                  <div class="contact-card__val">Perth, Western Australia</div>
-                </div>
-              </div>
-              <div class="contact-card__row">
-                <div class="contact-icon-pill">🌐</div>
-                <div>
-                  <div class="contact-card__label">Service Area</div>
-                  <div class="contact-card__val">Australia Wide</div>
-                </div>
-              </div>
-            </div>
+          <div style="background:var(--bg-mint);border-radius:12px;padding:20px 28px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:8px;">📧</div>
+            <div style="font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">General &amp; Admin</div>
+            <a href="mailto:admin@trustcaresupport.com.au" style="font-size:14px;color:var(--navy);font-weight:600;">admin@trustcaresupport.com.au</a>
           </div>
-
+          <div style="background:var(--bg-pale);border-radius:12px;padding:20px 28px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:8px;">📧</div>
+            <div style="font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Info</div>
+            <a href="mailto:info@trustcaresupport.com.au" style="font-size:14px;color:var(--navy);font-weight:600;">info@trustcaresupport.com.au</a>
+          </div>
+          <div style="background:#f0f4ff;border-radius:12px;padding:20px 28px;text-align:center;">
+            <div style="font-size:22px;margin-bottom:8px;">📍</div>
+            <div style="font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Location</div>
+            <div style="font-size:14px;color:var(--navy);font-weight:600;">Perth, Western Australia</div>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS + FORM -->
-    <section class="section" style="padding-top:24px;">
-      <div class="container">
         <div class="process__grid">
-
-          <!-- Left: process steps -->
           <div>
-            <div class="contact-section-label">
-              <div class="contact-accent-bar"></div>
-              <h2 class="contact-steps-title">How It Works</h2>
-            </div>
-            <div class="process__steps" style="margin-top:28px;">
+            <div class="process__steps">
               <div class="process__step reveal">
                 <div class="process__step-left">
                   <div class="process__step-num">1</div>
@@ -1669,16 +1634,10 @@
               </div>
             </div>
           </div>
-
-          <!-- Right: form -->
           <div class="process__form reveal">
-            <div class="contact-section-label" style="margin-bottom:6px;">
-              <div class="contact-accent-bar"></div>
-              <h2 class="contact-steps-title">Book a Free Consultation</h2>
-            </div>
-            <p style="font-size:14px;color:#64748b;margin-bottom:24px;">Get in touch — we'll respond within 24 hours.</p>
-
-            <form class="contact-form form-line" action="https://formspree.io/f/xaqlnwyw" method="POST">
+            <h3>Book a Free Consultation</h3>
+            <p>Get in touch — we'll respond within 24 hours.</p>
+            <form class="contact-form" action="https://formspree.io/f/xaqlnwyw" method="POST">
               <input type="hidden" name="_subject" value="New Consultation Request — TrustCare Support" />
               <input type="hidden" name="_replyto" value="admin@trustcaresupport.com.au" />
               <input type="text" name="_gotcha" style="display:none;" />
@@ -1726,18 +1685,15 @@
               </div>
               <div class="form-group">
                 <label>Message</label>
-                <textarea name="message" rows="4" placeholder="Briefly describe what you need help with..."></textarea>
+                <textarea name="message" placeholder="Briefly describe what you need help with..."></textarea>
               </div>
-              <div style="margin-top:4px;display:flex;align-items:flex-start;gap:10px;width:100%;box-sizing:border-box;">
+              <div style="margin-top:12px;display:flex;align-items:flex-start;gap:10px;width:100%;box-sizing:border-box;">
                 <input type="checkbox" name="consent" required style="margin-top:4px;flex-shrink:0;min-width:16px;width:16px;height:16px;cursor:pointer;" />
                 <p style="margin:0;font-size:13px;color:#4a5568;line-height:1.6;text-transform:none;letter-spacing:normal;font-weight:400;word-break:break-word;">I consent to the collection and use of my personal information in accordance with the <a href="#" data-wizard-page="page-privacy" style="color:var(--blue);">Privacy Policy</a>.</p>
               </div>
-              <button type="submit" class="btn btn--gradient">
-                Send Message &nbsp;→
-              </button>
+              <button type="submit" class="btn btn--blue" style="width:100%;justify-content:center;">Send Message</button>
             </form>
           </div>
-
         </div>
       </div>
     </section>
