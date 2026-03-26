@@ -1285,6 +1285,13 @@ img { max-width: 100%; display: block; }
 .wizard-container {
   margin-top: 72px; /* 72px navbar only */
   min-height: calc(100vh - 72px - 60px);
+  padding-bottom: 80px; /* clearance above fixed wizard nav bar */
+}
+
+html, body {
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Override hero padding since container already accounts for navbar */
