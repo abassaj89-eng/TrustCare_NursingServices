@@ -414,156 +414,26 @@
           <p class="section-sub reveal">All services are delivered through engagement with NDIS providers or via support coordinator referral. TrustCare operates as a clinical partner and does not deliver services as a registered NDIS provider.</p>
         </div>
 
-        <!-- Group A: HIDPA -->
+        <!-- Services (Jekyll — edit at /admin → Services) -->
+        {% assign service_groups = "services_a,services_b,services_c,services_d" | split: "," %}
+        {% for group_key in service_groups %}
+          {% assign group = site.data[group_key] %}
         <div style="margin-bottom:40px;">
-          <div class="eyebrow" style="margin-bottom:16px;">Group A</div>
-          <h3 style="font-size:22px;font-weight:700;color:var(--navy);margin-bottom:24px;">High-Intensity Daily Personal Activities (HIDPA)</h3>
+          <div class="eyebrow" style="margin-bottom:16px;">{{ group.eyebrow }}</div>
+          <h3 style="font-size:22px;font-weight:700;color:var(--navy);margin-bottom:24px;">{{ group.group_title }}</h3>
           <div class="services__grid">
-            <div class="service-card reveal" id="svc-bowel">
-              <div class="service-card__icon">🫁</div>
-              <div class="service-card__tag">HIDPA</div>
-              <h3>Complex Bowel Care</h3>
-              <p>Enema, suppository, and ostomy management delivered by a competency-assessed Registered Nurse following participant-specific support plans.</p>
+            {% for service in group.items %}
+            <div class="service-card reveal">
+              <div class="service-card__icon">{{ service.icon }}</div>
+              <div class="service-card__tag">{{ service.tag }}</div>
+              <h3>{{ service.title }}</h3>
+              <p>{{ service.description }}</p>
               <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
             </div>
-            <div class="service-card reveal reveal-delay-1" id="svc-enteral">
-              <div class="service-card__icon">🍼</div>
-              <div class="service-card__tag">HIDPA</div>
-              <h3>Enteral Feeding — PEG and PEJ Management</h3>
-              <p>Safe administration of feeds and medications via PEG and PEJ tubes, stoma site care, and complication monitoring.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-            <div class="service-card reveal reveal-delay-2" id="svc-trach">
-              <div class="service-card__icon">🫀</div>
-              <div class="service-card__tag">HIDPA</div>
-              <h3>Tracheostomy Care and Airway Management</h3>
-              <p>Stoma care, inner cannula management, suctioning, and emergency response for participants with a tracheostomy in situ.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-            <div class="service-card reveal" id="svc-ventilation">
-              <div class="service-card__icon">💨</div>
-              <div class="service-card__tag">HIDPA</div>
-              <h3>Ventilation Support and Respiratory Monitoring</h3>
-              <p>Monitoring ventilator settings and alarms, circuit management, and recognising signs of respiratory deterioration.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-            <div class="service-card reveal reveal-delay-1" id="svc-seizure">
-              <div class="service-card__icon">⚡</div>
-              <div class="service-card__tag">HIDPA</div>
-              <h3>Seizure Management and Emergency Medication</h3>
-              <p>Seizure support including administration of intranasal and buccal midazolam per an emergency medication management plan.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
+            {% endfor %}
           </div>
         </div>
-
-        <!-- Group B: Clinical Nursing Services -->
-        <div style="margin-bottom:40px;">
-          <div class="eyebrow" style="margin-bottom:16px;">Group B</div>
-          <h3 style="font-size:22px;font-weight:700;color:var(--navy);margin-bottom:24px;">Clinical Nursing Services</h3>
-          <div class="services__grid">
-            <div class="service-card reveal" id="svc-medication">
-              <div class="service-card__icon">💊</div>
-              <div class="service-card__tag">Clinical</div>
-              <h3>Medication Administration and Management</h3>
-              <p>Safe administration of complex medication schedules, enteral medications, subcutaneous injections, and medication management protocols.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-            <div class="service-card reveal reveal-delay-1" id="svc-wound">
-              <div class="service-card__icon">🩹</div>
-              <div class="service-card__tag">Clinical</div>
-              <h3>Wound Care and Skin Integrity Management</h3>
-              <p>Aseptic wound dressing changes, pressure injury management, and wound assessment using evidence-based clinical technique.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-            <div class="service-card reveal reveal-delay-2" id="svc-diabetes">
-              <div class="service-card__icon">🩸</div>
-              <div class="service-card__tag">Clinical</div>
-              <h3>Diabetes Care and Blood Glucose Monitoring</h3>
-              <p>Blood glucose testing, insulin administration, CGM device support, and management of hypo/hyperglycaemia events.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-            <div class="service-card reveal" id="svc-catheter">
-              <div class="service-card__icon">🩺</div>
-              <div class="service-card__tag">Clinical</div>
-              <h3>Catheter and Continence Care</h3>
-              <p>Insertion, maintenance, and monitoring of IDC, SPC, and external catheters, alongside continence assessment and management plans.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-            <div class="service-card reveal reveal-delay-1" id="svc-observations">
-              <div class="service-card__icon">📊</div>
-              <div class="service-card__tag">Clinical</div>
-              <h3>Clinical Observations and Escalation</h3>
-              <p>Vital signs monitoring, deterioration recognition, and appropriate escalation to GP, allied health, or emergency services.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Group C: Clinical Nursing Assessments -->
-        <div style="margin-bottom:40px;">
-          <div class="eyebrow" style="margin-bottom:16px;">Group C</div>
-          <h3 style="font-size:22px;font-weight:700;color:var(--navy);margin-bottom:24px;">Clinical Nursing Assessments</h3>
-          <div class="services__grid">
-            <div class="service-card reveal" id="svc-continence-assessment">
-              <div class="service-card__icon">📋</div>
-              <div class="service-card__tag">Assessment</div>
-              <h3>Continence Assessments</h3>
-              <p>Comprehensive continence assessments to inform NDIS plans and support the right clinical interventions for participants.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-            <div class="service-card reveal reveal-delay-1" id="svc-skin-assessment">
-              <div class="service-card__icon">🔍</div>
-              <div class="service-card__tag">Assessment</div>
-              <h3>Skin Integrity and Pressure Injury Risk Assessment</h3>
-              <p>Structured risk assessments to identify pressure injury risk and guide preventative care planning for participants.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-            <div class="service-card reveal reveal-delay-2" id="svc-med-review">
-              <div class="service-card__icon">💊</div>
-              <div class="service-card__tag">Assessment</div>
-              <h3>Medication Reviews and Safety Audits</h3>
-              <p>Clinical review of medication regimes to identify risks, interactions, and opportunities to improve safety and effectiveness.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-            <div class="service-card reveal" id="svc-functional">
-              <div class="service-card__icon">🏥</div>
-              <div class="service-card__tag">Assessment</div>
-              <h3>Functional Health Assessments</h3>
-              <p>Holistic health assessments to support NDIS plan reviews, care planning, and clinical evidence for supports required.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Group D: Workforce Training -->
-        <div style="margin-bottom:40px;">
-          <div class="eyebrow" style="margin-bottom:16px;">Group D</div>
-          <h3 style="font-size:22px;font-weight:700;color:var(--navy);margin-bottom:24px;">Workforce Training for Providers</h3>
-          <div class="services__grid">
-            <div class="service-card reveal" id="svc-training">
-              <div class="service-card__icon">🎓</div>
-              <div class="service-card__tag">Training</div>
-              <h3>Training Support Workers in Clinical Tasks</h3>
-              <p>Practical, hands-on training for support workers in high-intensity daily personal activities and clinical support tasks.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-            <div class="service-card reveal reveal-delay-1" id="svc-competency">
-              <div class="service-card__icon">✅</div>
-              <div class="service-card__tag">Training</div>
-              <h3>Competency Assessments and Skills Verification</h3>
-              <p>RN-led competency assessments to verify and document worker skills across HIDPA and clinical support areas.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-            <div class="service-card reveal reveal-delay-2" id="svc-governance">
-              <div class="service-card__icon">🏛️</div>
-              <div class="service-card__tag">Governance</div>
-              <h3>Clinical Governance Support for Providers</h3>
-              <p>Support for registered NDIS providers to establish and maintain clinical governance frameworks, incident management, and practice standards compliance.</p>
-              <a href="#" class="service-card__link" data-wizard-page="page-contact">Enquire →</a>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
 
       </div>
     </section>
@@ -590,237 +460,30 @@
           </div>
         </div>
 
+        <!-- High Intensity Cards (Jekyll — edit at /admin → High Intensity) -->
         <div class="hi-grid">
-
-          <div class="hi-card reveal" id="hi-bowel">
+          {% for support in site.data.hi_supports.items %}
+          <div class="hi-card reveal" id="{{ support.card_id }}">
             <div class="hi-card__header">
-              <div class="hi-card__icon">🫁</div>
+              <div class="hi-card__icon">{{ support.icon }}</div>
               <div>
-                <div class="hi-card__tag">NDIS HIDPA — Skill Area 1</div>
-                <h3>Complex Bowel Care</h3>
+                <div class="hi-card__tag">{{ support.skill_area }}</div>
+                <h3>{{ support.title }}</h3>
               </div>
             </div>
-            <p class="hi-card__desc">Supporting participants with complex bowel care needs including manual evacuation, digital stimulation, suppositories, enemas, and ostomy/stoma care. Workers must understand bowel anatomy, follow participant-specific support plans, and recognise complications requiring medical review.</p>
+            <p class="hi-card__desc">{{ support.description }}</p>
             <ul class="hi-card__skills">
-              <li>Administer suppositories and Microlax enemas safely</li>
-              <li>Perform digital rectal stimulation per support plan</li>
-              <li>Ostomy and stoma bag changes with infection control</li>
-              <li>Recognise signs of constipation, bowel obstruction and autonomic dysreflexia</li>
-              <li>Document and report bowel output accurately</li>
-              <li>Follow participant-specific bowel management plans</li>
+              {% for skill in support.skills %}
+              <li>{{ skill }}</li>
+              {% endfor %}
             </ul>
             <div class="hi-card__footer">
-              <span class="hi-card__badge">Training Available</span>
-              <span class="hi-card__badge">Competency Assessment</span>
+              {% for badge in support.badges %}
+              <span class="hi-card__badge">{{ badge }}</span>
+              {% endfor %}
             </div>
           </div>
-
-          <div class="hi-card reveal reveal-delay-1" id="hi-enteral">
-            <div class="hi-card__header">
-              <div class="hi-card__icon">🍼</div>
-              <div>
-                <div class="hi-card__tag">NDIS HIDPA — Skill Area 2</div>
-                <h3>Enteral Feeding Support (PEG &amp; PEJ)</h3>
-              </div>
-            </div>
-            <p class="hi-card__desc">Supporting participants who receive nutrition through a PEG (Percutaneous Endoscopic Gastrostomy) or PEJ (Percutaneous Endoscopic Jejunostomy) tube. Includes tube and stoma care, feeding regimes, administering feeds and medications, and responding to complications.</p>
-            <ul class="hi-card__skills">
-              <li>Prepare and administer enteral feeds via syringe/bolus method</li>
-              <li>Administer medication through PEG/PEJ tube</li>
-              <li>Gastrostomy/jejunostomy stoma site care</li>
-              <li>Troubleshoot tube displacement, blockage, and leakage</li>
-              <li>Recognise signs of aspiration, infection, and granulation tissue</li>
-              <li>Follow enteral feeding regimen and hydration plan</li>
-            </ul>
-            <div class="hi-card__footer">
-              <span class="hi-card__badge">Training Available</span>
-              <span class="hi-card__badge">Competency Assessment</span>
-            </div>
-          </div>
-
-          <div class="hi-card reveal" id="hi-dysphagia">
-            <div class="hi-card__header">
-              <div class="hi-card__icon">🥣</div>
-              <div>
-                <div class="hi-card__tag">NDIS HIDPA — Skill Area 3</div>
-                <h3>Dysphagia &amp; Mealtime Support</h3>
-              </div>
-            </div>
-            <p class="hi-card__desc">Supporting participants with swallowing difficulties (dysphagia) to eat and drink safely. Workers must understand texture-modified diets and fluid consistency levels (IDDSI framework), follow mealtime management plans, and respond appropriately to choking and aspiration emergencies.</p>
-            <ul class="hi-card__skills">
-              <li>Apply IDDSI food and fluid texture levels correctly</li>
-              <li>Follow participant mealtime management plans</li>
-              <li>Recognise aspiration signs and respond to choking</li>
-              <li>Correct positioning for safe swallowing</li>
-              <li>Thicken fluids to prescribed consistency</li>
-              <li>Administer medications safely for participants with swallowing difficulties</li>
-            </ul>
-            <div class="hi-card__footer">
-              <span class="hi-card__badge">Training Available</span>
-              <span class="hi-card__badge">Competency Assessment</span>
-            </div>
-          </div>
-
-          <div class="hi-card reveal reveal-delay-1" id="hi-ventilator">
-            <div class="hi-card__header">
-              <div class="hi-card__icon">💨</div>
-              <div>
-                <div class="hi-card__tag">NDIS HIDPA — Skill Area 4</div>
-                <h3>Ventilator &amp; Respiratory Support</h3>
-              </div>
-            </div>
-            <p class="hi-card__desc">Supporting participants who require mechanical ventilation (invasive or non-invasive). Workers must understand ventilator settings, circuit management, alarm responses, and emergency procedures. Requires specialist competency assessment by a Registered Nurse or respiratory clinician.</p>
-            <ul class="hi-card__skills">
-              <li>Monitor ventilator settings and alarm responses</li>
-              <li>Circuit and humidification system management</li>
-              <li>Suction via endotracheal or tracheostomy tube</li>
-              <li>Respond to ventilator alarms and disconnection emergencies</li>
-              <li>Non-invasive ventilation (CPAP/BiPAP) mask fitting and care</li>
-              <li>Recognise signs of respiratory deterioration</li>
-            </ul>
-            <div class="hi-card__footer">
-              <span class="hi-card__badge">RN-Led Training</span>
-              <span class="hi-card__badge">Competency Assessment</span>
-            </div>
-          </div>
-
-          <div class="hi-card reveal" id="hi-trach">
-            <div class="hi-card__header">
-              <div class="hi-card__icon">🫀</div>
-              <div>
-                <div class="hi-card__tag">NDIS HIDPA — Skill Area 5</div>
-                <h3>Tracheostomy Support &amp; Care</h3>
-              </div>
-            </div>
-            <p class="hi-card__desc">Supporting participants with a tracheostomy tube in situ. Includes stoma care, inner cannula changes, suctioning, speaking valve management, and emergency tube displacement procedures. All workers must be competency-assessed before providing unsupervised care.</p>
-            <ul class="hi-card__skills">
-              <li>Tracheostomy stoma site care and dressing changes</li>
-              <li>Safe suctioning technique (open and closed)</li>
-              <li>Inner cannula removal, cleaning, and reinsertion</li>
-              <li>Respond to tube displacement and decannulation emergencies</li>
-              <li>Passy Muir speaking valve application and removal</li>
-              <li>Humidification and cuff management</li>
-            </ul>
-            <div class="hi-card__footer">
-              <span class="hi-card__badge">RN-Led Training</span>
-              <span class="hi-card__badge">Competency Assessment</span>
-            </div>
-          </div>
-
-          <div class="hi-card reveal reveal-delay-1" id="hi-catheter">
-            <div class="hi-card__header">
-              <div class="hi-card__icon">🩺</div>
-              <div>
-                <div class="hi-card__tag">NDIS HIDPA — Skill Area 6</div>
-                <h3>Urinary Catheter Support</h3>
-              </div>
-            </div>
-            <p class="hi-card__desc">Supporting participants using indwelling urinary catheters (IDC), suprapubic catheters (SPC), or external drainage devices. Catheter insertion and removal is performed exclusively by our Registered Nurses. Support workers receive training in ongoing management and monitoring.</p>
-            <ul class="hi-card__skills">
-              <li>Urinary drainage bag changes and emptying</li>
-              <li>Catheter site hygiene and infection prevention</li>
-              <li>Recognise signs of urinary tract infection and blockage</li>
-              <li>Leg bag and overnight bag management</li>
-              <li>Suprapubic catheter stoma site care</li>
-              <li>External catheter (condom catheter) application</li>
-            </ul>
-            <div class="hi-card__footer">
-              <span class="hi-card__badge">Training Available</span>
-              <span class="hi-card__badge">RN Insertion/Removal</span>
-            </div>
-          </div>
-
-          <div class="hi-card reveal" id="hi-injections">
-            <div class="hi-card__header">
-              <div class="hi-card__icon">💉</div>
-              <div>
-                <div class="hi-card__tag">NDIS HIDPA — Skill Area 7</div>
-                <h3>Subcutaneous Injections</h3>
-              </div>
-            </div>
-            <p class="hi-card__desc">Supporting participants who require subcutaneous injections as part of their daily care — including insulin for diabetes management, anticoagulants, and other prescribed medications. Workers must be competency-assessed and operate within a participant-specific support plan.</p>
-            <ul class="hi-card__skills">
-              <li>Safe subcutaneous injection technique</li>
-              <li>Insulin pen and syringe administration</li>
-              <li>Rotation of injection sites to prevent lipodystrophy</li>
-              <li>Blood glucose monitoring and hypoglycaemia management</li>
-              <li>Medication storage, waste disposal, and sharps safety</li>
-              <li>Recognise and respond to adverse reactions</li>
-            </ul>
-            <div class="hi-card__footer">
-              <span class="hi-card__badge">Training Available</span>
-              <span class="hi-card__badge">Competency Assessment</span>
-            </div>
-          </div>
-
-          <div class="hi-card reveal reveal-delay-1" id="hi-wound">
-            <div class="hi-card__header">
-              <div class="hi-card__icon">🩹</div>
-              <div>
-                <div class="hi-card__tag">NDIS HIDPA — Skill Area 8</div>
-                <h3>Complex Wound Care &amp; Pressure Injury</h3>
-              </div>
-            </div>
-            <p class="hi-card__desc">Supporting participants with complex wounds beyond basic first aid — including pressure injuries, chronic wounds, post-surgical wounds, and wounds requiring aseptic dressing technique. All care follows wound management plans developed by our registered clinical team.</p>
-            <ul class="hi-card__skills">
-              <li>Aseptic non-touch technique (ANTT) for dressing changes</li>
-              <li>Wound assessment, classification, and documentation</li>
-              <li>Pressure injury prevention and staging</li>
-              <li>Recognise signs of wound infection and deterioration</li>
-              <li>Application of prescribed wound dressings and topical agents</li>
-              <li>Negative pressure wound therapy (VAC) monitoring</li>
-            </ul>
-            <div class="hi-card__footer">
-              <span class="hi-card__badge">Training Available</span>
-              <span class="hi-card__badge">Competency Assessment</span>
-            </div>
-          </div>
-
-          <div class="hi-card reveal" id="hi-epilepsy">
-            <div class="hi-card__header">
-              <div class="hi-card__icon">⚡</div>
-              <div>
-                <div class="hi-card__tag">NDIS HIDPA — Skill Area 9</div>
-                <h3>Epilepsy &amp; Seizure Support</h3>
-              </div>
-            </div>
-            <p class="hi-card__desc">Supporting participants living with epilepsy — understanding seizure types, triggers, safe practices during a seizure, and emergency medication administration including intranasal and buccal midazolam per an emergency medication management plan.</p>
-            <ul class="hi-card__skills">
-              <li>Identify seizure triggers and risk minimisation strategies</li>
-              <li>Manage partial and generalised seizures safely</li>
-              <li>Administer intranasal midazolam (Epistatus/Buccolam)</li>
-              <li>Administer buccal midazolam per emergency plan</li>
-              <li>Recovery position for unconscious participants</li>
-              <li>Post-seizure care and documentation</li>
-            </ul>
-            <div class="hi-card__footer">
-              <span class="hi-card__badge">Training Available</span>
-              <span class="hi-card__badge">Emergency Medication</span>
-            </div>
-          </div>
-
-          <div class="hi-card reveal reveal-delay-1" id="hi-diabetes">
-            <div class="hi-card__header">
-              <div class="hi-card__icon">🩸</div>
-              <div>
-                <div class="hi-card__tag">NDIS HIDPA — Skill Area 10</div>
-                <h3>Diabetes Management Support</h3>
-              </div>
-            </div>
-            <p class="hi-card__desc">Supporting participants living with Type 1 or Type 2 diabetes — including blood glucose monitoring, insulin administration, recognising and managing hypoglycaemia and hyperglycaemia, and supporting healthy lifestyle and dietary management within a personalised care plan.</p>
-            <ul class="hi-card__skills">
-              <li>Blood glucose testing — glucometer technique</li>
-              <li>Insulin administration via pen and syringe</li>
-              <li>Recognise and manage hypoglycaemia and hyperglycaemia</li>
-              <li>Diabetic foot care and skin assessment</li>
-              <li>Support healthy nutrition and lifestyle choices</li>
-              <li>Continuous glucose monitoring (CGM) device support</li>
-            </ul>
-            <div class="hi-card__footer">
-              <span class="hi-card__badge">Training Available</span>
-              <span class="hi-card__badge">Competency Assessment</span>
-            </div>
-          </div>
+          {% endfor %}
 
         </div>
 
@@ -882,41 +545,19 @@
             <div>
               <div class="eyebrow">Our Story</div>
               <h2 class="section-heading">Built on <span>Clinical Excellence</span></h2>
-              <p class="section-sub" style="margin-bottom:28px;">We established TrustCare Support with a clear purpose: to bring hospital-grade clinical nursing care directly into the lives of NDIS participants across Perth. With over 5 years of clinical nursing experience spanning acute hospital care, community nursing, and disability support, we work in partnership with registered NDIS providers and support coordinators to deliver the nursing component of complex care plans — safely, professionally, and with genuine compassion.</p>
-              <p style="font-size:15px;line-height:1.8;color:#4a5568;margin-bottom:28px;">Every participant deserves safe, high-quality nursing care delivered by a properly registered and accountable clinician. Every provider deserves a clinical partner they can trust — one who communicates clearly, documents rigorously, and puts participant safety first. That is the TrustCare commitment.</p>
+              <p class="section-sub" style="margin-bottom:28px;">{{ site.data.about.story_para1 }}</p>
+              <p style="font-size:15px;line-height:1.8;color:#4a5568;margin-bottom:28px;">{{ site.data.about.story_para2 }}</p>
               <div class="accordion">
-                <div class="accordion__item open">
+                {% for item in site.data.about.story_accordion %}
+                <div class="accordion__item{% if forloop.first %} open{% endif %}">
                   <div class="accordion__header">
-                    <div class="accordion__icon-wrap">🏥</div>
-                    <span class="accordion__title">AHPRA Registered Nurse with NDIS Specialisation</span>
+                    <div class="accordion__icon-wrap">{{ item.icon }}</div>
+                    <span class="accordion__title">{{ item.title }}</span>
                     <button class="accordion__toggle">+</button>
                   </div>
-                  <div class="accordion__body">AHPRA-registered with a clinical background across acute care, community nursing, and disability support. Our dual expertise in nursing and NDIS compliance means every policy, procedure, and training program we develop is clinically sound and fully aligned with NDIS Practice Standards.</div>
+                  <div class="accordion__body">{{ item.body }}</div>
                 </div>
-                <div class="accordion__item">
-                  <div class="accordion__header">
-                    <div class="accordion__icon-wrap">📋</div>
-                    <span class="accordion__title">100% AHPRA Compliant Clinical Practice</span>
-                    <button class="accordion__toggle">+</button>
-                  </div>
-                  <div class="accordion__body">All nursing care is delivered by an AHPRA-registered Registered Nurse in full compliance with the NMBA Registered Nurse Standards for Practice (2016) and the NDIS Code of Conduct. Every clinical decision is evidence-based, documented, and accountable.</div>
-                </div>
-                <div class="accordion__item">
-                  <div class="accordion__header">
-                    <div class="accordion__icon-wrap">🎓</div>
-                    <span class="accordion__title">Hands-On Clinical Training &amp; Education</span>
-                    <button class="accordion__toggle">+</button>
-                  </div>
-                  <div class="accordion__body">We don't just write training manuals — we deliver practical, hands-on clinical education. From catheter care demonstrations to medication management workshops, your staff learn by doing. Real competency built through real practice, not just online modules.</div>
-                </div>
-                <div class="accordion__item">
-                  <div class="accordion__header">
-                    <div class="accordion__icon-wrap">⭐</div>
-                    <span class="accordion__title">High Intensity Support Expertise Across All 10 Areas</span>
-                    <button class="accordion__toggle">+</button>
-                  </div>
-                  <div class="accordion__body">Skilled across all 10 NDIS High Intensity Daily Personal Activities — tracheostomy, ventilator management, PEG/enteral feeding, complex bowel care, suprapubic catheters, dysphagia, epilepsy, wound care, subcutaneous injections, and diabetes management.</div>
-                </div>
+                {% endfor %}
               </div>
               <div class="why__badges">
                 <div class="why__badge">⏰ Available 7 Days</div>
@@ -930,12 +571,8 @@
               <div class="why__credentials">
                 <div class="why__cred-title">Qualifications</div>
                 <ul class="why__cred-list">
-                  <li>Bachelor of Nursing</li>
-                  <li>AHPRA Registered</li>
-                  <li>Cert IV TAE</li>
-                  <li>NDIS Specialist</li>
-                  <li>Medication Endorsed</li>
-                </ul>
+                  {% for q in site.data.about.qualifications %}<li>{{ q }}</li>
+                  {% endfor %}</ul>
               </div>
             </div>
           </div>
@@ -951,25 +588,24 @@
             <p class="section-sub reveal">Our team combines deep clinical nursing expertise with specialist NDIS knowledge — giving providers and participants access to the highest standard of support and consultation.</p>
           </div>
           <div class="team-grid">
-
+            {% for member in site.data.team.members %}
             <div class="team-card reveal">
               <div class="team-card__photo">
-                <img src="photo-nobg.png" alt="Abdifatah"
-                  onerror="this.parentElement.innerHTML='<span style=\'font-size:72px\'>👨‍⚕️</span>'" />
+                <img src="{{ member.photo }}" alt="{{ member.name }}"
+                  onerror="this.parentElement.innerHTML='<span style='font-size:72px'>👨‍⚕️</span>'" />
               </div>
               <div class="team-card__body">
-                <div class="team-card__name">Abdifatah</div>
-                <div class="team-card__role">Registered Nurse &amp; Founder</div>
-                <p class="team-card__bio">Over 5 years of clinical nursing experience across acute hospital care, community nursing, and disability support. Specialist in high-intensity nursing support, clinical assessments, and workforce training for NDIS providers in Perth, WA.</p>
+                <div class="team-card__name">{{ member.name }}</div>
+                <div class="team-card__role">{{ member.role }}</div>
+                <p class="team-card__bio">{{ member.bio }}</p>
                 <div class="team-card__tags">
-                  <span class="team-card__tag">AHPRA RN</span>
-                  <span class="team-card__tag">HIDPA Specialist</span>
-                  <span class="team-card__tag">Cert IV TAE</span>
+                  {% for tag in member.tags %}
+                  <span class="team-card__tag">{{ tag }}</span>
+                  {% endfor %}
                 </div>
               </div>
             </div>
-
-
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -983,13 +619,26 @@
             <p class="section-sub reveal">Our advisory board brings together leaders from nursing, NDIS policy, and clinical governance — providing strategic guidance that keeps our practice at the forefront of the sector.</p>
           </div>
           <div class="board-grid" style="justify-content:center;">
-
+            {% if site.data.board.members.size == 0 %}
             <div style="text-align:center;padding:48px 24px;background:#f8faff;border-radius:16px;border:2px dashed rgba(38,106,251,0.2);">
               <div style="font-size:48px;margin-bottom:16px;">🏛️</div>
               <h3 style="color:var(--navy);margin-bottom:8px;">Advisory Board — Coming Soon</h3>
               <p style="color:#64748b;max-width:420px;margin:0 auto;">We are currently establishing our advisory board. Members will be announced soon.</p>
             </div>
-
+            {% else %}
+            {% for member in site.data.board.members %}
+            <div class="team-card reveal">
+              <div class="team-card__photo">
+                {% if member.photo %}<img src="{{ member.photo }}" alt="{{ member.name }}" />{% else %}<span style="font-size:72px;">👤</span>{% endif %}
+              </div>
+              <div class="team-card__body">
+                <div class="team-card__name">{{ member.name }}</div>
+                <div class="team-card__role">{{ member.role }}</div>
+                <p class="team-card__bio">{{ member.bio }}</p>
+              </div>
+            </div>
+            {% endfor %}
+            {% endif %}
           </div>
         </div>
       </div>
@@ -1005,42 +654,24 @@
             <div style="background:var(--bg-cta);border-radius:16px;padding:32px;">
               <div style="font-size:28px;margin-bottom:12px;">🎯</div>
               <h3 style="font-size:18px;font-weight:700;color:var(--navy);margin-bottom:12px;">Our Vision</h3>
-              <p style="font-size:15px;line-height:1.8;color:var(--navy);">To be Perth's most trusted clinical nursing partner, ensuring every NDIS participant receives hospital-grade nursing care within the dignity of their own home.</p>
+              <p style="font-size:15px;line-height:1.8;color:var(--navy);">{{ site.data.about.vision }}</p>
             </div>
             <div style="background:var(--bg-mint);border-radius:16px;padding:32px;">
               <div style="font-size:28px;margin-bottom:12px;">🚀</div>
               <h3 style="font-size:18px;font-weight:700;color:var(--navy);margin-bottom:12px;">Our Mission</h3>
-              <p style="font-size:15px;line-height:1.8;color:var(--navy);">To support NDIS providers and coordinators through evidence-based nursing care, clinical oversight, and strong collaboration — with a relentless focus on participant safety and wellbeing.</p>
+              <p style="font-size:15px;line-height:1.8;color:var(--navy);">{{ site.data.about.mission }}</p>
             </div>
           </div>
           <div>
             <h3 style="font-size:20px;font-weight:700;color:var(--navy);margin-bottom:24px;text-align:center;">Our Values</h3>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+              {% for value in site.data.about.values %}
               <div class="service-card reveal" style="padding:22px;">
-                <div class="service-card__icon">🏅</div>
-                <h3 style="font-size:16px;margin-bottom:6px;">Clinical Integrity</h3>
-                <p style="font-size:14px;">We never compromise on AHPRA nursing standards. Every clinical decision is made with rigour, evidence, and professional accountability.</p>
+                <div class="service-card__icon">{{ value.icon }}</div>
+                <h3 style="font-size:16px;margin-bottom:6px;">{{ value.title }}</h3>
+                <p style="font-size:14px;">{{ value.description }}</p>
               </div>
-              <div class="service-card reveal reveal-delay-1" style="padding:22px;">
-                <div class="service-card__icon">🤝</div>
-                <h3 style="font-size:16px;margin-bottom:6px;">Collaborative Care</h3>
-                <p style="font-size:14px;">We act as the clinical bridge between providers, doctors, and participants — enabling seamless, coordinated care for every person we support.</p>
-              </div>
-              <div class="service-card reveal reveal-delay-2" style="padding:22px;">
-                <div class="service-card__icon">❤️</div>
-                <h3 style="font-size:16px;margin-bottom:6px;">Dignity in Disability</h3>
-                <p style="font-size:14px;">We treat every participant with the respect their humanity deserves — person-centred, compassionate, and always rights-focused.</p>
-              </div>
-              <div class="service-card reveal" style="padding:22px;">
-                <div class="service-card__icon">📊</div>
-                <h3 style="font-size:16px;margin-bottom:6px;">Accountability</h3>
-                <p style="font-size:14px;">Transparent reporting and rigorous incident management — we hold ourselves to the highest standards of clinical and ethical conduct.</p>
-              </div>
-              <div class="service-card reveal reveal-delay-1" style="padding:22px;">
-                <div class="service-card__icon">🛡️</div>
-                <h3 style="font-size:16px;margin-bottom:6px;">Safety First</h3>
-                <p style="font-size:14px;">Participant safety underpins every clinical decision. We identify risks, act proactively, and escalate when needed — without exception.</p>
-              </div>
+              {% endfor %}
             </div>
           </div>
         </div>

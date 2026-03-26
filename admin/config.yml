@@ -72,3 +72,144 @@ collections:
       - { label: "Requirements", name: "requirements", widget: "list", hint: "One requirement per entry." }
       - { label: "Skill Tags", name: "tags", widget: "list", hint: "e.g. AHPRA Registered, Wound Care" }
       - { label: "Accent Colour (optional)", name: "accent_color", widget: "string", required: false, hint: "Leave blank for navy. Use CSS value e.g. var(--green)" }
+
+# ─── SERVICES ───────────────────────────────────────────────────────────────────
+  - name: "services"
+    label: "🏥 Services"
+    editor:
+      preview: false
+    files:
+      - label: "Group A — HIDPA Services"
+        name: "services_a"
+        file: "_data/services_a.yml"
+        fields:
+          - { label: "Group Label", name: "eyebrow", widget: "string" }
+          - { label: "Group Title", name: "group_title", widget: "string" }
+          - label: "Service Cards"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+      - label: "Group B — Clinical Services"
+        name: "services_b"
+        file: "_data/services_b.yml"
+        fields:
+          - { label: "Group Label", name: "eyebrow", widget: "string" }
+          - { label: "Group Title", name: "group_title", widget: "string" }
+          - label: "Service Cards"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+      - label: "Group C — Assessment Services"
+        name: "services_c"
+        file: "_data/services_c.yml"
+        fields:
+          - { label: "Group Label", name: "eyebrow", widget: "string" }
+          - { label: "Group Title", name: "group_title", widget: "string" }
+          - label: "Service Cards"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+      - label: "Group D — Workforce Training"
+        name: "services_d"
+        file: "_data/services_d.yml"
+        fields:
+          - { label: "Group Label", name: "eyebrow", widget: "string" }
+          - { label: "Group Title", name: "group_title", widget: "string" }
+          - label: "Service Cards"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+# ─── HIGH INTENSITY ──────────────────────────────────────────────────────────────
+  - name: "hi_supports"
+    label: "⚡ High Intensity (HIDPA)"
+    editor:
+      preview: false
+    files:
+      - label: "All 10 HIDPA Supports"
+        name: "hi_supports"
+        file: "_data/hi_supports.yml"
+        fields:
+          - label: "HIDPA Cards"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Skill Area Label", name: "skill_area", widget: "string", hint: "e.g. NDIS HIDPA — Skill Area 1" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Skills List", name: "skills", widget: "list", hint: "One skill per entry" }
+              - { label: "Badges", name: "badges", widget: "list", hint: "e.g. Training Available" }
+
+# ─── ABOUT PAGE ──────────────────────────────────────────────────────────────────
+  - name: "about"
+    label: "ℹ️ About Page"
+    editor:
+      preview: false
+    files:
+      - label: "Our Story & Values"
+        name: "about"
+        file: "_data/about.yml"
+        fields:
+          - { label: "Story — Paragraph 1", name: "story_para1", widget: "text" }
+          - { label: "Story — Paragraph 2", name: "story_para2", widget: "text" }
+          - { label: "Our Vision", name: "vision", widget: "text" }
+          - { label: "Our Mission", name: "mission", widget: "text" }
+          - label: "Story Accordion Items"
+            name: "story_accordion"
+            widget: "list"
+            fields:
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body Text", name: "body", widget: "text" }
+          - label: "Our Values"
+            name: "values"
+            widget: "list"
+            fields:
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Qualifications", name: "qualifications", widget: "list", hint: "One qualification per entry" }
+
+      - label: "Our Team"
+        name: "team"
+        file: "_data/team.yml"
+        fields:
+          - label: "Team Members"
+            name: "members"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role / Title", name: "role", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Upload a photo or leave blank" }
+              - { label: "Skill Tags", name: "tags", widget: "list", hint: "e.g. AHPRA RN" }
+
+      - label: "Our Board"
+        name: "board"
+        file: "_data/board.yml"
+        fields:
+          - label: "Board Members"
+            name: "members"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role / Title", name: "role", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
