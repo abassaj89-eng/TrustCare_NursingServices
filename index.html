@@ -928,7 +928,7 @@
             <div class="eyebrow">Resources</div>
             <h2 class="section-heading">Latest <span>NDIS</span> Insights</h2>
           </div>
-          <a href="#" class="btn btn--outline" data-wizard-page="page-contact">View All Articles</a>
+          <a href="#" class="btn btn--outline" data-wizard-page="page-blog">View All Articles</a>
         </div>
         <div class="blog__grid">
           <div class="blog-card reveal">
@@ -991,7 +991,7 @@
               <span class="job-skill">Tracheostomy</span>
               <span class="job-skill">Wound Care</span>
             </div>
-            <a href="#" class="btn btn--blue" data-wizard-page="page-contact">Apply Now →</a>
+            <a href="#" class="btn btn--blue" data-wizard-page="page-work">Apply Now →</a>
           </div>
 
           <div class="job-card reveal reveal-delay-1">
@@ -1009,7 +1009,7 @@
               <span class="job-skill">NDIS Worker Check</span>
               <span class="job-skill">First Aid</span>
             </div>
-            <a href="#" class="btn btn--blue" data-wizard-page="page-contact">Apply Now →</a>
+            <a href="#" class="btn btn--blue" data-wizard-page="page-work">Apply Now →</a>
           </div>
 
           <div class="job-card reveal reveal-delay-2">
@@ -1027,7 +1027,7 @@
               <span class="job-skill">Audit Experience</span>
               <span class="job-skill">Remote Work</span>
             </div>
-            <a href="#" class="btn btn--blue" data-wizard-page="page-contact">Apply Now →</a>
+            <a href="#" class="btn btn--blue" data-wizard-page="page-work">Apply Now →</a>
           </div>
 
         </div>
@@ -1037,8 +1037,9 @@
             <h3>Don't See the Right Role?</h3>
             <p>Sign up for job alerts and be the first to hear about new positions as they become available. We regularly add clinical, compliance, and support roles across Australia.</p>
           </div>
-          <form class="alerts-box__form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscribed ✓';this.querySelector('button').style.background='#014B11';">
-            <input type="email" placeholder="Your email address" required />
+          <form class="alerts-box__form contact-form" action="https://formspree.io/f/YOUR_ALERTS_FORM_ID" method="POST">
+            <input type="hidden" name="_subject" value="Job Alert Sign-Up — TrustCare Support" />
+            <input type="email" name="email" placeholder="Your email address" required />
             <button type="submit">Sign Up for Alerts</button>
           </form>
         </div>
@@ -1083,26 +1084,27 @@
           <div class="refer__form-wrap reveal">
             <h3>Make a Referral</h3>
             <p>Fill in the details below and we'll take it from there.</p>
-            <form>
+            <form class="contact-form" action="https://formspree.io/f/YOUR_REFERRAL_FORM_ID" method="POST">
+              <input type="hidden" name="_subject" value="New Provider Referral — TrustCare Support" />
               <div class="form-group">
                 <label>Your Name</label>
-                <input type="text" placeholder="Your full name" required />
+                <input type="text" name="your_name" placeholder="Your full name" required />
               </div>
               <div class="form-group">
                 <label>Your Email</label>
-                <input type="email" placeholder="your@email.com" required />
+                <input type="email" name="your_email" placeholder="your@email.com" required />
               </div>
               <div class="form-group">
                 <label>Provider / Organisation Name</label>
-                <input type="text" placeholder="Name of the provider you're referring" required />
+                <input type="text" name="provider_name" placeholder="Name of the provider you're referring" required />
               </div>
               <div class="form-group">
                 <label>Their Contact (Phone or Email)</label>
-                <input type="text" placeholder="Their phone number or email address" />
+                <input type="text" name="provider_contact" placeholder="Their phone number or email address" />
               </div>
               <div class="form-group">
                 <label>What Do They Need Help With?</label>
-                <textarea placeholder="Briefly describe their situation or needs..."></textarea>
+                <textarea name="message" placeholder="Briefly describe their situation or needs..."></textarea>
               </div>
               <button type="submit" class="btn btn--green" style="width:100%;justify-content:center;">Submit Referral</button>
             </form>
@@ -1167,28 +1169,29 @@
           <div class="process__form reveal">
             <h3>Book a Free Consultation</h3>
             <p>Get in touch — we'll respond within 24 hours.</p>
-            <form class="contact-form">
+            <form class="contact-form" action="https://formspree.io/f/YOUR_CONTACT_FORM_ID" method="POST">
+              <input type="hidden" name="_subject" value="New Consultation Request — TrustCare Support" />
               <div class="form-row">
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="text" placeholder="Jane" required />
+                  <input type="text" name="first_name" placeholder="Jane" required />
                 </div>
                 <div class="form-group">
                   <label>Last Name</label>
-                  <input type="text" placeholder="Smith" required />
+                  <input type="text" name="last_name" placeholder="Smith" required />
                 </div>
               </div>
               <div class="form-group">
                 <label>Email Address</label>
-                <input type="email" placeholder="jane@provider.com.au" required />
+                <input type="email" name="email" placeholder="jane@provider.com.au" required />
               </div>
               <div class="form-group">
                 <label>Phone Number</label>
-                <input type="tel" placeholder="0400 000 000" />
+                <input type="tel" name="phone" placeholder="0400 000 000" />
               </div>
               <div class="form-group">
                 <label>Service Needed</label>
-                <select>
+                <select name="service">
                   <option value="">Select a service...</option>
                   <option>Policies &amp; Procedures</option>
                   <option>NDIS Compliance Auditing</option>
@@ -1213,7 +1216,7 @@
               </div>
               <div class="form-group">
                 <label>Message</label>
-                <textarea placeholder="Briefly describe what you need help with..."></textarea>
+                <textarea name="message" placeholder="Briefly describe what you need help with..."></textarea>
               </div>
               <button type="submit" class="btn btn--blue" style="width:100%;justify-content:center;">Send Message</button>
             </form>
@@ -1276,32 +1279,33 @@
           <div class="complaints-form-wrap reveal reveal-delay-1">
             <h3>Submit a Complaint</h3>
             <p>Please provide as much detail as possible to help us investigate your concern.</p>
-            <form class="contact-form">
+            <form class="contact-form" action="https://formspree.io/f/YOUR_COMPLAINTS_FORM_ID" method="POST">
+              <input type="hidden" name="_subject" value="New Complaint Submitted — TrustCare Support" />
               <div class="form-group">
                 <label>Your Name</label>
-                <input type="text" placeholder="Full name" required />
+                <input type="text" name="full_name" placeholder="Full name" required />
               </div>
               <div class="form-group">
                 <label>Address</label>
-                <input type="text" placeholder="Street address, suburb, state" />
+                <input type="text" name="address" placeholder="Street address, suburb, state" />
               </div>
               <div class="form-row">
                 <div class="form-group">
                   <label>Phone Number</label>
-                  <input type="tel" placeholder="0400 000 000" required />
+                  <input type="tel" name="phone" placeholder="0400 000 000" required />
                 </div>
                 <div class="form-group">
                   <label>Email Address</label>
-                  <input type="email" placeholder="your@email.com" required />
+                  <input type="email" name="email" placeholder="your@email.com" required />
                 </div>
               </div>
               <div class="form-group">
                 <label>Complaint Details</label>
-                <textarea style="min-height:110px;" placeholder="Please describe what happened, when it happened, where it occurred, and who was involved..." required></textarea>
+                <textarea name="complaint_details" style="min-height:110px;" placeholder="Please describe what happened, when it happened, where it occurred, and who was involved..." required></textarea>
               </div>
               <div class="form-group">
                 <label>Desired Outcome</label>
-                <textarea placeholder="What resolution or outcome are you seeking from this complaint?"></textarea>
+                <textarea name="desired_outcome" placeholder="What resolution or outcome are you seeking from this complaint?"></textarea>
               </div>
               <div class="form-group">
                 <label>Keep My Identity Anonymous</label>
@@ -1337,7 +1341,8 @@
           <div class="feedback-card reveal">
             <h3>Tell Us What You Think</h3>
             <p>Select a feedback type below and share your thoughts. All feedback is welcome and appreciated.</p>
-            <form class="contact-form">
+            <form class="contact-form" action="https://formspree.io/f/YOUR_FEEDBACK_FORM_ID" method="POST">
+              <input type="hidden" name="_subject" value="New Feedback Received — TrustCare Support" />
               <div class="form-group">
                 <label>Feedback Type</label>
                 <div class="feedback-type-grid">
@@ -1361,26 +1366,26 @@
               <div class="form-row">
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="text" placeholder="Your first name" required />
+                  <input type="text" name="first_name" placeholder="Your first name" required />
                 </div>
                 <div class="form-group">
                   <label>Last Name</label>
-                  <input type="text" placeholder="Your last name" required />
+                  <input type="text" name="last_name" placeholder="Your last name" required />
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group">
                   <label>Email Address</label>
-                  <input type="email" placeholder="your@email.com" required />
+                  <input type="email" name="email" placeholder="your@email.com" required />
                 </div>
                 <div class="form-group">
                   <label>Phone (Optional)</label>
-                  <input type="tel" placeholder="0400 000 000" />
+                  <input type="tel" name="phone" placeholder="0400 000 000" />
                 </div>
               </div>
               <div class="form-group">
                 <label>Your Feedback</label>
-                <textarea style="min-height:120px;" placeholder="Share your thoughts, suggestions, or questions here..." required></textarea>
+                <textarea name="feedback" style="min-height:120px;" placeholder="Share your thoughts, suggestions, or questions here..." required></textarea>
               </div>
               <button type="submit" class="btn btn--green" style="width:100%;justify-content:center;">Submit Feedback</button>
             </form>
