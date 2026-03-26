@@ -153,6 +153,11 @@ img { max-width: 100%; display: block; }
   gap: 3px;
 }
 .navbar__nav > li > a:hover { color: var(--blue); background: var(--bg-pale); }
+.navbar__nav > li > a.active {
+  color: var(--blue);
+  background: var(--bg-pale);
+  font-weight: 700;
+}
 
 /* ===== NAVBAR DROPDOWN ===== */
 .navbar__dropdown-wrap {
@@ -167,11 +172,13 @@ img { max-width: 100%; display: block; }
   display: inline-block;
   margin-top: 1px;
 }
-.navbar__dropdown-wrap.open .navbar__arrow {
-  transform: rotate(180deg);
-}
 .navbar__dropdown {
-  display: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+  display: block !important;
+  pointer-events: none;
+  visibility: hidden;
   position: absolute;
   top: calc(100% + 6px);
   left: 0;
@@ -183,8 +190,20 @@ img { max-width: 100%; display: block; }
   padding: 6px 0;
   z-index: 3000;
 }
+.navbar__dropdown-wrap:hover .navbar__dropdown,
 .navbar__dropdown-wrap.open .navbar__dropdown {
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+.navbar__dropdown-wrap:hover .navbar__arrow,
+.navbar__dropdown-wrap.open .navbar__arrow {
+  transform: rotate(180deg);
+}
+@media (hover: none) {
+  .navbar__dropdown-wrap.open .navbar__dropdown { opacity: 1; transform: translateY(0); pointer-events: auto; visibility: visible; }
+  .navbar__dropdown-wrap.open .navbar__arrow { transform: rotate(180deg); }
 }
 .navbar__dropdown a {
   display: block;
@@ -812,7 +831,7 @@ img { max-width: 100%; display: block; }
 /* ===== FOOTER ===== */
 .footer { background: #001533; color: rgba(255,255,255,.75); padding: 64px 0 0; }
 .footer__top {
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
   gap: 44px; padding-bottom: 48px;
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
@@ -1244,14 +1263,14 @@ img { max-width: 100%; display: block; }
    WIZARD CONTAINER & PAGES
    ======================================================== */
 .wizard-container {
-  margin-top: 120px; /* 72px navbar + 48px tab-nav */
-  min-height: calc(100vh - 120px - 60px); /* full minus both fixed bars */
+  margin-top: 72px; /* 72px navbar only */
+  min-height: calc(100vh - 72px - 60px);
 }
 
 /* Override hero padding since container already accounts for navbar */
 .wizard-page .hero {
   padding-top: 24px;
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 72px);
 }
 
 .wizard-page {
@@ -1361,20 +1380,12 @@ img { max-width: 100%; display: block; }
 .footer { padding-bottom: 72px; }
 
 /* ========================================================
-   RESPONSIVE — TAB NAV & WIZARD NAV
+   RESPONSIVE — WIZARD NAV
    ======================================================== */
-@media (max-width: 1024px) {
-  .tab-item { padding: 0 10px; font-size: 11px; }
-  .tab-item--book { padding: 0 14px; }
-}
 
 @media (max-width: 768px) {
-  .tab-nav { height: 44px; top: 72px; }
-  .wizard-container { margin-top: 116px; }
-  .wizard-page .hero { padding-top: 20px; min-height: calc(100vh - 116px); }
-  /* All tabs scroll horizontally on mobile */
-  .tab-item { flex-shrink: 0; font-size: 10px; padding: 0 10px; }
-  .tab-nav__inner { flex-wrap: nowrap; }
+  .wizard-container { margin-top: 72px; }
+  .wizard-page .hero { padding-top: 20px; min-height: calc(100vh - 72px); }
   .wizard-nav-bar { padding: 0 12px; }
   .wiz-btn { padding: 8px 14px; font-size: 12px; }
   .wiz-dots { gap: 4px; }

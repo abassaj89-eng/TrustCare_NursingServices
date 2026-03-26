@@ -4,20 +4,26 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 20);
 });
 
-// ===== NAVBAR DROPDOWNS (one open at a time, close on outside click) =====
+// ===== NAVBAR DROPDOWNS (hover desktop, tap mobile) =====
 const dropdownWraps = document.querySelectorAll('.navbar__dropdown-wrap');
+const isTouchDevice = () => window.matchMedia('(hover: none)').matches;
+
 dropdownWraps.forEach(wrap => {
   const toggle = wrap.querySelector('.navbar__dropdown-toggle');
+
+  // Mobile: tap to toggle dropdown; Desktop: allow navigation
   toggle?.addEventListener('click', (e) => {
-    e.preventDefault();
-    const isOpen = wrap.classList.contains('open');
-    // Close all first
-    dropdownWraps.forEach(w => w.classList.remove('open'));
-    // Toggle clicked one
-    if (!isOpen) wrap.classList.add('open');
+    if (isTouchDevice()) {
+      e.preventDefault();
+      const isOpen = wrap.classList.contains('open');
+      dropdownWraps.forEach(w => w.classList.remove('open'));
+      if (!isOpen) wrap.classList.add('open');
+    }
+    // On desktop: allow default navigation via data-wizard-page
   });
 });
-// Close dropdown when clicking outside
+
+// Close mobile dropdowns on outside tap
 document.addEventListener('click', (e) => {
   if (!e.target.closest('.navbar__dropdown-wrap')) {
     dropdownWraps.forEach(w => w.classList.remove('open'));
@@ -172,18 +178,18 @@ function goToPage(index, anchorId) {
 
   currentPage = index;
 
-  // Sync active tab
-  document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
-  const activeTab = document.querySelector(`.tab-item[data-page="${PAGES[index].id}"]`);
-  if (activeTab) activeTab.classList.add('active');
+  // Update active navbar link
+  document.querySelectorAll('.navbar__nav a[data-wizard-page]').forEach(a => {
+    a.classList.toggle('active', a.dataset.wizardPage === PAGES[index].id);
+  });
 
   // Update wizard nav
   document.getElementById('wizLabel').textContent = PAGES[index].label;
   updateDots();
   updateNavButtons();
 
-  // Close any open dropdowns
-  document.querySelectorAll('.tab-item.open').forEach(t => t.classList.remove('open'));
+  // Close any open navbar dropdowns
+  dropdownWraps.forEach(w => w.classList.remove('open'));
   // Close mobile menu
   mobileMenu && mobileMenu.classList.remove('open');
 
@@ -192,7 +198,7 @@ function goToPage(index, anchorId) {
     requestAnimationFrame(() => {
       const el = document.getElementById(anchorId);
       if (el) {
-        const offset = 130; // navbar + tabnav
+        const offset = 88; // navbar only
         const top = el.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top, behavior: 'smooth' });
       }
@@ -306,6 +312,7 @@ document.addEventListener('keydown', (e) => {
 // ===== INIT =====
 generateDots();
 updateNavButtons();
-// Set initial active tab
-const initTab = document.querySelector(`.tab-item[data-page="${PAGES[0].id}"]`);
-if (initTab) initTab.classList.add('active');
+// Set initial active navbar link
+document.querySelectorAll('.navbar__nav a[data-wizard-page]').forEach(a => {
+  a.classList.toggle('active', a.dataset.wizardPage === PAGES[0].id);
+});
