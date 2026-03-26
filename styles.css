@@ -823,8 +823,8 @@ img { max-width: 100%; display: block; }
 .blog-search-inner { display: flex; align-items: center; background: #fff; border-radius: 10px; padding: 10px 16px; gap: 10px; box-shadow: 0 2px 8px rgba(0,53,136,0.08); }
 .blog-search-icon { font-size: 18px; color: #94a3b8; }
 .blog-search-input { flex: 1; border: none; outline: none; font-size: 15px; color: var(--navy); background: transparent; }
-.blog-search-btn { background: #e05a7b; color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-size: 13px; font-weight: 700; letter-spacing: 1px; cursor: pointer; transition: background 0.2s; }
-.blog-search-btn:hover { background: #c04060; }
+.blog-search-btn { background: var(--navy); color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-size: 13px; font-weight: 700; letter-spacing: 1px; cursor: pointer; transition: background 0.2s; }
+.blog-search-btn:hover { background: var(--blue); }
 
 /* ===== BLOG CATEGORIES ===== */
 .blog-cats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
