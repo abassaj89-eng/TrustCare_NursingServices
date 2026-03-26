@@ -25,10 +25,11 @@ collections:
           - { label: "Health Tips", value: "health" }
           - { label: "Company News", value: "news" }
       - { label: "Tag Label", name: "tag", widget: "string", hint: "Shown on the card e.g. 'NDIS Updates'" }
-      - { label: "Icon (emoji)", name: "icon", widget: "string", default: "📋", hint: "Pick an emoji e.g. 📋 💉 🩹 🏢 🤝 💲" }
+      - { label: "Icon (emoji)", name: "icon", widget: "string", default: "📋", hint: "Used as the card thumbnail if no image is uploaded." }
+      - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Optional — upload a photo to use as the card thumbnail instead of the emoji icon." }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Summary", name: "summary", widget: "text", hint: "Short preview shown on the blog card — 1 to 2 sentences." }
-      - { label: "Full Content", name: "body", widget: "markdown" }
+      - { label: "Full Content", name: "body", widget: "markdown", hint: "You can insert images inside the content using the image button in the toolbar above." }
 
 # ─── JOB LISTINGS ──────────────────────────────────────────────────────────────
   - name: "jobs"

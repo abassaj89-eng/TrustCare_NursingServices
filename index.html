@@ -728,7 +728,13 @@
         <div class="blog__grid">
           {% for post in site.posts %}
           <div class="blog-card" data-cat="{{ post.category }}">
+            {% if post.image %}
+            <div class="blog-card__img blog-card__img--photo">
+              <img src="{{ post.image }}" alt="{{ post.title }}" />
+            </div>
+            {% else %}
             <div class="blog-card__img">{{ post.icon }}</div>
+            {% endif %}
             <div class="blog-card__body">
               <div class="blog-card__tag">{{ post.tag }}</div>
               <h3 class="blog-card__title">{{ post.title }}</h3>
