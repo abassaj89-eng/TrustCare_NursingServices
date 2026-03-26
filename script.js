@@ -183,11 +183,15 @@ function goToPage(index, anchorId) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Re-attach observers for newly visible elements
+  // Re-attach observers and force-animate counters in newly visible page
   setTimeout(() => {
     attachRevealObserver();
     attachCounterObserver();
-  }, 50);
+    // Force animate any counters in the active page that haven't run yet
+    next.querySelectorAll('[data-target]:not([data-animated])').forEach(el => {
+      animateCounter(el);
+    });
+  }, 100);
 }
 
 // ===== DOT GENERATION =====

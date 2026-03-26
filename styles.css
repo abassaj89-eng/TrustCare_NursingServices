@@ -1372,10 +1372,9 @@ img { max-width: 100%; display: block; }
   .tab-nav { height: 44px; top: 72px; }
   .wizard-container { margin-top: 116px; }
   .wizard-page .hero { padding-top: 20px; min-height: calc(100vh - 116px); }
-  /* On mobile only show key tabs */
-  .tab-item:not([data-page="page-home"]):not([data-page="page-services"]):not([data-page="page-hi"]):not([data-page="page-contact"]):not(.tab-item--book) {
-    display: none;
-  }
+  /* All tabs scroll horizontally on mobile */
+  .tab-item { flex-shrink: 0; font-size: 10px; padding: 0 10px; }
+  .tab-nav__inner { flex-wrap: nowrap; }
   .wizard-nav-bar { padding: 0 12px; }
   .wiz-btn { padding: 8px 14px; font-size: 12px; }
   .wiz-dots { gap: 4px; }
