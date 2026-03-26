@@ -381,7 +381,9 @@ function openApplyModal(jobTitle) {
       }
     });
   }
-  document.getElementById('applyModal').style.display = 'block';
+  const modal = document.getElementById('applyModal');
+  modal.style.display = 'block';
+  modal.style.overflowY = 'auto';
   document.body.style.overflow = 'hidden';
 }
 
