@@ -837,6 +837,8 @@ img { max-width: 100%; display: block; }
 .blog-read-more { background: none; border: none; color: var(--blue); font-size: 13px; font-weight: 600; cursor: pointer; padding: 8px 0 0; display: block; transition: color 0.2s; }
 .blog-read-more:hover { color: var(--navy); }
 .blog-card__title { font-size: 16px; font-weight: 700; color: var(--navy); margin: 8px 0; line-height: 1.4; }
+.blog-card__excerpt { font-size: 13px; color: #4a5568; line-height: 1.7; margin-bottom: 14px; }
+.anon-row { margin-top: 8px; }
 
 /* ===== REFER ===== */
 .refer__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
@@ -1137,147 +1139,7 @@ img { max-width: 100%; display: block; }
   .feedback-type-grid { grid-template-columns: 1fr; }
 }
 
-/* ========================================================
-   TAB NAVIGATION BAR
-   ======================================================== */
-.tab-nav {
-  position: fixed;
-  top: 72px;
-  left: 0; right: 0;
-  z-index: 900;
-  background: var(--navy);
-  height: 48px;
-  box-shadow: 0 2px 12px rgba(0,53,136,.25);
-}
-
-.tab-nav__inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  align-items: stretch;
-  height: 100%;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-.tab-nav__inner::-webkit-scrollbar { display: none; }
-
-.tab-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 0 16px;
-  color: rgba(255,255,255,0.82);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s, color 0.2s;
-  border-bottom: 3px solid transparent;
-  user-select: none;
-}
-.tab-item:hover {
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-}
-.tab-item.active {
-  color: #fff;
-  border-bottom-color: #4fc3f7;
-  background: rgba(255,255,255,0.08);
-}
-
-.tab-arrow {
-  font-size: 10px;
-  opacity: 0.7;
-  transition: transform 0.25s;
-  margin-top: 1px;
-}
-.tab-item.has-dropdown:hover .tab-arrow,
-.tab-item.has-dropdown.open .tab-arrow {
-  transform: rotate(180deg);
-  opacity: 1;
-}
-
-/* BOOK NOW button-style tab */
-.tab-item--book {
-  margin-left: auto;
-  background: #014B11;
-  color: #fff;
-  padding: 0 22px;
-  border-bottom: 3px solid transparent;
-}
-.tab-item--book:hover {
-  background: #023a0d;
-  color: #fff;
-}
-
-/* ===== DROPDOWN ===== */
-.tab-dropdown {
-  position: absolute;
-  top: calc(100% + 3px);
-  left: 0;
-  background: #fff;
-  box-shadow: 0 12px 40px rgba(0,53,136,.18);
-  border-radius: 0 0 12px 12px;
-  min-width: 240px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-6px);
-  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
-  z-index: 1000;
-}
-.tab-item.has-dropdown:hover .tab-dropdown,
-.tab-item.has-dropdown.open .tab-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.tab-dropdown__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 12px 0;
-}
-.tab-dropdown__inner--single {
-  grid-template-columns: 1fr;
-}
-
-.tab-dropdown__col {
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid rgba(0,53,136,.08);
-  padding: 0 4px;
-}
-.tab-dropdown__col:last-child { border-right: none; }
-
-.tab-dropdown__col-header {
-  padding: 6px 14px 8px;
-  font-size: 10px;
-  font-weight: 800;
-  color: var(--blue);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-bottom: 1px solid rgba(38,106,251,.1);
-  margin-bottom: 4px;
-}
-
-.dropdown-link {
-  display: block;
-  padding: 8px 14px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--navy);
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s;
-  border-radius: 6px;
-  margin: 1px 4px;
-}
-.dropdown-link:hover {
-  background: var(--bg-pale);
-  color: var(--blue);
-}
+/* Tab-nav CSS removed — no matching HTML elements */
 
 /* ========================================================
    WIZARD CONTAINER & PAGES

@@ -268,54 +268,25 @@ document.getElementById('wizNext')?.addEventListener('click', () => {
   if (currentPage < PAGES.length - 1) goToPage(currentPage + 1);
 });
 
-// ===== TAB ITEM CLICKS =====
-document.querySelectorAll('.tab-item').forEach(tab => {
-  tab.addEventListener('click', (e) => {
-    // Ignore if click came from inside a dropdown link
-    if (e.target.classList.contains('dropdown-link')) return;
-
-    const pageId = tab.dataset.page;
-    const idx = PAGES.findIndex(p => p.id === pageId);
-
-    if (tab.classList.contains('has-dropdown')) {
-      // Toggle dropdown on mobile / keyboard; on desktop hover handles it
-      tab.classList.toggle('open');
-      if (idx >= 0) goToPage(idx);
-      return;
-    }
-
-    if (idx >= 0) goToPage(idx);
-  });
-});
-
-// Close dropdown when clicking outside
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.tab-item')) {
-    document.querySelectorAll('.tab-item.open').forEach(t => t.classList.remove('open'));
-  }
-});
-
-// ===== DROPDOWN LINK CLICKS =====
-document.querySelectorAll('.dropdown-link').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const pageId = link.dataset.page;
-    const anchor = link.dataset.anchor || null;
-    if (!pageId) return;
-    const idx = PAGES.findIndex(p => p.id === pageId);
-    if (idx >= 0) goToPage(idx, anchor);
-  });
-});
-
-// ===== data-wizard-page LINKS (navbar, footer, cards, buttons) =====
+// ===== data-wizard-page LINKS (navbar, footer, cards, buttons, legal pages) =====
 document.querySelectorAll('[data-wizard-page]').forEach(el => {
   el.addEventListener('click', (e) => {
     e.preventDefault();
     const pageId = el.dataset.wizardPage;
     const anchor = el.dataset.anchor || null;
     const idx = PAGES.findIndex(p => p.id === pageId);
-    if (idx >= 0) goToPage(idx, anchor);
+    if (idx >= 0) {
+      goToPage(idx, anchor);
+    } else {
+      // Legal / supplementary page not in PAGES — show directly without touching wizard nav
+      const prev = document.querySelector('.wizard-page.active');
+      if (prev) prev.classList.remove('active');
+      const target = document.getElementById(pageId);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
   });
 });
 
@@ -333,6 +304,12 @@ updateNavButtons();
 document.querySelectorAll('.navbar__nav a[data-wizard-page]').forEach(a => {
   a.classList.toggle('active', a.dataset.wizardPage === PAGES[0].id);
 });
+// Force-animate counters visible on the initial home page
+setTimeout(() => {
+  document.getElementById('page-home')?.querySelectorAll('[data-target]:not([data-animated])').forEach(el => {
+    animateCounter(el);
+  });
+}, 300);
 
 // ===== BLOG: SEARCH + CATEGORIES + READ MORE =====
 function toggleBlog(btn) {
@@ -382,8 +359,7 @@ function openApplyModal(jobTitle) {
     });
   }
   const modal = document.getElementById('applyModal');
-  modal.style.display = 'block';
-  modal.style.overflowY = 'auto';
+  modal.style.display = 'flex';  // flex so centering works
   document.body.style.overflow = 'hidden';
 }
 
