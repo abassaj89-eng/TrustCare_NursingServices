@@ -333,3 +333,85 @@ updateNavButtons();
 document.querySelectorAll('.navbar__nav a[data-wizard-page]').forEach(a => {
   a.classList.toggle('active', a.dataset.wizardPage === PAGES[0].id);
 });
+
+// ===== BLOG: SEARCH + CATEGORIES + READ MORE =====
+function toggleBlog(btn) {
+  const full = btn.previousElementSibling;
+  const isOpen = full.style.display === 'block';
+  full.style.display = isOpen ? 'none' : 'block';
+  btn.textContent = isOpen ? 'Read More ↓' : 'Read Less ↑';
+}
+
+function searchBlogs() {
+  const query = document.getElementById('blogSearch')?.value.toLowerCase() || '';
+  document.querySelectorAll('.blog-card').forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(query) ? '' : 'none';
+  });
+}
+
+document.getElementById('blogSearch')?.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') searchBlogs();
+});
+
+document.querySelectorAll('.blog-cat').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.blog-cat').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.blog-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+    });
+    // Reset search
+    const searchEl = document.getElementById('blogSearch');
+    if (searchEl) searchEl.value = '';
+  });
+});
+
+// ===== JOB APPLICATION MODAL =====
+function openApplyModal(jobTitle) {
+  document.getElementById('applyJobTitle').textContent = jobTitle;
+  document.getElementById('applySubject').value = 'Job Application — ' + jobTitle;
+  // Pre-select role in dropdown
+  const select = document.querySelector('#applyForm select[name="role"]');
+  if (select) {
+    Array.from(select.options).forEach(opt => {
+      if (opt.text.includes(jobTitle.split('—')[0].trim()) || opt.value.includes(jobTitle.toLowerCase().replace(/\s/g,'-').slice(0,8))) {
+        select.value = opt.value;
+      }
+    });
+  }
+  document.getElementById('applyModal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeApplyModal() {
+  document.getElementById('applyModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeApplyModal();
+});
+
+document.getElementById('applyForm')?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = e.target.querySelector('[type="submit"]');
+  const originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  try {
+    const formData = new FormData(e.target);
+    const res = await fetch(e.target.action, { method: 'POST', body: formData, headers: { Accept: 'application/json' } });
+    if (res.ok) {
+      btn.textContent = 'Application Sent ✓';
+      btn.style.background = '#014B11';
+      e.target.reset();
+      setTimeout(() => { closeApplyModal(); btn.textContent = originalText; btn.style.background = ''; btn.disabled = false; }, 3000);
+    } else { throw new Error(); }
+  } catch {
+    btn.textContent = 'Error — please try again';
+    btn.style.background = '#dc2626';
+    setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; btn.disabled = false; }, 3000);
+  }
+});
