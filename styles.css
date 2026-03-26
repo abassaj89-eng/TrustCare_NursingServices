@@ -151,6 +151,56 @@ img { max-width: 100%; display: block; }
 }
 .navbar__nav a:hover { color: var(--blue); background: var(--bg-pale); }
 
+/* ===== NAVBAR DROPDOWN ===== */
+.navbar__dropdown-wrap {
+  position: relative;
+}
+.navbar__dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.navbar__arrow {
+  font-size: 11px;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+.navbar__dropdown-wrap:hover .navbar__arrow {
+  transform: rotate(180deg);
+}
+.navbar__dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 230px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,53,136,0.13);
+  border: 1px solid rgba(38,106,251,0.10);
+  padding: 8px 0;
+  z-index: 2000;
+}
+.navbar__dropdown-wrap:hover .navbar__dropdown {
+  display: block;
+}
+.navbar__dropdown a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+  border-radius: 0;
+  border-left: 3px solid transparent;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.navbar__dropdown a:hover {
+  background: var(--bg-pale);
+  border-left-color: var(--blue);
+  color: var(--blue);
+}
+
 .navbar__cta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 
 .navbar__phone {
