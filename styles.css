@@ -1479,98 +1479,44 @@ html, body {
   .career-card__top { flex-direction: column; }
 }
 
-/* ===== ACKNOWLEDGEMENT OF COUNTRY ===== */
-.aoc-section {
-  background: #1a1008;
-  background-image:
-    radial-gradient(ellipse 80% 60% at 10% 50%, rgba(180,100,20,0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 80% at 90% 30%, rgba(140,60,10,0.12) 0%, transparent 60%);
-  padding: 64px 0 60px;
-  position: relative;
-  overflow: hidden;
-}
-.aoc-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(255,190,50,0.06)'/%3E%3C/svg%3E") repeat;
-  pointer-events: none;
-}
-.aoc-inner {
+/* ===== ACKNOWLEDGEMENT OF COUNTRY (footer strip) ===== */
+.aoc-footer {
   display: flex;
-  align-items: flex-start;
-  gap: 48px;
-}
-.aoc-flags {
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 14px;
+  padding: 16px 0 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 4px;
+}
+.aoc-footer__flags {
+  display: flex;
+  gap: 6px;
   flex-shrink: 0;
-  padding-top: 4px;
 }
-.aoc-flag {
-  width: 80px;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
-}
-.aoc-flag svg {
-  display: block;
-  width: 100%;
+.aoc-footer__flag {
+  width: 44px;
   height: auto;
+  border-radius: 4px;
+  display: block;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.45);
 }
-.aoc-content {
-  flex: 1;
-  min-width: 0;
-}
-.aoc-noongar {
-  font-size: 13px;
-  font-style: italic;
-  color: rgba(255, 190, 50, 0.75);
-  letter-spacing: 0.04em;
-  margin: 0 0 14px;
-  font-weight: 500;
-}
-.aoc-heading {
-  font-size: clamp(20px, 3vw, 28px);
-  font-weight: 700;
-  color: #FFD700;
-  margin: 0 0 18px;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
-.aoc-body {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.75;
-  margin: 0 0 14px;
-}
-.aoc-body strong {
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: 600;
-}
-.aoc-body em {
-  color: rgba(255, 200, 80, 0.9);
-  font-style: normal;
-  font-weight: 500;
-}
-.aoc-commitment {
-  font-size: 13.5px;
-  color: rgba(255, 200, 100, 0.65);
+.aoc-footer__text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
   line-height: 1.65;
   margin: 0;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255, 200, 50, 0.15);
+}
+.aoc-footer__text strong {
+  color: rgba(255,255,255,0.6);
+  font-weight: 600;
+}
+.aoc-footer__text em {
+  font-style: normal;
+  color: rgba(255,255,255,0.55);
 }
 
-@media (max-width: 768px) {
-  .aoc-inner { flex-direction: column; align-items: stretch; gap: 28px; }
-  .aoc-flags { flex-direction: row; gap: 16px; }
-  .aoc-flag { width: 72px; }
-  .aoc-section { padding: 48px 0 44px; }
-}
 @media (max-width: 480px) {
-  .aoc-flag { width: 60px; }
-  .aoc-body { font-size: 14px; }
+  .aoc-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .aoc-footer__text { font-size: 11.5px; }
 }
 
