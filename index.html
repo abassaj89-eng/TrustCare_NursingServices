@@ -103,6 +103,9 @@
 </head>
 <body>
 
+<!-- Skip to main content (accessibility) -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar" id="navbar">
   <div class="navbar__inner">
@@ -186,7 +189,7 @@
 
 
 <!-- ===== WIZARD CONTAINER ===== -->
-<div class="wizard-container">
+<main class="wizard-container" id="main-content" tabindex="-1">
 
   <!-- ============================= PAGE: HOME ============================= -->
   <div class="wizard-page active" id="page-home">
@@ -472,7 +475,7 @@
   </div><!-- /page-home -->
 
   <!-- ============================= PAGE: SERVICES ============================= -->
-  <div class="wizard-page" id="page-services">
+  <div class="wizard-page" id="page-services" aria-hidden="true">
     <section class="section" id="services">
       <div class="container">
         <div class="services__header">
@@ -507,7 +510,7 @@
   </div><!-- /page-services -->
 
   <!-- ============================= PAGE: HIGH INTENSITY ============================= -->
-  <div class="wizard-page" id="page-hi">
+  <div class="wizard-page" id="page-hi" aria-hidden="true">
     <section class="section section--blue" id="high-intensity">
       <div class="container">
         <div class="services__header">
@@ -563,7 +566,7 @@
   </div><!-- /page-hi -->
 
   <!-- ============================= PAGE: ABOUT ============================= -->
-  <div class="wizard-page" id="page-about">
+  <div class="wizard-page" id="page-about" aria-hidden="true">
     <section id="about">
 
       <!-- AHPRA & NDIS COMPLIANCE SECTION -->
@@ -748,7 +751,7 @@
   </div><!-- /page-about -->
 
   <!-- ============================= PAGE: RESOURCES / BLOG ============================= -->
-  <div class="wizard-page" id="page-blog">
+  <div class="wizard-page" id="page-blog" aria-hidden="true">
 
     <!-- CTA Banner -->
     <section class="section section--blue">
@@ -820,7 +823,7 @@
   </div><!-- /page-blog -->
 
   <!-- ============================= PAGE: WORK WITH US ============================= -->
-  <div class="wizard-page" id="page-work">
+  <div class="wizard-page" id="page-work" aria-hidden="true">
   <!-- CAREERS HERO -->
   <section class="careers-hero">
     <div class="container">
@@ -945,7 +948,7 @@
   </div><!-- /page-work -->
 
   <!-- ============================= PAGE: REFER ============================= -->
-  <div class="wizard-page" id="page-refer">
+  <div class="wizard-page" id="page-refer" aria-hidden="true">
     <section class="section" id="refer">
       <div class="container">
         <div class="refer__grid">
@@ -1058,7 +1061,7 @@
   </div><!-- /page-refer -->
 
   <!-- ============================= PAGE: CONTACT ============================= -->
-  <div class="wizard-page" id="page-contact">
+  <div class="wizard-page" id="page-contact" aria-hidden="true">
     <section class="section" id="contact">
       <div class="container">
         <div style="text-align:center;max-width:580px;margin:0 auto 24px;">
@@ -1197,7 +1200,7 @@
   </div><!-- /page-contact -->
 
   <!-- ============================= PAGE: COMPLAINTS ============================= -->
-  <div class="wizard-page" id="page-complaints">
+  <div class="wizard-page" id="page-complaints" aria-hidden="true">
     <section class="section section--pale" id="complaints">
       <div class="container">
         <div class="services__header">
@@ -1304,7 +1307,7 @@
   </div><!-- /page-complaints -->
 
   <!-- ============================= PAGE: FEEDBACK ============================= -->
-  <div class="wizard-page" id="page-feedback">
+  <div class="wizard-page" id="page-feedback" aria-hidden="true">
     <section class="section" id="feedback">
       <div class="container">
         <div class="services__header">
@@ -1378,7 +1381,7 @@
   </div><!-- /page-feedback -->
 
   <!-- ============================= PAGE: PRIVACY POLICY ============================= -->
-  <div class="wizard-page" id="page-privacy">
+  <div class="wizard-page" id="page-privacy" aria-hidden="true">
   <section class="section">
     <div class="container" style="max-width:800px;">
       <div class="eyebrow">{{ site.data.legal_privacy.eyebrow }}</div>
@@ -1396,7 +1399,7 @@
   </div><!-- /page-privacy -->
 
   <!-- ============================= PAGE: COMPLAINTS POLICY ============================= -->
-  <div class="wizard-page" id="page-complaints-policy">
+  <div class="wizard-page" id="page-complaints-policy" aria-hidden="true">
   <section class="section">
     <div class="container" style="max-width:800px;">
       <div class="eyebrow">{{ site.data.legal_complaints.eyebrow }}</div>
@@ -1414,7 +1417,7 @@
   </div><!-- /page-complaints-policy -->
 
   <!-- ============================= PAGE: INCIDENT MANAGEMENT ============================= -->
-  <div class="wizard-page" id="page-incident">
+  <div class="wizard-page" id="page-incident" aria-hidden="true">
   <section class="section">
     <div class="container" style="max-width:800px;">
       <div class="eyebrow">{{ site.data.legal_incident.eyebrow }}</div>
@@ -1431,7 +1434,7 @@
   </div><!-- /page-incident -->
 
   <!-- ============================= PAGE: TERMS AND CONDITIONS ============================= -->
-  <div class="wizard-page" id="page-terms">
+  <div class="wizard-page" id="page-terms" aria-hidden="true">
   <section class="section">
     <div class="container" style="max-width:800px;">
       <div class="eyebrow">{{ site.data.legal_terms.eyebrow }}</div>
@@ -1448,7 +1451,7 @@
   </div><!-- /page-terms -->
 
   <!-- ============================= PAGE: PARTICIPANT RIGHTS ============================= -->
-  <div class="wizard-page" id="page-rights">
+  <div class="wizard-page" id="page-rights" aria-hidden="true">
   <section class="section">
     <div class="container" style="max-width:800px;">
       <div class="eyebrow">{{ site.data.legal_rights.eyebrow }}</div>
@@ -1465,7 +1468,7 @@
   </section>
   </div><!-- /page-rights -->
 
-</div><!-- /wizard-container -->
+</main><!-- /wizard-container -->
 
 <!-- ===== WIZARD NAVIGATION BAR ===== -->
 <div class="wizard-nav-bar" id="wizNavBar">

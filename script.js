@@ -186,12 +186,13 @@ function goToPage(index, anchorId) {
 
   // Hide current
   const prev = document.querySelector('.wizard-page.active');
-  if (prev) prev.classList.remove('active');
+  if (prev) { prev.classList.remove('active'); prev.setAttribute('aria-hidden', 'true'); }
 
   // Show new
   const next = document.getElementById(PAGES[index].id);
   if (!next) return;
   next.classList.add('active');
+  next.removeAttribute('aria-hidden');
 
   currentPage = index;
 
@@ -280,10 +281,11 @@ document.querySelectorAll('[data-wizard-page]').forEach(el => {
     } else {
       // Legal / supplementary page not in PAGES — show directly without touching wizard nav
       const prev = document.querySelector('.wizard-page.active');
-      if (prev) prev.classList.remove('active');
+      if (prev) { prev.classList.remove('active'); prev.setAttribute('aria-hidden', 'true'); }
       const target = document.getElementById(pageId);
       if (target) {
         target.classList.add('active');
+        target.removeAttribute('aria-hidden');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
