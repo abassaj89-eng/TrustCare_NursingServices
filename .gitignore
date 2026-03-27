@@ -7,3 +7,10 @@ vendor/
 
 # Handover document (contains sensitive info — store securely, not in public repo)
 HANDOVER.md
+
+# Auto-generated documentation DOCX + build tooling
+generate-docs.js
+TrustCare_Website_Documentation.docx
+node_modules/
+package.json
+package-lock.json
