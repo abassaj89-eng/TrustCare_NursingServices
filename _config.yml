@@ -16,6 +16,9 @@ exclude:
   - vendor/
   - Gemfile.lock
   - README.md
+  - DEPLOYMENT.md
+  - CMS-GUIDE.md
+  - HANDOVER.md
 
 # Collections
 collections:

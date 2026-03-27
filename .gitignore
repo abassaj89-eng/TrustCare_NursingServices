@@ -4,3 +4,6 @@ _site/
 .jekyll-metadata
 vendor/
 .bundle/
+
+# Handover document (contains sensitive info — store securely, not in public repo)
+HANDOVER.md
