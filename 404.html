@@ -1,0 +1,294 @@
+---
+permalink: /404.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | TrustCare Support</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #003588;
+      --navy-deep: #001F5C;
+      --blue: #266AFB;
+      --blue-light: #5B93FF;
+      --green: #015C15;
+      --bg: #F6F9FF;
+      --text-body: #374151;
+      --text-muted: #6B7280;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background decoration */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(38,106,251,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -150px;
+      left: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(1,92,21,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .container-404 {
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Logo */
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 48px;
+      text-decoration: none;
+      color: var(--navy);
+    }
+    .logo-wrap img {
+      height: 44px;
+      width: auto;
+    }
+    .logo-wrap span {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    /* 404 number */
+    .num-404 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(6rem, 20vw, 9rem);
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--blue) 60%, var(--blue-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.04em;
+    }
+
+    /* Cross / plus icon inside */
+    .icon-404 {
+      display: block;
+      margin: 0 auto 24px;
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      border-radius: 18px;
+      position: relative;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(38,106,251,0.2); }
+      50% { transform: scale(1.04); box-shadow: 0 0 0 12px rgba(38,106,251,0); }
+    }
+    .icon-404::before,
+    .icon-404::after {
+      content: '';
+      position: absolute;
+      background: #fff;
+      border-radius: 4px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .icon-404::before { width: 28px; height: 5px; }
+    .icon-404::after  { width: 5px; height: 28px; }
+
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1.0625rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 100px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    .btn--blue {
+      background: linear-gradient(135deg, var(--blue) 0%, #1a5ce0 100%);
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(38,106,251,0.30);
+    }
+    .btn--blue:hover {
+      box-shadow: 0 10px 32px rgba(38,106,251,0.40);
+    }
+    .btn--outline {
+      background: #fff;
+      color: var(--navy);
+      border: 2px solid rgba(0,53,136,0.18);
+      box-shadow: 0 2px 12px rgba(0,35,100,0.06);
+    }
+    .btn--outline:hover {
+      box-shadow: 0 6px 20px rgba(0,35,100,0.10);
+      border-color: rgba(0,53,136,0.30);
+    }
+
+    /* Quick links */
+    .quick-links {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(38,106,251,0.12);
+    }
+    .quick-links p {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .quick-links ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .quick-links a {
+      display: inline-block;
+      padding: 7px 18px;
+      background: #fff;
+      border: 1px solid rgba(38,106,251,0.14);
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--navy);
+      text-decoration: none;
+      transition: border-color 0.18s, background 0.18s, transform 0.18s;
+    }
+    .quick-links a:hover {
+      background: var(--bg);
+      border-color: rgba(38,106,251,0.30);
+      transform: translateY(-1px);
+    }
+
+    /* Phone */
+    .contact-nudge {
+      margin-top: 32px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .contact-nudge a {
+      color: var(--blue);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .contact-nudge a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="container-404">
+
+    <a href="/" class="logo-wrap">
+      <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Support"
+           onerror="this.style.display='none'" />
+      <span>TrustCare</span>
+    </a>
+
+    <span class="icon-404" aria-hidden="true"></span>
+    <div class="num-404" aria-hidden="true">404</div>
+
+    <h1>Page Not Found</h1>
+    <p>The page you're looking for has moved, or may never have existed.<br />Let's get you back to where you need to be.</p>
+
+    <div class="btn-group">
+      <a href="/" class="btn btn--blue">
+        ← Back to Home
+      </a>
+      <a href="/#contact" class="btn btn--outline">
+        Contact Us
+      </a>
+    </div>
+
+    <div class="quick-links">
+      <p>Or go directly to</p>
+      <ul>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#high-intensity">High-Intensity Care</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <p class="contact-nudge">
+      Need help? Call us at <a href="tel:+61861231234">08 6123 1234</a> or email <a href="mailto:info@trustcaresupport.com.au">info@trustcaresupport.com.au</a>
+    </p>
+
+  </div>
+
+</body>
+</html>
