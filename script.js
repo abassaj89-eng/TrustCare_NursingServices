@@ -536,3 +536,13 @@ function filterJobs() {
   const sortEl = document.querySelector('.careers-list-sort');
   if (sortEl) sortEl.textContent = visible + ' role' + (visible !== 1 ? 's' : '') + ' available';
 }
+
+// ===== NETLIFY IDENTITY — CMS ADMIN REDIRECT =====
+// Moved from inline script to allow removing unsafe-inline from CSP
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', user => {
+    if (!user) {
+      window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; });
+    }
+  });
+}
