@@ -169,6 +169,7 @@ const PAGES = [
   { id: 'page-blog',       label: 'Resources' },
   { id: 'page-work',       label: 'Work With Us' },
   { id: 'page-refer',      label: 'Refer' },
+  { id: 'page-governance', label: 'Governance' },
   { id: 'page-contact',    label: 'Contact' },
   { id: 'page-complaints', label: 'Complaints' },
   { id: 'page-feedback',   label: 'Feedback' },
@@ -386,6 +387,125 @@ document.getElementById('applyForm')?.addEventListener('submit', async (e) => {
     setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; btn.disabled = false; }, 3000);
   }
 });
+
+// ===== GOVERNANCE: POLICY SEARCH =====
+function filterPolicies() {
+  const query = (document.getElementById('govSearch')?.value || '').toLowerCase();
+  const cards = document.querySelectorAll('.gov-policy-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const keywords = (card.dataset.keywords || '') + ' ' + card.textContent.toLowerCase();
+    const show = !query || keywords.includes(query);
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  const noMsg = document.getElementById('noPoliciesMsg');
+  if (noMsg) noMsg.style.display = visible === 0 ? 'block' : 'none';
+}
+
+// ===== GOVERNANCE: POLICY MODAL =====
+const policyContent = {
+  cc101: `
+    <div style="margin-bottom:8px;"><span style="font-size:11px;background:#e0e9ff;color:#266AFB;font-weight:700;padding:4px 12px;border-radius:999px;">Policy #CC-101</span></div>
+    <h2 style="color:var(--navy);font-size:22px;margin:16px 0 8px;">Clinical Care & Service Delivery</h2>
+    <p style="color:#64748b;font-size:13px;margin-bottom:24px;">Effective: January 2026 — TrustCare Support</p>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">1. Scope of Clinical Services</h3>
+    <p style="font-size:14px;color:#4a5568;line-height:1.75;margin-bottom:8px;">TrustCare Support provides high-intensity nursing services to NDIS participants via registered providers. Services include:</p>
+    <ul style="font-size:14px;color:#4a5568;line-height:1.8;margin-left:20px;margin-bottom:20px;">
+      <li>Complex Wound Management</li><li>Enteral Feeding &amp; Management</li><li>Tracheostomy Care</li>
+      <li>Urinary Catheter Management (Indwelling &amp; Suprapubic)</li><li>Subcutaneous Injections (e.g., Insulin)</li>
+      <li>Clinical Assessments &amp; Care Planning</li>
+    </ul>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">2. Practitioner Qualifications</h3>
+    <p style="font-size:14px;color:#4a5568;line-height:1.75;margin-bottom:20px;">All clinical tasks are performed exclusively by AHPRA-registered Division 1 Registered Nurses (RN) or Enrolled Nurses (EN) under RN supervision.</p>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">3. Service Workflow</h3>
+    <ol style="font-size:14px;color:#4a5568;line-height:1.9;margin-left:20px;margin-bottom:20px;">
+      <li><strong>Referral:</strong> Provider submits a clinical referral via the secure portal.</li>
+      <li><strong>Triage:</strong> A clinical lead RN reviews the referral within 24 hours.</li>
+      <li><strong>Quotation:</strong> A detailed quote is issued to the provider.</li>
+      <li><strong>Payment &amp; Dispatch:</strong> Once payment is confirmed, a nurse is dispatched.</li>
+      <li><strong>Reporting:</strong> A clinical service report is provided to the Support Coordinator within 48 hours of completion.</li>
+    </ol>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">4. Documentation Standards</h3>
+    <p style="font-size:14px;color:#4a5568;line-height:1.75;">All clinical documentation must adhere to NMBA standards for practice. Documents are signed digitally by the attending AHPRA-registered professional.</p>
+  `,
+  im202: `
+    <div style="margin-bottom:8px;"><span style="font-size:11px;background:#fee2e2;color:#dc2626;font-weight:700;padding:4px 12px;border-radius:999px;">Procedure #IM-202</span></div>
+    <h2 style="color:var(--navy);font-size:22px;margin:16px 0 8px;">Incident Management & Reporting</h2>
+    <p style="color:#64748b;font-size:13px;margin-bottom:24px;">Effective: October 2025 — TrustCare Support</p>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">1. Purpose</h3>
+    <p style="font-size:14px;color:#4a5568;line-height:1.75;margin-bottom:20px;">To ensure all incidents involving participants, staff, or third parties are identified, reported, investigated, and documented in compliance with the NDIS Quality and Safeguards Commission requirements.</p>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">2. Incident Classification</h3>
+    <ul style="font-size:14px;color:#4a5568;line-height:1.8;margin-left:20px;margin-bottom:20px;">
+      <li><strong>Reportable Incident:</strong> Any event that causes harm or risk of harm to a participant.</li>
+      <li><strong>Near Miss:</strong> Events that could have caused harm but did not.</li>
+      <li><strong>Critical Incident:</strong> Unexpected death, serious injury, or abuse of a participant.</li>
+    </ul>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">3. Reporting Timeline</h3>
+    <ul style="font-size:14px;color:#4a5568;line-height:1.8;margin-left:20px;margin-bottom:20px;">
+      <li>Critical incidents must be reported to the NDIS Commission within 24 hours.</li>
+      <li>All other reportable incidents within 5 business days.</li>
+      <li>Internal documentation completed within 48 hours of incident.</li>
+    </ul>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">4. Post-Incident Review</h3>
+    <p style="font-size:14px;color:#4a5568;line-height:1.75;">A root-cause analysis is conducted for all critical incidents. Findings are documented and used to update clinical procedures and prevent recurrence.</p>
+  `,
+  st303: `
+    <div style="margin-bottom:8px;"><span style="font-size:11px;background:#dcfce7;color:#059669;font-weight:700;padding:4px 12px;border-radius:999px;">Guidelines #ST-303</span></div>
+    <h2 style="color:var(--navy);font-size:22px;margin:16px 0 8px;">Staff Competency & Training</h2>
+    <p style="color:#64748b;font-size:13px;margin-bottom:24px;">Effective: November 2025 — TrustCare Support</p>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">1. Competency Framework</h3>
+    <p style="font-size:14px;color:#4a5568;line-height:1.75;margin-bottom:20px;">TrustCare Support follows the NDIS High Intensity Support Skills Descriptors. No staff member (TrustCare or Provider-staff) may perform high-intensity tasks without a verified competency assessment.</p>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">2. Assessment Process</h3>
+    <ul style="font-size:14px;color:#4a5568;line-height:1.8;margin-left:20px;margin-bottom:20px;">
+      <li>Assessments are conducted by an AHPRA-registered RN.</li>
+      <li>Includes a theoretical component and practical demonstration of skills.</li>
+      <li>A 'Staff Training Verified' badge is issued upon successful completion.</li>
+    </ul>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">3. Re-assessment & Renewal</h3>
+    <ul style="font-size:14px;color:#4a5568;line-height:1.8;margin-left:20px;margin-bottom:20px;">
+      <li>Clinical competencies must be renewed every 12 months.</li>
+      <li>Earlier renewal required if there is a change in the participant's clinical needs.</li>
+      <li>The portal provides automated alerts 30 days prior to competency expiry.</li>
+    </ul>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">4. Records Management</h3>
+    <p style="font-size:14px;color:#4a5568;line-height:1.75;">Competency records are stored securely in the provider's portal and are audit-ready for NDIS Quality and Safeguards Commission reviews.</p>
+  `,
+  dr404: `
+    <div style="margin-bottom:8px;"><span style="font-size:11px;background:#e0e9ff;color:#266AFB;font-weight:700;padding:4px 12px;border-radius:999px;">Policy #DR-404</span></div>
+    <h2 style="color:var(--navy);font-size:22px;margin:16px 0 8px;">Data Retention & Privacy</h2>
+    <p style="color:#64748b;font-size:13px;margin-bottom:24px;">Effective: December 2025 — TrustCare Support</p>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">1. Data Collection</h3>
+    <p style="font-size:14px;color:#4a5568;line-height:1.75;margin-bottom:20px;">TrustCare collects only the minimum personal and health information required to deliver safe clinical services. All collection is compliant with the Privacy Act 1988 (Cth) and the Australian Privacy Principles (APPs).</p>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">2. Storage & Encryption</h3>
+    <ul style="font-size:14px;color:#4a5568;line-height:1.8;margin-left:20px;margin-bottom:20px;">
+      <li>All participant records are stored on encrypted, Australian-hosted servers.</li>
+      <li>Access is restricted to authorised clinical staff only.</li>
+      <li>Data in transit is protected with TLS 1.3 encryption.</li>
+    </ul>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">3. Retention Periods</h3>
+    <ul style="font-size:14px;color:#4a5568;line-height:1.8;margin-left:20px;margin-bottom:20px;">
+      <li>Clinical records: 7 years from last service date (or until participant turns 25 if a minor).</li>
+      <li>Incident reports: 7 years.</li>
+      <li>Staff records: 7 years from employment end.</li>
+    </ul>
+    <h3 style="color:var(--navy);font-size:15px;margin-bottom:10px;">4. Participant Rights</h3>
+    <p style="font-size:14px;color:#4a5568;line-height:1.75;">Participants have the right to access, correct, or request deletion of their personal information. Requests are processed within 30 days. Contact: <a href="mailto:admin@trustcaresupport.com.au" style="color:var(--blue);">admin@trustcaresupport.com.au</a></p>
+  `
+};
+
+function openPolicyModal(policyId) {
+  const content = policyContent[policyId];
+  if (!content) return;
+  document.getElementById('policyModalContent').innerHTML = content;
+  document.getElementById('policyModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closePolicyModal() {
+  document.getElementById('policyModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
 
 // ===== CAREERS: SEARCH + FILTER =====
 let activeJobFilter = 'all';
