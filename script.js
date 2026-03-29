@@ -124,7 +124,7 @@ function attachCounterObserver() {
 }
 attachCounterObserver();
 
-// ===== FORM SUBMIT (Formspree AJAX) =====
+// ===== FORM SUBMIT (Netlify Forms AJAX) =====
 document.querySelectorAll('.contact-form').forEach(form => {
   form.addEventListener('submit', async e => {
     e.preventDefault();
