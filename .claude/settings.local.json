@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.ndiscommission.gov.au)",
+      "WebSearch",
+      "Bash(cd /tmp)",
+      "Bash(curl -s -L \"https://www.ndiscommission.gov.au/sites/default/files/2024-09/High%20Intensity%20support%20skills%20descriptors.pdf\" -o hiss.pdf --max-time 60)",
+      "Bash(python3 -c \":*)",
+      "Bash(pdftotext -layout hiss.pdf -)",
+      "Bash(ls /tmp/*.txt)",
+      "Read(//c//**)",
+      "Read(//c/Users/Admin/Desktop/Abdifatah Website/**)",
+      "WebFetch(domain:www.cpsn.org.au)",
+      "WebFetch(domain:compassionwings.com.au)",
+      "WebFetch(domain:ndis.avaana.com.au)",
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:trustcaresupport.com.au)",
+      "WebFetch(domain:securityheaders.com)",
+      "Bash(where node:*)",
+      "Read(//c/Program Files/nodejs/**)",
+      "Read(//c/Users/Admin/Desktop/TrustCare_NursingServices/$APPDATA/npm/**)",
+      "Bash('/c/Program Files/nodejs/node.exe' --version)",
+      "Bash('/c/Program Files/nodejs/npm.cmd' list -g docx)",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" install -g docx)",
+      "Bash(python -c \":*)"
+    ]
+  }
+}
