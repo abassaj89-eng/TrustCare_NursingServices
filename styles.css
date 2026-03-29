@@ -1421,25 +1421,53 @@ html, body {
 .career-card__posted { font-size: 13px; color: #94a3b8; }
 .career-card__apply { min-width: 130px; text-align: center; }
 
-/* TALENT POOL CARD */
-.work-talent-card { background: var(--navy); border-radius: 24px; padding: 56px 40px; text-align: center; max-width: 560px; margin: 0 auto; }
-.work-talent-card__icon { font-size: 40px; margin-bottom: 16px; }
-.work-talent-card__h2 { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 10px; }
-.work-talent-card__sub { font-size: 15px; color: #bfdbfe; line-height: 1.65; margin-bottom: 28px; }
-.work-talent-card__form { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-.work-talent-card__input { flex: 1; min-width: 200px; padding: 13px 16px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.1); color: #fff; font-size: 14px; outline: none; }
-.work-talent-card__input::placeholder { color: rgba(255,255,255,0.55); }
-.work-talent-card__input:focus { border-color: rgba(255,255,255,0.6); }
+/* TALENT COMMUNITY — two-card layout */
+.work-community { background: var(--bg-pale); border-radius: 24px; padding: 48px 40px; }
+.work-community__header { text-align: center; margin-bottom: 36px; }
+.work-community__h2 { font-size: 26px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+.work-community__sub { font-size: 15px; color: var(--text-muted); line-height: 1.65; }
+.work-community__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.work-community-card { background: #fff; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 12px; border: 1.5px solid var(--border); }
+.work-community-card--featured { background: var(--navy); border-color: var(--navy); }
+.work-community-card__badge { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: var(--bg-pale); color: var(--blue); padding: 4px 12px; border-radius: 20px; align-self: flex-start; }
+.work-community-card__badge--featured { background: rgba(255,255,255,0.15); color: #bfdbfe; }
+.work-community-card__title { font-size: 20px; font-weight: 700; color: var(--navy); margin: 0; }
+.work-community-card--featured .work-community-card__title { color: #fff; }
+.work-community-card__desc { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin: 0; }
+.work-community-card--featured .work-community-card__desc { color: #bfdbfe; }
+.work-community-card__input { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1.5px solid var(--border-mid); background: var(--bg-pale); color: var(--navy); font-size: 14px; outline: none; margin-top: 4px; font-family: inherit; }
+.work-community-card__input:focus { border-color: var(--blue); }
+.work-community-card--featured .work-community-card__input { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff; }
+.work-community-card--featured .work-community-card__input::placeholder { color: rgba(255,255,255,0.5); }
+.work-community-card--featured select.work-community-card__input option { background: #002855; color: #fff; }
+.work-community-card__upload { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 10px; border: 1.5px dashed rgba(255,255,255,0.3); background: rgba(255,255,255,0.06); cursor: pointer; font-size: 13px; color: #bfdbfe; margin-top: 4px; transition: border-color 0.2s; }
+.work-community-card__upload:hover { border-color: rgba(255,255,255,0.6); }
+.work-community-card__upload-icon { font-size: 18px; flex-shrink: 0; }
+.work-community-card__file { display: none; }
+
+/* BLOG NEWSLETTER STRIP */
+.blog-newsletter { display: flex; align-items: center; justify-content: space-between; gap: 24px; background: var(--navy); border-radius: 16px; padding: 20px 28px; margin-bottom: 32px; flex-wrap: wrap; }
+.blog-newsletter__left { display: flex; align-items: center; gap: 16px; flex: 1; min-width: 220px; }
+.blog-newsletter__icon { font-size: 28px; flex-shrink: 0; }
+.blog-newsletter__title { display: block; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+.blog-newsletter__sub { display: block; font-size: 13px; color: #bfdbfe; line-height: 1.5; }
+.blog-newsletter__form { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+.blog-newsletter__input { padding: 11px 14px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #fff; font-size: 14px; outline: none; min-width: 200px; }
+.blog-newsletter__input::placeholder { color: rgba(255,255,255,0.5); }
+.blog-newsletter__input:focus { border-color: rgba(255,255,255,0.5); }
+.blog-newsletter__btn { white-space: nowrap; }
 
 @media (max-width: 768px) {
   .work-leadership__grid { grid-template-columns: 1fr; gap: 40px; }
+  .blog-newsletter { flex-direction: column; align-items: flex-start; }
+  .blog-newsletter__form { width: 100%; }
+  .blog-newsletter__input { flex: 1; min-width: 0; }
 }
 @media (max-width: 640px) {
   .work-benefits__grid { grid-template-columns: 1fr 1fr; }
   .career-card__top { flex-direction: column; }
-  .work-talent-card { padding: 40px 24px; }
-  .work-talent-card__form { flex-direction: column; }
-  .work-talent-card__input { width: 100%; }
+  .work-community { padding: 32px 20px; }
+  .work-community__grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 400px) {
   .work-benefits__grid { grid-template-columns: 1fr; }
