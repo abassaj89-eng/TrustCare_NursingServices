@@ -345,6 +345,33 @@ updateNavButtons();
 document.querySelectorAll('.navbar__nav a[data-wizard-page]').forEach(a => {
   a.classList.toggle('active', a.dataset.wizardPage === PAGES[0].id);
 });
+
+// ===== DEEP-LINK VIA URL HASH =====
+// External pages (referral-received, thank-you, etc.) can link directly
+// to any wizard page using a URL hash: href="/#page-refer"
+// e.g. the "Submit Another Referral" button uses /#page-refer
+(function handleDeepLink() {
+  const hash = location.hash.replace('#', '');
+  if (!hash) return;
+  const idx = PAGES.findIndex(p => p.id === hash);
+  if (idx > 0) {
+    // Small delay so DOM is fully painted before switching
+    setTimeout(() => goToPage(idx), 50);
+    return;
+  }
+  // Also support supplementary pages not in the PAGES array (legal, etc.)
+  const target = document.getElementById(hash);
+  if (target && target.classList.contains('wizard-page')) {
+    setTimeout(() => {
+      const prev = document.querySelector('.wizard-page.active');
+      if (prev) { prev.classList.remove('active'); prev.setAttribute('aria-hidden', 'true'); }
+      target.classList.add('active');
+      target.removeAttribute('aria-hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 50);
+  }
+})();
+
 // Force-animate counters visible on the initial home page
 setTimeout(() => {
   document.getElementById('page-home')?.querySelectorAll('[data-target]:not([data-animated])').forEach(el => {
