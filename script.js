@@ -133,6 +133,9 @@ document.querySelectorAll('.contact-form').forEach(form => {
     btn.textContent = 'Sending...';
     btn.disabled = true;
     try {
+      const emailField = form.querySelector('[type="email"]');
+      const replyToField = form.querySelector('[name="_replyto"]');
+      if (emailField && replyToField) replyToField.value = emailField.value;
       const res = await fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
