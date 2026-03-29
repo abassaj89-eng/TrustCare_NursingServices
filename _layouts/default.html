@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta name="keywords" content="NDIS nursing Perth, community nursing Perth, complex care nursing WA, continence assessment Perth, wound care registered nurse Perth" />
+  <link rel="canonical" href="{% if page.canonical %}{{ page.canonical }}{% else %}{{ site.url }}{{ page.url }}{% endif %}" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="TrustCare Support" />
+  <meta name="theme-color" content="#003588" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{% if page.canonical %}{{ page.canonical }}{% else %}{{ site.url }}{{ page.url }}{% endif %}" />
+  <meta property="og:title" content="{% if page.og_title %}{{ page.og_title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta property="og:image" content="https://trustcaresupport.com.au/Trustcaremainlogo.jpg.png" />
+  <meta property="og:site_name" content="TrustCare Support" />
+  <meta property="og:locale" content="en_AU" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta name="twitter:image" content="https://trustcaresupport.com.au/Trustcaremainlogo.jpg.png" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://trustcaresupport.com.au/#organization",
+    "name": "TrustCare Support",
+    "alternateName": "TrustCare Nursing Services",
+    "description": "AHPRA Registered Nurse providing clinical nursing support for NDIS participants in Perth, WA. Specialising in complex care, wound care, continence assessments, and high-intensity nursing supports.",
+    "url": "https://trustcaresupport.com.au/",
+    "logo": "https://trustcaresupport.com.au/Trustcaremainlogo.jpg.png",
+    "image": "https://trustcaresupport.com.au/Trustcaremainlogo.jpg.png",
+    "telephone": "+61861231234",
+    "email": "info@trustcaresupport.com.au",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Perth",
+      "addressRegion": "WA",
+      "addressCountry": "AU"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Western Australia"
+    },
+    "serviceType": [
+      "Complex Bowel Care",
+      "Wound Care",
+      "Catheter and Continence Care",
+      "Continence Assessments",
+      "Workforce Training",
+      "Clinical Governance Support",
+      "Medication Management",
+      "Tracheostomy Care",
+      "Enteral Feeding",
+      "Epilepsy Management",
+      "PEG Care",
+      "Subcutaneous Injections",
+      "NDIS High-Intensity Nursing"
+    ],
+    "knowsAbout": [
+      "NDIS Support",
+      "Community Nursing",
+      "High-Intensity Daily Activities",
+      "AHPRA Registered Nurse"
+    ],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "AHPRA Registration",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Australian Health Practitioner Regulation Agency",
+        "url": "https://www.ahpra.gov.au/"
+      }
+    },
+    "sameAs": [],
+    "priceRange": "Contact for quote",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday","Tuesday","Wednesday","Thursday","Friday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer integrity="sha384-dy2tW8xkhLIj8lZR42MCwZhhDb2cCewZiw0uA65CMpdHiJzL+iubx7HzHcCXU2rW" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Skip to main content (accessibility) -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="/" class="navbar__logo">
+      <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="navbar__logo-img logo-preview-trigger" />
+      <span>TrustCare</span>
+    </a>
+    <ul class="navbar__nav">
+      <li><a href="/">Home</a></li>
+
+      <li class="navbar__dropdown-wrap">
+        <a href="/services/" class="navbar__dropdown-toggle">Services <span class="navbar__arrow">▾</span></a>
+        <div class="navbar__dropdown">
+          <a href="/services/#svc-bowel">Complex Bowel Care</a>
+          <a href="/services/#svc-wound">Wound Care</a>
+          <a href="/services/#svc-catheter">Catheter &amp; Continence Care</a>
+          <a href="/services/#svc-continence-assessment">Continence Assessments</a>
+          <a href="/services/#svc-training">Workforce Training</a>
+          <a href="/services/#svc-governance">Clinical Governance Support</a>
+          <a href="/services/#svc-medication">Medication Management</a>
+          <a href="/services/#svc-trach">Tracheostomy Care</a>
+        </div>
+      </li>
+
+      <li class="navbar__dropdown-wrap">
+        <a href="/high-intensity/" class="navbar__dropdown-toggle">High Intensity <span class="navbar__arrow">▾</span></a>
+        <div class="navbar__dropdown">
+          <a href="/high-intensity/#hi-bowel">Complex Bowel Care</a>
+          <a href="/high-intensity/#hi-enteral">Enteral Feeding (PEG &amp; PEJ)</a>
+          <a href="/high-intensity/#hi-dysphagia">Dysphagia &amp; Mealtime Support</a>
+          <a href="/high-intensity/#hi-ventilator">Ventilator &amp; Respiratory Support</a>
+          <a href="/high-intensity/#hi-trach">Tracheostomy Support</a>
+          <a href="/high-intensity/#hi-catheter">Urinary Catheter Support</a>
+          <a href="/high-intensity/#hi-injections">Subcutaneous Injections</a>
+          <a href="/high-intensity/#hi-wound">Complex Wound Care</a>
+          <a href="/high-intensity/#hi-epilepsy">Epilepsy &amp; Seizure Support</a>
+          <a href="/high-intensity/#hi-diabetes">Diabetes Management</a>
+        </div>
+      </li>
+
+      <li class="navbar__dropdown-wrap">
+        <a href="/about/" class="navbar__dropdown-toggle">About <span class="navbar__arrow">▾</span></a>
+        <div class="navbar__dropdown">
+          <a href="/about/#about-story">Our Story</a>
+          <a href="/about/#about-team">Our Team</a>
+          <a href="/about/#about-board">Our Board</a>
+        </div>
+      </li>
+
+      <li><a href="/blog/">Resources</a></li>
+      <li><a href="/careers/">Work With Us</a></li>
+      <li><a href="/referral/">Referral</a></li>
+      <li><a href="/governance/">Governance</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+    <div class="navbar__cta">
+      <a href="tel:0432014162" class="navbar__phone">📞 0432 014 162</a>
+      <a href="/contact/" class="btn btn--green">Book a Consult</a>
+    </div>
+    <button class="navbar__toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <a href="/">Home</a>
+  <a href="/services/">Services</a>
+  <a href="/high-intensity/">High Intensity</a>
+  <a href="/about/">About</a>
+  <a href="/blog/">Resources</a>
+  <a href="/careers/">Work With Us</a>
+  <a href="/referral/">Refer</a>
+  <a href="/governance/">Governance</a>
+  <a href="/contact/">Contact</a>
+  <a href="/complaints/">Complaints</a>
+  <a href="/feedback/">Feedback</a>
+  <a href="tel:0432014162">📞 0432 014 162</a>
+  <a href="/contact/" class="btn btn--green" style="text-align:center;margin-top:4px;">Book a Consult</a>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main id="main-content" tabindex="-1">
+{{ content }}
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo">
+          <a href="/">
+          <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="footer__logo-img logo-preview-trigger" />
+          </a>
+          <span>TrustCare</span>
+        </div>
+        <p class="footer__desc">TrustCare Support — AHPRA-registered Registered Nurse providing clinical nursing support in partnership with NDIS providers across Perth, Western Australia.</p>
+        <div class="footer__contact-item">📞 <a href="tel:0432014162" style="color:inherit;">0432 014 162</a></div>
+        <div class="footer__contact-item">📧 <a href="mailto:referrals@trustcaresupport.com.au" style="color:inherit;">referrals@trustcaresupport.com.au</a></div>
+        <div class="footer__contact-item">📧 <a href="mailto:admin@trustcaresupport.com.au" style="color:inherit;">admin@trustcaresupport.com.au</a></div>
+        <div class="footer__contact-item">📧 <a href="mailto:info@trustcaresupport.com.au" style="color:inherit;">info@trustcaresupport.com.au</a></div>
+        <div class="footer__contact-item">📍 <span>Perth, Western Australia</span></div>
+        <div class="footer__nl">
+          <p>Stay updated with NDIS compliance tips:</p>
+          <form class="footer__nl-form contact-form" name="newsletter" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" action="/thank-you">
+            <input type="hidden" name="form-name" value="newsletter" />
+            <input type="text" name="bot-field" style="display:none;" />
+            <input type="email" name="email" placeholder="your@email.com" required />
+            <div data-netlify-recaptcha="true" style="margin-bottom:10px;"></div>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/high-intensity/">High Intensity</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/blog/">Blog &amp; Resources</a></li>
+          <li><a href="/careers/">Work With Us</a></li>
+          <li><a href="/referral/">Make a Referral</a></li>
+          <li><a href="/governance/">Clinical Governance</a></li>
+          <li><a href="/complaints/">Make a Complaint</a></li>
+          <li><a href="/feedback/">Provide Feedback</a></li>
+          <li><a href="/contact/">Book a Consult</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal &amp; Compliance</h4>
+        <ul class="footer__links">
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms &amp; Conditions</a></li>
+          <li><a href="/complaints-policy/">Complaints Policy</a></li>
+          <li><a href="/rights/">Participant Rights</a></li>
+          <li><a href="/incident/">Incident Management</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.08);border-radius:12px;padding:18px 22px;margin-bottom:24px;font-size:13px;color:rgba(255,255,255,0.82);line-height:1.7;border:1px solid rgba(255,255,255,0.10);">
+      TrustCare Support operates as an independent AHPRA-registered Registered Nurse service, providing clinical nursing support in partnership with NDIS providers. We are not an NDIS registered provider. ABN: 18 809 341 867 | <a href="https://www.ahpra.gov.au/Registration.aspx" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-left:6px;padding:4px 12px;background:#fff;color:#003588;font-weight:700;font-size:12px;border-radius:6px;text-decoration:none;letter-spacing:0.3px;">🔍 Verify AHPRA Registration ↗</a>
+    </div>
+    <!-- Acknowledgement of Country -->
+    <div class="aoc-footer" role="complementary" aria-label="Acknowledgement of Country">
+      <div class="aoc-footer__flags" aria-hidden="true">
+        <svg class="aoc-footer__flag" viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" title="Aboriginal Flag">
+          <rect width="180" height="60" fill="#000"/>
+          <rect y="60" width="180" height="60" fill="#CC0000"/>
+          <circle cx="90" cy="60" r="28" fill="#FFD700"/>
+        </svg>
+        <svg class="aoc-footer__flag" viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" title="Torres Strait Islander Flag">
+          <rect width="180" height="120" fill="#009B4E"/>
+          <rect y="26" width="180" height="68" fill="#0000CD"/>
+          <rect y="52" width="180" height="16" fill="#000"/>
+          <g transform="translate(90,60)" fill="#fff">
+            <path d="M0,-22 C-6,-12 -18,-4 -18,8 C-18,16 -10,20 0,20 C10,20 18,16 18,8 C18,-4 6,-12 0,-22Z"/>
+            <rect x="-2" y="-26" width="4" height="12" rx="2"/>
+            <polygon points="0,-10 2.4,-3.3 9.5,-3.3 3.8,1.3 6.1,8 0,4 -6.1,8 -3.8,1.3 -9.5,-3.3 -2.4,-3.3" fill="#009B4E" transform="translate(0,44) scale(0.85)"/>
+          </g>
+        </svg>
+      </div>
+      <p class="aoc-footer__text">TrustCare Support proudly acknowledges <strong>First Nations peoples</strong> as the Traditional Custodians of the lands, skies and seas across Australia, and the lands on which we live and deliver our care. We pay our respects to Elders past, present and emerging.</p>
+    </div>
+
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2026 TrustCare Support. All rights reserved.</span>
+      <ul class="footer__bottom-links">
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/complaints-policy/">Complaints Policy</a></li>
+        <li><a href="/rights/">Participant Rights</a></li>
+        <li><a href="/incident/">Incident Management</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Netlify field pre-registration (hidden, never shown to users) -->
+<form name="expression-of-interest" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="bot-field" />
+  <input type="text" name="full_name" />
+  <input type="email" name="email" />
+  <select name="professional_role"></select>
+  <input type="file" name="resume" />
+</form>
+<form name="job-apply" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="bot-field" />
+  <input type="text" name="full_name" />
+  <input type="tel" name="phone" />
+  <input type="email" name="email" />
+  <select name="role"></select>
+  <select name="referral_source"></select>
+  <textarea name="cover_letter_text"></textarea>
+  <input type="file" name="cover_letter_file" />
+  <input type="file" name="resume" />
+  <input type="checkbox" name="consent" />
+</form>
+
+<!-- ===== JOB APPLICATION MODAL (global) ===== -->
+<div id="applyModal" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.6);padding:20px;align-items:flex-start;justify-content:center;overflow-y:auto;" onclick="if(event.target===this)closeApplyModal()">
+  <div style="background:#fff;border-radius:16px;max-width:580px;width:100%;margin:40px auto;padding:36px;position:relative;max-height:calc(100vh - 80px);overflow-y:auto;box-sizing:border-box;">
+    <button onclick="closeApplyModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:24px;cursor:pointer;color:#64748b;">✕</button>
+    <h2 style="color:var(--navy);margin-bottom:4px;">Apply for <span id="applyJobTitle">this Role</span></h2>
+    <p style="color:#64748b;font-size:14px;margin-bottom:24px;">Please attach your cover letter &amp; resume as a single PDF.</p>
+    <form id="applyForm" name="job-apply" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" enctype="multipart/form-data" action="/thank-you">
+      <input type="hidden" name="form-name" value="job-apply" />
+      <input type="text" name="bot-field" style="display:none;" />
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div><label for="apply_name" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;">Full Name *</label><input id="apply_name" type="text" name="full_name" placeholder="Full Name" required style="width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box;" /></div>
+        <div><label for="apply_phone" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;">Phone *</label><input id="apply_phone" type="tel" name="phone" placeholder="Phone" required style="width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box;" /></div>
+        <div><label for="apply_email" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;">Email Address *</label><input id="apply_email" type="email" name="email" placeholder="Email Address" required style="width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box;" /></div>
+        <div><label for="apply_role" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;">Role Applying For *</label>
+          <select id="apply_role" name="role" required style="width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box;background:#fff;">
+            <option value="">What role are you applying for?</option>
+            <option value="Registered Nurse — High Intensity Support Specialist">Registered Nurse — High Intensity Support Specialist</option>
+            <option value="Complex Care Support Worker">Complex Care Support Worker</option>
+            <option value="NDIS Compliance Consultant">NDIS Compliance Consultant</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="apply_source" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;">How did you hear about us?</label>
+          <select id="apply_source" name="referral_source" style="width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box;background:#fff;">
+            <option value="">Select an option...</option>
+            <option value="Google Search">Google Search</option>
+            <option value="Seek / Job Board">Seek / Job Board</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Facebook / Instagram">Facebook / Instagram</option>
+            <option value="NDIS Provider Referral">NDIS Provider Referral</option>
+            <option value="Word of Mouth">Word of Mouth</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <!-- COVER LETTER -->
+        <div style="border:1.5px solid #e2e8f0;border-radius:12px;padding:18px 16px;">
+          <div style="font-size:12px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;">Cover Letter <span style="font-weight:400;text-transform:none;letter-spacing:normal;">(optional — write below or attach a file)</span></div>
+          <textarea id="apply_msg" name="cover_letter_text" placeholder="Tell us a bit about yourself and why you'd like to join TrustCare..." rows="4" style="width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box;resize:vertical;margin-bottom:10px;"></textarea>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+            <div style="flex:1;height:1px;background:#e2e8f0;"></div>
+            <span style="font-size:12px;color:#94a3b8;font-weight:500;">OR ATTACH</span>
+            <div style="flex:1;height:1px;background:#e2e8f0;"></div>
+          </div>
+          <input id="apply_cover_file" type="file" name="cover_letter_file" accept=".pdf,.doc,.docx" style="width:100%;padding:8px;border:1.5px dashed #cbd5e1;border-radius:8px;font-size:13px;box-sizing:border-box;cursor:pointer;" />
+          <p style="font-size:11px;color:#94a3b8;margin-top:6px;">Accepted: pdf, doc, docx. Max 10 MB.</p>
+        </div>
+        <!-- RESUME -->
+        <div>
+          <label for="apply_file" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;">Resume *</label>
+          <input id="apply_file" type="file" name="resume" accept=".pdf,.doc,.docx" required style="width:100%;padding:8px;border:1.5px dashed #cbd5e1;border-radius:8px;font-size:13px;box-sizing:border-box;cursor:pointer;" />
+          <p style="font-size:11px;color:#94a3b8;margin-top:6px;">Accepted: pdf, doc, docx. Max 25 MB.</p>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <input type="checkbox" id="apply_consent" name="consent" required style="margin-top:4px;flex-shrink:0;width:16px;height:16px;cursor:pointer;" />
+          <label for="apply_consent" style="margin:0;font-size:13px;color:#4a5568;line-height:1.6;text-transform:none;letter-spacing:normal;font-weight:400;word-break:break-word;">I consent to the collection and use of my personal information for the purpose of this job application in accordance with the <a href="/privacy/" style="color:var(--blue);">Privacy Policy</a>.</label>
+        </div>
+        <div data-netlify-recaptcha="true" style="margin-bottom:14px;"></div>
+        <button type="submit" class="btn btn--blue" style="width:100%;justify-content:center;padding:14px;">Send Application</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ===== LOGO LIGHTBOX ===== -->
+<div id="logo-lightbox" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.82);align-items:center;justify-content:center;flex-direction:column;gap:16px;cursor:zoom-out;" onclick="this.style.display='none'">
+  <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Logo" style="max-width:420px;width:88%;border-radius:18px;box-shadow:0 24px 64px rgba(0,0,0,0.5);background:#fff;padding:24px;"/>
+  <span style="color:#fff;font-size:13px;opacity:0.7;">Click anywhere to close</span>
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>

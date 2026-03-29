@@ -1,0 +1,20 @@
+---
+layout: default
+title: "Terms & Conditions | TrustCare Support"
+description: "TrustCare Support terms and conditions of use for our website and services."
+canonical: "https://trustcaresupport.com.au/terms/"
+---
+
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+      <div class="eyebrow">{{ site.data.legal_terms.eyebrow }}</div>
+      <h2 class="section-heading">{{ site.data.legal_terms.heading_main }} <span>{{ site.data.legal_terms.heading_highlight }}</span></h2>
+      <p class="section-sub">Last updated: {{ site.data.legal_terms.last_updated }}</p>
+      <div class="legal-content">
+        {{ site.data.legal_terms.content | markdownify }}
+        <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="/" class="btn btn--outline">← Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </section>

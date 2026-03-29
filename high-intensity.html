@@ -1,0 +1,59 @@
+---
+layout: default
+title: "High Intensity Daily Personal Activities | TrustCare Support"
+description: "NDIS High Intensity Support Skills — RN-led HIDPA training, competency assessment and direct care across all 10 skill areas in Perth."
+canonical: "https://trustcaresupport.com.au/high-intensity/"
+---
+
+    <section class="section section--blue" id="high-intensity">
+      <div class="container">
+        <div class="services__header">
+          <div class="eyebrow">NDIS Practice Standards — Supplementary Module 1</div>
+          <h2 class="section-heading reveal">High Intensity Daily <span>Personal Activities</span></h2>
+          <p class="section-sub reveal">We deliver training, competency assessment, care planning, and direct clinical support across all NDIS High Intensity Daily Personal Activities (HIDPA) as defined by the NDIS Quality and Safeguards Commission Skills Descriptors.</p>
+        </div>
+
+        <div class="hi-intro reveal">
+          <div class="hi-intro__text">
+            <h2>What Are High Intensity Supports?</h2>
+            <p>High intensity support skills descriptors are supplementary guidance for NDIS providers and workers supporting participants who rely on High Intensity Daily Personal Activities. These supports carry some of the highest clinical risks for participants — requiring workers with specialist knowledge and verified competency, assessed by a qualified health professional. Our registered nursing team delivers training, direct care, and ongoing competency assessment across all 10 HIDPA skill areas — in home, in Supported Independent Living (SIL), and in community environments.</p>
+          </div>
+          <div class="hi-intro__badge">
+            <div class="num">10</div>
+            <div class="lbl">HIDPA Skill Areas</div>
+          </div>
+        </div>
+
+        <!-- High Intensity Cards (Jekyll — edit at /admin → High Intensity) -->
+        <div class="hi-grid">
+          {% for support in site.data.hi_supports.items %}
+          <div class="hi-card reveal" id="{{ support.card_id }}">
+            <div class="hi-card__header">
+              <div class="hi-card__icon">{{ support.icon }}</div>
+              <div>
+                <div class="hi-card__tag">{{ support.skill_area }}</div>
+                <h3>{{ support.title }}</h3>
+              </div>
+            </div>
+            <p class="hi-card__desc">{{ support.description }}</p>
+            <ul class="hi-card__skills">
+              {% for skill in support.skills %}
+              <li>{{ skill }}</li>
+              {% endfor %}
+            </ul>
+            <div class="hi-card__footer">
+              {% for badge in support.badges %}
+              <span class="hi-card__badge">{{ badge }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+
+        <div style="text-align:center;margin-top:48px;" class="reveal">
+          <p style="font-size:14px;color:#4a5568;margin-bottom:20px;">All HIDPA training is consistent with the <strong>NDIS Practice Standards: High Intensity Support Skills Descriptors</strong> (Version 3, November 2022) published by the NDIS Quality and Safeguards Commission.</p>
+          <a href="/contact/" class="btn btn--green">Book HIDPA Training →</a>
+        </div>
+      </div>
+    </section>

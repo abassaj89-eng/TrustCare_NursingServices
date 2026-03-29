@@ -1,0 +1,77 @@
+---
+layout: default
+title: "Share Feedback | TrustCare Support"
+description: "Share your feedback about TrustCare Support services. Your input helps us improve care quality for NDIS participants in Perth."
+canonical: "https://trustcaresupport.com.au/feedback/"
+---
+
+    <section class="section" id="feedback">
+      <div class="container">
+        <div class="services__header">
+          <div class="eyebrow">Share Your Experience</div>
+          <h2 class="section-heading reveal">Provide <span>Feedback</span></h2>
+          <p class="section-sub reveal">Your feedback — whether positive or constructive — helps us continually improve. We review all submissions and use your input to enhance our services, training, and participant outcomes.</p>
+        </div>
+
+        <div class="feedback-wrap">
+          <div class="feedback-card reveal">
+            <h3>Tell Us What You Think</h3>
+            <p>Select a feedback type below and share your thoughts. All feedback is welcome and appreciated.</p>
+            <form class="contact-form" name="feedback" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" action="/thank-you">
+              <input type="hidden" name="form-name" value="feedback" />
+              <input type="text" name="bot-field" style="display:none;" />
+              <div class="form-group">
+                <label>Feedback Type</label>
+                <div class="feedback-type-grid">
+                  <label class="feedback-type-btn">
+                    <input type="radio" name="fbtype" value="comment" checked />
+                    <div class="ft-icon">💬</div>
+                    <div class="ft-label">Comment</div>
+                  </label>
+                  <label class="feedback-type-btn">
+                    <input type="radio" name="fbtype" value="suggestion" />
+                    <div class="ft-icon">💡</div>
+                    <div class="ft-label">Suggestion</div>
+                  </label>
+                  <label class="feedback-type-btn">
+                    <input type="radio" name="fbtype" value="question" />
+                    <div class="ft-icon">❓</div>
+                    <div class="ft-label">Question</div>
+                  </label>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" name="first_name" placeholder="Your first name" required />
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" name="last_name" placeholder="Your last name" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" name="email" placeholder="your@email.com" required />
+                </div>
+                <div class="form-group">
+                  <label>Phone (Optional)</label>
+                  <input type="tel" name="phone" placeholder="0400 000 000" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Your Feedback</label>
+                <textarea name="feedback" style="min-height:120px;" placeholder="Share your thoughts, suggestions, or questions here..." required></textarea>
+              </div>
+              <div style="margin-top:12px;display:flex;align-items:flex-start;gap:10px;width:100%;box-sizing:border-box;">
+                <input type="checkbox" name="consent" required style="margin-top:4px;flex-shrink:0;min-width:16px;width:16px;height:16px;cursor:pointer;" />
+                <p style="margin:0;font-size:13px;color:#4a5568;line-height:1.6;text-transform:none;letter-spacing:normal;font-weight:400;word-break:break-word;">I consent to the collection and use of my personal information in accordance with the <a href="/privacy/" style="color:var(--blue);">Privacy Policy</a>.</p>
+              </div>
+              <div data-netlify-recaptcha="true" style="margin-bottom:14px;"></div>
+              <button type="submit" class="btn btn--green" style="width:100%;justify-content:center;">Submit Feedback</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
