@@ -1717,10 +1717,22 @@
             <option value="other">Other</option>
           </select>
         </div>
-        <div><label for="apply_source" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;">How did you hear about us?</label><input id="apply_source" type="text" name="referral_source" placeholder="How did you hear about us?" style="width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box;" /></div>
-        <div><label for="apply_msg" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;">Message</label><textarea id="apply_msg" name="message" placeholder="Tell us a bit about yourself..." rows="4" style="width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box;resize:vertical;"></textarea></div>
         <div>
-          <label for="apply_file" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;">Resume / Cover Letter (PDF) *</label>
+          <label for="apply_source" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;">How did you hear about us?</label>
+          <select id="apply_source" name="referral_source" style="width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box;background:#fff;">
+            <option value="">Select an option...</option>
+            <option value="google">Google Search</option>
+            <option value="seek">Seek / Job Board</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="facebook">Facebook / Instagram</option>
+            <option value="ndis-provider">NDIS Provider Referral</option>
+            <option value="word-of-mouth">Word of Mouth</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div><label for="apply_msg" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;">Cover Letter <span style="font-weight:400;text-transform:none;letter-spacing:normal;">(optional)</span></label><textarea id="apply_msg" name="message" placeholder="Tell us a bit about yourself and why you'd like to join TrustCare..." rows="4" style="width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box;resize:vertical;"></textarea></div>
+        <div>
+          <label for="apply_file" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;">Resume *</label>
           <input id="apply_file" type="file" name="resume" accept=".png,.pdf,.jpg,.doc,.docx,.xls,.gif,.txt,.csv,.jpeg" required style="width:100%;padding:8px;border:1.5px dashed #cbd5e1;border-radius:8px;font-size:13px;box-sizing:border-box;cursor:pointer;" />
           <p style="font-size:11px;color:#94a3b8;margin-top:6px;">Accepted: pdf, doc, docx, jpg, png. Max 25 MB.</p>
         </div>
