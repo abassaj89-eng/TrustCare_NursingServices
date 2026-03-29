@@ -17,3 +17,10 @@ TrustCare_Website_Documentation.docx
 node_modules/
 package.json
 package-lock.json
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Local audit reports and unpacked docs
+Trustcare Support antigravity audit_report
+doc_unpacked/
