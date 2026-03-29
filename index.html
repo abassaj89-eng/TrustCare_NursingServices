@@ -1004,10 +1004,11 @@
               <span class="blog-newsletter__sub">Be notified when new resources and insights are published.</span>
             </div>
           </div>
-          <form class="contact-form blog-newsletter__form" name="newsletter" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/thank-you">
+          <form class="contact-form blog-newsletter__form" name="newsletter" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" action="/thank-you">
             <input type="hidden" name="form-name" value="newsletter" />
             <input type="text" name="bot-field" style="display:none;" />
             <input type="email" name="email" placeholder="your@email.com" required class="blog-newsletter__input" />
+            <div data-netlify-recaptcha="true" style="margin-top:10px;"></div>
             <button type="submit" class="btn btn--blue blog-newsletter__btn">Subscribe</button>
           </form>
         </div>
@@ -1226,10 +1227,11 @@
             <div class="work-community-card__badge">Quick Register</div>
             <h3 class="work-community-card__title">Stay in the Loop</h3>
             <p class="work-community-card__desc">Drop your email and we'll reach out when a matching role becomes available.</p>
-            <form class="contact-form" name="talent-pool" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/thank-you">
+            <form class="contact-form" name="talent-pool" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" action="/thank-you">
               <input type="hidden" name="form-name" value="talent-pool" />
               <input type="text" name="bot-field" style="display:none;" />
               <input type="email" name="email" placeholder="your@email.com" required class="work-community-card__input" />
+              <div data-netlify-recaptcha="true" style="margin-bottom:12px;"></div>
               <button type="submit" class="btn btn--blue" style="width:100%;margin-top:12px;">Join Talent Pool</button>
             </form>
           </div>
@@ -1239,7 +1241,7 @@
             <div class="work-community-card__badge work-community-card__badge--featured">Expression of Interest</div>
             <h3 class="work-community-card__title">Tell Us About Yourself</h3>
             <p class="work-community-card__desc">Share your details and credentials so we can match you to upcoming roles.</p>
-            <form class="contact-form" name="expression-of-interest" data-netlify="true" netlify-honeypot="bot-field" method="POST" enctype="multipart/form-data" action="/thank-you">
+            <form class="contact-form" name="expression-of-interest" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" enctype="multipart/form-data" action="/thank-you">
               <input type="hidden" name="form-name" value="expression-of-interest" />
               <input type="text" name="bot-field" style="display:none;" />
               <input type="text" name="full_name" placeholder="Full Name" required class="work-community-card__input" />
@@ -1258,6 +1260,7 @@
                 <span id="eoiFileName">Upload CV (PDF/DOCX)</span>
                 <input type="file" name="resume" accept=".pdf,.doc,.docx" class="work-community-card__file" onchange="document.getElementById('eoiFileName').textContent=this.files[0]?this.files[0].name:'Upload CV (PDF/DOCX)'" />
               </label>
+              <div data-netlify-recaptcha="true" style="margin-bottom:12px;"></div>
               <button type="submit" class="btn btn--blue" style="width:100%;background:var(--navy);">Submit Interest</button>
             </form>
           </div>
@@ -1433,7 +1436,7 @@
           <div class="refer__form-wrap reveal">
             <h3>Clinical Nursing Referral</h3>
             <p>Complete all required fields. Participant information is used for clinical triage only.</p>
-            <form class="contact-form" name="referral" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/thank-you">
+            <form class="contact-form" name="referral" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" action="/thank-you">
               <input type="hidden" name="form-name" value="referral" />
               <input type="text" name="bot-field" style="display:none;" />
               <div class="form-group">
@@ -1501,6 +1504,7 @@
                 <input type="checkbox" name="consent" required style="margin-top:4px;flex-shrink:0;min-width:16px;width:16px;height:16px;cursor:pointer;" />
                 <p style="margin:0;font-size:13px;color:#4a5568;line-height:1.6;text-transform:none;letter-spacing:normal;font-weight:400;word-break:break-word;">I consent to the collection and use of this health information for clinical triage in accordance with the <a href="#" data-wizard-page="page-privacy" style="color:var(--blue);">Privacy Policy</a>. <span style="color:red;">*</span></p>
               </div>
+              <div data-netlify-recaptcha="true" style="margin-bottom:14px;"></div>
               <button type="submit" class="btn btn--green" style="width:100%;justify-content:center;">Submit Clinical Referral</button>
             </form>
           </div>
@@ -1848,7 +1852,7 @@
           <div class="process__form reveal">
             <h3>Book a Free Consultation</h3>
             <p>Get in touch — we'll respond within 24 hours.</p>
-            <form class="contact-form" name="contact" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/thank-you">
+            <form class="contact-form" name="contact" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" action="/thank-you">
               <input type="hidden" name="form-name" value="contact" />
               <input type="text" name="bot-field" style="display:none;" />
               <div class="form-row">
@@ -1901,6 +1905,7 @@
                 <input type="checkbox" name="consent" required style="margin-top:4px;flex-shrink:0;min-width:16px;width:16px;height:16px;cursor:pointer;" />
                 <p style="margin:0;font-size:13px;color:#4a5568;line-height:1.6;text-transform:none;letter-spacing:normal;font-weight:400;word-break:break-word;">I consent to the collection and use of my personal information in accordance with the <a href="#" data-wizard-page="page-privacy" style="color:var(--blue);">Privacy Policy</a>.</p>
               </div>
+              <div data-netlify-recaptcha="true" style="margin-bottom:14px;"></div>
               <button type="submit" class="btn btn--blue" style="width:100%;justify-content:center;">Send Message</button>
             </form>
           </div>
@@ -1962,7 +1967,7 @@
           <div class="complaints-form-wrap reveal reveal-delay-1">
             <h3>Submit a Complaint</h3>
             <p>Please provide as much detail as possible to help us investigate your concern.</p>
-            <form class="contact-form" name="complaints" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/thank-you">
+            <form class="contact-form" name="complaints" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" action="/thank-you">
               <input type="hidden" name="form-name" value="complaints" />
               <input type="text" name="bot-field" style="display:none;" />
               <div class="form-group">
@@ -2006,6 +2011,7 @@
                 <input type="checkbox" name="consent" required style="margin-top:4px;flex-shrink:0;min-width:16px;width:16px;height:16px;cursor:pointer;" />
                 <p style="margin:0;font-size:13px;color:#4a5568;line-height:1.6;text-transform:none;letter-spacing:normal;font-weight:400;word-break:break-word;">I consent to the collection and use of my personal information in accordance with the <a href="#" data-wizard-page="page-privacy" style="color:var(--blue);">Privacy Policy</a>.</p>
               </div>
+              <div data-netlify-recaptcha="true" style="margin-bottom:14px;"></div>
               <button type="submit" class="btn btn--blue" style="width:100%;justify-content:center;">Submit Complaint</button>
             </form>
           </div>
@@ -2029,7 +2035,7 @@
           <div class="feedback-card reveal">
             <h3>Tell Us What You Think</h3>
             <p>Select a feedback type below and share your thoughts. All feedback is welcome and appreciated.</p>
-            <form class="contact-form" name="feedback" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/thank-you">
+            <form class="contact-form" name="feedback" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" action="/thank-you">
               <input type="hidden" name="form-name" value="feedback" />
               <input type="text" name="bot-field" style="display:none;" />
               <div class="form-group">
@@ -2080,6 +2086,7 @@
                 <input type="checkbox" name="consent" required style="margin-top:4px;flex-shrink:0;min-width:16px;width:16px;height:16px;cursor:pointer;" />
                 <p style="margin:0;font-size:13px;color:#4a5568;line-height:1.6;text-transform:none;letter-spacing:normal;font-weight:400;word-break:break-word;">I consent to the collection and use of my personal information in accordance with the <a href="#" data-wizard-page="page-privacy" style="color:var(--blue);">Privacy Policy</a>.</p>
               </div>
+              <div data-netlify-recaptcha="true" style="margin-bottom:14px;"></div>
               <button type="submit" class="btn btn--green" style="width:100%;justify-content:center;">Submit Feedback</button>
             </form>
           </div>
@@ -2211,10 +2218,11 @@
         <div class="footer__contact-item">📍 <span>Perth, Western Australia</span></div>
         <div class="footer__nl">
           <p>Stay updated with NDIS compliance tips:</p>
-          <form class="footer__nl-form contact-form" name="newsletter" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/thank-you">
+          <form class="footer__nl-form contact-form" name="newsletter" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" action="/thank-you">
             <input type="hidden" name="form-name" value="newsletter" />
             <input type="text" name="bot-field" style="display:none;" />
             <input type="email" name="email" placeholder="your@email.com" required />
+            <div data-netlify-recaptcha="true" style="margin-bottom:10px;"></div>
             <button type="submit">Subscribe</button>
           </form>
         </div>
@@ -2313,7 +2321,7 @@
     <button onclick="closeApplyModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:24px;cursor:pointer;color:#64748b;">✕</button>
     <h2 style="color:var(--navy);margin-bottom:4px;">Apply for <span id="applyJobTitle">this Role</span></h2>
     <p style="color:#64748b;font-size:14px;margin-bottom:24px;">Please attach your cover letter &amp; resume as a single PDF.</p>
-    <form id="applyForm" name="job-apply" data-netlify="true" netlify-honeypot="bot-field" method="POST" enctype="multipart/form-data" action="/thank-you">
+    <form id="applyForm" name="job-apply" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" enctype="multipart/form-data" action="/thank-you">
       <input type="hidden" name="form-name" value="job-apply" />
       <input type="text" name="bot-field" style="display:none;" />
       <div style="display:flex;flex-direction:column;gap:14px;">
@@ -2364,6 +2372,7 @@
           <input type="checkbox" id="apply_consent" name="consent" required style="margin-top:4px;flex-shrink:0;width:16px;height:16px;cursor:pointer;" />
           <label for="apply_consent" style="margin:0;font-size:13px;color:#4a5568;line-height:1.6;text-transform:none;letter-spacing:normal;font-weight:400;word-break:break-word;">I consent to the collection and use of my personal information for the purpose of this job application in accordance with the <a href="#" data-wizard-page="page-privacy" style="color:var(--blue);">Privacy Policy</a>.</label>
         </div>
+        <div data-netlify-recaptcha="true" style="margin-bottom:14px;"></div>
         <button type="submit" class="btn btn--blue" style="width:100%;justify-content:center;padding:14px;">Send Application</button>
       </div>
     </form>
