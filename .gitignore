@@ -11,6 +11,9 @@ HANDOVER.md
 # Auto-generated documentation DOCX + build tooling
 generate-docs.js
 TrustCare_Website_Documentation.docx
+~$*.docx
+~$*.doc
+~$*.xlsx
 node_modules/
 package.json
 package-lock.json

@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 20);
-});
+}, { passive: true }); // passive: no preventDefault called — improves scroll performance
 
 // ===== NAVBAR DROPDOWNS (hover desktop, tap mobile) =====
 const dropdownWraps = document.querySelectorAll('.navbar__dropdown-wrap');
@@ -124,12 +124,49 @@ function attachCounterObserver() {
 }
 attachCounterObserver();
 
+// ===== FILE UPLOAD MIME VALIDATION =====
+// Client-side guard against wrong file types on upload fields.
+// Note: server-side validation is also required for full security.
+const ALLOWED_UPLOAD_TYPES = new Set([
+  'application/pdf',
+  'application/msword',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+]);
+const ALLOWED_UPLOAD_EXTS = /\.(pdf|doc|docx)$/i;
+
+function validateFileInputs(form) {
+  const fileInputs = form.querySelectorAll('input[type="file"]');
+  for (const input of fileInputs) {
+    for (const file of input.files) {
+      const typeOk = ALLOWED_UPLOAD_TYPES.has(file.type);
+      const extOk = ALLOWED_UPLOAD_EXTS.test(file.name);
+      if (!typeOk && !extOk) {
+        return `"${file.name}" is not allowed. Please upload a PDF, DOC, or DOCX file.`;
+      }
+    }
+  }
+  return null; // valid
+}
+
 // ===== FORM SUBMIT (Netlify Forms AJAX) =====
 document.querySelectorAll('.contact-form').forEach(form => {
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
+
+    // Validate file types before submitting
+    const fileError = validateFileInputs(form);
+    if (fileError) {
+      btn.textContent = fileError;
+      btn.style.background = '#dc2626';
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+      }, 4000);
+      return;
+    }
+
     btn.textContent = 'Sending...';
     btn.disabled = true;
     try {
@@ -234,14 +271,19 @@ function goToPage(index, anchorId) {
 }
 
 // ===== DOT GENERATION =====
+// Uses createElement (not innerHTML) to avoid string interpolation into DOM
 function generateDots() {
   const container = document.getElementById('wizDots');
   if (!container) return;
-  container.innerHTML = PAGES.map((p, i) =>
-    `<button class="wiz-dot${i === 0 ? ' active' : ''}" data-index="${i}" title="${p.label}" aria-label="Go to ${p.label}"></button>`
-  ).join('');
-  container.querySelectorAll('.wiz-dot').forEach(dot => {
-    dot.addEventListener('click', () => goToPage(parseInt(dot.dataset.index)));
+  container.textContent = ''; // safe clear — no innerHTML
+  PAGES.forEach((p, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'wiz-dot' + (i === 0 ? ' active' : '');
+    btn.dataset.index = String(i);
+    btn.title = p.label;          // setAttribute via property — auto-escaped
+    btn.setAttribute('aria-label', 'Go to ' + p.label);
+    btn.addEventListener('click', () => goToPage(i));
+    container.appendChild(btn);
   });
 }
 
@@ -374,6 +416,16 @@ document.getElementById('applyForm')?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = e.target.querySelector('[type="submit"]');
   const originalText = btn.textContent;
+
+  // Validate file types (resume + cover letter attachment)
+  const fileError = validateFileInputs(e.target);
+  if (fileError) {
+    btn.textContent = fileError;
+    btn.style.background = '#dc2626';
+    setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; }, 4000);
+    return;
+  }
+
   btn.disabled = true;
   btn.textContent = 'Sending...';
   try {
@@ -495,10 +547,16 @@ const policyContent = {
   `
 };
 
+// Freeze the policy content object — prevents runtime mutation of this developer-controlled HTML.
+// IMPORTANT: policyId must always come from a hardcoded onclick value, never from URL params or
+// user input. If that ever changes, switch to DOMPurify sanitization before innerHTML assignment.
+Object.freeze(policyContent);
+
 function openPolicyModal(policyId) {
+  // Validate policyId is a known key — defence-in-depth against unexpected calls
+  if (!Object.prototype.hasOwnProperty.call(policyContent, policyId)) return;
   const content = policyContent[policyId];
-  if (!content) return;
-  document.getElementById('policyModalContent').innerHTML = content;
+  document.getElementById('policyModalContent').innerHTML = content; // developer-controlled static HTML
   document.getElementById('policyModal').style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
@@ -536,6 +594,36 @@ function filterJobs() {
   const sortEl = document.querySelector('.careers-list-sort');
   if (sortEl) sortEl.textContent = visible + ' role' + (visible !== 1 ? 's' : '') + ' available';
 }
+
+// ===== IMAGE ERROR FALLBACKS =====
+// Replaces inline onerror="" attributes — avoids unsafe-inline pattern.
+document.addEventListener('DOMContentLoaded', () => {
+  // Logo images (navbar + footer) — show text placeholder on error
+  document.querySelectorAll('.navbar__logo-img, .footer__logo-img').forEach(img => {
+    img.addEventListener('error', () => {
+      const div = document.createElement('div');
+      div.className = img.classList.contains('navbar__logo-img')
+        ? 'navbar__logo-icon'
+        : 'footer__logo-icon';
+      div.textContent = '+';
+      img.replaceWith(div);
+    });
+  });
+
+  // Hero / content photos — hide on error
+  document.querySelectorAll('.hero__img-wrap img, .why__img').forEach(img => {
+    img.addEventListener('error', () => { img.style.display = 'none'; });
+  });
+
+  // Team member photos — show emoji placeholder on error
+  document.querySelectorAll('.team-card__photo img').forEach(img => {
+    img.addEventListener('error', () => {
+      const span = document.createElement('span');
+      span.textContent = '👨‍⚕️';
+      img.parentElement.replaceChildren(span);
+    });
+  });
+});
 
 // ===== NETLIFY IDENTITY — CMS ADMIN REDIRECT =====
 // Moved from inline script to allow removing unsafe-inline from CSP

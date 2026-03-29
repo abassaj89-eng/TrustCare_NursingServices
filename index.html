@@ -99,7 +99,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer integrity="sha384-dy2tW8xkhLIj8lZR42MCwZhhDb2cCewZiw0uA65CMpdHiJzL+iubx7HzHcCXU2rW" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -110,8 +110,7 @@
 <nav class="navbar" id="navbar">
   <div class="navbar__inner">
     <a href="#" class="navbar__logo" data-wizard-page="page-home">
-      <img src="Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="navbar__logo-img logo-preview-trigger"
-        onerror="this.outerHTML='<div class=\'navbar__logo-icon\'>+</div>'" />
+      <img src="Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="navbar__logo-img logo-preview-trigger" />
       <span>TrustCare</span>
     </a>
     <ul class="navbar__nav">
@@ -237,7 +236,7 @@
         </div>
         <div class="hero__image">
           <div class="hero__img-wrap">
-            <img src="photo-nobg.png" alt="TrustCare Support" onerror="this.style.display='none'" />
+            <img src="photo-nobg.png" alt="TrustCare Support" />
             <div class="hero__card-float hero__card-float--1">
               <div class="hero__card-icon">🩺</div>
               <div class="hero__card-text">
@@ -327,7 +326,7 @@
       <div class="container">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
           <div style="border-radius:20px;overflow:hidden;position:relative;">
-            <img src="photo-nobg.png" alt="TrustCare Clinical Team" style="width:100%;height:380px;object-fit:cover;border-radius:20px;" onerror="this.style.display='none'" />
+            <img src="photo-nobg.png" alt="TrustCare Clinical Team" style="width:100%;height:380px;object-fit:cover;border-radius:20px;" />
             <div style="position:absolute;bottom:20px;left:20px;background:#fff;border-radius:12px;padding:14px 18px;box-shadow:0 8px 24px rgba(0,53,136,0.15);max-width:220px;">
               <p style="font-size:13px;font-style:italic;color:var(--navy);margin:0;line-height:1.5;">"Clinical excellence meets compassionate care delivery."</p>
             </div>
@@ -840,8 +839,7 @@
               </div>
             </div>
             <div style="position:relative;">
-              <img src="photo-nobg.png" alt="TrustCare Support" class="why__img"
-                onerror="this.outerHTML='<div class=\'why__img-placeholder\'><div style=\'font-size:80px\'>👨‍⚕️</div><p style=\'font-size:18px;font-weight:700;color:var(--navy)\'>TrustCare RN</p></div>'" />
+              <img src="photo-nobg.png" alt="TrustCare Support" class="why__img" />
               <div class="why__credentials">
                 <div class="why__cred-title">Qualifications</div>
                 <ul class="why__cred-list">
@@ -865,8 +863,7 @@
             {% for member in site.data.team.members %}
             <div class="team-card reveal">
               <div class="team-card__photo">
-                <img src="{{ member.photo }}" alt="{{ member.name }}"
-                  onerror="this.parentElement.innerHTML='<span>👨‍⚕️</span>'" />
+                <img src="{{ member.photo }}" alt="{{ member.name }}" />
               </div>
               <div class="team-card__body">
                 <div class="team-card__name">{{ member.name }}</div>
@@ -1460,8 +1457,11 @@
                 <input type="text" name="participant_first_name" placeholder="Participant's first name only" required />
               </div>
               <div class="form-group">
-                <label>NDIS Number (optional)</label>
-                <input type="password" name="ndis_number" placeholder="NDIS Number (optional — masked for privacy)" autocomplete="off" />
+                <label>NDIS Number <span style="font-weight:400;color:#6b7280;">(optional)</span></label>
+                <input type="text" name="ndis_number" placeholder="e.g. 430 123 4567" autocomplete="off" inputmode="numeric" />
+                <p style="font-size:12px;color:#9ca3af;margin-top:6px;line-height:1.5;">
+                  Optional — only provide if relevant to this referral. This information is stored securely by Netlify Forms and accessed only by TrustCare clinical staff.
+                </p>
               </div>
               <div class="form-group">
                 <label>Type of Nursing Support Required <span style="color:red;">*</span></label>
@@ -2199,8 +2199,7 @@
       <div>
         <div class="footer__logo">
           <a href="#" data-wizard-page="page-home">
-          <img src="Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="footer__logo-img logo-preview-trigger"
-            onerror="this.outerHTML='<div class=\'footer__logo-icon\'>+</div>'" />
+          <img src="Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="footer__logo-img logo-preview-trigger" />
           </a>
           <span>TrustCare</span>
         </div>
