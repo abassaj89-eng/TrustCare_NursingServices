@@ -21,7 +21,7 @@
 
 ## 1. What this site is
 
-TrustCare Support is a single-page Jekyll website for an NDIS nursing services provider based in Perth, Western Australia. The site is:
+TrustCare Support is a multi-page Jekyll website for an NDIS nursing services provider based in Perth, Western Australia. The site is:
 
 - Hosted on **Netlify** (free tier, auto-deployed from GitHub)
 - Built with **Jekyll 4.3** (a static site generator — no database)
@@ -44,7 +44,8 @@ Because it is a static site, there is **no server, no PHP, no WordPress**. All p
 | Continuous deployment | Netlify + GitHub | — |
 | Domain registrar | (see HANDOVER.md for credentials) | — |
 | Email forwarding | ImprovMX | Free tier |
-| Form handling | Formspree | Free tier |
+| Form handling | Formspree + Netlify Forms | Free tier |
+| Spam protection | Netlify reCAPTCHA | — |
 | Fonts | Google Fonts (DM Sans + Sora) | — |
 | Authentication (CMS) | Netlify Identity | — |
 | Ruby version | 3.2.0 | (set in netlify.toml) |
@@ -57,49 +58,67 @@ Because it is a static site, there is **no server, no PHP, no WordPress**. All p
 ```
 TrustCare_NursingServices/
 │
-├── index.html          ← The ENTIRE website lives in this one file
-├── styles.css          ← All CSS styling
-├── script.js           ← All JavaScript behaviour
-├── 404.html            ← Custom "page not found" page
+├── index.html              ← Homepage
+├── about.html              ← About Us page
+├── services.html           ← Services overview
+├── high-intensity.html     ← High-Intensity (HIDPA) supports
+├── governance.html         ← Board & governance
+├── blog.html               ← Blog listing page
+├── careers.html            ← Job listings page
+├── contact.html            ← Contact page
+├── referral.html           ← Make a Referral form
+├── referral-received.html  ← Referral confirmation page
+├── feedback.html           ← Feedback form
+├── complaints.html         ← Complaints form
+├── complaints-policy.html  ← Complaints Policy page
+├── privacy.html            ← Privacy Policy page
+├── terms.html              ← Terms & Conditions page
+├── rights.html             ← Participant Rights Statement
+├── incident.html           ← Incident Management Statement
+├── thank-you.html          ← Form submission thank-you page
+├── 404.html                ← Custom "page not found" page
 │
-├── _config.yml         ← Jekyll site settings (title, URL, collections)
-├── netlify.toml        ← Netlify build instructions (Ruby version, build command)
-├── Gemfile             ← Ruby gem dependencies (Jekyll, webrick)
+├── styles.css              ← All CSS styling
+├── script.js               ← All JavaScript behaviour
 │
-├── _headers            ← Netlify HTTP security headers (CSP, HSTS, etc.)
-├── robots.txt          ← Tells search engine crawlers what to index
-├── sitemap.xml         ← List of all URLs for Google Search Console
-│
-├── admin/
-│   ├── index.html      ← Decap CMS admin panel entry point
-│   └── config.yml      ← CMS configuration — defines all editable fields
+├── _config.yml             ← Jekyll site settings (title, URL, collections)
+├── netlify.toml            ← Netlify build instructions (Ruby version, build command)
+├── Gemfile                 ← Ruby gem dependencies (Jekyll, webrick)
+├── _headers                ← Netlify HTTP security headers (CSP, HSTS, etc.)
+├── robots.txt              ← Tells search engine crawlers what to index
+├── sitemap.xml             ← List of all URLs for Google Search Console
 │
 ├── _layouts/
-│   └── post.html       ← HTML template for individual blog post pages
+│   ├── default.html        ← Base HTML template (all pages extend this)
+│   └── post.html           ← HTML template for individual blog post pages
 │
-├── _posts/             ← Blog post files (Markdown format)
+├── admin/
+│   ├── index.html          ← Decap CMS admin panel entry point
+│   └── config.yml          ← CMS configuration — defines all editable fields
+│
+├── _posts/                 ← Blog post files (Markdown format)
 │   └── YYYY-MM-DD-slug.md
 │
-├── _jobs/              ← Job listing files (Markdown front matter only)
+├── _jobs/                  ← Job listing files (Markdown front matter only)
 │   └── job-slug.md
 │
-├── _data/              ← All CMS-editable data (YAML files)
-│   ├── about.yml       ← About page: story, values, qualifications
-│   ├── team.yml        ← Team member profiles
-│   ├── board.yml       ← Board member profiles
-│   ├── services_a.yml  ← HIDPA Services group
-│   ├── services_b.yml  ← Clinical Services group
-│   ├── services_c.yml  ← Assessment Services group
-│   ├── services_d.yml  ← Workforce Training group
-│   ├── hi_supports.yml ← High-Intensity (HIDPA) supports
-│   ├── legal_privacy.yml     ← Privacy Policy content
-│   ├── legal_terms.yml       ← Terms & Conditions content
-│   ├── legal_complaints.yml  ← Complaints Policy content
-│   ├── legal_rights.yml      ← Participant Rights Statement
-│   └── legal_incident.yml    ← Incident Management Statement
+├── _data/                  ← All CMS-editable data (YAML files)
+│   ├── about.yml           ← About page: story, values, qualifications
+│   ├── team.yml            ← Team member profiles
+│   ├── board.yml           ← Board member profiles
+│   ├── services_a.yml      ← HIDPA Services group
+│   ├── services_b.yml      ← Clinical Services group
+│   ├── services_c.yml      ← Assessment Services group
+│   ├── services_d.yml      ← Workforce Training group
+│   ├── hi_supports.yml     ← High-Intensity (HIDPA) supports
+│   ├── legal_privacy.yml         ← Privacy Policy content
+│   ├── legal_terms.yml           ← Terms & Conditions content
+│   ├── legal_complaints.yml      ← Complaints Policy content
+│   ├── legal_rights.yml          ← Participant Rights Statement
+│   └── legal_incident.yml        ← Incident Management Statement
 │
 ├── images/
-│   └── uploads/        ← Images uploaded via CMS go here
+│   └── uploads/            ← Images uploaded via CMS go here
 │
 ├── Trustcaremainlogo.jpg.png  ← Primary logo (navbar + footer)
 ├── Trustcarelogo.jpg.jpg      ← Logo variant
@@ -111,16 +130,15 @@ TrustCare_NursingServices/
 
 ## 4. How the site works
 
-### Single-page "wizard" architecture
+### Multi-page architecture
 
-The entire website is **one HTML file** (`index.html`). Each "page" (Home, Services, About, Contact, etc.) is a `<div class="wizard-page">` inside that file. Only one page is visible at a time — the rest are hidden with CSS (`display: none`) and `aria-hidden="true"`.
+The site is built as **separate HTML pages** — each section (Home, Services, About, Contact, etc.) is its own `.html` file with its own URL. All pages share a common layout defined in `_layouts/default.html`, which provides the navbar, footer, and shared CSS/JS.
 
-When a visitor clicks a nav link, JavaScript switches which page is visible. **No actual page navigation happens** — the URL stays at `/`.
+When a visitor clicks a nav link, the browser navigates to a different URL (e.g. `/services.html`, `/contact.html`). This means:
 
-This means:
-- The site loads extremely fast (everything is already downloaded)
-- There is no back-button history between pages
-- Search engines only index the homepage content
+- Each page has its own URL and can be bookmarked or shared directly
+- Search engines can index every page individually
+- The browser back button works as expected
 
 ### Jekyll build process
 
@@ -141,6 +159,10 @@ New HTML is deployed to CDN (~1–2 minutes)
         ↓
 Live site updated at trustcaresupport.com.au
 ```
+
+### Forms
+
+All forms use **Formspree** for email delivery and **Netlify Forms** with reCAPTCHA for spam protection. Form endpoints are set in each page's HTML. To change a form's destination email, update it in the Formspree dashboard — no code change needed.
 
 ---
 
@@ -186,7 +208,8 @@ content: |
 
 - `styles.css` — all visual styling
 - `script.js` — all interactive behaviour
-- `index.html` — page structure and content
+- Individual `.html` files — page structure and content
+- `_layouts/default.html` — shared navbar, footer, and page wrapper
 
 After any file change, commit and push to GitHub. Netlify auto-deploys.
 
@@ -220,6 +243,9 @@ bundle exec jekyll serve
 ### Making changes
 
 ```bash
+# Always pull first — Decap CMS may have committed via the browser
+git pull origin main --rebase
+
 # Check what files you've changed
 git status
 
@@ -258,11 +284,12 @@ No secret environment variables are required — all credentials (Formspree endp
 | Hide a job listing | CMS → 💼 Job Listings → toggle "Show on Website" off |
 | Update Privacy Policy | CMS → ⚖️ Legal & Compliance → Privacy Policy |
 | Add a team member | CMS → ℹ️ About Page → Our Team → add item |
-| Change phone number | Edit `index.html` — search for `0432 014 162` |
-| Change email address | Edit `index.html` — search for `info@trustcaresupport.com.au` |
+| Change phone number | Search `0432 014 162` across all `.html` files |
+| Change email address | Search `info@trustcaresupport.com.au` across all `.html` files |
 | Update hero text | Edit `index.html` — find the `<section class="hero">` block |
 | Add a new service card | CMS → 🏥 Services → choose the relevant group → add item |
 | Update legal pages | CMS → ⚖️ Legal & Compliance → choose page |
+| Edit shared navbar/footer | Edit `_layouts/default.html` |
 | Check site speed | Visit web.dev/measure — enter trustcaresupport.com.au |
 | View form submissions | Log into formspree.io with TrustCare account |
 
