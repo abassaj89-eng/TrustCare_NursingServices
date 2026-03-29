@@ -1348,23 +1348,44 @@ html, body {
   .wizard-page .hero { padding: 20px 0 60px; min-height: auto; }
 }
 
-/* ===== CAREERS PAGE ===== */
-.careers-hero { background: linear-gradient(135deg, #f8faff 0%, #eef3ff 100%); padding: 60px 0 40px; }
-.careers-hero__inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
-.careers-hero__text { flex: 1; min-width: 260px; }
-.careers-hero__h1 { font-size: clamp(28px, 4vw, 48px); color: var(--navy); line-height: 1.2; margin: 8px 0 16px; }
-.careers-hero__sub { font-size: 16px; color: #64748b; max-width: 480px; line-height: 1.7; }
-.careers-bento { display: flex; gap: 16px; flex-shrink: 0; }
-.careers-bento__stat { background: var(--navy); color: #fff; border-radius: 16px; padding: 24px 20px; min-width: 120px; display: flex; flex-direction: column; gap: 8px; }
-.careers-bento__icon { font-size: 28px; }
-.careers-bento__num { font-size: 32px; font-weight: 800; }
-.careers-bento__label { font-size: 12px; opacity: 0.8; }
-.careers-bento__award { background: #eef3ff; border-radius: 16px; padding: 24px 20px; min-width: 120px; display: flex; flex-direction: column; gap: 8px; }
-.careers-bento__award-title { font-size: 13px; font-weight: 700; color: var(--navy); }
-.careers-bento__award-sub { font-size: 11px; color: #64748b; }
+/* ===== WORK WITH US PAGE ===== */
+
+/* HERO */
+.work-hero { background: linear-gradient(135deg, var(--navy) 0%, #001b3d 100%); padding: 80px 0 72px; }
+.work-hero__inner { max-width: 640px; }
+.work-hero__eyebrow { color: #93c5fd; letter-spacing: 0.12em; }
+.work-hero__h1 { font-size: clamp(30px, 4.5vw, 52px); color: #fff; line-height: 1.15; margin: 12px 0 18px; }
+.work-hero__h1 span { color: #93c5fd; }
+.work-hero__sub { font-size: 17px; color: #bfdbfe; line-height: 1.75; margin-bottom: 32px; max-width: 520px; }
+.work-hero__cta { display: inline-flex; align-items: center; gap: 8px; }
+
+/* WHY JOIN US */
+.work-benefits { background: #fff; }
+.work-benefits__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+.work-benefit-card { background: var(--bg-pale); border-radius: 20px; padding: 32px 28px; transition: transform 0.2s; }
+.work-benefit-card:hover { transform: translateY(-4px); }
+.work-benefit-card__icon { width: 56px; height: 56px; background: #fff; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,53,136,0.08); }
+.work-benefit-card__title { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.work-benefit-card__text { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+/* CLINICAL LEADERSHIP */
+.work-leadership { background: var(--navy); padding: 72px 0; }
+.work-leadership__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.work-leadership__h2 { font-size: clamp(24px, 3vw, 36px); color: #fff; font-weight: 800; margin-bottom: 16px; }
+.work-leadership__intro { font-size: 16px; color: #bfdbfe; line-height: 1.75; margin-bottom: 32px; }
+.work-leadership__points { display: flex; flex-direction: column; gap: 24px; }
+.work-leadership__point { display: flex; gap: 16px; align-items: flex-start; }
+.work-leadership__point-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.work-leadership__point-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.work-leadership__point-text { font-size: 14px; color: #93c5fd; line-height: 1.65; }
+.work-leadership__cred-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 28px; }
+.work-leadership__cred-item { display: flex; gap: 16px; align-items: center; }
+.work-leadership__cred-icon { font-size: 32px; flex-shrink: 0; }
+.work-leadership__cred-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.work-leadership__cred-sub { font-size: 13px; color: #93c5fd; line-height: 1.5; }
 
 /* SEARCH BOX */
-.careers-search-box { background: #f1f5ff; border-radius: 16px; padding: 20px; box-shadow: 0 2px 12px rgba(0,53,136,0.07); }
+.careers-search-box { background: var(--bg-pale); border-radius: 16px; padding: 20px; box-shadow: 0 2px 12px rgba(0,53,136,0.07); margin-bottom: 24px; }
 .careers-search-row { display: flex; align-items: center; background: #fff; border-radius: 10px; padding: 10px 16px; gap: 10px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,53,136,0.06); }
 .careers-search-icon { font-size: 18px; color: #94a3b8; }
 .careers-search-input { flex: 1; border: none; outline: none; font-size: 15px; color: var(--navy); background: transparent; }
@@ -1400,24 +1421,28 @@ html, body {
 .career-card__posted { font-size: 13px; color: #94a3b8; }
 .career-card__apply { min-width: 130px; text-align: center; }
 
-/* TALENT POOL */
-.careers-talent { background: linear-gradient(135deg, var(--navy) 0%, #002266 100%); border-radius: 20px; padding: 48px 40px; color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-.careers-talent__text { flex: 1; min-width: 220px; }
-.careers-talent__h2 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
-.careers-talent__sub { font-size: 14px; opacity: 0.85; line-height: 1.6; }
-.careers-talent__form { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
-.careers-talent__input { padding: 12px 16px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color: #fff; font-size: 14px; min-width: 220px; outline: none; }
-.careers-talent__input::placeholder { color: rgba(255,255,255,0.6); }
-.careers-talent__input:focus { border-color: rgba(255,255,255,0.7); }
+/* TALENT POOL CARD */
+.work-talent-card { background: var(--navy); border-radius: 24px; padding: 56px 40px; text-align: center; max-width: 560px; margin: 0 auto; }
+.work-talent-card__icon { font-size: 40px; margin-bottom: 16px; }
+.work-talent-card__h2 { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 10px; }
+.work-talent-card__sub { font-size: 15px; color: #bfdbfe; line-height: 1.65; margin-bottom: 28px; }
+.work-talent-card__form { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.work-talent-card__input { flex: 1; min-width: 200px; padding: 13px 16px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.1); color: #fff; font-size: 14px; outline: none; }
+.work-talent-card__input::placeholder { color: rgba(255,255,255,0.55); }
+.work-talent-card__input:focus { border-color: rgba(255,255,255,0.6); }
 
+@media (max-width: 768px) {
+  .work-leadership__grid { grid-template-columns: 1fr; gap: 40px; }
+}
 @media (max-width: 640px) {
-  .careers-hero__inner { flex-direction: column; }
-  .careers-bento { width: 100%; }
-  .careers-bento__stat, .careers-bento__award { flex: 1; }
-  .careers-talent { flex-direction: column; }
-  .careers-talent__form { width: 100%; flex-direction: column; }
-  .careers-talent__input { width: 100%; }
+  .work-benefits__grid { grid-template-columns: 1fr 1fr; }
   .career-card__top { flex-direction: column; }
+  .work-talent-card { padding: 40px 24px; }
+  .work-talent-card__form { flex-direction: column; }
+  .work-talent-card__input { width: 100%; }
+}
+@media (max-width: 400px) {
+  .work-benefits__grid { grid-template-columns: 1fr; }
 }
 
 /* ===== ACKNOWLEDGEMENT OF COUNTRY (footer strip) ===== */

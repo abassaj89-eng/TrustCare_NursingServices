@@ -824,25 +824,98 @@
 
   <!-- ============================= PAGE: WORK WITH US ============================= -->
   <div class="wizard-page" id="page-work" aria-hidden="true">
-  <!-- CAREERS HERO -->
-  <section class="careers-hero">
+
+  <!-- HERO -->
+  <section class="work-hero">
     <div class="container">
-      <div class="careers-hero__inner">
-        <div class="careers-hero__text">
-          <div class="eyebrow">JOIN OUR TEAM</div>
-          <h1 class="careers-hero__h1">Join Our <span style="color:var(--blue);">Compassionate</span> Team</h1>
-          <p class="careers-hero__sub">Shape the future of healthcare with an organisation that values clinical excellence, integrity, and dignity in disability care.</p>
+      <div class="work-hero__inner">
+        <div class="eyebrow work-hero__eyebrow">Careers at TrustCare</div>
+        <h1 class="work-hero__h1">Build Your Clinical Career <span>with TrustCare</span></h1>
+        <p class="work-hero__sub">Join a team of skilled nursing professionals dedicated to delivering excellence in NDIS community support across Perth, WA.</p>
+        <a href="#work-openings" class="btn btn--white work-hero__cta">View Current Openings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY JOIN US -->
+  <section class="section work-benefits">
+    <div class="container">
+      <div class="section-header" style="text-align:center;margin-bottom:48px;">
+        <h2 class="section-heading">Why Join Our Clinical Team?</h2>
+        <div style="height:4px;width:56px;background:var(--blue);border-radius:4px;margin:12px auto 0;"></div>
+      </div>
+      <div class="work-benefits__grid">
+        <div class="work-benefit-card">
+          <div class="work-benefit-card__icon">🕐</div>
+          <h3 class="work-benefit-card__title">Flexible Rostering</h3>
+          <p class="work-benefit-card__text">Work-life balance tailored to you through responsive, collaborative scheduling.</p>
         </div>
-        <div class="careers-bento">
-          <div class="careers-bento__stat">
-            <span class="careers-bento__icon">🏥</span>
-            <div class="careers-bento__num">3+</div>
-            <div class="careers-bento__label">Open Positions</div>
+        <div class="work-benefit-card">
+          <div class="work-benefit-card__icon">💰</div>
+          <h3 class="work-benefit-card__title">Competitive Rates</h3>
+          <p class="work-benefit-card__text">Rewarding your expertise with industry-leading compensation packages.</p>
+        </div>
+        <div class="work-benefit-card">
+          <div class="work-benefit-card__icon">🎓</div>
+          <h3 class="work-benefit-card__title">Ongoing Development</h3>
+          <p class="work-benefit-card__text">Continuous clinical learning and mentorship to elevate your professional practice.</p>
+        </div>
+        <div class="work-benefit-card">
+          <div class="work-benefit-card__icon">🤝</div>
+          <h3 class="work-benefit-card__title">Supportive Culture</h3>
+          <p class="work-benefit-card__text">A collaborative, nurse-led environment where your voice is valued.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLINICAL LEADERSHIP -->
+  <section class="work-leadership">
+    <div class="container">
+      <div class="work-leadership__grid">
+        <div class="work-leadership__left">
+          <h2 class="work-leadership__h2">Clinical Leadership</h2>
+          <p class="work-leadership__intro">At TrustCare Support, we are led by AHPRA-registered nurses with front-line clinical experience. Our leadership team ensures every support plan is grounded in medical best practice and NDIS quality standards.</p>
+          <div class="work-leadership__points">
+            <div class="work-leadership__point">
+              <span class="work-leadership__point-icon">🧠</span>
+              <div>
+                <h4 class="work-leadership__point-title">Evidence-Based Governance</h4>
+                <p class="work-leadership__point-text">Continuous oversight from Registered Nurses ensures patient-centred safety at every level.</p>
+              </div>
+            </div>
+            <div class="work-leadership__point">
+              <span class="work-leadership__point-icon">📋</span>
+              <div>
+                <h4 class="work-leadership__point-title">Expert Mentorship</h4>
+                <p class="work-leadership__point-text">Direct access to clinical leads for real-time guidance and complex care support.</p>
+              </div>
+            </div>
           </div>
-          <div class="careers-bento__award">
-            <span style="font-size:28px;">🏆</span>
-            <div class="careers-bento__award-title">AHPRA Compliant</div>
-            <div class="careers-bento__award-sub">Registered Nurse Led</div>
+        </div>
+        <div class="work-leadership__right">
+          <div class="work-leadership__cred-card">
+            <div class="work-leadership__cred-item">
+              <div class="work-leadership__cred-icon">✅</div>
+              <div>
+                <div class="work-leadership__cred-title">AHPRA Registered</div>
+                <div class="work-leadership__cred-sub">All clinical staff maintain active registration</div>
+              </div>
+            </div>
+            <div class="work-leadership__cred-item">
+              <div class="work-leadership__cred-icon">🏥</div>
+              <div>
+                <div class="work-leadership__cred-title">NDIS Compliant</div>
+                <div class="work-leadership__cred-sub">Aligned with NDIS Quality &amp; Safeguards Commission</div>
+              </div>
+            </div>
+            <div class="work-leadership__cred-item">
+              <div class="work-leadership__cred-icon">🛡️</div>
+              <div>
+                <div class="work-leadership__cred-title">Worker Screened</div>
+                <div class="work-leadership__cred-sub">All staff hold valid NDIS Worker Screening clearance</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -850,8 +923,13 @@
   </section>
 
   <!-- SEARCH & FILTER -->
-  <section class="section" style="padding-top:0;">
+  <section class="section" id="work-openings" style="padding-top:48px;">
     <div class="container">
+      <div class="careers-list-header" style="margin-bottom:20px;">
+        <h2 class="careers-list-title">Current Openings</h2>
+        {% assign active_jobs = site.jobs | where: "active", true %}
+        <span class="careers-list-sort">{{ active_jobs.size }} role{% if active_jobs.size != 1 %}s{% endif %} available</span>
+      </div>
       <div class="careers-search-box">
         <div class="careers-search-row">
           <span class="careers-search-icon">🔍</span>
@@ -871,15 +949,7 @@
   <!-- JOB LISTINGS -->
   <section class="section" style="padding-top:0;">
     <div class="container">
-      {% assign active_jobs = site.jobs | where: "active", true %}
-      <div class="careers-list-header">
-        <h2 class="careers-list-title">Available Positions</h2>
-        <span class="careers-list-sort">{{ active_jobs.size }} role{% if active_jobs.size != 1 %}s{% endif %} available</span>
-      </div>
-
       <div class="careers-jobs" id="jobsList">
-
-        <!-- JOB LISTINGS (Jekyll — edit at /admin) -->
         {% for job in active_jobs %}
         <div class="career-card" data-filter="{{ job.filter }}" data-keywords="{{ job.keywords }}">
           <div class="career-card__accent"{% if job.accent_color %} style="background:{{ job.accent_color }};"{% endif %}></div>
@@ -914,30 +984,26 @@
           </div>
         </div>
         {% endfor %}
-
-        <!-- NO RESULTS MESSAGE -->
         <div id="noJobsMsg" style="display:none;text-align:center;padding:48px 24px;color:#64748b;">
           <div style="font-size:48px;margin-bottom:12px;">🔍</div>
           <p style="font-size:16px;font-weight:600;">No roles match your search.</p>
           <p style="font-size:14px;margin-top:4px;">Try a different keyword or filter.</p>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- TALENT POOL -->
-  <section class="section" style="padding-top:0;">
+  <section class="section" style="padding-top:0;padding-bottom:64px;">
     <div class="container">
-      <div class="careers-talent">
-        <div class="careers-talent__text">
-          <h2 class="careers-talent__h2">Not finding the right fit?</h2>
-          <p class="careers-talent__sub">Join our talent community and be the first to hear about new opportunities that match your expertise.</p>
-        </div>
-        <form class="careers-talent__form contact-form" name="talent-pool" data-netlify="true" netlify-honeypot="bot-field" method="POST">
+      <div class="work-talent-card">
+        <div class="work-talent-card__icon">✉️</div>
+        <h2 class="work-talent-card__h2">Not seeing the right role?</h2>
+        <p class="work-talent-card__sub">Join our talent community and be the first to hear when new opportunities open up.</p>
+        <form class="work-talent-card__form contact-form" name="talent-pool" data-netlify="true" netlify-honeypot="bot-field" method="POST">
           <input type="hidden" name="form-name" value="talent-pool" />
           <input type="text" name="bot-field" style="display:none;" />
-          <input type="email" name="email" placeholder="Your email address" required class="careers-talent__input" />
+          <input type="email" name="email" placeholder="your@email.com" required class="work-talent-card__input" />
           <button type="submit" class="btn btn--blue">Join Talent Pool</button>
         </form>
       </div>
