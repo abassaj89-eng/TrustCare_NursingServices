@@ -1,43 +1,70 @@
-story_para1: "We established TrustCare Support with a clear purpose: to bring hospital-grade clinical nursing care directly into the lives of NDIS participants across Perth. With over 5 years of clinical nursing experience spanning acute hospital care, community nursing, and disability support, we work in partnership with registered NDIS providers and support coordinators to deliver the nursing component of complex care plans — safely, professionally, and with genuine compassion."
-story_para2: "Every participant deserves safe, high-quality nursing care delivered by a properly registered and accountable clinician. Every provider deserves a clinical partner they can trust — one who communicates clearly, documents rigorously, and puts participant safety first. That is the TrustCare commitment."
-
-vision: "To be Perth's most trusted clinical nursing partner, ensuring every NDIS participant receives hospital-grade nursing care within the dignity of their own home."
-mission: "To support NDIS providers and coordinators through evidence-based nursing care, clinical oversight, and strong collaboration — with a relentless focus on participant safety and wellbeing."
-
-qualifications:
-  - "Bachelor of Nursing"
-  - "AHPRA Registered"
-  - "Cert IV TAE"
-  - "NDIS Specialist"
-  - "Medication Endorsed"
-
+story_para1: "We established TrustCare Support with a clear purpose: to bring
+  hospital-grade clinical nursing care directly into the lives of NDIS
+  participants across Perth. With over 5 years of clinical nursing experience
+  spanning acute hospital care, community nursing, and disability support, we
+  work in partnership with registered NDIS providers and support coordinators to
+  deliver the nursing component of complex care plans — safely, professionally,
+  and with genuine compassion."
+story_para2: Every participant deserves safe, high-quality nursing care
+  delivered by a properly registered and accountable clinician. Every provider
+  deserves a clinical partner they can trust — one who communicates clearly,
+  documents rigorously, and puts participant safety first. That is the TrustCare
+  commitment.
+vision: To be Perth's most trusted clinical nursing partner, ensuring every NDIS
+  participant receives hospital-grade nursing care within the dignity of their
+  own home.
+mission: To support NDIS providers and coordinators through evidence-based
+  nursing care, clinical oversight, and strong collaboration — with a relentless
+  focus on participant safety and wellbeing.
 story_accordion:
-  - icon: "🏥"
-    title: "AHPRA Registered Nurse with NDIS Specialisation"
-    body: "AHPRA-registered with a clinical background across acute care, community nursing, and disability support. Our dual expertise in nursing and NDIS compliance means every policy, procedure, and training program we develop is clinically sound and fully aligned with NDIS Practice Standards."
-  - icon: "📋"
-    title: "100% AHPRA Compliant Clinical Practice"
-    body: "All nursing care is delivered by an AHPRA-registered Registered Nurse in full compliance with the NMBA Registered Nurse Standards for Practice (2016) and the NDIS Code of Conduct. Every clinical decision is evidence-based, documented, and accountable."
-  - icon: "🎓"
-    title: "Hands-On Clinical Training & Education"
-    body: "We don't just write training manuals — we deliver practical, hands-on clinical education. From catheter care demonstrations to medication management workshops, your staff learn by doing. Real competency built through real practice, not just online modules."
-  - icon: "⭐"
-    title: "High Intensity Support Expertise Across All 10 Areas"
-    body: "Skilled across all 10 NDIS High Intensity Daily Personal Activities — tracheostomy, ventilator management, PEG/enteral feeding, complex bowel care, suprapubic catheters, dysphagia, epilepsy, wound care, subcutaneous injections, and diabetes management."
-
+  - icon: 🏥
+    title: AHPRA Registered Nurse with NDIS Specialisation
+    body: AHPRA-registered with a clinical background across acute care, community
+      nursing, and disability support. Our dual expertise in nursing and NDIS
+      compliance means every policy, procedure, and training program we develop
+      is clinically sound and fully aligned with NDIS Practice Standards.
+  - icon: 📋
+    title: 100% AHPRA Compliant Clinical Practice
+    body: All nursing care is delivered by an AHPRA-registered Registered Nurse in
+      full compliance with the NMBA Registered Nurse Standards for Practice
+      (2016) and the NDIS Code of Conduct. Every clinical decision is
+      evidence-based, documented, and accountable.
+  - icon: 🎓
+    title: Hands-On Clinical Training & Education
+    body: We don't just write training manuals — we deliver practical, hands-on
+      clinical education. From catheter care demonstrations to medication
+      management workshops, your staff learn by doing. Real competency built
+      through real practice, not just online modules.
+  - icon: ⭐
+    title: High Intensity Support Expertise Across All 10 Areas
+    body: Skilled across all 10 NDIS High Intensity Daily Personal Activities —
+      tracheostomy, ventilator management, PEG/enteral feeding, complex bowel
+      care, suprapubic catheters, dysphagia, epilepsy, wound care, subcutaneous
+      injections, and diabetes management.
 values:
-  - icon: "🏅"
-    title: "Clinical Integrity"
-    description: "We never compromise on AHPRA nursing standards. Every clinical decision is made with rigour, evidence, and professional accountability."
-  - icon: "🤝"
-    title: "Collaborative Care"
-    description: "We act as the clinical bridge between providers, doctors, and participants — enabling seamless, coordinated care for every person we support."
-  - icon: "❤️"
-    title: "Dignity in Disability"
-    description: "We treat every participant with the respect their humanity deserves — person-centred, compassionate, and always rights-focused."
-  - icon: "📊"
-    title: "Accountability"
-    description: "Transparent reporting and rigorous incident management — we hold ourselves to the highest standards of clinical and ethical conduct."
-  - icon: "🛡️"
-    title: "Safety First"
-    description: "Participant safety underpins every clinical decision. We identify risks, act proactively, and escalate when needed — without exception."
+  - icon: 🏅
+    title: Clinical Integrity
+    description: We never compromise on AHPRA nursing standards. Every clinical
+      decision is made with rigour, evidence, and professional accountability.
+  - icon: 🤝
+    title: Collaborative Care
+    description: We act as the clinical bridge between providers, doctors, and
+      participants — enabling seamless, coordinated care for every person we
+      support.
+  - icon: ❤️
+    title: Dignity in Disability
+    description: We treat every participant with the respect their humanity deserves
+      — person-centred, compassionate, and always rights-focused.
+  - icon: 📊
+    title: Accountability
+    description: Transparent reporting and rigorous incident management — we hold
+      ourselves to the highest standards of clinical and ethical conduct.
+  - icon: 🛡️
+    title: Safety First
+    description: Participant safety underpins every clinical decision. We identify
+      risks, act proactively, and escalate when needed — without exception.
+qualifications:
+  - Bachelor of Nursing
+  - AHPRA Registered
+  - NDIS Specialist
+  - Medication Endorsed
