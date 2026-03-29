@@ -133,13 +133,10 @@ document.querySelectorAll('.contact-form').forEach(form => {
     btn.textContent = 'Sending...';
     btn.disabled = true;
     try {
-      const emailField = form.querySelector('[type="email"]');
-      const replyToField = form.querySelector('[name="_replyto"]');
-      if (emailField && replyToField) replyToField.value = emailField.value;
-      const res = await fetch(form.action, {
+      const res = await fetch('/', {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
       });
       if (res.ok) {
         btn.textContent = 'Sent ✓';
@@ -385,7 +382,7 @@ document.getElementById('applyForm')?.addEventListener('submit', async (e) => {
   btn.textContent = 'Sending...';
   try {
     const formData = new FormData(e.target);
-    const res = await fetch(e.target.action, { method: 'POST', body: formData, headers: { Accept: 'application/json' } });
+    const res = await fetch('/', { method: 'POST', body: formData });
     if (res.ok) {
       btn.textContent = 'Application Sent ✓';
       btn.style.background = '#014B11';

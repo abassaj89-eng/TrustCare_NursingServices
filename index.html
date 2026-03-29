@@ -934,10 +934,9 @@
           <h2 class="careers-talent__h2">Not finding the right fit?</h2>
           <p class="careers-talent__sub">Join our talent community and be the first to hear about new opportunities that match your expertise.</p>
         </div>
-        <form class="careers-talent__form contact-form" action="https://formspree.io/f/maqlnwnw" method="POST">
-          <input type="hidden" name="_subject" value="Talent Pool Sign-Up — TrustCare Support" />
-          <input type="hidden" name="_replyto" value="info@trustcaresupport.com.au" />
-          <input type="text" name="_gotcha" style="display:none;" />
+        <form class="careers-talent__form contact-form" name="talent-pool" netlify netlify-honeypot="bot-field" method="POST">
+          <input type="hidden" name="form-name" value="talent-pool" />
+          <input type="hidden" name="bot-field" style="display:none;" />
           <input type="email" name="email" placeholder="Your email address" required class="careers-talent__input" />
           <button type="submit" class="btn btn--blue">Join Talent Pool</button>
         </form>
@@ -986,10 +985,9 @@
           <div class="refer__form-wrap reveal">
             <h3>Clinical Nursing Referral</h3>
             <p>Complete all required fields. Participant information is used for clinical triage only.</p>
-            <form class="contact-form" action="https://formspree.io/f/mpqowazj" method="POST">
-              <input type="hidden" name="_subject" value="New Clinical Nursing Referral — TrustCare Support" />
-              <input type="hidden" name="_replyto" value="referrals@trustcaresupport.com.au" />
-              <input type="text" name="_gotcha" style="display:none;" />
+            <form class="contact-form" name="referral" netlify netlify-honeypot="bot-field" method="POST">
+              <input type="hidden" name="form-name" value="referral" />
+              <input type="hidden" name="bot-field" style="display:none;" />
               <div class="form-group">
                 <label>Full Name <span style="color:red;">*</span></label>
                 <input type="text" name="full_name" placeholder="Your full name" required />
@@ -1137,10 +1135,9 @@
           <div class="process__form reveal">
             <h3>Book a Free Consultation</h3>
             <p>Get in touch — we'll respond within 24 hours.</p>
-            <form class="contact-form" action="https://formspree.io/f/xaqlnwyw" method="POST">
-              <input type="hidden" name="_subject" value="New Consultation Request — TrustCare Support" />
-              <input type="hidden" name="_replyto" value="admin@trustcaresupport.com.au" />
-              <input type="text" name="_gotcha" style="display:none;" />
+            <form class="contact-form" name="contact" netlify netlify-honeypot="bot-field" method="POST">
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="bot-field" style="display:none;" />
               <div class="form-row">
                 <div class="form-group">
                   <label>First Name</label>
@@ -1252,10 +1249,9 @@
           <div class="complaints-form-wrap reveal reveal-delay-1">
             <h3>Submit a Complaint</h3>
             <p>Please provide as much detail as possible to help us investigate your concern.</p>
-            <form class="contact-form" action="https://formspree.io/f/xbdplrjb" method="POST">
-              <input type="hidden" name="_subject" value="New Complaint Submitted — TrustCare Support" />
-              <input type="hidden" name="_replyto" value="admin@trustcaresupport.com.au" />
-              <input type="text" name="_gotcha" style="display:none;" />
+            <form class="contact-form" name="complaints" netlify netlify-honeypot="bot-field" method="POST">
+              <input type="hidden" name="form-name" value="complaints" />
+              <input type="hidden" name="bot-field" style="display:none;" />
               <div class="form-group">
                 <label>Your Name</label>
                 <input type="text" name="full_name" placeholder="Full name" required />
@@ -1320,10 +1316,9 @@
           <div class="feedback-card reveal">
             <h3>Tell Us What You Think</h3>
             <p>Select a feedback type below and share your thoughts. All feedback is welcome and appreciated.</p>
-            <form class="contact-form" action="https://formspree.io/f/xjgpkbvq" method="POST">
-              <input type="hidden" name="_subject" value="New Feedback Received — TrustCare Support" />
-              <input type="hidden" name="_replyto" value="admin@trustcaresupport.com.au" />
-              <input type="text" name="_gotcha" style="display:none;" />
+            <form class="contact-form" name="feedback" netlify netlify-honeypot="bot-field" method="POST">
+              <input type="hidden" name="form-name" value="feedback" />
+              <input type="hidden" name="bot-field" style="display:none;" />
               <div class="form-group">
                 <label>Feedback Type</label>
                 <div class="feedback-type-grid">
@@ -1504,10 +1499,9 @@
         <div class="footer__contact-item">📍 <span>Perth, Western Australia</span></div>
         <div class="footer__nl">
           <p>Stay updated with NDIS compliance tips:</p>
-          <form class="footer__nl-form contact-form" action="https://formspree.io/f/maqlnwnw" method="POST">
-            <input type="hidden" name="_subject" value="Newsletter Sign-Up — TrustCare Support" />
-            <input type="hidden" name="_replyto" value="info@trustcaresupport.com.au" />
-            <input type="text" name="_gotcha" style="display:none;" />
+          <form class="footer__nl-form contact-form" name="newsletter" netlify netlify-honeypot="bot-field" method="POST">
+            <input type="hidden" name="form-name" value="newsletter" />
+            <input type="hidden" name="bot-field" style="display:none;" />
             <input type="email" name="email" placeholder="your@email.com" required />
             <button type="submit">Subscribe</button>
           </form>
@@ -1585,9 +1579,9 @@
     <button onclick="closeApplyModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:24px;cursor:pointer;color:#64748b;">✕</button>
     <h2 style="color:var(--navy);margin-bottom:4px;">Apply for <span id="applyJobTitle">this Role</span></h2>
     <p style="color:#64748b;font-size:14px;margin-bottom:24px;">Please attach your cover letter &amp; resume as a single PDF.</p>
-    <form id="applyForm" action="https://formspree.io/f/xaqlnwyw" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="_subject" id="applySubject" value="Job Application — TrustCare Support" />
-      <input type="text" name="_gotcha" style="display:none;" />
+    <form id="applyForm" name="job-application" netlify netlify-honeypot="bot-field" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="form-name" value="job-application" />
+      <input type="hidden" name="bot-field" style="display:none;" />
       <div style="display:flex;flex-direction:column;gap:14px;">
         <div><label for="apply_name" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;">Full Name *</label><input id="apply_name" type="text" name="full_name" placeholder="Full Name" required style="width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box;" /></div>
         <div><label for="apply_phone" style="font-size:12px;font-weight:600;color:#64748b;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;">Phone *</label><input id="apply_phone" type="tel" name="phone" placeholder="Phone" required style="width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box;" /></div>
