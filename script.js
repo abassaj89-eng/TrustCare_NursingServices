@@ -139,14 +139,7 @@ document.querySelectorAll('.contact-form').forEach(form => {
         body: new URLSearchParams(new FormData(form)).toString()
       });
       if (res.ok) {
-        btn.textContent = 'Sent ✓';
-        btn.style.background = '#014B11';
-        form.reset();
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.style.background = '';
-          btn.disabled = false;
-        }, 4000);
+        window.location.href = '/thank-you';
       } else {
         throw new Error('Server error');
       }
@@ -384,10 +377,7 @@ document.getElementById('applyForm')?.addEventListener('submit', async (e) => {
     const formData = new FormData(e.target);
     const res = await fetch('/', { method: 'POST', body: formData });
     if (res.ok) {
-      btn.textContent = 'Application Sent ✓';
-      btn.style.background = '#014B11';
-      e.target.reset();
-      setTimeout(() => { closeApplyModal(); btn.textContent = originalText; btn.style.background = ''; btn.disabled = false; }, 3000);
+      window.location.href = '/thank-you';
     } else { throw new Error(); }
   } catch {
     btn.textContent = 'Error — please try again';
