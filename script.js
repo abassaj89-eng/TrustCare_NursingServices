@@ -133,11 +133,13 @@ document.querySelectorAll('.contact-form').forEach(form => {
     btn.textContent = 'Sending...';
     btn.disabled = true;
     try {
-      const res = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString()
-      });
+      // Use FormData directly for multipart forms (file uploads); URLSearchParams for text-only
+      const isMultipart = form.enctype === 'multipart/form-data';
+      const body = isMultipart
+        ? new FormData(form)
+        : new URLSearchParams(new FormData(form)).toString();
+      const headers = isMultipart ? {} : { 'Content-Type': 'application/x-www-form-urlencoded' };
+      const res = await fetch('/', { method: 'POST', headers, body });
       if (res.ok) {
         window.location.href = '/thank-you';
       } else {

@@ -1055,7 +1055,7 @@
               <label class="work-community-card__upload">
                 <span class="work-community-card__upload-icon">📎</span>
                 <span id="eoiFileName">Upload CV (PDF/DOCX)</span>
-                <input type="file" name="cv" accept=".pdf,.doc,.docx" class="work-community-card__file" onchange="document.getElementById('eoiFileName').textContent=this.files[0]?this.files[0].name:'Upload CV (PDF/DOCX)'" />
+                <input type="file" name="resume" accept=".pdf,.doc,.docx" class="work-community-card__file" onchange="document.getElementById('eoiFileName').textContent=this.files[0]?this.files[0].name:'Upload CV (PDF/DOCX)'" />
               </label>
               <button type="submit" class="btn btn--blue" style="width:100%;background:var(--navy);">Submit Interest</button>
             </form>
@@ -1696,6 +1696,13 @@
 <!-- Legal pages (privacy, terms, complaints-policy, incident, rights) are inside the wizard-container above -->
 
 <!-- Netlify field pre-registration (hidden, never shown to users) -->
+<form name="expression-of-interest" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="bot-field" />
+  <input type="text" name="full_name" />
+  <input type="email" name="email" />
+  <select name="professional_role"></select>
+  <input type="file" name="resume" />
+</form>
 <form name="job-apply" data-netlify="true" netlify-honeypot="bot-field" hidden>
   <input type="text" name="bot-field" />
   <input type="text" name="full_name" />
