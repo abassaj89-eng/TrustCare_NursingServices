@@ -343,7 +343,6 @@ document.querySelectorAll('.blog-cat').forEach(btn => {
 // ===== JOB APPLICATION MODAL =====
 function openApplyModal(jobTitle) {
   document.getElementById('applyJobTitle').textContent = jobTitle;
-  document.getElementById('applySubject').value = 'Job Application — ' + jobTitle;
   // Pre-select role in dropdown
   const select = document.querySelector('#applyForm select[name="role"]');
   if (select) {
