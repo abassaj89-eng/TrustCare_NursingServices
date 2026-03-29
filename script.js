@@ -141,7 +141,8 @@ document.querySelectorAll('.contact-form').forEach(form => {
       const headers = isMultipart ? {} : { 'Content-Type': 'application/x-www-form-urlencoded' };
       const res = await fetch('/', { method: 'POST', headers, body });
       if (res.ok) {
-        window.location.href = '/thank-you';
+        const successUrl = form.name === 'referral' ? '/referral-received' : '/thank-you';
+        window.location.href = successUrl;
       } else {
         throw new Error('Server error');
       }
