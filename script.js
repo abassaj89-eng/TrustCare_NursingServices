@@ -565,32 +565,3 @@ if (window.netlifyIdentity) {
 document.addEventListener('DOMContentLoaded', function() {
   document.body.classList.add('page-fade-in');
 });
-
-// ===== LIGHT / DARK MODE TOGGLE =====
-(function () {
-  var html   = document.documentElement;
-  var btn    = document.getElementById('themeToggle');
-  var KEY    = 'tc-theme';
-  var DARK   = 'dark';
-  var LIGHT  = 'light';
-
-  // Read saved preference (default: dark)
-  function getTheme() {
-    return localStorage.getItem(KEY) || DARK;
-  }
-
-  function applyTheme(theme) {
-    html.setAttribute('data-theme', theme);
-    localStorage.setItem(KEY, theme);
-    if (btn) btn.setAttribute('aria-label', theme === DARK ? 'Switch to light mode' : 'Switch to dark mode');
-  }
-
-  function toggle() {
-    applyTheme(getTheme() === DARK ? LIGHT : DARK);
-  }
-
-  // Apply on load (anti-flash inline script handles it before paint, this keeps btn state correct)
-  applyTheme(getTheme());
-
-  if (btn) btn.addEventListener('click', toggle);
-})();
