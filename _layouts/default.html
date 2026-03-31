@@ -220,11 +220,15 @@
 <main id="main-content" tabindex="-1">
 {% unless page.no_hero %}
 <section class="page-hero">
-  <div class="container">
+  <div class="page-hero__inner">
     {% if page.eyebrow %}<div class="page-hero__eyebrow">{{ page.eyebrow }}</div>{% endif %}
     <h1 class="page-hero__title">{{ page.title | split: ' | ' | first }}</h1>
-    {% if page.description %}<p class="page-hero__sub">{{ page.description | truncate: 160 }}</p>{% endif %}
-    <div class="page-hero__breadcrumb"><a href="/">Home</a> / {{ page.title | split: ' | ' | first }}</div>
+    {% if page.description %}<p class="page-hero__description">{{ page.description | truncate: 180 }}</p>{% endif %}
+    <div class="page-hero__breadcrumb">
+      <a href="/">Home</a>
+      <span class="page-hero__breadcrumb-sep">›</span>
+      <span>{{ page.title | split: ' | ' | first }}</span>
+    </div>
   </div>
 </section>
 {% endunless %}
