@@ -1,3 +1,15 @@
+// ===== RECAPTCHA EXPLICIT RENDERING =====
+// Renders each visible .g-recaptcha widget and stores its ID on the parent form.
+// The job-apply modal widget is skipped here and rendered when the modal opens.
+window.initRecaptchas = function() {
+  document.querySelectorAll('.g-recaptcha').forEach(function(div) {
+    const form = div.closest('form');
+    if (!form || form.id === 'applyForm') return; // applyForm handled on modal open
+    const widgetId = grecaptcha.render(div, { sitekey: div.dataset.sitekey });
+    form.dataset.recaptchaWidget = widgetId;
+  });
+};
+
 // ===== LOGO LIGHTBOX =====
 document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('logo-lightbox');
@@ -167,10 +179,10 @@ document.querySelectorAll('.contact-form').forEach(form => {
       return;
     }
 
-    // Validate reCAPTCHA if widget is present on this form
-    const recaptchaWidget = form.querySelector('.g-recaptcha');
-    if (recaptchaWidget) {
-      if (typeof grecaptcha === 'undefined' || !grecaptcha.getResponse()) {
+    // Validate reCAPTCHA using per-form widget ID (avoids multi-widget conflict)
+    if (form.querySelector('.g-recaptcha')) {
+      const widgetId = form.dataset.recaptchaWidget !== undefined ? parseInt(form.dataset.recaptchaWidget) : 0;
+      if (typeof grecaptcha === 'undefined' || !grecaptcha.getResponse(widgetId)) {
         btn.textContent = 'Please complete the reCAPTCHA';
         btn.style.background = '#dc2626';
         setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; }, 3000);
@@ -253,8 +265,17 @@ function openApplyModal(jobTitle) {
     });
   }
   const modal = document.getElementById('applyModal');
-  modal.style.display = 'flex';  // flex so centering works
+  modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
+  // Render applyForm reCAPTCHA widget on first open
+  const applyForm = document.getElementById('applyForm');
+  if (applyForm && applyForm.dataset.recaptchaWidget === undefined && typeof grecaptcha !== 'undefined') {
+    const div = applyForm.querySelector('.g-recaptcha');
+    if (div) {
+      const widgetId = grecaptcha.render(div, { sitekey: div.dataset.sitekey });
+      applyForm.dataset.recaptchaWidget = widgetId;
+    }
+  }
 }
 
 function closeApplyModal() {
@@ -280,8 +301,9 @@ document.getElementById('applyForm')?.addEventListener('submit', async (e) => {
     return;
   }
 
-  // Validate reCAPTCHA
-  if (typeof grecaptcha === 'undefined' || !grecaptcha.getResponse()) {
+  // Validate reCAPTCHA using per-form widget ID
+  const applyWidgetId = e.target.dataset.recaptchaWidget !== undefined ? parseInt(e.target.dataset.recaptchaWidget) : undefined;
+  if (typeof grecaptcha === 'undefined' || !grecaptcha.getResponse(applyWidgetId)) {
     btn.textContent = 'Please complete the reCAPTCHA';
     btn.style.background = '#dc2626';
     setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; }, 3000);
