@@ -1,0 +1,53 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# TrustCare — Jekyll → Netlify Deploy
+#
+# Triggers on every push to `main`.
+#
+# NOTE: Netlify's built-in git integration also watches `main` and will trigger
+# its own build in parallel. To avoid double-builds you have two options:
+#   A) Keep both — GitHub Actions and Netlify native. Both will deploy; the last
+#      one to finish wins (harmless, just costs build minutes).
+#   B) Disable Netlify's git integration under Site Settings → Build & Deploy →
+#      Continuous Deployment → "Stop builds" and rely solely on this workflow.
+#
+# Required GitHub repository secrets (Settings → Secrets → Actions):
+#   NETLIFY_AUTH_TOKEN  — generate at https://app.netlify.com/user/applications
+#   NETLIFY_SITE_ID     — found at Site Settings → General → Site ID
+# ──────────────────────────────────────────────────────────────────────────────
+
+name: Deploy to Netlify
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    name: Build Jekyll & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout source
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Ruby (matches RUBY_VERSION in netlify.toml)
+      - name: Set up Ruby 3.2.0
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2.0'
+          bundler-cache: true   # runs `bundle install` and caches gems automatically
+
+      # 3. Build Jekyll site
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      # 4. Deploy _site/ to Netlify (production)
+      - name: Deploy to Netlify
+        run: npx netlify-cli deploy --prod --dir=_site --message "GitHub Actions deploy — ${{ github.sha }}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

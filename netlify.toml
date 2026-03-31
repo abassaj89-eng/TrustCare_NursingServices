@@ -6,9 +6,139 @@
   JEKYLL_ENV = "production"
   RUBY_VERSION = "3.2.0"
 
-# Redirect www → non-www (canonical domain)
+# ── Canonical domain — www → non-www ──────────────────────────────────────────
 [[redirects]]
-  from = "https://www.trustcaresupport.com.au/*"
-  to   = "https://trustcaresupport.com.au/:splat"
+  from   = "https://www.trustcaresupport.com.au/*"
+  to     = "https://trustcaresupport.com.au/:splat"
   status = 301
   force  = true
+
+# ── Service sub-path aliases → canonical landing pages ────────────────────────
+# Handles any inbound links that used a /services/* prefix pattern.
+[[redirects]]
+  from   = "/services/tracheostomy-care/"
+  to     = "/tracheostomy-care/"
+  status = 301
+
+[[redirects]]
+  from   = "/services/wound-care/"
+  to     = "/wound-care/"
+  status = 301
+
+[[redirects]]
+  from   = "/services/complex-bowel-care/"
+  to     = "/complex-bowel-care/"
+  status = 301
+
+[[redirects]]
+  from   = "/services/peg-enteral-feeding/"
+  to     = "/peg-enteral-feeding/"
+  status = 301
+
+[[redirects]]
+  from   = "/services/catheter-management/"
+  to     = "/catheter-management/"
+  status = 301
+
+[[redirects]]
+  from   = "/services/diabetes-management/"
+  to     = "/diabetes-management/"
+  status = 301
+
+[[redirects]]
+  from   = "/services/seizure-management/"
+  to     = "/seizure-management/"
+  status = 301
+
+[[redirects]]
+  from   = "/services/continence-assessment/"
+  to     = "/continence-assessment/"
+  status = 301
+
+[[redirects]]
+  from   = "/services/ndis-nursing-subcontractor/"
+  to     = "/ndis-nursing-subcontractor/"
+  status = 301
+
+# ── Legacy / alternate spellings ──────────────────────────────────────────────
+[[redirects]]
+  from   = "/peg-feeding/"
+  to     = "/peg-enteral-feeding/"
+  status = 301
+
+[[redirects]]
+  from   = "/enteral-feeding/"
+  to     = "/peg-enteral-feeding/"
+  status = 301
+
+[[redirects]]
+  from   = "/bowel-care/"
+  to     = "/complex-bowel-care/"
+  status = 301
+
+[[redirects]]
+  from   = "/catheter-care/"
+  to     = "/catheter-management/"
+  status = 301
+
+[[redirects]]
+  from   = "/epilepsy/"
+  to     = "/seizure-management/"
+  status = 301
+
+[[redirects]]
+  from   = "/seizures/"
+  to     = "/seizure-management/"
+  status = 301
+
+[[redirects]]
+  from   = "/continence/"
+  to     = "/continence-assessment/"
+  status = 301
+
+[[redirects]]
+  from   = "/subcontractor/"
+  to     = "/ndis-nursing-subcontractor/"
+  status = 301
+
+[[redirects]]
+  from   = "/ndis-subcontractor/"
+  to     = "/ndis-nursing-subcontractor/"
+  status = 301
+
+# ── Trailing-slash normalisation for top-level pages ─────────────────────────
+# Jekyll generates pages with trailing slashes; these catch non-slash variants.
+[[redirects]]
+  from   = "/blog"
+  to     = "/blog/"
+  status = 301
+
+[[redirects]]
+  from   = "/services"
+  to     = "/services/"
+  status = 301
+
+[[redirects]]
+  from   = "/referral"
+  to     = "/referral/"
+  status = 301
+
+[[redirects]]
+  from   = "/contact"
+  to     = "/contact/"
+  status = 301
+
+[[redirects]]
+  from   = "/about"
+  to     = "/about/"
+  status = 301
+
+[[redirects]]
+  from   = "/careers"
+  to     = "/careers/"
+  status = 301
+
+[[redirects]]
+  from   = "/high-intensity"
+  to     = "/high-intensity/"
+  status = 301

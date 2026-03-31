@@ -215,6 +215,33 @@ collections:
               - { label: "Bio", name: "bio", widget: "text" }
               - { label: "Photo", name: "photo", widget: "image", required: false }
 
+# ─── TESTIMONIALS ─────────────────────────────────────────────────────────────
+  - name: "testimonials"
+    label: "💬 Testimonials"
+    editor:
+      preview: false
+    files:
+      - label: "Provider Testimonials"
+        name: "testimonials"
+        file: "_data/testimonials.yml"
+        fields:
+          - label: "Testimonial Cards"
+            name: "items"
+            widget: "list"
+            fields:
+              - label: "Quote"
+                name: "quote"
+                widget: "text"
+                hint: "The testimonial text — do not include opening/closing quotation marks, they are added automatically."
+              - label: "Role / Title"
+                name: "role"
+                widget: "string"
+                hint: "e.g. Support Coordinator"
+              - label: "Organisation"
+                name: "organisation"
+                widget: "string"
+                hint: "e.g. Registered NDIS Provider, Perth"
+
 # ─── LEGAL & COMPLIANCE ──────────────────────────────────────────────────────
   - name: "legal"
     label: "⚖️ Legal & Compliance"
