@@ -211,10 +211,11 @@
         <div class="footer__contact-item">📍 <span>Perth, Western Australia</span></div>
         <div class="footer__nl">
           <p>Stay updated with NDIS compliance tips:</p>
-          <form class="footer__nl-form contact-form" name="newsletter" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/thank-you">
+          <form class="footer__nl-form contact-form" name="newsletter" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" action="/thank-you">
             <input type="hidden" name="form-name" value="newsletter" />
             <input type="text" name="bot-field" style="display:none;" />
             <input type="email" name="email" placeholder="your@email.com" required />
+            <div class="g-recaptcha" data-sitekey="{{ site.recaptcha_site_key }}" style="margin-bottom:10px;"></div>
             <button type="submit">Subscribe</button>
           </form>
         </div>
