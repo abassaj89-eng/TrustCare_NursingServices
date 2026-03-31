@@ -3,45 +3,135 @@ heading_main: "Privacy"
 heading_highlight: "Policy"
 eyebrow: "Legal"
 last_updated: "March 2026"
+version: "2.0"
 content: |
-  ### 1. About This Policy
+  ### About This Policy
 
-  Trust Care Nursing Services and Consulting Pty Ltd (ABN: 18 809 341 867) trading as TrustCare Support ("we", "us", "our") is committed to protecting your personal information in accordance with the *Privacy Act 1988* (Cth) and the Australian Privacy Principles (APPs). This policy explains how we collect, use, store and disclose your personal information when you interact with our website or clinical services.
+  **Version 2.0 — Last updated: March 2026**
+
+  This policy applies to Trust Care Nursing Services and Consulting Pty Ltd (ABN: 18 809 341 867) trading as **TrustCare Support** ("we", "us", "our"). We are committed to protecting your personal information in accordance with the *Privacy Act 1988* (Cth) and the **Australian Privacy Principles (APPs)**.
+
+  **Who this policy applies to:** This policy applies to all individuals whose personal information we collect, including NDIS participants and their families, NDIS registered providers, support coordinators, plan managers, guardians and authorised representatives, and job applicants or prospective nurses.
+
+  If you have a cognitive impairment, communication difficulty, or would like information in an alternative format, please contact us and we will make every reasonable effort to assist. An Easy Read summary of this policy is available on request. You may also nominate a support person, guardian, plan manager, or support coordinator to contact us on your behalf.
+
+  ### 1. Anonymity and Pseudonymity (APP 2)
+
+  Where practicable, you may interact with TrustCare Support anonymously or using a pseudonym. For example, you may contact us with general enquiries without providing your name.
+
+  However, we are unable to deliver clinical nursing services, process a referral, or respond to a complaint on your behalf without collecting your personal and health information. If you do not provide the information we require, we may not be able to provide the relevant service.
 
   ### 2. What Personal Information We Collect
 
-  We may collect the following types of personal information: names and contact details (email, phone, address), organisation name and role, NDIS plan information (general), health and clinical information relevant to nursing care, referral details from NDIS providers and support coordinators, and any other information you provide through our website forms or direct contact.
+  We may collect the following types of personal information:
+
+  - Names and contact details (email, phone, address)
+  - Organisation name and role (for registered providers and support coordinators)
+  - NDIS plan information (general — plan number, funding category)
+  - Health and clinical information relevant to nursing care
+  - Referral details provided by NDIS registered providers and support coordinators
+  - Authorised representative details (guardian, plan manager, support coordinator)
+  - Employment and professional information (for job applicants and nurses)
+  - Any other information you provide through our website forms or direct contact
+
+  We collect only the minimum information necessary for the relevant purpose.
 
   ### 3. Sensitive Health Information
 
-  Health information is classified as sensitive information under the *Privacy Act 1988* (Cth). We collect sensitive health information only where it is necessary for clinical triage and care delivery. Sensitive health information is collected with your explicit consent, or that of your authorised representative, prior to collection. We handle all health information with the highest standard of care and confidentiality.
+  Health information is classified as **sensitive information** under the *Privacy Act 1988* (Cth) and attracts a higher level of protection. We collect sensitive health information only where it is necessary for clinical triage and care delivery.
+
+  Sensitive health information is collected with your **explicit consent**, or that of your **authorised representative** (including a legal guardian, enduring guardian, plan manager, or support coordinator acting under delegated authority), prior to collection.
+
+  Where a participant has a **cognitive impairment or communication difficulty**, we work with their authorised representative or support network to obtain consent and ensure information is communicated in an accessible way. We follow the NDIS Code of Conduct obligation to respect the rights of people with disability to make decisions about their own lives.
 
   ### 4. How We Collect Information
 
-  We collect personal information through: website forms (referral, contact, complaints, and feedback forms); direct contact via phone or email; referrals from registered NDIS providers and support coordinators. We collect only the minimum information necessary for the relevant purpose.
+  We collect personal information through:
+
+  - Website forms (referral, contact, complaints, and feedback forms)
+  - Direct contact via phone or email
+  - Referrals from registered NDIS providers and support coordinators
+  - Authorised representatives acting on behalf of a participant
 
   ### 5. How We Use Your Information
 
-  We use personal information to: conduct clinical triage and prioritise nursing referrals; deliver nursing and clinical support services; communicate with treating teams (GP, allied health) with consent; improve our services and clinical quality; and comply with legal and regulatory obligations including under the NDIS Act and AHPRA registration requirements.
+  We use personal information to:
+
+  - Conduct clinical triage and prioritise nursing referrals
+  - Deliver nursing and clinical support services
+  - Communicate with treating teams (GP, allied health) with consent
+  - Improve our services and clinical quality
+  - Comply with legal and regulatory obligations including under the *NDIS Act 2013*, AHPRA registration requirements, and the *Privacy Act 1988* (Cth)
+  - Process employment applications
 
   ### 6. Disclosure of Information
 
-  Your personal information is not sold or shared with third parties for marketing purposes. We may disclose information to: treating clinicians and allied health professionals (with consent); registered NDIS providers engaged in the participant's care; regulatory bodies (including AHPRA and the NDIS Quality and Safeguards Commission) where required by law. Your information is not disclosed overseas.
+  Your personal information is **not sold or shared with third parties for marketing purposes**. We may disclose information to:
 
-  ### 7. Data Storage and Security
+  - Treating clinicians and allied health professionals (with consent)
+  - Registered NDIS providers engaged in the participant's care
+  - Regulatory bodies (including AHPRA and the NDIS Quality and Safeguards Commission) where required by law
 
-  All information submitted via our website is transmitted using HTTPS/TLS encryption. Data is stored on Australian-based servers. We take reasonable technical and organisational security measures to protect your information from misuse, interference, loss, and unauthorised access, modification, or disclosure.
+  **Your information is not disclosed overseas.**
 
-  ### 8. Access and Correction
+  ### 7. Data Storage, Security, and Retention
 
-  You have the right to access and correct your personal information at any time. To request access or corrections, contact us at [admin@trustcaresupport.com.au](mailto:admin@trustcaresupport.com.au). We will respond within a reasonable timeframe.
+  All information submitted via our website is transmitted using **HTTPS/TLS encryption**. Data is stored on **Australian-based servers**. We take reasonable technical and organisational security measures to protect your information from misuse, interference, loss, and unauthorised access, modification, or disclosure.
+
+  **Retention periods:**
+
+  - **Health records (adult participants):** retained for a minimum of **7 years** from the date of last clinical entry, in accordance with the *Health Records Act* applicable in Western Australia and general health privacy guidance
+  - **Health records (child participants):** retained until the individual turns **25 years of age**, or for 7 years from the date of last entry — whichever is the longer period
+  - **Employment/job application records:** retained for **12 months** from the date of application unless employment commences, in which case records are retained for the duration of employment plus 7 years
+  - **Website enquiry and contact form records:** retained for **2 years** unless the enquiry results in an ongoing engagement
+
+  When personal information is no longer required, it is securely destroyed or de-identified.
+
+  ### 8. Access and Correction (APP 12 and APP 13)
+
+  You have the right to **access and correct your personal information** at any time.
+
+  **Authorised representatives** — including legal guardians, enduring guardians, plan managers, or support coordinators — may request access on behalf of a participant. We will take reasonable steps to verify the representative's authority before disclosing information.
+
+  To request access or corrections, contact us at [admin@trustcaresupport.com.au](mailto:admin@trustcaresupport.com.au) or 📞 0432 014 162.
+
+  We will respond to access requests **within 30 days** of receiving the request, as required by APP 12.3. If we are unable to provide access within 30 days, we will notify you of the reason for the delay and provide an estimated timeframe.
+
+  We may decline to provide access in limited circumstances permitted by APP 12.3, including where providing access would pose a serious threat to life or safety, would have an unreasonable impact on others' privacy, or where the information is subject to legal professional privilege. If we decline, we will provide written reasons and information about how to make a complaint.
 
   ### 9. Complaints About Privacy
 
-  If you have a concern about how we have handled your personal information, please contact us first at [admin@trustcaresupport.com.au](mailto:admin@trustcaresupport.com.au). If your concern is not resolved to your satisfaction, you have the right to contact the Office of the Australian Information Commissioner (OAIC) at [oaic.gov.au](https://www.oaic.gov.au).
+  If you have a concern about how we have handled your personal information, please **contact us first**:
 
-  ### 10. Contact
+  📧 [admin@trustcaresupport.com.au](mailto:admin@trustcaresupport.com.au)
+  📞 0432 014 162
+
+  We will acknowledge your complaint within **5 business days** and aim to resolve it within **30 days**.
+
+  If your concern is not resolved to your satisfaction, you have the right to contact the **Office of the Australian Information Commissioner (OAIC)**:
+  🌐 [oaic.gov.au](https://www.oaic.gov.au) | 📞 1300 363 992
+
+  ### 10. Changes to This Policy
+
+  We may update this Privacy Policy from time to time to reflect changes in our practices, legal obligations, or regulatory guidance. The current version and its version number and date appear at the top of this page.
+
+  If we make a **material change** to how we collect, use, or disclose your personal information, we will take reasonable steps to notify affected individuals — for example, by posting a notice on our website or contacting you directly where we have your contact details. We encourage you to review this policy periodically.
+
+  Previous versions of this policy are available on request.
+
+  ### 11. Alternative Formats and Accessibility
+
+  This policy is available in the following formats on request:
+
+  - **Large print**
+  - **Plain English / Easy Read summary**
+  - **Email text version**
+
+  To request an alternative format, contact us at [admin@trustcaresupport.com.au](mailto:admin@trustcaresupport.com.au) or 📞 0432 014 162. We will respond within **5 business days**.
+
+  ### 12. Contact
 
   📧 [admin@trustcaresupport.com.au](mailto:admin@trustcaresupport.com.au)
   📞 0432 014 162
   🌐 [trustcaresupport.com.au](https://trustcaresupport.com.au)
+  📍 Perth, Western Australia

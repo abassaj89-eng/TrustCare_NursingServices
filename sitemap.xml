@@ -85,6 +85,14 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Compliance Checklist -->
+  <url>
+    <loc>https://trustcaresupport.com.au/compliance/</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Legal & Compliance -->
   <url>
     <loc>https://trustcaresupport.com.au/rights/</loc>
