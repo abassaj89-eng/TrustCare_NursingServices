@@ -1,5 +1,5 @@
 [build]
-  command = "python3 -c \"import os; open('_data/env.yml','w').write('google_maps_api_key: \\\"' + os.environ.get('GOOGLE_MAPS_API_KEY','') + '\\\"\\n')\" && bundle exec jekyll build"
+  command = "echo \"google_maps_api_key: $GOOGLE_MAPS_API_KEY\" > _data/env.yml && bundle exec jekyll build"
   publish = "_site"
 
 [build.environment]
