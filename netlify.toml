@@ -1,5 +1,5 @@
 [build]
-  command = "rm -rf .jekyll-cache && echo \"google_maps_api_key: $GOOGLE_MAPS_API_KEY\" > _config_env.yml && bundle exec jekyll build --config _config.yml,_config_env.yml && rm -f _config_env.yml"
+  command = "bundle exec jekyll build"
   publish = "_site"
 
 [build.environment]
