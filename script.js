@@ -571,7 +571,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var btn = document.getElementById('backToTop');
   if (!btn) return;
   function checkScroll() {
-    btn.classList.toggle('visible', window.scrollY > 50);
+    btn.classList.toggle('visible', window.scrollY > 1);
   }
   window.addEventListener('scroll', checkScroll, { passive: true });
   checkScroll(); // run on load in case page is already scrolled

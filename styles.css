@@ -1976,8 +1976,8 @@ footer::before {
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(8px);
-  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(0);
+  transition: opacity 0.15s;
   box-shadow: 0 4px 16px rgba(0,33,91,0.12);
 }
 .back-to-top.visible {
