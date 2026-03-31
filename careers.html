@@ -188,11 +188,10 @@ canonical: "https://trustcaresupport.com.au/careers/"
             <div class="work-community-card__badge">Quick Register</div>
             <h3 class="work-community-card__title">Stay in the Loop</h3>
             <p class="work-community-card__desc">Drop your email and we'll reach out when a matching role becomes available.</p>
-            <form class="contact-form" name="talent-pool" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" action="/thank-you">
+            <form class="contact-form" name="talent-pool" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/thank-you">
               <input type="hidden" name="form-name" value="talent-pool" />
               <input type="text" name="bot-field" style="display:none;" />
               <input type="email" name="email" placeholder="your@email.com" required class="work-community-card__input" />
-              <div class="g-recaptcha" data-sitekey="{{ site.recaptcha_site_key }}" style="margin-top:12px;"></div>
               <button type="submit" class="btn btn--blue" style="width:100%;margin-top:12px;">Join Talent Pool</button>
             </form>
           </div>
