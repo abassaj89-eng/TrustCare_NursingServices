@@ -423,7 +423,8 @@ img { max-width: 100%; display: block; }
   line-height: 1;
   letter-spacing: -0.02em;
 }
-.hero__stat-label { font-size: 12px; color: rgba(255,255,255,.6); margin-top: 4px; }
+.hero__stat-icon { font-size: 28px; line-height: 1; margin-bottom: 6px; }
+.hero__stat-label { font-size: 12px; color: rgba(255,255,255,.75); margin-top: 4px; font-weight: 600; }
 
 .hero__image { position: relative; }
 .hero__img-wrap {
