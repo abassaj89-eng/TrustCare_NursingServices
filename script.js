@@ -87,19 +87,46 @@ const firstAccordion = document.querySelector('.accordion__item');
 if (firstAccordion) firstAccordion.classList.add('open');
 
 // ===== SCROLL REVEAL =====
+// Cinematic staggered fade-up using Intersection Observer — no external libraries.
+// Elements with class "reveal" slide up and fade in when entering the viewport.
+// Sibling .reveal elements inside the same parent get an incremental delay for a
+// stagger effect (e.g. card grids, feature lists).
+const STAGGER_MS = 80; // delay between consecutive siblings
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
+      const el = e.target;
+
+      // Calculate stagger: count preceding .reveal siblings already seen or intersecting
+      const siblings = el.parentElement
+        ? Array.from(el.parentElement.querySelectorAll(':scope > .reveal'))
+        : [];
+      const idx = siblings.indexOf(el);
+      const stagger = idx > 0 ? idx * STAGGER_MS : 0;
+
+      // Apply delay then mark visible (CSS transition handles the animation)
+      if (stagger > 0) {
+        el.style.transitionDelay = `${stagger}ms`;
+      }
+      // rAF ensures the delay style is painted before the class triggers the transition
+      requestAnimationFrame(() => {
+        el.classList.add('visible');
+        el.classList.add('is-visible'); // support both class names used in legacy markup
+      });
+
+      observer.unobserve(el);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
 function attachRevealObserver() {
-  document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal:not(.visible):not(.is-visible)').forEach(el => observer.observe(el));
 }
 attachRevealObserver();
+
+// Re-attach after wizard page switches (single-page app navigation)
+document.addEventListener('pageSwitch', attachRevealObserver);
 
 // ===== COUNTER ANIMATION =====
 function animateCounter(el) {

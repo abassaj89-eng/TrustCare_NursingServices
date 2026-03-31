@@ -140,10 +140,10 @@ no_hero: true
           </div>
           <div class="board-grid" style="justify-content:center;">
             {% if site.data.board.members.size == 0 %}
-            <div style="text-align:center;padding:48px 24px;background:#f8faff;border-radius:16px;border:2px dashed rgba(38,106,251,0.2);">
+            <div style="text-align:center;padding:48px 24px;background:rgba(10,186,181,.07);border-radius:16px;border:2px dashed rgba(10,186,181,0.2);">
               <div style="font-size:48px;margin-bottom:16px;">🏛️</div>
-              <h3 style="color:var(--navy);margin-bottom:8px;">Advisory Board — Coming Soon</h3>
-              <p style="color:#64748b;max-width:420px;margin:0 auto;">We are currently establishing our advisory board. Members will be announced soon.</p>
+              <h3 style="color:#fff;margin-bottom:8px;">Advisory Board — Coming Soon</h3>
+              <p style="color:rgba(255,255,255,.55);max-width:420px;margin:0 auto;">We are currently establishing our advisory board. Members will be announced soon.</p>
             </div>
             {% else %}
             {% for member in site.data.board.members %}
@@ -173,17 +173,17 @@ no_hero: true
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;margin-bottom:40px;">
             <div style="background:var(--bg-cta);border-radius:16px;padding:32px;">
               <div style="font-size:28px;margin-bottom:12px;">🎯</div>
-              <h3 style="font-size:18px;font-weight:700;color:var(--navy);margin-bottom:12px;">Our Vision</h3>
-              <p style="font-size:15px;line-height:1.8;color:var(--navy);">{{ site.data.about.vision }}</p>
+              <h3 style="font-size:18px;font-weight:700;color:#fff;margin-bottom:12px;">Our Vision</h3>
+              <p style="font-size:15px;line-height:1.8;color:rgba(255,255,255,.75);">{{ site.data.about.vision }}</p>
             </div>
             <div style="background:var(--bg-mint);border-radius:16px;padding:32px;">
               <div style="font-size:28px;margin-bottom:12px;">🚀</div>
-              <h3 style="font-size:18px;font-weight:700;color:var(--navy);margin-bottom:12px;">Our Mission</h3>
-              <p style="font-size:15px;line-height:1.8;color:var(--navy);">{{ site.data.about.mission }}</p>
+              <h3 style="font-size:18px;font-weight:700;color:#fff;margin-bottom:12px;">Our Mission</h3>
+              <p style="font-size:15px;line-height:1.8;color:rgba(255,255,255,.75);">{{ site.data.about.mission }}</p>
             </div>
           </div>
           <div>
-            <h3 style="font-size:20px;font-weight:700;color:var(--navy);margin-bottom:24px;text-align:center;">Our Values</h3>
+            <h3 style="font-size:20px;font-weight:700;color:#fff;margin-bottom:24px;text-align:center;">Our Values</h3>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
               {% for value in site.data.about.values %}
               <div class="service-card reveal" style="padding:22px;">
