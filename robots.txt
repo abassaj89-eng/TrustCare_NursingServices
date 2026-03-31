@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /thank-you
-Disallow: /referral-received
+Disallow: /thank-you/
+Disallow: /referral-received/
 
 Sitemap: https://trustcaresupport.com.au/sitemap.xml
