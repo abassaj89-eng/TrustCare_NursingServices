@@ -167,6 +167,17 @@ document.querySelectorAll('.contact-form').forEach(form => {
       return;
     }
 
+    // Validate reCAPTCHA if widget is present on this form
+    const recaptchaWidget = form.querySelector('.g-recaptcha');
+    if (recaptchaWidget) {
+      if (typeof grecaptcha === 'undefined' || !grecaptcha.getResponse()) {
+        btn.textContent = 'Please complete the reCAPTCHA';
+        btn.style.background = '#dc2626';
+        setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; }, 3000);
+        return;
+      }
+    }
+
     btn.textContent = 'Sending...';
     btn.disabled = true;
     try {
@@ -266,6 +277,14 @@ document.getElementById('applyForm')?.addEventListener('submit', async (e) => {
     btn.textContent = fileError;
     btn.style.background = '#dc2626';
     setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; }, 4000);
+    return;
+  }
+
+  // Validate reCAPTCHA
+  if (typeof grecaptcha === 'undefined' || !grecaptcha.getResponse()) {
+    btn.textContent = 'Please complete the reCAPTCHA';
+    btn.style.background = '#dc2626';
+    setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; }, 3000);
     return;
   }
 

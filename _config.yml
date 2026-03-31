@@ -1,3 +1,6 @@
+# Google reCAPTCHA v2 site key — replace with your key from https://www.google.com/recaptcha/admin/create
+recaptcha_site_key: "REPLACE_WITH_YOUR_SITE_KEY"
+
 title: "TrustCare Support"
 description: "NDIS Community Nursing Perth | Complex Care RN | TrustCare Support"
 url: "https://trustcaresupport.com.au"
