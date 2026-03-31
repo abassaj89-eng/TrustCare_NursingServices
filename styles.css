@@ -1957,11 +1957,11 @@ footer::before {
    BACK TO TOP BUTTON
    ================================================================ */
 .back-to-top {
+  display: none;
   position: fixed;
   bottom: 28px;
   right: 24px;
   z-index: 9990;
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
@@ -1974,16 +1974,10 @@ footer::before {
   font-weight: 600;
   letter-spacing: 0.02em;
   cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(0);
-  transition: opacity 0.15s;
   box-shadow: 0 4px 16px rgba(0,33,91,0.12);
 }
 .back-to-top.visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
+  display: flex;
 }
 .back-to-top:hover {
   background: #c8d5e8;

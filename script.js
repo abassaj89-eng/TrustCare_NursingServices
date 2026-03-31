@@ -570,11 +570,19 @@ document.addEventListener('DOMContentLoaded', function() {
 (function () {
   var btn = document.getElementById('backToTop');
   if (!btn) return;
+  function scrolled() {
+    return (window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0);
+  }
   function checkScroll() {
-    btn.classList.toggle('visible', window.scrollY > 1);
+    if (scrolled() > 1) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
   }
   window.addEventListener('scroll', checkScroll, { passive: true });
-  checkScroll(); // run on load in case page is already scrolled
+  document.addEventListener('scroll', checkScroll, { passive: true });
+  checkScroll();
   btn.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
