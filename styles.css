@@ -1952,3 +1952,243 @@ footer::before {
   max-width: 230px;
   margin: 0 auto;
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHT MODE THEME  —  data-theme="light"
+   Stats bar, CTA banner and footer always stay dark navy.
+   ═══════════════════════════════════════════════════════════ */
+
+[data-theme="light"] {
+  /* ── Page backgrounds ── */
+  --bg:         #ffffff;
+  --bg-white:   #ffffff;
+  --bg-section: #f8fafc;
+  --bg-pale:    #f1f5f9;
+  --bg-sky:     #f1f5f9;
+  --bg-blue:    #f1f5f9;
+  --bg-card-a:  #ffffff;
+  --bg-card-b:  rgba(0,106,103,0.04);
+  --bg-card-c:  #f8fafc;
+  --bg-mint:    rgba(0,106,103,0.04);
+
+  /* ── Text ── */
+  --text-body:  #334155;
+  --text-muted: #64748b;
+  --dark:       #0f172a;
+
+  /* ── Borders ── */
+  --border:     rgba(0,106,103,0.14);
+  --border-mid: rgba(0,106,103,0.24);
+
+  /* ── Shadows ── */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:  0 4px 12px rgba(0,33,91,0.08), 0 2px 4px rgba(0,33,91,0.05);
+  --shadow-lg:  0 20px 40px rgba(0,33,91,0.10);
+}
+
+/* ── Body & page ── */
+[data-theme="light"] body {
+  background: #ffffff;
+  color: #334155;
+}
+
+/* ── Hero section ── */
+[data-theme="light"] .hero__bg {
+  background: #ffffff;
+}
+[data-theme="light"] .hero__bg-pattern {
+  background-image:
+    radial-gradient(ellipse 60% 70% at 60% 55%, rgba(0,106,103,0.08) 0%, transparent 65%),
+    radial-gradient(circle at 2px 2px, rgba(0,33,91,0.04) 1px, transparent 0);
+  background-size: auto, 36px 36px;
+}
+[data-theme="light"] .hero__title   { color: #00215b; }
+[data-theme="light"] .hero__sub     { color: #334155; }
+[data-theme="light"] .hero__badge   {
+  background: rgba(0,106,103,0.08);
+  color: #006a67;
+  border-color: rgba(0,106,103,0.20);
+}
+
+/* ── Hero image frame ── */
+[data-theme="light"] .hero__photo-card {
+  border-color: #e2e8f0;
+  box-shadow: 0 12px 40px rgba(0,33,91,0.10);
+}
+[data-theme="light"] .hero__blob--accent { opacity: 0.4; }
+[data-theme="light"] .hero__blob--teal   { opacity: 0.3; }
+
+/* ── Floating cards in hero ── */
+[data-theme="light"] .fc-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(0,33,91,0.10);
+}
+[data-theme="light"] .fc-num   { color: #00215b; }
+[data-theme="light"] .fc-lbl   { color: #64748b; }
+[data-theme="light"] .fc-title { color: #00215b; }
+[data-theme="light"] .fc-sub   { color: #64748b; }
+
+/* ── Ticker / scrolling band ── */
+[data-theme="light"] .ticker {
+  background: linear-gradient(90deg, #f1f5f9 0%, #f8fafc 100%);
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+[data-theme="light"] .ticker__item { color: #334155; }
+[data-theme="light"] .ticker__item span { color: #006a67; }
+
+/* ── Section headings & eyebrows ── */
+[data-theme="light"] .section-heading { color: #00215b; }
+[data-theme="light"] .section-sub     { color: #64748b; }
+[data-theme="light"] .eyebrow         { color: #006a67; }
+
+/* ── Section backgrounds ── */
+[data-theme="light"] .section,
+[data-theme="light"] .section--white,
+[data-theme="light"] .section--pale  { background: #ffffff; }
+[data-theme="light"] .section--tinted { background: #f8fafc; }
+
+/* ── Service cards ── */
+[data-theme="light"] .service-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 12px rgba(0,33,91,0.06);
+}
+[data-theme="light"] .service-card h3 { color: #00215b; }
+[data-theme="light"] .service-card p  { color: #334155; }
+
+/* ── Hi-intensity cards ── */
+[data-theme="light"] .hi-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 12px rgba(0,33,91,0.06);
+}
+[data-theme="light"] .hi-card h3          { color: #00215b; }
+[data-theme="light"] .hi-card__desc       { color: #334155; }
+[data-theme="light"] .hi-card__tag        { color: #334155; }
+[data-theme="light"] .hi-intro { background: var(--bg-stats); }
+
+/* ── Process steps ── */
+[data-theme="light"] .process__step-num {
+  background: #006a67;
+  color: #fff;
+}
+[data-theme="light"] .process__step-title { color: #00215b; }
+[data-theme="light"] .process__step-desc  { color: #334155; }
+[data-theme="light"] .process__step-line  { background: #e2e8f0; }
+
+/* ── Accordion ── */
+[data-theme="light"] .accordion__item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+[data-theme="light"] .accordion__title  { color: #00215b; }
+[data-theme="light"] .accordion__body   { color: #334155; }
+
+/* ── Testimonials section ── */
+[data-theme="light"] .testimonials-section { background: #f8fafc; }
+[data-theme="light"] .testimonial-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0,33,91,0.06);
+}
+[data-theme="light"] .testimonial-card__text { color: #00215b; }
+[data-theme="light"] .testimonial-card__name { color: #00215b; }
+[data-theme="light"] .testimonial-card__role { color: #64748b; }
+
+/* ── Blog / career cards ── */
+[data-theme="light"] .blog-card, [data-theme="light"] .career-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 12px rgba(0,33,91,0.06);
+}
+[data-theme="light"] .blog-card h3, [data-theme="light"] .career-card h3 { color: #00215b; }
+[data-theme="light"] .blog-card p,  [data-theme="light"] .career-card p  { color: #334155; }
+
+/* ── Navbar ── */
+[data-theme="light"] .navbar {
+  background: rgba(255,255,255,0.98);
+  border-bottom: 1px solid rgba(0,33,91,0.08);
+}
+[data-theme="light"] .navbar__nav > li > a { color: #334155; }
+[data-theme="light"] .navbar__logo span    { color: #00215b; }
+
+/* ── Mobile menu ── */
+[data-theme="light"] .mobile-menu {
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+[data-theme="light"] .mobile-menu a { color: #334155; }
+
+/* ── Forms ── */
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group select,
+[data-theme="light"] .form-group textarea {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+[data-theme="light"] .form-group label { color: #334155; }
+
+/* ── Theme toggle button ── */
+[data-theme="light"] .theme-toggle {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+[data-theme="light"] .theme-toggle__sun  {
+  background: #006a67;
+  transform: scale(1.08);
+}
+[data-theme="light"] .theme-toggle__moon { background: transparent; }
+[data-theme="dark"]  .theme-toggle__moon {
+  background: #006a67;
+  transform: scale(1.08);
+}
+[data-theme="dark"]  .theme-toggle__sun  { background: transparent; }
+
+/* ── Page-hero banner — always dark ── */
+[data-theme="light"] .page-hero { /* stays dark navy by design */ }
+
+/* ── Credential badges (about page) ── */
+[data-theme="light"] .cred-badge {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+/* ── Work/careers hero ── */
+[data-theme="light"] .work-hero { /* stays dark */ }
+
+/* ── Smooth colour transitions for everything ── */
+[data-theme="light"] *,
+[data-theme="dark"]  * {
+  transition:
+    background-color 0.32s ease,
+    border-color     0.32s ease,
+    color            0.28s ease,
+    box-shadow       0.32s ease;
+}
+
+/* ── Theme toggle button base styles ── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(255,255,255,0.10);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  border-radius: 100px;
+  padding: 3px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.3s, border-color 0.3s;
+}
+.theme-toggle__icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  transition: background 0.25s, transform 0.25s;
+  user-select: none;
+}
