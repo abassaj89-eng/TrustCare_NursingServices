@@ -25,3 +25,4 @@ package-lock.json
 Trustcare Support antigravity audit_report
 doc_unpacked/
 _data/env.yml
+_config_env.yml

@@ -109,7 +109,7 @@ canonical: "https://trustcaresupport.com.au/complaints/"
       </div>
     </section>
 
-{% if site.data.env.google_maps_api_key and site.data.env.google_maps_api_key != "" %}
+{% if site.google_maps_api_key and site.google_maps_api_key != "" %}
 <script>
 (function() {
   function initAddressAutocomplete() {
@@ -130,6 +130,6 @@ canonical: "https://trustcaresupport.com.au/complaints/"
   window.initComplaintAddressAutocomplete = initAddressAutocomplete;
 })();
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key={{ site.data.env.google_maps_api_key }}&libraries=places&callback=initComplaintAddressAutocomplete" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ site.google_maps_api_key }}&libraries=places&callback=initComplaintAddressAutocomplete" async defer></script>
 {% endif %}
 
