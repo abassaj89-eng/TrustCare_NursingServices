@@ -201,7 +201,7 @@ canonical: "https://trustcaresupport.com.au/careers/"
             <div class="work-community-card__badge work-community-card__badge--featured">Expression of Interest</div>
             <h3 class="work-community-card__title">Tell Us About Yourself</h3>
             <p class="work-community-card__desc">Share your details and credentials so we can match you to upcoming roles.</p>
-            <form class="contact-form" name="expression-of-interest" data-netlify="true" netlify-honeypot="bot-field" method="POST" enctype="multipart/form-data" action="/thank-you">
+            <form class="contact-form" name="expression-of-interest" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" enctype="multipart/form-data" action="/thank-you">
               <input type="hidden" name="form-name" value="expression-of-interest" />
               <input type="text" name="bot-field" style="display:none;" />
               <input type="text" name="full_name" placeholder="Full Name" required class="work-community-card__input" />
@@ -220,7 +220,7 @@ canonical: "https://trustcaresupport.com.au/careers/"
                 <span id="eoiFileName">Upload CV (PDF/DOCX)</span>
                 <input type="file" name="resume" accept=".pdf,.doc,.docx" class="work-community-card__file" onchange="document.getElementById('eoiFileName').textContent=this.files[0]?this.files[0].name:'Upload CV (PDF/DOCX)'" />
               </label>
-              <div class="g-recaptcha" data-sitekey="{{ site.recaptcha_site_key }}" style="margin-bottom:12px;"></div>
+              <div data-netlify-recaptcha="true" style="margin-bottom:12px;"></div>
               <button type="submit" class="btn btn--blue" style="width:100%;background:var(--navy);">Submit Interest</button>
             </form>
           </div>
