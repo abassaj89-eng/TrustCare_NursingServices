@@ -97,6 +97,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer integrity="sha384-dy2tW8xkhLIj8lZR42MCwZhhDb2cCewZiw0uA65CMpdHiJzL+iubx7HzHcCXU2rW" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -361,7 +362,7 @@
           <input type="checkbox" id="apply_consent" name="consent" required style="margin-top:4px;flex-shrink:0;width:16px;height:16px;cursor:pointer;" />
           <label for="apply_consent" style="margin:0;font-size:13px;color:#4a5568;line-height:1.6;text-transform:none;letter-spacing:normal;font-weight:400;word-break:break-word;">I consent to the collection and use of my personal information for the purpose of this job application in accordance with the <a href="/privacy/" style="color:var(--blue);">Privacy Policy</a>.</label>
         </div>
-        <div data-netlify-recaptcha="true" style="margin-bottom:14px;"></div>
+        <div class="g-recaptcha" data-sitekey="{{ site.recaptcha_site_key }}" style="margin-bottom:14px;"></div>
         <button type="submit" class="btn btn--blue" style="width:100%;justify-content:center;padding:14px;">Send Application</button>
       </div>
     </form>

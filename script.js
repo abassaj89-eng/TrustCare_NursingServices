@@ -167,8 +167,8 @@ document.querySelectorAll('.contact-form').forEach(form => {
       return;
     }
 
-    // Validate reCAPTCHA if Netlify widget is present on this form
-    const recaptchaWidget = form.querySelector('[data-netlify-recaptcha]');
+    // Validate reCAPTCHA if widget is present on this form
+    const recaptchaWidget = form.querySelector('.g-recaptcha');
     if (recaptchaWidget) {
       if (typeof grecaptcha === 'undefined' || !grecaptcha.getResponse()) {
         btn.textContent = 'Please complete the reCAPTCHA';

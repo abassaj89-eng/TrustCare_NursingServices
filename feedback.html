@@ -68,7 +68,7 @@ canonical: "https://trustcaresupport.com.au/feedback/"
                 <input type="checkbox" name="consent" required style="margin-top:4px;flex-shrink:0;min-width:16px;width:16px;height:16px;cursor:pointer;" />
                 <p style="margin:0;font-size:13px;color:#4a5568;line-height:1.6;text-transform:none;letter-spacing:normal;font-weight:400;word-break:break-word;">I consent to the collection and use of my personal information in accordance with the <a href="/privacy/" style="color:var(--blue);">Privacy Policy</a>.</p>
               </div>
-              <div data-netlify-recaptcha="true" style="margin-bottom:14px;"></div>
+              <div class="g-recaptcha" data-sitekey="{{ site.recaptcha_site_key }}" style="margin-bottom:14px;"></div>
               <button type="submit" class="btn btn--green" style="width:100%;justify-content:center;">Submit Feedback</button>
             </form>
           </div>
