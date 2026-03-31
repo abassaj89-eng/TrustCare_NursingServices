@@ -182,9 +182,9 @@ img { max-width: 100%; display: block; }
 }
 /* Primary — accent blue */
 .btn--green { background: var(--color-accent-blue); color: #fff; box-shadow: 0 2px 8px rgba(0,33,91,0.22); }
-.btn--green:hover { background: #002a70; transform: translateY(-2px); }
+.btn--green:hover { background: #001845; transform: translateY(-2px); }
 .btn--blue { background: var(--color-accent-blue); color: #fff; box-shadow: 0 2px 8px rgba(0,33,91,0.22); }
-.btn--blue:hover { background: #002a70; transform: translateY(-2px); }
+.btn--blue:hover { background: #001845; transform: translateY(-2px); }
 /* Secondary — teal outline */
 .btn--outline { background: transparent; color: var(--color-brand-teal); border: 2px solid var(--color-primary-teal); }
 .btn--outline:hover { background: var(--color-brand-teal); color: #fff; }
@@ -838,7 +838,7 @@ img { max-width: 100%; display: block; }
   background-clip: text;
   letter-spacing: -0.03em;
 }
-.stat-item__label { font-size: 14px; color: rgba(255,255,255,0.80); font-weight: 600; letter-spacing: 0.02em; }
+.stat-item__label { font-size: 14px; color: rgba(255,255,255,0.88); font-weight: 600; letter-spacing: 0.02em; }
 
 /* ===== PROCESS ===== */
 .process__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
@@ -1078,7 +1078,7 @@ img { max-width: 100%; display: block; }
 .blog-search-icon { font-size: 18px; color: #64748b; }
 .blog-search-input { flex: 1; border: none; outline: none; font-size: 15px; color: var(--navy); background: transparent; font-family: 'Inter', sans-serif; }
 .blog-search-btn { background: var(--color-accent-blue); color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s; font-family: 'Inter', sans-serif; }
-.blog-search-btn:hover { background: #002a70; }
+.blog-search-btn:hover { background: #001845; }
 
 /* ===== BLOG CATEGORIES ===== */
 .blog-cats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
@@ -1747,7 +1747,7 @@ footer::before {
   font-size: 1.05rem;
 }
 .post-content h2, .post-content h3 {
-  color: var(--navy, #003588);
+  color: var(--navy, #00215b);
   font-weight: 700;
   margin-top: 2.2em;
 }
@@ -1759,7 +1759,7 @@ footer::before {
   background: var(--bg-section, #f1f5f9);
   border-radius: 0 8px 8px 0;
   font-style: italic;
-  color: var(--navy, #003588);
+  color: var(--navy, #00215b);
 }
 
 
@@ -1923,4 +1923,32 @@ footer::before {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   line-height: 1.4;
+}
+
+/* ── Stats icon-box design ── */
+.stat-icon-box {
+  width: 56px; height: 56px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--color-brand-accent);
+  border: 1px solid rgba(0,106,103,0.28);
+  flex-shrink: 0;
+}
+.stat-icon-box svg { display: block; }
+.stat-item__heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.01em;
+}
+.stat-item__desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.65;
+  max-width: 230px;
+  margin: 0 auto;
 }
