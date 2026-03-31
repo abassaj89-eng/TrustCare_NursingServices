@@ -1385,3 +1385,199 @@ img { max-width: 100%; display: block; }
   border-color: #c7d9f7;
 }
 
+/* ===== CINEMATIC REDESIGN ADDITIONS ===== */
+
+/* ── Body base ──────────────────────────────────────────────────────────── */
+body {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ── Section heading letter-spacing ─────────────────────────────────────── */
+.section-heading {
+  letter-spacing: 0.02em;
+}
+
+/* ── Page load animation ─────────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-fade-in {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Enhanced scroll reveal (IS-VISIBLE variant for new observer) ─────────── */
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Navbar — cinematic dark on standalone pages ──────────────────────────── */
+.navbar {
+  position: sticky;
+  top: 0;
+}
+
+/* ── Page Hero ────────────────────────────────────────────────────────────── */
+.page-hero {
+  background: var(--navy);
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0 56px;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(38,106,251,0.15) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 30%, rgba(1,92,21,0.08) 0%, transparent 45%);
+  pointer-events: none;
+}
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+}
+.page-hero__eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6ea8fe;
+  margin-bottom: 12px;
+}
+.page-hero__title {
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.page-hero__sub {
+  color: rgba(255,255,255,0.7);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-top: 12px;
+  max-width: 560px;
+}
+.page-hero__breadcrumb {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 16px;
+}
+.page-hero__breadcrumb a {
+  color: #6ea8fe;
+  text-decoration: none;
+}
+.page-hero__breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ── Card enhancements ────────────────────────────────────────────────────── */
+.card,
+.hi-card,
+.service-card {
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.card:hover,
+.hi-card:hover,
+.service-card:hover {
+  box-shadow: 0 8px 32px rgba(38,106,251,0.15);
+}
+.service-card {
+  border-top: 3px solid var(--green);
+}
+.hi-card {
+  border-left: 3px solid var(--blue);
+}
+
+/* ── Button enhancements ──────────────────────────────────────────────────── */
+.btn {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn--green {
+  border-radius: 8px;
+}
+
+/* ── Forms — cinematic dark style ──────────────────────────────────────────── */
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(38,106,251,0.15);
+  outline: none;
+}
+
+/* Referral form glassmorphism wrap */
+.refer__form-wrap {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.97);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 20px;
+}
+
+/* ── Footer teal top accent ───────────────────────────────────────────────── */
+.footer {
+  position: relative;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--blue) 40%, #6ea8fe 60%, transparent 100%);
+}
+
+/* ── Governance policy cards — dark accent ────────────────────────────────── */
+.gov-policy-card {
+  border-top: 3px solid var(--blue);
+}
+
+/* ── Hide disabled buttons ────────────────────────────────────────────────── */
+.btn[disabled] {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  display: none;
+}
+
+/* ── Blog cards — dark accent + hover lift ─────────────────────────────────── */
+.blog-card {
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(38,106,251,0.15);
+}
+.blog-card__tag {
+  color: var(--blue);
+}
+
+/* ── Page hero responsive ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .page-hero {
+    min-height: 220px;
+    padding: 56px 0 40px;
+  }
+  .page-hero__title {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+}
+@media (max-width: 375px) {
+  .page-hero {
+    padding: 48px 0 32px;
+  }
+}
+

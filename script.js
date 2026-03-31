@@ -518,3 +518,23 @@ if (window.netlifyIdentity) {
     }
   });
 }
+
+// ── Intersection Observer — scroll reveal (is-visible) ───────────────────────
+(function() {
+  var revealEls = document.querySelectorAll('.reveal');
+  if (!revealEls.length) return;
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(function(el) { io.observe(el); });
+})();
+
+// ── Page fade-in on load ──────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  document.body.classList.add('page-fade-in');
+});
