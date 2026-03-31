@@ -3,13 +3,15 @@ heading_main: "Privacy"
 heading_highlight: "Policy"
 eyebrow: "Legal"
 last_updated: "March 2026"
-version: "2.0"
+version: "2.1"
 content: |
   ### About This Policy
 
-  **Version 2.0 — Last updated: March 2026**
+  **Version 2.1 — Last updated: March 2026**
 
-  This policy applies to Trust Care Nursing Services and Consulting Pty Ltd (ABN: 18 809 341 867) trading as **TrustCare Support** ("we", "us", "our"). We are committed to protecting your personal information in accordance with the *Privacy Act 1988* (Cth) and the **Australian Privacy Principles (APPs)**.
+  This policy applies to Trust Care Nursing Services and Consulting Pty Ltd (ABN: 18 809 341 867) trading as **TrustCare Support** ("we", "us", "our"). We are committed to protecting your personal information in accordance with the *Privacy Act 1988* (Cth) as amended by the *Privacy and Other Legislation Amendment Act 2024* (Cth), and the **Australian Privacy Principles (APPs)**.
+
+  **Recent legislative changes:** From December 2024, updated security obligations under the Privacy Act require entities to take reasonable steps to protect personal information from misuse, interference, loss, and unauthorised access, disclosure, or modification — including technical and organisational safeguards. From June 2025, Australian law also recognises a statutory **privacy tort**: individuals may seek civil remedies for serious invasions of privacy. Maximum civil penalties for serious or repeated privacy contraventions have increased to the greater of $50 million, three times the benefit obtained, or 30% of adjusted turnover. TrustCare's practices are designed to meet these strengthened obligations.
 
   **Who this policy applies to:** This policy applies to all individuals whose personal information we collect, including NDIS participants and their families, NDIS registered providers, support coordinators, plan managers, guardians and authorised representatives, and job applicants or prospective nurses.
 
@@ -99,7 +101,18 @@ content: |
 
   We may decline to provide access in limited circumstances permitted by APP 12.3, including where providing access would pose a serious threat to life or safety, would have an unreasonable impact on others' privacy, or where the information is subject to legal professional privilege. If we decline, we will provide written reasons and information about how to make a complaint.
 
-  ### 9. Complaints About Privacy
+  ### 9. Security of Your Personal Information
+
+  We take reasonable technical and organisational steps to protect personal information from misuse, interference, loss, and unauthorised access, modification, or disclosure. These steps include:
+
+  - Secure, encrypted storage of digital health records
+  - Access controls limiting health information to authorised clinical staff
+  - Use of Netlify's secure forms infrastructure for referral data submission
+  - Secure destruction or de-identification of personal information when it is no longer required
+
+  We will notify affected individuals and the OAIC as required by the **Notifiable Data Breaches (NDB) scheme** under Part IIIC of the Privacy Act if a data breach is likely to result in serious harm.
+
+  ### 10. Complaints About Privacy
 
   If you have a concern about how we have handled your personal information, please **contact us first**:
 
@@ -111,7 +124,9 @@ content: |
   If your concern is not resolved to your satisfaction, you have the right to contact the **Office of the Australian Information Commissioner (OAIC)**:
   🌐 [oaic.gov.au](https://www.oaic.gov.au) | 📞 1300 363 992
 
-  ### 10. Changes to This Policy
+  From June 2025, the *Privacy and Other Legislation Amendment Act 2024* also provides individuals with a **statutory privacy tort**: a right to seek civil remedies through the courts for serious invasions of privacy. This remedy is available in addition to the OAIC complaints process.
+
+  ### 11. Changes to This Policy
 
   We may update this Privacy Policy from time to time to reflect changes in our practices, legal obligations, or regulatory guidance. The current version and its version number and date appear at the top of this page.
 
@@ -119,7 +134,7 @@ content: |
 
   Previous versions of this policy are available on request.
 
-  ### 11. Alternative Formats and Accessibility
+  ### 12. Alternative Formats and Accessibility
 
   This policy is available in the following formats on request:
 
@@ -129,7 +144,7 @@ content: |
 
   To request an alternative format, contact us at [admin@trustcaresupport.com.au](mailto:admin@trustcaresupport.com.au) or 📞 0432 014 162. We will respond within **5 business days**.
 
-  ### 12. Contact
+  ### 13. Contact
 
   📧 [admin@trustcaresupport.com.au](mailto:admin@trustcaresupport.com.au)
   📞 0432 014 162
