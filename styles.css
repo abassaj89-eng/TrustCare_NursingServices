@@ -58,9 +58,9 @@
   /* ── Legacy aliases — all existing selectors keep working ── */
   --color-primary-navy:   #00215b;
   --color-primary-teal:   #006a67;
-  --color-accent-blue:    #00215b;
+  --color-accent-blue:    #006a67;
   --color-royal-blue:     #00215b;
-  --color-blue:           #00215b;
+  --color-blue:           #006a67;
   --color-light-blue:     #f1f5f9;
   --color-grey-text:      #334155;
   --color-muted:          #64748b;
@@ -73,7 +73,7 @@
   --bg:         #f8fafc;
   --bg-white:   #ffffff;
   --bg-section: #f1f5f9;
-  --bg-mint:    rgba(26,94,99,0.06);
+  --bg-mint:    rgba(0,106,103,0.06);
   --bg-sky:     #f1f5f9;
   --bg-card-a:  #f1f5f9;
   --bg-card-b:  rgba(0,106,103,0.05);
@@ -182,9 +182,9 @@ img { max-width: 100%; display: block; }
 }
 /* Primary — accent blue */
 .btn--green { background: var(--color-accent-blue); color: #fff; box-shadow: 0 2px 8px rgba(0,33,91,0.22); }
-.btn--green:hover { background: #001845; transform: translateY(-2px); }
+.btn--green:hover { background: #005250; transform: translateY(-2px); }
 .btn--blue { background: var(--color-accent-blue); color: #fff; box-shadow: 0 2px 8px rgba(0,33,91,0.22); }
-.btn--blue:hover { background: #001845; transform: translateY(-2px); }
+.btn--blue:hover { background: #005250; transform: translateY(-2px); }
 /* Secondary — teal outline */
 .btn--outline { background: transparent; color: var(--color-brand-teal); border: 2px solid var(--color-primary-teal); }
 .btn--outline:hover { background: var(--color-brand-teal); color: #fff; }
@@ -426,7 +426,7 @@ img { max-width: 100%; display: block; }
   gap: 8px;
   background: rgba(0,106,103,0.18);
   border: 1px solid rgba(0,106,103,0.35);
-  color: rgba(0,106,103,0.60);
+  color: rgba(0,106,103,0.92);
   font-size: 12px;
   font-weight: 600;
   padding: 6px 16px;
@@ -1078,7 +1078,7 @@ img { max-width: 100%; display: block; }
 .blog-search-icon { font-size: 18px; color: #64748b; }
 .blog-search-input { flex: 1; border: none; outline: none; font-size: 15px; color: var(--navy); background: transparent; font-family: 'Inter', sans-serif; }
 .blog-search-btn { background: var(--color-accent-blue); color: #fff; border: none; padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s; font-family: 'Inter', sans-serif; }
-.blog-search-btn:hover { background: #001845; }
+.blog-search-btn:hover { background: #005250; }
 
 /* ===== BLOG CATEGORIES ===== */
 .blog-cats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
@@ -1892,7 +1892,7 @@ footer::before {
 }
 .hero__blob--teal {
   width: 260px; height: 260px;
-  background: rgba(26,94,99,0.15);
+  background: rgba(0,106,103,0.15);
   top: -40px; left: -40px;
 }
 
