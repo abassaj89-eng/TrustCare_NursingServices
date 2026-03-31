@@ -5,3 +5,10 @@
 [build.environment]
   JEKYLL_ENV = "production"
   RUBY_VERSION = "3.2.0"
+
+# Redirect www → non-www (canonical domain)
+[[redirects]]
+  from = "https://www.trustcaresupport.com.au/*"
+  to   = "https://trustcaresupport.com.au/:splat"
+  status = 301
+  force  = true
