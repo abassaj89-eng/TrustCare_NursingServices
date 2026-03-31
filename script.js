@@ -565,3 +565,69 @@ if (window.netlifyIdentity) {
 document.addEventListener('DOMContentLoaded', function() {
   document.body.classList.add('page-fade-in');
 });
+
+// ===== BACK TO TOP =====
+(function () {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  window.addEventListener('scroll', function () {
+    btn.classList.toggle('visible', window.scrollY > 300);
+  }, { passive: true });
+  btn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+// ===== ACCESSIBILITY WIDGET =====
+(function () {
+  var widget  = document.getElementById('a11yWidget');
+  var panel   = document.getElementById('a11yPanel');
+  var close   = document.getElementById('a11yClose');
+  var fontUp  = document.getElementById('a11yFontUp');
+  var fontDn  = document.getElementById('a11yFontDown');
+  var contrast= document.getElementById('a11yContrast');
+  var reset   = document.getElementById('a11yReset');
+  if (!widget || !panel) return;
+
+  var fontSize   = parseInt(localStorage.getItem('tc-a11y-font') || '0', 10);
+  var highContrast = localStorage.getItem('tc-a11y-contrast') === '1';
+
+  function applyFont() {
+    document.documentElement.style.fontSize = fontSize === 0 ? '' : (16 + fontSize * 2) + 'px';
+    localStorage.setItem('tc-a11y-font', fontSize);
+  }
+  function applyContrast() {
+    document.body.classList.toggle('high-contrast', highContrast);
+    if (contrast) contrast.classList.toggle('active', highContrast);
+    localStorage.setItem('tc-a11y-contrast', highContrast ? '1' : '0');
+  }
+
+  // Restore saved settings on load
+  applyFont();
+  applyContrast();
+
+  function togglePanel() {
+    var isHidden = panel.hasAttribute('hidden');
+    if (isHidden) { panel.removeAttribute('hidden'); widget.setAttribute('aria-expanded', 'true'); }
+    else          { panel.setAttribute('hidden', '');  widget.setAttribute('aria-expanded', 'false'); }
+  }
+
+  widget.addEventListener('click', togglePanel);
+  close.addEventListener('click',  function () { panel.setAttribute('hidden', ''); widget.setAttribute('aria-expanded', 'false'); });
+
+  fontUp.addEventListener('click', function () { if (fontSize < 4) { fontSize++; applyFont(); } });
+  fontDn.addEventListener('click', function () { if (fontSize > -2) { fontSize--; applyFont(); } });
+  contrast.addEventListener('click', function () { highContrast = !highContrast; applyContrast(); });
+  reset.addEventListener('click', function () {
+    fontSize = 0; highContrast = false;
+    applyFont(); applyContrast();
+  });
+
+  // Close panel on outside click
+  document.addEventListener('click', function (e) {
+    if (!panel.hasAttribute('hidden') && !panel.contains(e.target) && e.target !== widget) {
+      panel.setAttribute('hidden', '');
+      widget.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();

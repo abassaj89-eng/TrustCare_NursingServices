@@ -431,6 +431,29 @@
   <span style="color:#fff;font-size:13px;opacity:0.7;">Click anywhere to close</span>
 </div>
 
+<!-- ===== BACK TO TOP ===== -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  <span>Back To Top</span>
+</button>
+
+<!-- ===== ACCESSIBILITY WIDGET ===== -->
+<button id="a11yWidget" class="a11y-widget" aria-label="Accessibility options" aria-expanded="false">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M12 7c-2.76 0-5 2.24-5 5h2c0-1.66 1.34-3 3-3s3 1.34 3 3h2c0-2.76-2.24-5-5-5zm-1 10.5V22h2v-4.5l2.5-2.5H18v-2h-2.93L12 16l-3.07-3H6v2h2.5l2.5 2.5z"/></svg>
+</button>
+<div id="a11yPanel" class="a11y-panel" role="dialog" aria-label="Accessibility options" hidden>
+  <div class="a11y-panel__header">
+    <span>Accessibility</span>
+    <button class="a11y-panel__close" id="a11yClose" aria-label="Close accessibility panel">✕</button>
+  </div>
+  <div class="a11y-panel__body">
+    <button class="a11y-panel__btn" id="a11yFontUp" aria-label="Increase font size">A+ <span>Larger Text</span></button>
+    <button class="a11y-panel__btn" id="a11yFontDown" aria-label="Decrease font size">A− <span>Smaller Text</span></button>
+    <button class="a11y-panel__btn" id="a11yContrast" aria-label="Toggle high contrast">◑ <span>High Contrast</span></button>
+    <button class="a11y-panel__btn" id="a11yReset" aria-label="Reset accessibility settings">↺ <span>Reset</span></button>
+  </div>
+</div>
+
 <script src="/script.js"></script>
 </body>
 </html>
