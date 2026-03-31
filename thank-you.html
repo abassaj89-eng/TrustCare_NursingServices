@@ -9,49 +9,87 @@
   <meta name="robots" content="noindex" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Sora:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:'DM Sans',sans-serif;
-      background:#0A1628;min-height:100vh;
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      padding:24px;color:rgba(255,255,255,.82);
-      animation:fadein .55s ease both;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f6f9ff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      color: #111827;
     }
-    @keyframes fadein{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-    body::before{
-      content:'';position:fixed;inset:0;pointer-events:none;
-      background:radial-gradient(ellipse at 50% 40%,rgba(10,186,181,.18) 0%,transparent 60%);
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 56px 48px;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(0,53,136,0.10);
     }
-    .card{
-      background:rgba(13,30,53,.85);backdrop-filter:blur(12px);
-      border:1px solid rgba(10,186,181,.25);border-radius:24px;
-      padding:56px 48px;max-width:520px;width:100%;text-align:center;
-      box-shadow:0 24px 80px rgba(0,0,0,.4);position:relative;
+    .icon {
+      width: 80px;
+      height: 80px;
+      background: #eef3ff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 36px;
     }
-    .logo{font-family:'Sora',sans-serif;font-size:15px;font-weight:700;color:rgba(255,255,255,.5);margin-bottom:32px;letter-spacing:.02em;}
-    .icon{
-      width:80px;height:80px;background:rgba(10,186,181,.15);border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      margin:0 auto 28px;font-size:36px;
-      border:2px solid rgba(10,186,181,.3);
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: #003588;
+      margin-bottom: 14px;
     }
-    h1{font-family:'Sora',sans-serif;font-size:32px;font-weight:800;color:#fff;margin-bottom:14px;}
-    p{font-size:16px;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:32px;}
-    strong{color:#fff;}
-    .btn{
-      display:inline-flex;align-items:center;gap:8px;
-      background:#0ABAB5;color:#fff;text-decoration:none;
-      padding:14px 32px;border-radius:100px;font-size:15px;font-weight:600;
-      transition:background .2s,transform .2s,box-shadow .2s;
-      box-shadow:0 4px 18px rgba(10,186,181,.3);
+    p {
+      font-size: 16px;
+      color: #6b7280;
+      line-height: 1.75;
+      margin-bottom: 32px;
     }
-    .btn:hover{background:#089490;transform:translateY(-2px);box-shadow:0 8px 28px rgba(10,186,181,.4);}
-    .contact{margin-top:28px;font-size:13px;color:rgba(255,255,255,.4);}
-    .contact a{color:#0ABAB5;text-decoration:none;font-weight:600;}
-    .contact a:hover{text-decoration:underline;}
-    @media(max-width:480px){.card{padding:40px 24px;}h1{font-size:26px;}}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #003588;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #266afb; }
+    .contact {
+      margin-top: 28px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+    .contact a { color: #003588; text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
+    .logo {
+      margin-bottom: 32px;
+      font-family: 'Sora', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #003588;
+      opacity: 0.6;
+      letter-spacing: 0.02em;
+    }
+    @media (max-width: 480px) {
+      .card { padding: 40px 24px; }
+      h1 { font-size: 26px; }
+    }
   </style>
 </head>
 <body>
