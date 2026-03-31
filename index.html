@@ -352,29 +352,50 @@ canonical: "https://trustcaresupport.com.au/"
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="section section--blue" id="testimonials">
+    <section class="testimonials-section reveal" id="testimonials">
       <div class="container">
-        <div style="text-align:center;max-width:640px;margin:0 auto 48px;">
-          <div class="eyebrow">Provider Feedback</div>
-          <h2 class="section-heading">What <span>Providers &amp; Coordinators</span> Say</h2>
-          <p style="color:#f1f5f9;font-size:15px;line-height:1.75;margin-top:16px;">TrustCare works exclusively with registered NDIS providers as a clinical nursing subcontractor — here is what our provider partners say about the model.</p>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
 
+        <!-- Header -->
+        <div style="text-align:center;max-width:700px;margin:0 auto 56px;">
+          <div class="eyebrow-pill">
+            <span class="eyebrow-pill__dot"></span>
+            Provider Feedback
+          </div>
+          <h2 class="section-heading">
+            What Providers &amp; <br>
+            Coordinators <span>Say</span>
+          </h2>
+        </div>
+
+        <!-- Cards -->
+        <div class="testimonials__grid">
           {% for item in site.data.testimonials.items %}
-          <div style="background:rgba(255,255,255,0.07);border:1.5px solid rgba(255,255,255,0.13);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;">
-            <div style="display:flex;gap:4px;">
-              <span style="color:#f59e0b;font-size:16px;">★★★★★</span>
+          <div class="testimonial-card reveal">
+
+            <!-- Stars -->
+            <div class="testimonial-card__stars" aria-label="5 stars out of 5">
+              {% for i in (1..5) %}
+              <svg class="testimonial-card__star" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              {% endfor %}
             </div>
-            <p style="color:#fff;font-size:15px;line-height:1.8;margin:0;font-style:italic;">"{{ item.quote }}"</p>
-            <div style="border-top:1px solid rgba(255,255,255,0.12);padding-top:16px;">
-              <div style="font-size:13px;font-weight:700;color:#fff;">{{ item.role }}</div>
-              <div style="font-size:12px;color:#f1f5f9;margin-top:2px;">{{ item.organisation }}</div>
+
+            <!-- Quote -->
+            <p class="testimonial-card__text">"{{ item.quote }}"</p>
+
+            <!-- Author -->
+            <div class="testimonial-card__author">
+              <div>
+                <div class="testimonial-card__name">{{ item.role }}</div>
+                <div class="testimonial-card__role">{{ item.organisation }}</div>
+              </div>
             </div>
+
           </div>
           {% endfor %}
-
         </div>
+
       </div>
     </section>
 
