@@ -24,3 +24,4 @@ package-lock.json
 # Local audit reports and unpacked docs
 Trustcare Support antigravity audit_report
 doc_unpacked/
+_data/env.yml

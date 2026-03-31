@@ -1,5 +1,5 @@
 recaptcha_site_key: "6Lc9Ep8sAAAAAEr8D8lrMn-PdZKVfyugRh3dQpLn"
-google_maps_api_key: "AIzaSyBuLaEk5j--MAtLVwVkBabFbWfPfFtRcEE"   # Paste your Google Maps API key here (needs Places API enabled)
+google_maps_api_key: ""   # Set via Netlify environment variable GOOGLE_MAPS_API_KEY — never put key here
 
 title: "TrustCare Support"
 description: "TrustCare Support is Perth's NDIS nursing subcontractor — delivering AHPRA-registered clinical care, HIDPA training and complex nursing support for registered NDIS providers in WA."
