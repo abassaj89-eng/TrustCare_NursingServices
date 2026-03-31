@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Dark blue circle background -->
+  <circle cx="60" cy="60" r="58" fill="#003588"/>
+
+  <!-- Shield shape -->
+  <path d="M60 22 L88 34 L88 62 Q88 86 60 98 Q32 86 32 62 L32 34 Z" fill="#061535"/>
+  <path d="M60 28 L84 38 L84 62 Q84 82 60 93 Q36 82 36 62 L36 38 Z" fill="#266AFB" opacity="0.3"/>
+
+  <!-- Shield outline -->
+  <path d="M60 22 L88 34 L88 62 Q88 86 60 98 Q32 86 32 62 L32 34 Z" stroke="#059669" stroke-width="3" fill="none"/>
+
+  <!-- Medical cross inside shield -->
+  <rect x="50" y="50" width="20" height="6" rx="3" fill="#FFFFFF"/>
+  <rect x="57" y="43" width="6" height="20" rx="3" fill="#FFFFFF"/>
+</svg>

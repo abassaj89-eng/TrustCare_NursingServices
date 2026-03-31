@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Dark blue circle background -->
+  <circle cx="60" cy="60" r="58" fill="#003588"/>
+
+  <!-- Simplified intestine/colon outline - coiled loops -->
+  <path d="M38 45 Q38 32 52 32 Q66 32 66 45 Q66 55 54 55 Q44 55 44 65 Q44 76 56 76 Q70 76 72 65 Q74 54 82 54 Q88 54 88 62 Q88 72 78 72" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- End cap -->
+  <circle cx="78" cy="72" r="5" fill="#FFFFFF"/>
+  <!-- Start cap -->
+  <circle cx="38" cy="45" r="5" fill="#FFFFFF"/>
+
+  <!-- Teal medical cross overlay -->
+  <rect x="86" y="28" width="22" height="7" rx="3.5" fill="#059669"/>
+  <rect x="93" y="21" width="7" height="22" rx="3.5" fill="#059669"/>
+</svg>
