@@ -188,11 +188,10 @@ canonical: "https://trustcaresupport.com.au/careers/"
             <div class="work-community-card__badge">Quick Register</div>
             <h3 class="work-community-card__title">Stay in the Loop</h3>
             <p class="work-community-card__desc">Drop your email and we'll reach out when a matching role becomes available.</p>
-            <form class="contact-form" name="talent-pool" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" action="/thank-you">
+            <form class="contact-form" name="talent-pool" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/thank-you">
               <input type="hidden" name="form-name" value="talent-pool" />
               <input type="text" name="bot-field" style="display:none;" />
               <input type="email" name="email" placeholder="your@email.com" required class="work-community-card__input" />
-              <div data-netlify-recaptcha="true" style="margin-bottom:12px;"></div>
               <button type="submit" class="btn btn--blue" style="width:100%;margin-top:12px;">Join Talent Pool</button>
             </form>
           </div>
@@ -202,7 +201,7 @@ canonical: "https://trustcaresupport.com.au/careers/"
             <div class="work-community-card__badge work-community-card__badge--featured">Expression of Interest</div>
             <h3 class="work-community-card__title">Tell Us About Yourself</h3>
             <p class="work-community-card__desc">Share your details and credentials so we can match you to upcoming roles.</p>
-            <form class="contact-form" name="expression-of-interest" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" method="POST" enctype="multipart/form-data" action="/thank-you">
+            <form class="contact-form" name="expression-of-interest" data-netlify="true" netlify-honeypot="bot-field" method="POST" enctype="multipart/form-data" action="/thank-you">
               <input type="hidden" name="form-name" value="expression-of-interest" />
               <input type="text" name="bot-field" style="display:none;" />
               <input type="text" name="full_name" placeholder="Full Name" required class="work-community-card__input" />
@@ -221,7 +220,6 @@ canonical: "https://trustcaresupport.com.au/careers/"
                 <span id="eoiFileName">Upload CV (PDF/DOCX)</span>
                 <input type="file" name="resume" accept=".pdf,.doc,.docx" class="work-community-card__file" onchange="document.getElementById('eoiFileName').textContent=this.files[0]?this.files[0].name:'Upload CV (PDF/DOCX)'" />
               </label>
-              <div data-netlify-recaptcha="true" style="margin-bottom:12px;"></div>
               <button type="submit" class="btn btn--blue" style="width:100%;background:var(--navy);">Submit Interest</button>
             </form>
           </div>
