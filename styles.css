@@ -1995,8 +1995,8 @@ footer::before {
    ================================================================ */
 .a11y-widget {
   position: fixed;
-  bottom: 32px;
-  left: 24px;
+  top: 80px;
+  right: 24px;
   z-index: 900;
   width: 52px;
   height: 52px;
@@ -2017,8 +2017,8 @@ footer::before {
 }
 .a11y-panel {
   position: fixed;
-  bottom: 94px;
-  left: 24px;
+  top: 142px;
+  right: 24px;
   z-index: 901;
   background: #ffffff;
   border: 1px solid #e2e8f0;

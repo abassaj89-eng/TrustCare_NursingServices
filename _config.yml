@@ -8,10 +8,6 @@ baseurl: ""
 # URL structure
 permalink: /:title/
 
-# Plugins
-plugins:
-  - jekyll-sitemap
-
 # Build settings
 markdown: kramdown
 kramdown:
