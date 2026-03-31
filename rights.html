@@ -1,20 +1,31 @@
 ---
 layout: default
-title: "Participant Rights & Responsibilities | TrustCare Support"
-description: "TrustCare Support participant rights and responsibilities — understanding your rights as an NDIS participant."
+title: "How We Work | TrustCare Support"
+description: "How TrustCare Support works — independent RN services through registered NDIS provider partnerships in Western Australia. We do not contract directly with participants."
 canonical: "https://trustcaresupport.com.au/rights/"
 ---
 
   <section class="section">
-    <div class="container" style="max-width:800px;">
+    <div class="container" style="max-width:860px;">
       <div class="eyebrow">{{ site.data.legal_rights.eyebrow }}</div>
       <h2 class="section-heading">{{ site.data.legal_rights.heading_main }} <span>{{ site.data.legal_rights.heading_highlight }}</span></h2>
       <p class="section-sub">Last updated: {{ site.data.legal_rights.last_updated }}</p>
+
+      <!-- Key fact callout -->
+      <div style="background:var(--navy);border-radius:12px;padding:20px 24px;margin-bottom:36px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="font-size:28px;flex-shrink:0;">🤝</div>
+        <div>
+          <p style="color:#fff;font-size:15px;font-weight:600;margin:0 0 6px;">TrustCare works through registered NDIS providers — not directly with participants.</p>
+          <p style="color:#93c5fd;font-size:13px;margin:0;line-height:1.6;">All clinical nursing engagements are arranged through a registered NDIS provider or plan manager. NDIS funding flows through the registered provider framework.</p>
+        </div>
+      </div>
+
       <div class="legal-content">
         {{ site.data.legal_rights.content | markdownify }}
         <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;">
           <a href="/" class="btn btn--outline">← Back to Home</a>
-          <a href="/complaints/" class="btn btn--blue">Make a Complaint →</a>
+          <a href="/referral/" class="btn btn--green">Make a Referral →</a>
+          <a href="/contact/" class="btn btn--blue">Contact Us →</a>
         </div>
       </div>
     </div>
