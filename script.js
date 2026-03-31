@@ -570,9 +570,11 @@ document.addEventListener('DOMContentLoaded', function() {
 (function () {
   var btn = document.getElementById('backToTop');
   if (!btn) return;
-  window.addEventListener('scroll', function () {
-    btn.classList.toggle('visible', window.scrollY > 10);
-  }, { passive: true });
+  function checkScroll() {
+    btn.classList.toggle('visible', window.scrollY > 50);
+  }
+  window.addEventListener('scroll', checkScroll, { passive: true });
+  checkScroll(); // run on load in case page is already scrolled
   btn.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });

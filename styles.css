@@ -1958,9 +1958,9 @@ footer::before {
    ================================================================ */
 .back-to-top {
   position: fixed;
-  bottom: 100px;
+  bottom: 28px;
   right: 24px;
-  z-index: 900;
+  z-index: 9990;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1995,9 +1995,9 @@ footer::before {
    ================================================================ */
 .a11y-widget {
   position: fixed;
-  top: 80px;
-  right: 24px;
-  z-index: 900;
+  top: 8px;
+  right: 8px;
+  z-index: 9995;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -2017,9 +2017,9 @@ footer::before {
 }
 .a11y-panel {
   position: fixed;
-  top: 142px;
-  right: 24px;
-  z-index: 901;
+  top: 68px;
+  right: 8px;
+  z-index: 9996;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 14px;
