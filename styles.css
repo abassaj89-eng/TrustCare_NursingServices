@@ -1109,8 +1109,8 @@ img { max-width: 100%; display: block; }
 .footer { background: var(--color-brand-primary); color: rgba(255,255,255,.75); padding: 64px 0 0; }
 .footer::before { content:''; display:block; height:3px; background:linear-gradient(90deg,transparent,var(--color-primary-teal),transparent); }
 .footer__top {
-  display: grid; grid-template-columns: 2fr 1fr 1fr;
-  gap: 44px; padding-bottom: 48px;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 36px; padding-bottom: 48px;
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 .footer__logo {
@@ -1125,7 +1125,7 @@ img { max-width: 100%; display: block; }
   display: flex; align-items: center; justify-content: center;
   color: #fff; font-size: 19px; font-weight: 700;
 }
-.footer__desc { font-size: 14px; line-height: 1.8; margin-bottom: 18px; max-width: 260px; }
+.footer__desc { font-size: 14px; line-height: 1.8; margin-bottom: 18px; max-width: 220px; }
 .footer__contact-item { display: flex; align-items: center; gap: 8px; font-size: 14px; margin-bottom: 8px; }
 .footer__col h4 {
   font-family: 'Outfit', sans-serif;
