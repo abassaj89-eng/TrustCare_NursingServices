@@ -13,9 +13,13 @@ window.initRecaptchas = function() {
 // ===== LOGO LIGHTBOX =====
 document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('logo-lightbox');
+  if (!lightbox) return;
   document.querySelectorAll('.logo-preview-trigger').forEach(img => {
+    // Attach to the parent <a> if present — prevents anchor navigation reliably
+    const el = img.closest('a') || img;
+    el.style.cursor = 'zoom-in';
     img.style.cursor = 'zoom-in';
-    img.addEventListener('click', (e) => {
+    el.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       lightbox.style.display = 'flex';
