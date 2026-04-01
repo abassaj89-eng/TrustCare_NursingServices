@@ -136,8 +136,8 @@
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar" id="navbar">
   <div class="navbar__inner">
-    <a href="/" class="navbar__logo">
-      <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="navbar__logo-img logo-preview-trigger" />
+    <a href="/" class="navbar__logo" onclick="event.preventDefault();event.stopPropagation();document.getElementById('logo-lightbox').style.display='flex';" style="cursor:zoom-in;">
+      <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="navbar__logo-img" style="cursor:zoom-in;" />
       <span>TrustCare</span>
     </a>
     <ul class="navbar__nav">
@@ -241,8 +241,8 @@
     <div class="footer__top">
       <div>
         <div class="footer__logo">
-          <a href="/">
-          <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="footer__logo-img logo-preview-trigger" />
+          <a href="/" onclick="event.preventDefault();event.stopPropagation();document.getElementById('logo-lightbox').style.display='flex';" style="cursor:zoom-in;">
+          <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="footer__logo-img" style="cursor:zoom-in;" />
           </a>
           <span>TrustCare</span>
         </div>

@@ -11,24 +11,14 @@ window.initRecaptchas = function() {
 };
 
 // ===== LOGO LIGHTBOX =====
-document.addEventListener('DOMContentLoaded', () => {
-  const lightbox = document.getElementById('logo-lightbox');
-  if (!lightbox) return;
-  document.querySelectorAll('.logo-preview-trigger').forEach(img => {
-    // Attach to the parent <a> if present — prevents anchor navigation reliably
-    const el = img.closest('a') || img;
-    el.style.cursor = 'zoom-in';
-    img.style.cursor = 'zoom-in';
-    el.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      lightbox.style.display = 'flex';
-    });
-  });
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') lightbox.style.display = 'none';
-  });
+// Open: handled via inline onclick on logo <a> tags in default.html
+// Close: Escape key
+function closeLogo() {
+  const lb = document.getElementById('logo-lightbox');
+  if (lb) lb.style.display = 'none';
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLogo();
 });
 
 // ===== NAVBAR SCROLL =====
