@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrustCare Support — NDIS Nursing Perth (Design Prototype)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:    #2C5F78;
+      --secondary:  #E8F1F5;
+      --accent:     #F4A261;
+      --bg:         #ffffff;
+      --footer-bg:  #0f172a;
+      --text-dark:  #111827;
+      --text-body:  #4B5563;
+      --text-muted: #9CA3AF;
+      --gray-50:    #f9fafb;
+      --gray-100:   #f3f4f6;
+      --gray-200:   #e5e7eb;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-body);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    /* ── CONTAINER ── */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: 80px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 40px; height: 40px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-img {
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .nav-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4B5563;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      background: var(--secondary);
+    }
+
+    .btn-cta-nav {
+      background: var(--primary);
+      color: white !important;
+      border-radius: 9999px !important;
+      padding: 10px 24px !important;
+      font-weight: 600 !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+
+    .btn-cta-nav:hover {
+      background: #224d63 !important;
+      transform: translateY(-1px);
+    }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: white;
+      border-radius: 9999px;
+      padding: 14px 32px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #224d63;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(44,95,120,0.28);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--primary);
+      border-radius: 9999px;
+      padding: 14px 32px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid var(--primary);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: white;
+      border-radius: 9999px;
+      padding: 14px 32px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.6);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+
+    .btn-outline-white:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: white;
+      border-radius: 24px;
+      border: 1px solid var(--gray-100);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 48px rgba(44,95,120,0.12);
+    }
+
+    /* ── SECTION ── */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: var(--secondary);
+      border-radius: 9999px;
+      padding: 6px 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--primary);
+    }
+
+    .section-sub {
+      font-size: 1.125rem;
+      color: var(--text-body);
+      max-width: 600px;
+    }
+
+    .section-sub.centered {
+      margin: 0 auto;
+    }
+
+    .text-center { text-align: center; }
+
+    /* ── HERO ── */
+    .hero {
+      padding-top: 160px;
+      padding-bottom: 80px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--secondary);
+      color: var(--primary);
+      border-radius: 9999px;
+      padding: 8px 18px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge-dot {
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--primary);
+    }
+
+    .hero-sub {
+      font-size: 1.125rem;
+      color: var(--text-body);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-stat-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-stat-icon {
+      width: 36px; height: 36px;
+      background: var(--secondary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hero-stat-text strong {
+      display: block;
+      font-weight: 600;
+      color: var(--text-dark);
+      font-size: 0.9375rem;
+    }
+
+    .hero-stat-text span {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image-bg {
+      position: absolute;
+      inset: -32px -32px 0 32px;
+      background: var(--secondary);
+      border-radius: 40px;
+      z-index: 0;
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 480px;
+      border-radius: 32px;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      display: block;
+      box-shadow: 0 24px 64px rgba(44,95,120,0.18);
+    }
+
+    .hero-image-badge {
+      position: absolute;
+      bottom: 24px;
+      left: -24px;
+      z-index: 2;
+      background: white;
+      border-radius: 16px;
+      padding: 14px 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-image-badge-icon {
+      width: 40px; height: 40px;
+      background: var(--secondary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hero-image-badge-text strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .hero-image-badge-text span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ── STATS BAND ── */
+    .stats-band {
+      background: var(--footer-bg);
+      padding: 56px 0;
+    }
+
+    .stats-band-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .stats-band-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .stats-band-icon {
+      width: 52px; height: 52px;
+      background: rgba(44,95,120,0.4);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .stats-band-text strong {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .stats-band-text span {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      background: var(--gray-50);
+    }
+
+    .services-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 56px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .service-card {
+      padding: 32px 24px;
+    }
+
+    .service-icon-wrap {
+      width: 56px; height: 56px;
+      background: var(--secondary);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: background 0.2s;
+    }
+
+    .service-card:hover .service-icon-wrap {
+      background: var(--primary);
+    }
+
+    .service-card:hover .service-icon-wrap svg path,
+    .service-card:hover .service-icon-wrap svg circle,
+    .service-card:hover .service-icon-wrap svg rect {
+      stroke: white;
+    }
+
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .service-desc {
+      font-size: 0.875rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+
+    .service-link:hover { gap: 10px; }
+
+    .services-cta { text-align: center; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      background: var(--primary);
+      padding: 80px 0;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .testimonials-header .section-eyebrow {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.85);
+    }
+
+    .testimonials-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .testimonials-title span {
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 2px;
+    }
+
+    .testimonials-sub {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.0625rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testi-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 24px;
+      padding: 32px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .testi-card:hover {
+      background: rgba(255,255,255,0.14);
+      transform: translateY(-6px);
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    .testi-stars span {
+      color: var(--accent);
+      font-size: 1.125rem;
+    }
+
+    .testi-quote {
+      color: rgba(255,255,255,0.88);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testi-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: white;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .testi-author-info strong {
+      display: block;
+      color: white;
+      font-weight: 600;
+      font-size: 0.9375rem;
+    }
+
+    .testi-author-info span {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8125rem;
+    }
+
+    /* ── CONTACT / CTA ── */
+    .contact-section {
+      background: var(--bg);
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 40px;
+      border: 1px solid var(--gray-100);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .contact-left {
+      background: var(--secondary);
+      padding: 56px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-left .section-title {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-left .section-sub {
+      margin-bottom: 36px;
+      max-width: 380px;
+    }
+
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contact-info-icon {
+      width: 40px; height: 40px;
+      background: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .contact-info-text strong {
+      display: block;
+      font-weight: 600;
+      color: var(--text-dark);
+      font-size: 0.9375rem;
+    }
+
+    .contact-info-text span {
+      color: var(--text-body);
+      font-size: 0.875rem;
+    }
+
+    .contact-right {
+      background: white;
+      padding: 56px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-right-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .contact-right-sub {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      margin-bottom: 32px;
+    }
+
+    .form-field {
+      margin-bottom: 20px;
+    }
+
+    .form-field label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9375rem;
+      color: var(--text-dark);
+      background: var(--gray-50);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      appearance: none;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus,
+    .form-field select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(44,95,120,0.1);
+      background: white;
+    }
+
+    .form-field textarea { height: 100px; resize: vertical; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-submit { width: 100%; border: none; cursor: pointer; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--footer-bg);
+      padding: 72px 0 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      text-decoration: none;
+    }
+
+    .footer-logo-icon {
+      width: 40px; height: 40px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-logo-img {
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .footer-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .footer-desc {
+      color: #94a3b8;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .footer-contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-contact-item:hover { color: white; }
+
+    .footer-col-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-aoc {
+      font-size: 0.8125rem;
+      color: #64748b;
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    .footer-copy {
+      font-size: 0.8125rem;
+      color: #64748b;
+    }
+
+    /* ── DIVIDER ── */
+    .divider-line {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+
+    .divider-line.centered {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════ NAVBAR ══════════════ -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="nav-logo" href="/">
+        <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Logo" class="nav-logo-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="nav-logo-icon" style="display:none;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </span>
+        <span class="nav-logo-text">TrustCare</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/high-intensity/">High Intensity</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/resources/">Resources</a></li>
+        <li><a href="/work-with-us/">Work With Us</a></li>
+        <li><a href="/referral/">Referral</a></li>
+        <li><a href="/governance/">Governance</a></li>
+        <li><a href="/contact/" class="btn-cta-nav">Book a Consult</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- LEFT: Text -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            AHPRA-Registered NDIS Nursing
+          </div>
+
+          <h1 class="hero-h1">
+            Perth's Trusted NDIS<br>
+            <em>Nursing Subcontractor</em>
+          </h1>
+
+          <p class="hero-sub">
+            AHPRA-registered RN delivering complex care, HIDPA training, and clinical governance for registered NDIS providers across Perth, WA.
+          </p>
+
+          <div class="hero-actions">
+            <a href="/referral/" class="btn-primary">
+              Refer a Participant
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="tel:0432014162" class="btn-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.07 6.07l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call 0432 014 162
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat-item">
+              <div class="hero-stat-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C5F78" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="hero-stat-text">
+                <strong>AHPRA Registered</strong>
+                <span>Publicly verifiable</span>
+              </div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C5F78" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="hero-stat-text">
+                <strong>Perth Metro</strong>
+                <span>All suburbs covered</span>
+              </div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C5F78" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="hero-stat-text">
+                <strong>7 Days</strong>
+                <span>Always available</span>
+              </div>
+            </div>
+          </div>
+        </div><!-- /hero-content -->
+
+        <!-- RIGHT: Image -->
+        <div class="hero-image-wrap">
+          <div class="hero-image-bg"></div>
+          <img
+            src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=800"
+            alt="NDIS nursing care"
+            class="hero-image"
+          />
+          <div class="hero-image-badge">
+            <div class="hero-image-badge-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2C5F78" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="hero-image-badge-text">
+              <strong>Trusted Care</strong>
+              <span>NDIS Registered Nursing</span>
+            </div>
+          </div>
+        </div><!-- /hero-image-wrap -->
+
+      </div><!-- /hero-grid -->
+    </div>
+  </section>
+
+  <!-- ══════════════ STATS BAND ══════════════ -->
+  <div class="stats-band">
+    <div class="container">
+      <div class="stats-band-grid">
+
+        <div class="stats-band-item">
+          <div class="stats-band-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="stats-band-text">
+            <strong>AHPRA Registered</strong>
+            <span>Fully registered with the Australian Health Practitioner Regulation Agency — publicly verifiable any time.</span>
+          </div>
+        </div>
+
+        <div class="stats-band-item">
+          <div class="stats-band-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="stats-band-text">
+            <strong>Perth Metro Coverage</strong>
+            <span>Servicing all Perth suburbs — from Joondalup to Rockingham and everywhere in between.</span>
+          </div>
+        </div>
+
+        <div class="stats-band-item">
+          <div class="stats-band-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="stats-band-text">
+            <strong>7-Day Availability</strong>
+            <span>Complex care needs don't follow business hours. TrustCare is available seven days a week.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ SERVICES ══════════════ -->
+  <section class="services">
+    <div class="container">
+
+      <div class="services-header">
+        <div>
+          <span class="section-eyebrow">Clinical Services</span>
+          <h2 class="section-title">Clinical Services<br>We <em>Deliver</em></h2>
+        </div>
+        <div>
+          <div class="divider-line"></div>
+          <p class="section-sub">
+            Specialised nursing support for NDIS participants with complex health needs across Perth, WA.
+          </p>
+        </div>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Card 1: Tracheostomy -->
+        <div class="card service-card">
+          <div class="service-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2C5F78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 0 1 10 10v2a2 2 0 0 1-2 2h-2v-4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v4H4a2 2 0 0 1-2-2v-2A10 10 0 0 1 12 2z"/>
+              <line x1="12" y1="16" x2="12" y2="20"/>
+              <line x1="8" y1="20" x2="16" y2="20"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Tracheostomy Care</h3>
+          <p class="service-desc">Specialist tracheostomy management including suctioning, tube changes, stoma care, and airway clearance for NDIS participants.</p>
+          <a href="/services/tracheostomy/" class="service-link">
+            Learn more
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 2: Wound Care -->
+        <div class="card service-card">
+          <div class="service-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2C5F78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Wound Care</h3>
+          <p class="service-desc">Evidence-based wound assessment and treatment including chronic wound management, surgical wounds, pressure injuries, and debridement.</p>
+          <a href="/services/wound-care/" class="service-link">
+            Learn more
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 3: Complex Bowel Care -->
+        <div class="card service-card">
+          <div class="service-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2C5F78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 12h8M12 8v8"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Complex Bowel Care</h3>
+          <p class="service-desc">Clinical bowel management programs including digital removal of faeces, manual evacuation, suppositories, and continence assessments.</p>
+          <a href="/services/bowel-care/" class="service-link">
+            Learn more
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 4: PEG & Enteral Feeding -->
+        <div class="card service-card">
+          <div class="service-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2C5F78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+              <line x1="6" y1="1" x2="6" y2="4"/>
+              <line x1="10" y1="1" x2="10" y2="4"/>
+              <line x1="14" y1="1" x2="14" y2="4"/>
+            </svg>
+          </div>
+          <h3 class="service-title">PEG &amp; Enteral Feeding</h3>
+          <p class="service-desc">Management of PEG tubes, nasogastric tubes, and enteral feeding systems including site care, tube replacements, and feeding administration.</p>
+          <a href="/services/peg-feeding/" class="service-link">
+            Learn more
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+      </div><!-- /services-grid -->
+
+      <div class="services-cta">
+        <a href="/services/" class="btn-outline">
+          View All Services
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════ TESTIMONIALS ══════════════ -->
+  <section class="testimonials">
+    <div class="container">
+
+      <div class="testimonials-header">
+        <span class="section-eyebrow">Testimonials</span>
+        <h2 class="testimonials-title">What NDIS Providers <span>Say</span></h2>
+        <div class="divider-line centered" style="background:var(--accent);"></div>
+        <p class="testimonials-sub">Trusted by registered NDIS providers across Perth for complex nursing subcontracting.</p>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="testi-quote">"TrustCare has been an exceptional subcontracting partner for our complex participants. Their clinical knowledge and reliable communication gives us total confidence that our participants are in safe hands."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">SB</div>
+            <div class="testi-author-info">
+              <strong>Support Coordinator</strong>
+              <span>Registered NDIS Provider, Perth</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="testi-quote">"We rely on TrustCare for all of our high-intensity nursing needs. From tracheostomy care to HIDPA training, they bring exactly the expertise that our participants require. Highly professional at every step."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">KL</div>
+            <div class="testi-author-info">
+              <strong>Operations Manager</strong>
+              <span>Registered NDIS Provider, Perth Metro</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="testi-quote">"Referring a participant to TrustCare is seamless. The documentation, clinical notes, and follow-up are outstanding. It's genuinely rare to find a nursing subcontractor this thorough and responsive."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MR</div>
+            <div class="testi-author-info">
+              <strong>Plan Manager</strong>
+              <span>NDIS Registered Provider, WA</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /testimonials-grid -->
+    </div>
+  </section>
+
+  <!-- ══════════════ CONTACT / CTA ══════════════ -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-card">
+
+        <!-- LEFT panel -->
+        <div class="contact-left">
+          <span class="section-eyebrow">Get in Touch</span>
+          <h2 class="section-title">Start a Referral<br><em>Today</em></h2>
+          <div class="divider-line"></div>
+          <p class="section-sub">
+            Ready to refer a participant or discuss a subcontracting arrangement? Reach out directly — we typically respond within a few hours.
+          </p>
+
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2C5F78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.07 6.07l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="contact-info-text">
+                <strong>0432 014 162</strong>
+                <span>Call or SMS anytime</span>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2C5F78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-info-text">
+                <strong>info@trustcaresupport.com.au</strong>
+                <span>Email us directly</span>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2C5F78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-info-text">
+                <strong>Perth, WA</strong>
+                <span>Serving all metro suburbs</span>
+              </div>
+            </div>
+          </div>
+        </div><!-- /contact-left -->
+
+        <!-- RIGHT panel: referral form -->
+        <div class="contact-right">
+          <h3 class="contact-right-heading">Make a Referral</h3>
+          <p class="contact-right-sub">Fill in the details below and we'll be in touch promptly.</p>
+
+          <form action="https://formspree.io/f/referral" method="POST">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="ref-name">Your Name</label>
+                <input type="text" id="ref-name" name="name" placeholder="Jane Smith" required />
+              </div>
+              <div class="form-field">
+                <label for="ref-org">Organisation</label>
+                <input type="text" id="ref-org" name="organisation" placeholder="ABC Support Services" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="ref-phone">Phone</label>
+                <input type="tel" id="ref-phone" name="phone" placeholder="08 xxxx xxxx" />
+              </div>
+              <div class="form-field">
+                <label for="ref-email">Email</label>
+                <input type="email" id="ref-email" name="email" placeholder="you@provider.com.au" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="ref-service">Service Required</label>
+              <select id="ref-service" name="service">
+                <option value="">— Select a service —</option>
+                <option>Tracheostomy Care</option>
+                <option>Wound Care</option>
+                <option>Complex Bowel Care</option>
+                <option>PEG &amp; Enteral Feeding</option>
+                <option>HIDPA Training</option>
+                <option>Other / Multiple Services</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="ref-message">Additional Notes</label>
+              <textarea id="ref-message" name="message" placeholder="Brief summary of participant needs…"></textarea>
+            </div>
+            <!-- Honeypot -->
+            <input type="text" name="_gotcha" style="display:none" />
+            <button type="submit" class="btn-primary form-submit">
+              Submit Referral
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </form>
+        </div><!-- /contact-right -->
+
+      </div><!-- /contact-card -->
+    </div>
+  </section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand -->
+        <div>
+          <a class="footer-logo" href="/">
+            <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Logo" class="footer-logo-img"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <span class="footer-logo-icon" style="display:none;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </span>
+            <span class="footer-logo-text">TrustCare</span>
+          </a>
+          <p class="footer-desc">
+            TrustCare Support is an AHPRA-registered nursing subcontractor delivering specialist NDIS nursing and high-intensity daily personal activities (HIDPA) across Perth, Western Australia.
+          </p>
+          <div class="footer-contact-items">
+            <a href="tel:0432014162" class="footer-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.07 6.07l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              0432 014 162
+            </a>
+            <a href="mailto:info@trustcaresupport.com.au" class="footer-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              info@trustcaresupport.com.au
+            </a>
+            <span class="footer-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Perth, WA — All Metro Suburbs
+            </span>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About TrustCare</a></li>
+            <li><a href="/high-intensity/">High Intensity Supports</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/work-with-us/">Work With Us</a></li>
+            <li><a href="/referral/">Make a Referral</a></li>
+            <li><a href="/governance/">Governance</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Clinical Services -->
+        <div>
+          <h4 class="footer-col-title">Clinical Services</h4>
+          <ul class="footer-links">
+            <li><a href="/services/tracheostomy/">Tracheostomy Care</a></li>
+            <li><a href="/services/wound-care/">Wound Care</a></li>
+            <li><a href="/services/bowel-care/">Complex Bowel Care</a></li>
+            <li><a href="/services/peg-feeding/">PEG &amp; Enteral Feeding</a></li>
+            <li><a href="/services/catheter-care/">Catheter Care</a></li>
+            <li><a href="/services/medication/">Medication Management</a></li>
+            <li><a href="/services/diabetes/">Diabetes Management</a></li>
+            <li><a href="/services/">View All Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Legal & Compliance -->
+        <div>
+          <h4 class="footer-col-title">Legal &amp; Compliance</h4>
+          <ul class="footer-links">
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/complaints/">Complaints Policy</a></li>
+            <li><a href="/accessibility/">Accessibility</a></li>
+            <li><a href="/governance/">NDIS Governance</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /footer-grid -->
+
+      <div class="footer-bottom">
+        <p class="footer-aoc">
+          TrustCare Support acknowledges the Traditional Custodians of the land on which we operate across Perth and Western Australia. We pay our respects to Elders past, present, and emerging.
+        </p>
+        <p class="footer-copy">
+          &copy; 2026 TrustCare Support. All rights reserved.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -28,11 +28,11 @@
      Brand: Clinical Precision, Compassionate Care
      ════════════════════════════════════════════════ */
 
-  /* ── AI Studio Brand ── */
-  --color-brand-primary:   #00215b;   /* deep navy — hero, topbar, dark sections */
-  --color-brand-secondary: #00215b;   /* navy — secondary headings */
-  --color-brand-accent:    #006a67;   /* sky-blue — CTA buttons, icons, links */
-  --color-brand-teal:      #006a67;   /* teal — section labels, accents */
+  /* ── Brand Palette: Slate Blue + Coral ── */
+  --color-brand-primary:   #334E68;   /* slate blue — hero, topbar, dark sections */
+  --color-brand-secondary: #334E68;   /* slate blue — secondary headings */
+  --color-brand-accent:    #E07A5F;   /* coral — CTA buttons, icons, links */
+  --color-brand-teal:      #E07A5F;   /* coral — section labels, accents */
 
   /* ── Neutral Slate ── */
   --color-white:         #ffffff;
@@ -48,7 +48,7 @@
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-error:   #ef4444;
-  --color-info:    #006a67;
+  --color-info:    #E07A5F;
 
   /* ── Typography ── */
   --font-display:   'Outfit', sans-serif;
@@ -56,32 +56,32 @@
   --font-secondary: 'Inter', sans-serif;
 
   /* ── Legacy aliases — all existing selectors keep working ── */
-  --color-primary-navy:   #00215b;
-  --color-primary-teal:   #006a67;
-  --color-accent-blue:    #006a67;
-  --color-royal-blue:     #00215b;
-  --color-blue:           #006a67;
-  --color-light-blue:     #f1f5f9;
+  --color-primary-navy:   #334E68;
+  --color-primary-teal:   #E07A5F;
+  --color-accent-blue:    #E07A5F;
+  --color-royal-blue:     #334E68;
+  --color-blue:           #E07A5F;
+  --color-light-blue:     #f0f4f8;
   --color-grey-text:      #334155;
   --color-muted:          #64748b;
-  --navy:       #00215b;
-  --navy-deep:  #00215b;
-  --blue:       #006a67;
-  --blue-light: rgba(0,106,103,0.45);
-  --green:      #006a67;
-  --green-mid:  #005250;
+  --navy:       #334E68;
+  --navy-deep:  #1E3045;
+  --blue:       #E07A5F;
+  --blue-light: rgba(224,122,95,0.45);
+  --green:      #E07A5F;
+  --green-mid:  #C96A4F;
   --bg:         #f8fafc;
   --bg-white:   #ffffff;
   --bg-section: #f1f5f9;
-  --bg-mint:    rgba(0,106,103,0.06);
-  --bg-sky:     #f1f5f9;
+  --bg-mint:    rgba(224,122,95,0.06);
+  --bg-sky:     #f0f4f8;
   --bg-card-a:  #f1f5f9;
-  --bg-card-b:  rgba(0,106,103,0.05);
+  --bg-card-b:  rgba(224,122,95,0.05);
   --bg-card-c:  #f8fafc;
-  --bg-pale:    #f1f5f9;
-  --bg-blue:    #f1f5f9;
-  --border:     rgba(0,106,103,0.15);
-  --border-mid: rgba(0,106,103,0.28);
+  --bg-pale:    #f0f4f8;
+  --bg-blue:    #f0f4f8;
+  --border:     rgba(51,78,104,0.15);
+  --border-mid: rgba(51,78,104,0.28);
   --text-body:  #334155;
   --text-muted: #64748b;
   --dark:       #0f172a;
@@ -95,7 +95,7 @@
   /* ── Shadows ── */
   --shadow-sm:  0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
   --shadow-md:  0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-lg:  0 20px 40px rgba(0,33,91,0.10);
+  --shadow-lg:  0 20px 40px rgba(51,78,104,0.10);
 
   /* ── Transitions ── */
   --transition-fast:   150ms cubic-bezier(0.4,0,0.2,1);

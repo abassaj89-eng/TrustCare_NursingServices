@@ -22,7 +22,20 @@
       "Bash('/c/Program Files/nodejs/node.exe' --version)",
       "Bash('/c/Program Files/nodejs/npm.cmd' list -g docx)",
       "Bash(\"/c/Program Files/nodejs/npm.cmd\" install -g docx)",
-      "Bash(python -c \":*)"
+      "Bash(python -c \":*)",
+      "Bash(python3 _apply_design_system.py)",
+      "Bash(grep -rnh 'style=\"\"\"\"[^\"\"\"\"]*#\\\\|fill=\"\"\"\"\\\\|stroke=\"\"\"\"' *.html)",
+      "Bash(grep -viE \"^\\(#00215b|#006a67|#003588|#1565c0|#334155|#64748b|#0f172a|#f8fafc|#f1f5f9|#e2e8f0|#cbd5e1|#ffffff|#10b981|#f59e0b|#ef4444|#3b82f6|#002a70|#001843|#005452|#0d2040\\)$\")",
+      "Bash(grep -viE \"^\\(#00215b|#006a67|#003588|#1565c0|#334155|#64748b|#0f172a|#f8fafc|#f1f5f9|#e2e8f0|#cbd5e1|#ffffff|#10b981|#f59e0b|#ef4444|#3b82f6|#002a70|#001843|#005452\\)$\")",
+      "Bash(ls -lt \"C:\\\\Users\\\\Admin\\\\Downloads\"\" | grep -iE \".png)",
+      "Bash(.jpg)",
+      "Bash(.jpeg)",
+      "Bash(.webp \")",
+      "Bash(ls -lt /c/Users/Admin/Downloads/*.png /c/Users/Admin/Downloads/*.jpg)",
+      "Bash(python3 _ai_studio_design.py)",
+      "Bash(python _fix_stats.py)",
+      "Bash(python _full_fix.py)",
+      "WebFetch(domain:aistudio.google.com)"
     ]
   }
 }

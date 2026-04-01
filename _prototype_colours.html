@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrustCare — Colour Palette Prototypes</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #f1f5f9; padding: 40px 24px; }
+h1 { text-align: center; font-family: 'Outfit', sans-serif; font-size: 2rem; color: #0f172a; margin-bottom: 8px; }
+.subtitle { text-align: center; color: #64748b; margin-bottom: 48px; font-size: 15px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(460px, 1fr)); gap: 32px; max-width: 1400px; margin: 0 auto; }
+
+.palette-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+}
+.palette-label {
+  padding: 14px 20px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.palette-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+.palette-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #0f172a;
+}
+.palette-style {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ── Mini site preview ── */
+.preview { overflow: hidden; }
+
+/* Navbar */
+.mini-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.mini-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+.mini-logo-icon {
+  width: 28px; height: 28px;
+  border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+}
+.mini-logo-icon svg { width: 14px; height: 14px; }
+.mini-nav-links { display: flex; gap: 16px; }
+.mini-nav-link { font-size: 11px; font-weight: 500; }
+.mini-cta-btn {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Hero */
+.mini-hero {
+  padding: 24px 20px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.mini-hero-left { flex: 1; }
+.mini-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.mini-h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.mini-sub {
+  font-size: 10px;
+  line-height: 1.6;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+.mini-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.mini-btn-primary {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.mini-btn-outline {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  border-width: 1.5px;
+  border-style: solid;
+}
+.mini-hero-right {
+  width: 130px;
+  height: 100px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+.mini-hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.mini-hero-bg {
+  position: absolute;
+  top: -10px; right: -10px;
+  width: 100px; height: 120px;
+  border-radius: 40px 0 0 40px;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+/* Stats band */
+.mini-stats {
+  display: flex;
+  padding: 14px 20px;
+  gap: 0;
+}
+.mini-stat {
+  flex: 1;
+  text-align: center;
+  padding: 0 8px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.mini-stat:last-child { border-right: none; }
+.mini-stat-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+}
+.mini-stat-label {
+  font-size: 9px;
+  color: rgba(255,255,255,0.65);
+  margin-top: 2px;
+}
+
+/* Services */
+.mini-services {
+  padding: 20px;
+}
+.mini-section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.mini-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.mini-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 8px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+.mini-card-icon {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  margin: 0 auto 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mini-card-icon svg { width: 14px; height: 14px; }
+.mini-card-title {
+  font-size: 8px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.mini-card-desc {
+  font-size: 7px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* Testimonials */
+.mini-testimonials {
+  padding: 18px 20px;
+}
+.mini-test-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.mini-test-divider {
+  width: 32px;
+  height: 2px;
+  margin: 0 auto 12px;
+}
+.mini-test-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.mini-test-card {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 10px;
+}
+.mini-stars { font-size: 9px; margin-bottom: 6px; color: #F4A261; }
+.mini-quote { font-size: 8px; color: rgba(255,255,255,0.85); line-height: 1.5; font-style: italic; margin-bottom: 6px; }
+.mini-author { font-size: 8px; font-weight: 700; color: #fff; }
+.mini-role { font-size: 7px; color: rgba(255,255,255,0.55); }
+
+/* Footer */
+.mini-footer {
+  padding: 18px 20px 14px;
+}
+.mini-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.mini-footer-brand-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mini-footer-desc {
+  font-size: 8px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+.mini-footer-col-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.mini-footer-link {
+  display: block;
+  font-size: 8px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 4px;
+}
+.mini-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 10px;
+  font-size: 8px;
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+}
+
+/* Swatches row */
+.swatches {
+  display: flex;
+  gap: 0;
+  height: 8px;
+}
+.swatch { flex: 1; }
+
+</style>
+</head>
+<body>
+
+<h1>TrustCare — Colour Prototypes</h1>
+<p class="subtitle">10 combinations — same content, different colours. Pick your favourite.</p>
+
+<div class="grid">
+
+<!-- ============================================================ -->
+<!-- #1 CURRENT — Navy + Teal -->
+<!-- ============================================================ -->
+<div class="palette-card">
+  <div class="palette-label">
+    <div>
+      <div class="palette-num">Option 1 · Current</div>
+      <div class="palette-name">Deep Navy + Teal</div>
+    </div>
+    <div class="palette-style">Dark Professional</div>
+  </div>
+  <div class="swatches">
+    <div class="swatch" style="background:#00215b"></div>
+    <div class="swatch" style="background:#006a67"></div>
+    <div class="swatch" style="background:#001845"></div>
+    <div class="swatch" style="background:#0a1628"></div>
+    <div class="swatch" style="background:#e2e8f0"></div>
+  </div>
+  <div class="preview">
+    <div class="mini-nav" style="background:#00215b;">
+      <div class="mini-logo" style="color:#fff;">
+        <div class="mini-logo-icon" style="background:#006a67;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        TrustCare
+      </div>
+      <div class="mini-nav-links">
+        <span class="mini-nav-link" style="color:rgba(255,255,255,0.7);">Services</span>
+        <span class="mini-nav-link" style="color:rgba(255,255,255,0.7);">About</span>
+        <span class="mini-nav-link" style="color:rgba(255,255,255,0.7);">Referral</span>
+      </div>
+      <button class="mini-cta-btn" style="background:#006a67;">Book a Consult</button>
+    </div>
+    <div class="mini-hero" style="background:#0a1628;">
+      <div class="mini-hero-left">
+        <div class="mini-badge" style="background:rgba(0,106,103,0.2);color:#006a67;">AHPRA-Registered NDIS Nursing</div>
+        <div class="mini-h1" style="color:#fff;">Perth's Trusted NDIS <span style="color:#006a67;font-style:italic;">Nursing Subcontractor</span></div>
+        <div class="mini-sub">AHPRA-registered RN delivering complex care, HIDPA training and clinical governance for NDIS providers across Perth.</div>
+        <div class="mini-btns">
+          <button class="mini-btn-primary" style="background:#006a67;">Refer a Participant →</button>
+          <button class="mini-btn-outline" style="border-color:#006a67;color:#006a67;">Call 0432 014 162</button>
+        </div>
+      </div>
+      <div class="mini-hero-right"><img class="mini-hero-img" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=300" referrerpolicy="no-referrer" /></div>
+    </div>
+    <div class="mini-stats" style="background:#00215b;">
+      <div class="mini-stat"><div class="mini-stat-num">AHPRA</div><div class="mini-stat-label">Registered</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">Perth</div><div class="mini-stat-label">Metro Coverage</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">7 Days</div><div class="mini-stat-label">Available</div></div>
+    </div>
+    <div class="mini-services" style="background:#f8fafc;">
+      <div class="mini-section-title" style="color:#00215b;">Clinical Services We Deliver</div>
+      <div class="mini-cards">
+        <div class="mini-card"><div class="mini-card-icon" style="background:#e0f2fe;"><svg viewBox="0 0 24 24" fill="none" stroke="#006a67" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="mini-card-title">Tracheostomy Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#dcfce7;"><svg viewBox="0 0 24 24" fill="none" stroke="#006a67" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg></div><div class="mini-card-title">Wound Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#fef9c3;"><svg viewBox="0 0 24 24" fill="none" stroke="#006a67" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div><div class="mini-card-title">Complex Bowel</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#fce7f3;"><svg viewBox="0 0 24 24" fill="none" stroke="#006a67" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div><div class="mini-card-title">PEG & Enteral</div></div>
+      </div>
+    </div>
+    <div class="mini-testimonials" style="background:#00215b;">
+      <div class="mini-test-title">What NDIS Providers Say</div>
+      <div class="mini-test-divider" style="background:#006a67;"></div>
+      <div class="mini-test-cards">
+        <div class="mini-test-card"><div class="mini-stars">★★★★★</div><div class="mini-quote">"Exceptional complex care support."</div><div class="mini-author">Sarah M.</div><div class="mini-role">NDIS Provider</div></div>
+        <div class="mini-test-card"><div class="mini-stars">★★★★★</div><div class="mini-quote">"Professional & AHPRA verified."</div><div class="mini-author">James K.</div><div class="mini-role">Support Coordinator</div></div>
+        <div class="mini-test-card"><div class="mini-stars">★★★★★</div><div class="mini-quote">"Reliable partner for our clients."</div><div class="mini-author">Emily T.</div><div class="mini-role">Plan Manager</div></div>
+      </div>
+    </div>
+    <div class="mini-footer" style="background:#060e1a;">
+      <div class="mini-footer-grid">
+        <div><div class="mini-footer-brand-name">TrustCare</div><div class="mini-footer-desc">AHPRA-registered RN delivering NDIS nursing support across Perth, WA.</div></div>
+        <div><div class="mini-footer-col-title">Quick Links</div><span class="mini-footer-link">Home</span><span class="mini-footer-link">Services</span><span class="mini-footer-link">About</span></div>
+        <div><div class="mini-footer-col-title">Services</div><span class="mini-footer-link">Tracheostomy</span><span class="mini-footer-link">Wound Care</span><span class="mini-footer-link">Bowel Care</span></div>
+      </div>
+      <div class="mini-footer-bottom">© 2026 TrustCare Support. All rights reserved.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- #2 Steel Blue + Orange -->
+<!-- ============================================================ -->
+<div class="palette-card">
+  <div class="palette-label">
+    <div>
+      <div class="palette-num">Option 2</div>
+      <div class="palette-name">Steel Blue + Orange</div>
+    </div>
+    <div class="palette-style">Clean Warm</div>
+  </div>
+  <div class="swatches">
+    <div class="swatch" style="background:#2C5F78"></div>
+    <div class="swatch" style="background:#F4A261"></div>
+    <div class="swatch" style="background:#E8F1F5"></div>
+    <div class="swatch" style="background:#ffffff"></div>
+    <div class="swatch" style="background:#0f172a"></div>
+  </div>
+  <div class="preview">
+    <div class="mini-nav" style="background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid #f1f5f9;">
+      <div class="mini-logo" style="color:#2C5F78;">
+        <div class="mini-logo-icon" style="background:#2C5F78;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        TrustCare
+      </div>
+      <div class="mini-nav-links">
+        <span class="mini-nav-link" style="color:#4b5563;">Services</span>
+        <span class="mini-nav-link" style="color:#4b5563;">About</span>
+        <span class="mini-nav-link" style="color:#4b5563;">Referral</span>
+      </div>
+      <button class="mini-cta-btn" style="background:#2C5F78;">Book a Consult</button>
+    </div>
+    <div class="mini-hero" style="background:#fff;">
+      <div class="mini-hero-left">
+        <div class="mini-badge" style="background:#E8F1F5;color:#2C5F78;">AHPRA-Registered NDIS Nursing</div>
+        <div class="mini-h1" style="color:#111827;">Perth's Trusted NDIS <span style="color:#2C5F78;font-style:italic;">Nursing Subcontractor</span></div>
+        <div class="mini-sub">AHPRA-registered RN delivering complex care, HIDPA training and clinical governance for NDIS providers across Perth.</div>
+        <div class="mini-btns">
+          <button class="mini-btn-primary" style="background:#2C5F78;">Refer a Participant →</button>
+          <button class="mini-btn-outline" style="border-color:#2C5F78;color:#2C5F78;">Call 0432 014 162</button>
+        </div>
+      </div>
+      <div class="mini-hero-right" style="position:relative;">
+        <div class="mini-hero-bg" style="background:#E8F1F5;position:absolute;top:0;right:0;width:100%;height:100%;border-radius:16px;z-index:0;"></div>
+        <img class="mini-hero-img" style="position:relative;z-index:1;border-radius:16px;" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=300" referrerpolicy="no-referrer" />
+      </div>
+    </div>
+    <div class="mini-stats" style="background:#2C5F78;">
+      <div class="mini-stat"><div class="mini-stat-num">AHPRA</div><div class="mini-stat-label">Registered</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">Perth</div><div class="mini-stat-label">Metro Coverage</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">7 Days</div><div class="mini-stat-label">Available</div></div>
+    </div>
+    <div class="mini-services" style="background:#f9fafb;">
+      <div class="mini-section-title" style="color:#111827;">Clinical Services We Deliver</div>
+      <div class="mini-cards">
+        <div class="mini-card"><div class="mini-card-icon" style="background:#dbeafe;"><svg viewBox="0 0 24 24" fill="none" stroke="#2C5F78" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="mini-card-title">Tracheostomy Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#fef3c7;"><svg viewBox="0 0 24 24" fill="none" stroke="#F4A261" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg></div><div class="mini-card-title">Wound Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#E8F1F5;"><svg viewBox="0 0 24 24" fill="none" stroke="#2C5F78" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div><div class="mini-card-title">Complex Bowel</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#fce7f3;"><svg viewBox="0 0 24 24" fill="none" stroke="#F4A261" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div><div class="mini-card-title">PEG & Enteral</div></div>
+      </div>
+    </div>
+    <div class="mini-testimonials" style="background:#2C5F78;">
+      <div class="mini-test-title">What NDIS Providers Say</div>
+      <div class="mini-test-divider" style="background:#F4A261;"></div>
+      <div class="mini-test-cards">
+        <div class="mini-test-card"><div class="mini-stars">★★★★★</div><div class="mini-quote">"Exceptional complex care support."</div><div class="mini-author">Sarah M.</div><div class="mini-role">NDIS Provider</div></div>
+        <div class="mini-test-card"><div class="mini-stars">★★★★★</div><div class="mini-quote">"Professional & AHPRA verified."</div><div class="mini-author">James K.</div><div class="mini-role">Support Coordinator</div></div>
+        <div class="mini-test-card"><div class="mini-stars">★★★★★</div><div class="mini-quote">"Reliable partner for our clients."</div><div class="mini-author">Emily T.</div><div class="mini-role">Plan Manager</div></div>
+      </div>
+    </div>
+    <div class="mini-footer" style="background:#0f172a;">
+      <div class="mini-footer-grid">
+        <div><div class="mini-footer-brand-name">TrustCare</div><div class="mini-footer-desc">AHPRA-registered RN delivering NDIS nursing support across Perth, WA.</div></div>
+        <div><div class="mini-footer-col-title">Quick Links</div><span class="mini-footer-link">Home</span><span class="mini-footer-link">Services</span><span class="mini-footer-link">About</span></div>
+        <div><div class="mini-footer-col-title">Services</div><span class="mini-footer-link">Tracheostomy</span><span class="mini-footer-link">Wound Care</span><span class="mini-footer-link">Bowel Care</span></div>
+      </div>
+      <div class="mini-footer-bottom">© 2026 TrustCare Support. All rights reserved.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- #3 Forest Green + Mint -->
+<!-- ============================================================ -->
+<div class="palette-card">
+  <div class="palette-label">
+    <div>
+      <div class="palette-num">Option 3</div>
+      <div class="palette-name">Forest Green + Mint</div>
+    </div>
+    <div class="palette-style">Natural Calm</div>
+  </div>
+  <div class="swatches">
+    <div class="swatch" style="background:#1B4332"></div>
+    <div class="swatch" style="background:#52B788"></div>
+    <div class="swatch" style="background:#D8F3DC"></div>
+    <div class="swatch" style="background:#ffffff"></div>
+    <div class="swatch" style="background:#081c15"></div>
+  </div>
+  <div class="preview">
+    <div class="mini-nav" style="background:rgba(255,255,255,0.95);border-bottom:1px solid #d8f3dc;">
+      <div class="mini-logo" style="color:#1B4332;">
+        <div class="mini-logo-icon" style="background:#1B4332;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        TrustCare
+      </div>
+      <div class="mini-nav-links">
+        <span class="mini-nav-link" style="color:#4b5563;">Services</span>
+        <span class="mini-nav-link" style="color:#4b5563;">About</span>
+        <span class="mini-nav-link" style="color:#4b5563;">Referral</span>
+      </div>
+      <button class="mini-cta-btn" style="background:#1B4332;">Book a Consult</button>
+    </div>
+    <div class="mini-hero" style="background:#fff;">
+      <div class="mini-hero-left">
+        <div class="mini-badge" style="background:#D8F3DC;color:#1B4332;">AHPRA-Registered NDIS Nursing</div>
+        <div class="mini-h1" style="color:#111827;">Perth's Trusted NDIS <span style="color:#1B4332;font-style:italic;">Nursing Subcontractor</span></div>
+        <div class="mini-sub">AHPRA-registered RN delivering complex care, HIDPA training and clinical governance for NDIS providers across Perth.</div>
+        <div class="mini-btns">
+          <button class="mini-btn-primary" style="background:#1B4332;">Refer a Participant →</button>
+          <button class="mini-btn-outline" style="border-color:#1B4332;color:#1B4332;">Call 0432 014 162</button>
+        </div>
+      </div>
+      <div class="mini-hero-right"><img class="mini-hero-img" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=300" referrerpolicy="no-referrer" /></div>
+    </div>
+    <div class="mini-stats" style="background:#1B4332;">
+      <div class="mini-stat"><div class="mini-stat-num">AHPRA</div><div class="mini-stat-label">Registered</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">Perth</div><div class="mini-stat-label">Metro Coverage</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">7 Days</div><div class="mini-stat-label">Available</div></div>
+    </div>
+    <div class="mini-services" style="background:#f0fdf4;">
+      <div class="mini-section-title" style="color:#111827;">Clinical Services We Deliver</div>
+      <div class="mini-cards">
+        <div class="mini-card"><div class="mini-card-icon" style="background:#D8F3DC;"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="mini-card-title">Tracheostomy Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#D8F3DC;"><svg viewBox="0 0 24 24" fill="none" stroke="#52B788" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg></div><div class="mini-card-title">Wound Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#D8F3DC;"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div><div class="mini-card-title">Complex Bowel</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#D8F3DC;"><svg viewBox="0 0 24 24" fill="none" stroke="#52B788" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div><div class="mini-card-title">PEG & Enteral</div></div>
+      </div>
+    </div>
+    <div class="mini-testimonials" style="background:#1B4332;">
+      <div class="mini-test-title">What NDIS Providers Say</div>
+      <div class="mini-test-divider" style="background:#52B788;"></div>
+      <div class="mini-test-cards">
+        <div class="mini-test-card"><div class="mini-stars" style="color:#52B788;">★★★★★</div><div class="mini-quote">"Exceptional complex care support."</div><div class="mini-author">Sarah M.</div><div class="mini-role">NDIS Provider</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#52B788;">★★★★★</div><div class="mini-quote">"Professional & AHPRA verified."</div><div class="mini-author">James K.</div><div class="mini-role">Support Coordinator</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#52B788;">★★★★★</div><div class="mini-quote">"Reliable partner for our clients."</div><div class="mini-author">Emily T.</div><div class="mini-role">Plan Manager</div></div>
+      </div>
+    </div>
+    <div class="mini-footer" style="background:#081c15;">
+      <div class="mini-footer-grid">
+        <div><div class="mini-footer-brand-name">TrustCare</div><div class="mini-footer-desc">AHPRA-registered RN delivering NDIS nursing support across Perth, WA.</div></div>
+        <div><div class="mini-footer-col-title">Quick Links</div><span class="mini-footer-link">Home</span><span class="mini-footer-link">Services</span><span class="mini-footer-link">About</span></div>
+        <div><div class="mini-footer-col-title">Services</div><span class="mini-footer-link">Tracheostomy</span><span class="mini-footer-link">Wound Care</span><span class="mini-footer-link">Bowel Care</span></div>
+      </div>
+      <div class="mini-footer-bottom">© 2026 TrustCare Support. All rights reserved.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- #4 Deep Indigo + Rose -->
+<!-- ============================================================ -->
+<div class="palette-card">
+  <div class="palette-label">
+    <div>
+      <div class="palette-num">Option 4</div>
+      <div class="palette-name">Deep Indigo + Rose</div>
+    </div>
+    <div class="palette-style">Bold Modern</div>
+  </div>
+  <div class="swatches">
+    <div class="swatch" style="background:#1a1a2e"></div>
+    <div class="swatch" style="background:#e94560"></div>
+    <div class="swatch" style="background:#16213e"></div>
+    <div class="swatch" style="background:#0f3460"></div>
+    <div class="swatch" style="background:#533483"></div>
+  </div>
+  <div class="preview">
+    <div class="mini-nav" style="background:#1a1a2e;">
+      <div class="mini-logo" style="color:#fff;">
+        <div class="mini-logo-icon" style="background:#e94560;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        TrustCare
+      </div>
+      <div class="mini-nav-links">
+        <span class="mini-nav-link" style="color:rgba(255,255,255,0.6);">Services</span>
+        <span class="mini-nav-link" style="color:rgba(255,255,255,0.6);">About</span>
+        <span class="mini-nav-link" style="color:rgba(255,255,255,0.6);">Referral</span>
+      </div>
+      <button class="mini-cta-btn" style="background:#e94560;">Book a Consult</button>
+    </div>
+    <div class="mini-hero" style="background:#16213e;">
+      <div class="mini-hero-left">
+        <div class="mini-badge" style="background:rgba(233,69,96,0.15);color:#e94560;">AHPRA-Registered NDIS Nursing</div>
+        <div class="mini-h1" style="color:#fff;">Perth's Trusted NDIS <span style="color:#e94560;font-style:italic;">Nursing Subcontractor</span></div>
+        <div class="mini-sub" style="color:rgba(255,255,255,0.6);">AHPRA-registered RN delivering complex care, HIDPA training and clinical governance for NDIS providers across Perth.</div>
+        <div class="mini-btns">
+          <button class="mini-btn-primary" style="background:#e94560;">Refer a Participant →</button>
+          <button class="mini-btn-outline" style="border-color:#e94560;color:#e94560;">Call 0432 014 162</button>
+        </div>
+      </div>
+      <div class="mini-hero-right"><img class="mini-hero-img" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=300" referrerpolicy="no-referrer" /></div>
+    </div>
+    <div class="mini-stats" style="background:#0f3460;">
+      <div class="mini-stat"><div class="mini-stat-num">AHPRA</div><div class="mini-stat-label">Registered</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">Perth</div><div class="mini-stat-label">Metro Coverage</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">7 Days</div><div class="mini-stat-label">Available</div></div>
+    </div>
+    <div class="mini-services" style="background:#1a1a2e;">
+      <div class="mini-section-title" style="color:#fff;">Clinical Services We Deliver</div>
+      <div class="mini-cards" style="--card-bg:#16213e;">
+        <div class="mini-card" style="background:#16213e;border-color:#0f3460;"><div class="mini-card-icon" style="background:rgba(233,69,96,0.15);"><svg viewBox="0 0 24 24" fill="none" stroke="#e94560" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="mini-card-title" style="color:#fff;">Tracheostomy Care</div></div>
+        <div class="mini-card" style="background:#16213e;border-color:#0f3460;"><div class="mini-card-icon" style="background:rgba(233,69,96,0.15);"><svg viewBox="0 0 24 24" fill="none" stroke="#e94560" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg></div><div class="mini-card-title" style="color:#fff;">Wound Care</div></div>
+        <div class="mini-card" style="background:#16213e;border-color:#0f3460;"><div class="mini-card-icon" style="background:rgba(233,69,96,0.15);"><svg viewBox="0 0 24 24" fill="none" stroke="#e94560" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div><div class="mini-card-title" style="color:#fff;">Complex Bowel</div></div>
+        <div class="mini-card" style="background:#16213e;border-color:#0f3460;"><div class="mini-card-icon" style="background:rgba(233,69,96,0.15);"><svg viewBox="0 0 24 24" fill="none" stroke="#e94560" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div><div class="mini-card-title" style="color:#fff;">PEG & Enteral</div></div>
+      </div>
+    </div>
+    <div class="mini-testimonials" style="background:#0f3460;">
+      <div class="mini-test-title">What NDIS Providers Say</div>
+      <div class="mini-test-divider" style="background:#e94560;"></div>
+      <div class="mini-test-cards">
+        <div class="mini-test-card"><div class="mini-stars" style="color:#e94560;">★★★★★</div><div class="mini-quote">"Exceptional complex care support."</div><div class="mini-author">Sarah M.</div><div class="mini-role">NDIS Provider</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#e94560;">★★★★★</div><div class="mini-quote">"Professional & AHPRA verified."</div><div class="mini-author">James K.</div><div class="mini-role">Support Coordinator</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#e94560;">★★★★★</div><div class="mini-quote">"Reliable partner for our clients."</div><div class="mini-author">Emily T.</div><div class="mini-role">Plan Manager</div></div>
+      </div>
+    </div>
+    <div class="mini-footer" style="background:#0d0d1a;">
+      <div class="mini-footer-grid">
+        <div><div class="mini-footer-brand-name">TrustCare</div><div class="mini-footer-desc">AHPRA-registered RN delivering NDIS nursing support across Perth, WA.</div></div>
+        <div><div class="mini-footer-col-title">Quick Links</div><span class="mini-footer-link">Home</span><span class="mini-footer-link">Services</span><span class="mini-footer-link">About</span></div>
+        <div><div class="mini-footer-col-title">Services</div><span class="mini-footer-link">Tracheostomy</span><span class="mini-footer-link">Wound Care</span><span class="mini-footer-link">Bowel Care</span></div>
+      </div>
+      <div class="mini-footer-bottom">© 2026 TrustCare Support. All rights reserved.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- #5 Charcoal + Aqua -->
+<!-- ============================================================ -->
+<div class="palette-card">
+  <div class="palette-label">
+    <div>
+      <div class="palette-num">Option 5</div>
+      <div class="palette-name">Charcoal + Aqua</div>
+    </div>
+    <div class="palette-style">Minimal Clinical</div>
+  </div>
+  <div class="swatches">
+    <div class="swatch" style="background:#2d3748"></div>
+    <div class="swatch" style="background:#38B2AC"></div>
+    <div class="swatch" style="background:#68D391"></div>
+    <div class="swatch" style="background:#EBF8FF"></div>
+    <div class="swatch" style="background:#ffffff"></div>
+  </div>
+  <div class="preview">
+    <div class="mini-nav" style="background:#fff;border-bottom:1px solid #e2e8f0;">
+      <div class="mini-logo" style="color:#2d3748;">
+        <div class="mini-logo-icon" style="background:#38B2AC;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        TrustCare
+      </div>
+      <div class="mini-nav-links">
+        <span class="mini-nav-link" style="color:#718096;">Services</span>
+        <span class="mini-nav-link" style="color:#718096;">About</span>
+        <span class="mini-nav-link" style="color:#718096;">Referral</span>
+      </div>
+      <button class="mini-cta-btn" style="background:#38B2AC;">Book a Consult</button>
+    </div>
+    <div class="mini-hero" style="background:#fff;">
+      <div class="mini-hero-left">
+        <div class="mini-badge" style="background:#EBF8FF;color:#38B2AC;">AHPRA-Registered NDIS Nursing</div>
+        <div class="mini-h1" style="color:#2d3748;">Perth's Trusted NDIS <span style="color:#38B2AC;font-style:italic;">Nursing Subcontractor</span></div>
+        <div class="mini-sub">AHPRA-registered RN delivering complex care, HIDPA training and clinical governance for NDIS providers across Perth.</div>
+        <div class="mini-btns">
+          <button class="mini-btn-primary" style="background:#38B2AC;">Refer a Participant →</button>
+          <button class="mini-btn-outline" style="border-color:#38B2AC;color:#38B2AC;">Call 0432 014 162</button>
+        </div>
+      </div>
+      <div class="mini-hero-right"><img class="mini-hero-img" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=300" referrerpolicy="no-referrer" /></div>
+    </div>
+    <div class="mini-stats" style="background:#2d3748;">
+      <div class="mini-stat"><div class="mini-stat-num">AHPRA</div><div class="mini-stat-label">Registered</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">Perth</div><div class="mini-stat-label">Metro Coverage</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">7 Days</div><div class="mini-stat-label">Available</div></div>
+    </div>
+    <div class="mini-services" style="background:#f7fafc;">
+      <div class="mini-section-title" style="color:#2d3748;">Clinical Services We Deliver</div>
+      <div class="mini-cards">
+        <div class="mini-card"><div class="mini-card-icon" style="background:#EBF8FF;"><svg viewBox="0 0 24 24" fill="none" stroke="#38B2AC" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="mini-card-title">Tracheostomy Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#F0FFF4;"><svg viewBox="0 0 24 24" fill="none" stroke="#68D391" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg></div><div class="mini-card-title">Wound Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#EBF8FF;"><svg viewBox="0 0 24 24" fill="none" stroke="#38B2AC" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div><div class="mini-card-title">Complex Bowel</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#F0FFF4;"><svg viewBox="0 0 24 24" fill="none" stroke="#68D391" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div><div class="mini-card-title">PEG & Enteral</div></div>
+      </div>
+    </div>
+    <div class="mini-testimonials" style="background:#2d3748;">
+      <div class="mini-test-title">What NDIS Providers Say</div>
+      <div class="mini-test-divider" style="background:#68D391;"></div>
+      <div class="mini-test-cards">
+        <div class="mini-test-card"><div class="mini-stars" style="color:#68D391;">★★★★★</div><div class="mini-quote">"Exceptional complex care support."</div><div class="mini-author">Sarah M.</div><div class="mini-role">NDIS Provider</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#68D391;">★★★★★</div><div class="mini-quote">"Professional & AHPRA verified."</div><div class="mini-author">James K.</div><div class="mini-role">Support Coordinator</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#68D391;">★★★★★</div><div class="mini-quote">"Reliable partner for our clients."</div><div class="mini-author">Emily T.</div><div class="mini-role">Plan Manager</div></div>
+      </div>
+    </div>
+    <div class="mini-footer" style="background:#1a202c;">
+      <div class="mini-footer-grid">
+        <div><div class="mini-footer-brand-name">TrustCare</div><div class="mini-footer-desc">AHPRA-registered RN delivering NDIS nursing support across Perth, WA.</div></div>
+        <div><div class="mini-footer-col-title">Quick Links</div><span class="mini-footer-link">Home</span><span class="mini-footer-link">Services</span><span class="mini-footer-link">About</span></div>
+        <div><div class="mini-footer-col-title">Services</div><span class="mini-footer-link">Tracheostomy</span><span class="mini-footer-link">Wound Care</span><span class="mini-footer-link">Bowel Care</span></div>
+      </div>
+      <div class="mini-footer-bottom">© 2026 TrustCare Support. All rights reserved.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- #6 Midnight Blue + Gold -->
+<!-- ============================================================ -->
+<div class="palette-card">
+  <div class="palette-label">
+    <div>
+      <div class="palette-num">Option 6</div>
+      <div class="palette-name">Midnight Blue + Gold</div>
+    </div>
+    <div class="palette-style">Elegant Premium</div>
+  </div>
+  <div class="swatches">
+    <div class="swatch" style="background:#1E3A5F"></div>
+    <div class="swatch" style="background:#C9A84C"></div>
+    <div class="swatch" style="background:#0d2137"></div>
+    <div class="swatch" style="background:#EEF3F7"></div>
+    <div class="swatch" style="background:#ffffff"></div>
+  </div>
+  <div class="preview">
+    <div class="mini-nav" style="background:#1E3A5F;">
+      <div class="mini-logo" style="color:#fff;">
+        <div class="mini-logo-icon" style="background:#C9A84C;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        TrustCare
+      </div>
+      <div class="mini-nav-links">
+        <span class="mini-nav-link" style="color:rgba(255,255,255,0.7);">Services</span>
+        <span class="mini-nav-link" style="color:rgba(255,255,255,0.7);">About</span>
+        <span class="mini-nav-link" style="color:rgba(255,255,255,0.7);">Referral</span>
+      </div>
+      <button class="mini-cta-btn" style="background:#C9A84C;">Book a Consult</button>
+    </div>
+    <div class="mini-hero" style="background:#0d2137;">
+      <div class="mini-hero-left">
+        <div class="mini-badge" style="background:rgba(201,168,76,0.15);color:#C9A84C;">AHPRA-Registered NDIS Nursing</div>
+        <div class="mini-h1" style="color:#fff;">Perth's Trusted NDIS <span style="color:#C9A84C;font-style:italic;">Nursing Subcontractor</span></div>
+        <div class="mini-sub" style="color:rgba(255,255,255,0.6);">AHPRA-registered RN delivering complex care, HIDPA training and clinical governance for NDIS providers across Perth.</div>
+        <div class="mini-btns">
+          <button class="mini-btn-primary" style="background:#C9A84C;">Refer a Participant →</button>
+          <button class="mini-btn-outline" style="border-color:#C9A84C;color:#C9A84C;">Call 0432 014 162</button>
+        </div>
+      </div>
+      <div class="mini-hero-right"><img class="mini-hero-img" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=300" referrerpolicy="no-referrer" /></div>
+    </div>
+    <div class="mini-stats" style="background:#1E3A5F;">
+      <div class="mini-stat"><div class="mini-stat-num" style="color:#C9A84C;">AHPRA</div><div class="mini-stat-label">Registered</div></div>
+      <div class="mini-stat"><div class="mini-stat-num" style="color:#C9A84C;">Perth</div><div class="mini-stat-label">Metro Coverage</div></div>
+      <div class="mini-stat"><div class="mini-stat-num" style="color:#C9A84C;">7 Days</div><div class="mini-stat-label">Available</div></div>
+    </div>
+    <div class="mini-services" style="background:#EEF3F7;">
+      <div class="mini-section-title" style="color:#1E3A5F;">Clinical Services We Deliver</div>
+      <div class="mini-cards">
+        <div class="mini-card"><div class="mini-card-icon" style="background:#1E3A5F;"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="mini-card-title">Tracheostomy Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#1E3A5F;"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg></div><div class="mini-card-title">Wound Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#1E3A5F;"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div><div class="mini-card-title">Complex Bowel</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#1E3A5F;"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div><div class="mini-card-title">PEG & Enteral</div></div>
+      </div>
+    </div>
+    <div class="mini-testimonials" style="background:#1E3A5F;">
+      <div class="mini-test-title">What NDIS Providers Say</div>
+      <div class="mini-test-divider" style="background:#C9A84C;"></div>
+      <div class="mini-test-cards">
+        <div class="mini-test-card"><div class="mini-stars" style="color:#C9A84C;">★★★★★</div><div class="mini-quote">"Exceptional complex care support."</div><div class="mini-author">Sarah M.</div><div class="mini-role">NDIS Provider</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#C9A84C;">★★★★★</div><div class="mini-quote">"Professional & AHPRA verified."</div><div class="mini-author">James K.</div><div class="mini-role">Support Coordinator</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#C9A84C;">★★★★★</div><div class="mini-quote">"Reliable partner for our clients."</div><div class="mini-author">Emily T.</div><div class="mini-role">Plan Manager</div></div>
+      </div>
+    </div>
+    <div class="mini-footer" style="background:#070f18;">
+      <div class="mini-footer-grid">
+        <div><div class="mini-footer-brand-name">TrustCare</div><div class="mini-footer-desc">AHPRA-registered RN delivering NDIS nursing support across Perth, WA.</div></div>
+        <div><div class="mini-footer-col-title">Quick Links</div><span class="mini-footer-link">Home</span><span class="mini-footer-link">Services</span><span class="mini-footer-link">About</span></div>
+        <div><div class="mini-footer-col-title">Services</div><span class="mini-footer-link">Tracheostomy</span><span class="mini-footer-link">Wound Care</span><span class="mini-footer-link">Bowel Care</span></div>
+      </div>
+      <div class="mini-footer-bottom">© 2026 TrustCare Support. All rights reserved.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- #7 Deep Teal + Sage -->
+<!-- ============================================================ -->
+<div class="palette-card">
+  <div class="palette-label">
+    <div>
+      <div class="palette-num">Option 7</div>
+      <div class="palette-name">Deep Teal + Sage</div>
+    </div>
+    <div class="palette-style">Soft Clinical</div>
+  </div>
+  <div class="swatches">
+    <div class="swatch" style="background:#065F46"></div>
+    <div class="swatch" style="background:#10B981"></div>
+    <div class="swatch" style="background:#F0FDF4"></div>
+    <div class="swatch" style="background:#ECFDF5"></div>
+    <div class="swatch" style="background:#ffffff"></div>
+  </div>
+  <div class="preview">
+    <div class="mini-nav" style="background:#fff;border-bottom:1px solid #d1fae5;">
+      <div class="mini-logo" style="color:#065F46;">
+        <div class="mini-logo-icon" style="background:#065F46;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        TrustCare
+      </div>
+      <div class="mini-nav-links">
+        <span class="mini-nav-link" style="color:#374151;">Services</span>
+        <span class="mini-nav-link" style="color:#374151;">About</span>
+        <span class="mini-nav-link" style="color:#374151;">Referral</span>
+      </div>
+      <button class="mini-cta-btn" style="background:#065F46;">Book a Consult</button>
+    </div>
+    <div class="mini-hero" style="background:#fff;">
+      <div class="mini-hero-left">
+        <div class="mini-badge" style="background:#ECFDF5;color:#065F46;">AHPRA-Registered NDIS Nursing</div>
+        <div class="mini-h1" style="color:#111827;">Perth's Trusted NDIS <span style="color:#065F46;font-style:italic;">Nursing Subcontractor</span></div>
+        <div class="mini-sub">AHPRA-registered RN delivering complex care, HIDPA training and clinical governance for NDIS providers across Perth.</div>
+        <div class="mini-btns">
+          <button class="mini-btn-primary" style="background:#065F46;">Refer a Participant →</button>
+          <button class="mini-btn-outline" style="border-color:#065F46;color:#065F46;">Call 0432 014 162</button>
+        </div>
+      </div>
+      <div class="mini-hero-right"><img class="mini-hero-img" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=300" referrerpolicy="no-referrer" /></div>
+    </div>
+    <div class="mini-stats" style="background:#065F46;">
+      <div class="mini-stat"><div class="mini-stat-num">AHPRA</div><div class="mini-stat-label">Registered</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">Perth</div><div class="mini-stat-label">Metro Coverage</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">7 Days</div><div class="mini-stat-label">Available</div></div>
+    </div>
+    <div class="mini-services" style="background:#F0FDF4;">
+      <div class="mini-section-title" style="color:#065F46;">Clinical Services We Deliver</div>
+      <div class="mini-cards">
+        <div class="mini-card"><div class="mini-card-icon" style="background:#ECFDF5;"><svg viewBox="0 0 24 24" fill="none" stroke="#065F46" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="mini-card-title">Tracheostomy Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#ECFDF5;"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg></div><div class="mini-card-title">Wound Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#ECFDF5;"><svg viewBox="0 0 24 24" fill="none" stroke="#065F46" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div><div class="mini-card-title">Complex Bowel</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#ECFDF5;"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div><div class="mini-card-title">PEG & Enteral</div></div>
+      </div>
+    </div>
+    <div class="mini-testimonials" style="background:#065F46;">
+      <div class="mini-test-title">What NDIS Providers Say</div>
+      <div class="mini-test-divider" style="background:#10B981;"></div>
+      <div class="mini-test-cards">
+        <div class="mini-test-card"><div class="mini-stars" style="color:#10B981;">★★★★★</div><div class="mini-quote">"Exceptional complex care support."</div><div class="mini-author">Sarah M.</div><div class="mini-role">NDIS Provider</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#10B981;">★★★★★</div><div class="mini-quote">"Professional & AHPRA verified."</div><div class="mini-author">James K.</div><div class="mini-role">Support Coordinator</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#10B981;">★★★★★</div><div class="mini-quote">"Reliable partner for our clients."</div><div class="mini-author">Emily T.</div><div class="mini-role">Plan Manager</div></div>
+      </div>
+    </div>
+    <div class="mini-footer" style="background:#022c22;">
+      <div class="mini-footer-grid">
+        <div><div class="mini-footer-brand-name">TrustCare</div><div class="mini-footer-desc">AHPRA-registered RN delivering NDIS nursing support across Perth, WA.</div></div>
+        <div><div class="mini-footer-col-title">Quick Links</div><span class="mini-footer-link">Home</span><span class="mini-footer-link">Services</span><span class="mini-footer-link">About</span></div>
+        <div><div class="mini-footer-col-title">Services</div><span class="mini-footer-link">Tracheostomy</span><span class="mini-footer-link">Wound Care</span><span class="mini-footer-link">Bowel Care</span></div>
+      </div>
+      <div class="mini-footer-bottom">© 2026 TrustCare Support. All rights reserved.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- #8 Slate Blue + Coral -->
+<!-- ============================================================ -->
+<div class="palette-card">
+  <div class="palette-label">
+    <div>
+      <div class="palette-num">Option 8</div>
+      <div class="palette-name">Slate Blue + Coral</div>
+    </div>
+    <div class="palette-style">Warm Trustworthy</div>
+  </div>
+  <div class="swatches">
+    <div class="swatch" style="background:#334E68"></div>
+    <div class="swatch" style="background:#E07A5F"></div>
+    <div class="swatch" style="background:#F2F4F6"></div>
+    <div class="swatch" style="background:#ffffff"></div>
+    <div class="swatch" style="background:#1A2E40"></div>
+  </div>
+  <div class="preview">
+    <div class="mini-nav" style="background:#fff;border-bottom:1px solid #e8edf2;">
+      <div class="mini-logo" style="color:#334E68;">
+        <div class="mini-logo-icon" style="background:#334E68;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        TrustCare
+      </div>
+      <div class="mini-nav-links">
+        <span class="mini-nav-link" style="color:#5a7a8f;">Services</span>
+        <span class="mini-nav-link" style="color:#5a7a8f;">About</span>
+        <span class="mini-nav-link" style="color:#5a7a8f;">Referral</span>
+      </div>
+      <button class="mini-cta-btn" style="background:#E07A5F;">Book a Consult</button>
+    </div>
+    <div class="mini-hero" style="background:#fff;">
+      <div class="mini-hero-left">
+        <div class="mini-badge" style="background:#FDF0ED;color:#E07A5F;">AHPRA-Registered NDIS Nursing</div>
+        <div class="mini-h1" style="color:#334E68;">Perth's Trusted NDIS <span style="color:#E07A5F;font-style:italic;">Nursing Subcontractor</span></div>
+        <div class="mini-sub">AHPRA-registered RN delivering complex care, HIDPA training and clinical governance for NDIS providers across Perth.</div>
+        <div class="mini-btns">
+          <button class="mini-btn-primary" style="background:#E07A5F;">Refer a Participant →</button>
+          <button class="mini-btn-outline" style="border-color:#334E68;color:#334E68;">Call 0432 014 162</button>
+        </div>
+      </div>
+      <div class="mini-hero-right"><img class="mini-hero-img" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=300" referrerpolicy="no-referrer" /></div>
+    </div>
+    <div class="mini-stats" style="background:#334E68;">
+      <div class="mini-stat"><div class="mini-stat-num">AHPRA</div><div class="mini-stat-label">Registered</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">Perth</div><div class="mini-stat-label">Metro Coverage</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">7 Days</div><div class="mini-stat-label">Available</div></div>
+    </div>
+    <div class="mini-services" style="background:#F2F4F6;">
+      <div class="mini-section-title" style="color:#334E68;">Clinical Services We Deliver</div>
+      <div class="mini-cards">
+        <div class="mini-card"><div class="mini-card-icon" style="background:#FDF0ED;"><svg viewBox="0 0 24 24" fill="none" stroke="#E07A5F" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="mini-card-title">Tracheostomy Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#E8EEF3;"><svg viewBox="0 0 24 24" fill="none" stroke="#334E68" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg></div><div class="mini-card-title">Wound Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#FDF0ED;"><svg viewBox="0 0 24 24" fill="none" stroke="#E07A5F" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div><div class="mini-card-title">Complex Bowel</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#E8EEF3;"><svg viewBox="0 0 24 24" fill="none" stroke="#334E68" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div><div class="mini-card-title">PEG & Enteral</div></div>
+      </div>
+    </div>
+    <div class="mini-testimonials" style="background:#334E68;">
+      <div class="mini-test-title">What NDIS Providers Say</div>
+      <div class="mini-test-divider" style="background:#E07A5F;"></div>
+      <div class="mini-test-cards">
+        <div class="mini-test-card"><div class="mini-stars" style="color:#E07A5F;">★★★★★</div><div class="mini-quote">"Exceptional complex care support."</div><div class="mini-author">Sarah M.</div><div class="mini-role">NDIS Provider</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#E07A5F;">★★★★★</div><div class="mini-quote">"Professional & AHPRA verified."</div><div class="mini-author">James K.</div><div class="mini-role">Support Coordinator</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#E07A5F;">★★★★★</div><div class="mini-quote">"Reliable partner for our clients."</div><div class="mini-author">Emily T.</div><div class="mini-role">Plan Manager</div></div>
+      </div>
+    </div>
+    <div class="mini-footer" style="background:#1A2E40;">
+      <div class="mini-footer-grid">
+        <div><div class="mini-footer-brand-name">TrustCare</div><div class="mini-footer-desc">AHPRA-registered RN delivering NDIS nursing support across Perth, WA.</div></div>
+        <div><div class="mini-footer-col-title">Quick Links</div><span class="mini-footer-link">Home</span><span class="mini-footer-link">Services</span><span class="mini-footer-link">About</span></div>
+        <div><div class="mini-footer-col-title">Services</div><span class="mini-footer-link">Tracheostomy</span><span class="mini-footer-link">Wound Care</span><span class="mini-footer-link">Bowel Care</span></div>
+      </div>
+      <div class="mini-footer-bottom">© 2026 TrustCare Support. All rights reserved.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- #9 Royal Purple + Lavender -->
+<!-- ============================================================ -->
+<div class="palette-card">
+  <div class="palette-label">
+    <div>
+      <div class="palette-num">Option 9</div>
+      <div class="palette-name">Royal Purple + Lavender</div>
+    </div>
+    <div class="palette-style">Distinctive Care</div>
+  </div>
+  <div class="swatches">
+    <div class="swatch" style="background:#4C1D95"></div>
+    <div class="swatch" style="background:#7C3AED"></div>
+    <div class="swatch" style="background:#A78BFA"></div>
+    <div class="swatch" style="background:#F5F3FF"></div>
+    <div class="swatch" style="background:#ffffff"></div>
+  </div>
+  <div class="preview">
+    <div class="mini-nav" style="background:#fff;border-bottom:1px solid #ede9fe;">
+      <div class="mini-logo" style="color:#4C1D95;">
+        <div class="mini-logo-icon" style="background:#7C3AED;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        TrustCare
+      </div>
+      <div class="mini-nav-links">
+        <span class="mini-nav-link" style="color:#6b7280;">Services</span>
+        <span class="mini-nav-link" style="color:#6b7280;">About</span>
+        <span class="mini-nav-link" style="color:#6b7280;">Referral</span>
+      </div>
+      <button class="mini-cta-btn" style="background:#7C3AED;">Book a Consult</button>
+    </div>
+    <div class="mini-hero" style="background:#fff;">
+      <div class="mini-hero-left">
+        <div class="mini-badge" style="background:#F5F3FF;color:#7C3AED;">AHPRA-Registered NDIS Nursing</div>
+        <div class="mini-h1" style="color:#4C1D95;">Perth's Trusted NDIS <span style="color:#7C3AED;font-style:italic;">Nursing Subcontractor</span></div>
+        <div class="mini-sub">AHPRA-registered RN delivering complex care, HIDPA training and clinical governance for NDIS providers across Perth.</div>
+        <div class="mini-btns">
+          <button class="mini-btn-primary" style="background:#7C3AED;">Refer a Participant →</button>
+          <button class="mini-btn-outline" style="border-color:#7C3AED;color:#7C3AED;">Call 0432 014 162</button>
+        </div>
+      </div>
+      <div class="mini-hero-right"><img class="mini-hero-img" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=300" referrerpolicy="no-referrer" /></div>
+    </div>
+    <div class="mini-stats" style="background:#4C1D95;">
+      <div class="mini-stat"><div class="mini-stat-num">AHPRA</div><div class="mini-stat-label">Registered</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">Perth</div><div class="mini-stat-label">Metro Coverage</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">7 Days</div><div class="mini-stat-label">Available</div></div>
+    </div>
+    <div class="mini-services" style="background:#F5F3FF;">
+      <div class="mini-section-title" style="color:#4C1D95;">Clinical Services We Deliver</div>
+      <div class="mini-cards">
+        <div class="mini-card"><div class="mini-card-icon" style="background:#EDE9FE;"><svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="mini-card-title">Tracheostomy Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#EDE9FE;"><svg viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg></div><div class="mini-card-title">Wound Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#EDE9FE;"><svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div><div class="mini-card-title">Complex Bowel</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#EDE9FE;"><svg viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div><div class="mini-card-title">PEG & Enteral</div></div>
+      </div>
+    </div>
+    <div class="mini-testimonials" style="background:#4C1D95;">
+      <div class="mini-test-title">What NDIS Providers Say</div>
+      <div class="mini-test-divider" style="background:#A78BFA;"></div>
+      <div class="mini-test-cards">
+        <div class="mini-test-card"><div class="mini-stars" style="color:#A78BFA;">★★★★★</div><div class="mini-quote">"Exceptional complex care support."</div><div class="mini-author">Sarah M.</div><div class="mini-role">NDIS Provider</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#A78BFA;">★★★★★</div><div class="mini-quote">"Professional & AHPRA verified."</div><div class="mini-author">James K.</div><div class="mini-role">Support Coordinator</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#A78BFA;">★★★★★</div><div class="mini-quote">"Reliable partner for our clients."</div><div class="mini-author">Emily T.</div><div class="mini-role">Plan Manager</div></div>
+      </div>
+    </div>
+    <div class="mini-footer" style="background:#1e0a40;">
+      <div class="mini-footer-grid">
+        <div><div class="mini-footer-brand-name">TrustCare</div><div class="mini-footer-desc">AHPRA-registered RN delivering NDIS nursing support across Perth, WA.</div></div>
+        <div><div class="mini-footer-col-title">Quick Links</div><span class="mini-footer-link">Home</span><span class="mini-footer-link">Services</span><span class="mini-footer-link">About</span></div>
+        <div><div class="mini-footer-col-title">Services</div><span class="mini-footer-link">Tracheostomy</span><span class="mini-footer-link">Wound Care</span><span class="mini-footer-link">Bowel Care</span></div>
+      </div>
+      <div class="mini-footer-bottom">© 2026 TrustCare Support. All rights reserved.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- #10 Navy + Sky Blue (Light) -->
+<!-- ============================================================ -->
+<div class="palette-card">
+  <div class="palette-label">
+    <div>
+      <div class="palette-num">Option 10</div>
+      <div class="palette-name">Navy + Sky Blue</div>
+    </div>
+    <div class="palette-style">Light & Airy</div>
+  </div>
+  <div class="swatches">
+    <div class="swatch" style="background:#1e40af"></div>
+    <div class="swatch" style="background:#38bdf8"></div>
+    <div class="swatch" style="background:#e0f2fe"></div>
+    <div class="swatch" style="background:#f0f9ff"></div>
+    <div class="swatch" style="background:#ffffff"></div>
+  </div>
+  <div class="preview">
+    <div class="mini-nav" style="background:#fff;border-bottom:1px solid #e0f2fe;">
+      <div class="mini-logo" style="color:#1e40af;">
+        <div class="mini-logo-icon" style="background:#1e40af;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        TrustCare
+      </div>
+      <div class="mini-nav-links">
+        <span class="mini-nav-link" style="color:#6b7280;">Services</span>
+        <span class="mini-nav-link" style="color:#6b7280;">About</span>
+        <span class="mini-nav-link" style="color:#6b7280;">Referral</span>
+      </div>
+      <button class="mini-cta-btn" style="background:#1e40af;">Book a Consult</button>
+    </div>
+    <div class="mini-hero" style="background:#fff;">
+      <div class="mini-hero-left">
+        <div class="mini-badge" style="background:#e0f2fe;color:#1e40af;">AHPRA-Registered NDIS Nursing</div>
+        <div class="mini-h1" style="color:#1e3a8a;">Perth's Trusted NDIS <span style="color:#38bdf8;font-style:italic;">Nursing Subcontractor</span></div>
+        <div class="mini-sub">AHPRA-registered RN delivering complex care, HIDPA training and clinical governance for NDIS providers across Perth.</div>
+        <div class="mini-btns">
+          <button class="mini-btn-primary" style="background:#1e40af;">Refer a Participant →</button>
+          <button class="mini-btn-outline" style="border-color:#38bdf8;color:#1e40af;">Call 0432 014 162</button>
+        </div>
+      </div>
+      <div class="mini-hero-right"><img class="mini-hero-img" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=300" referrerpolicy="no-referrer" /></div>
+    </div>
+    <div class="mini-stats" style="background:#1e40af;">
+      <div class="mini-stat"><div class="mini-stat-num">AHPRA</div><div class="mini-stat-label">Registered</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">Perth</div><div class="mini-stat-label">Metro Coverage</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">7 Days</div><div class="mini-stat-label">Available</div></div>
+    </div>
+    <div class="mini-services" style="background:#f0f9ff;">
+      <div class="mini-section-title" style="color:#1e3a8a;">Clinical Services We Deliver</div>
+      <div class="mini-cards">
+        <div class="mini-card"><div class="mini-card-icon" style="background:#e0f2fe;"><svg viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="mini-card-title">Tracheostomy Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#bae6fd;"><svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M9 12l2 2 4-4"/></svg></div><div class="mini-card-title">Wound Care</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#e0f2fe;"><svg viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div><div class="mini-card-title">Complex Bowel</div></div>
+        <div class="mini-card"><div class="mini-card-icon" style="background:#bae6fd;"><svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div><div class="mini-card-title">PEG & Enteral</div></div>
+      </div>
+    </div>
+    <div class="mini-testimonials" style="background:#1e40af;">
+      <div class="mini-test-title">What NDIS Providers Say</div>
+      <div class="mini-test-divider" style="background:#38bdf8;"></div>
+      <div class="mini-test-cards">
+        <div class="mini-test-card"><div class="mini-stars" style="color:#38bdf8;">★★★★★</div><div class="mini-quote">"Exceptional complex care support."</div><div class="mini-author">Sarah M.</div><div class="mini-role">NDIS Provider</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#38bdf8;">★★★★★</div><div class="mini-quote">"Professional & AHPRA verified."</div><div class="mini-author">James K.</div><div class="mini-role">Support Coordinator</div></div>
+        <div class="mini-test-card"><div class="mini-stars" style="color:#38bdf8;">★★★★★</div><div class="mini-quote">"Reliable partner for our clients."</div><div class="mini-author">Emily T.</div><div class="mini-role">Plan Manager</div></div>
+      </div>
+    </div>
+    <div class="mini-footer" style="background:#0c1a3a;">
+      <div class="mini-footer-grid">
+        <div><div class="mini-footer-brand-name">TrustCare</div><div class="mini-footer-desc">AHPRA-registered RN delivering NDIS nursing support across Perth, WA.</div></div>
+        <div><div class="mini-footer-col-title">Quick Links</div><span class="mini-footer-link">Home</span><span class="mini-footer-link">Services</span><span class="mini-footer-link">About</span></div>
+        <div><div class="mini-footer-col-title">Services</div><span class="mini-footer-link">Tracheostomy</span><span class="mini-footer-link">Wound Care</span><span class="mini-footer-link">Bowel Care</span></div>
+      </div>
+      <div class="mini-footer-bottom">© 2026 TrustCare Support. All rights reserved.</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /grid -->
+</body>
+</html>

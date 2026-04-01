@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrustCare — Light/Dark Mode Prototype</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── DARK MODE (current site) ── */
+    [data-theme="dark"] {
+      --bg-page:        #00215b;
+      --bg-section:     #f8fafc;
+      --bg-card:        rgba(255,255,255,0.06);
+      --bg-navbar:      rgba(255,255,255,0.98);
+      --bg-hero:        #00215b;
+      --bg-stats:       linear-gradient(135deg,#00215b 0%,#001845 100%);
+      --bg-footer:      #00215b;
+      --text-heading:   #ffffff;
+      --text-body:      rgba(255,255,255,0.80);
+      --text-muted:     rgba(255,255,255,0.55);
+      --text-nav:       #334155;
+      --text-eyebrow:   #006a67;
+      --border-card:    rgba(255,255,255,0.10);
+      --border-section: rgba(255,255,255,0.08);
+      --stat-divider:   rgba(255,255,255,0.10);
+      --toggle-bg:      #001845;
+      --toggle-border:  rgba(255,255,255,0.15);
+      --card-shadow:    0 4px 24px rgba(0,0,0,0.25);
+      --section-alt-bg: rgba(255,255,255,0.03);
+    }
+
+    /* ── LIGHT MODE ── */
+    [data-theme="light"] {
+      --bg-page:        #ffffff;
+      --bg-section:     #f8fafc;
+      --bg-card:        #ffffff;
+      --bg-navbar:      rgba(255,255,255,0.98);
+      --bg-hero:        #ffffff;
+      --bg-stats:       linear-gradient(135deg,#00215b 0%,#001845 100%);
+      --bg-footer:      #00215b;
+      --text-heading:   #00215b;
+      --text-body:      #334155;
+      --text-muted:     #64748b;
+      --text-nav:       #334155;
+      --text-eyebrow:   #006a67;
+      --border-card:    #e2e8f0;
+      --border-section: #e2e8f0;
+      --stat-divider:   rgba(255,255,255,0.15);
+      --toggle-bg:      #f1f5f9;
+      --toggle-border:  #e2e8f0;
+      --card-shadow:    0 4px 24px rgba(0,33,91,0.08);
+      --section-alt-bg: #f8fafc;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-page);
+      color: var(--text-body);
+      transition: background 0.35s ease, color 0.35s ease;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOGGLE BUTTON ── */
+    .theme-toggle {
+      position: fixed;
+      top: 18px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      background: var(--toggle-bg);
+      border: 1.5px solid var(--toggle-border);
+      border-radius: 100px;
+      padding: 4px;
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+    .theme-toggle__icon {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+      transition: background 0.25s, transform 0.25s;
+    }
+    [data-theme="dark"]  .theme-toggle__sun  { background: transparent; }
+    [data-theme="dark"]  .theme-toggle__moon { background: #006a67; transform: scale(1.08); }
+    [data-theme="light"] .theme-toggle__sun  { background: #006a67; transform: scale(1.08); }
+    [data-theme="light"] .theme-toggle__moon { background: transparent; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      background: var(--bg-navbar);
+      border-bottom: 1px solid rgba(0,33,91,0.10);
+      padding: 0 32px;
+      height: 64px;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+      transition: background 0.35s;
+    }
+    .navbar__brand {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px; font-weight: 800;
+      color: #00215b;
+    }
+    .navbar__links { display: flex; gap: 28px; }
+    .navbar__links a {
+      font-size: 14px; font-weight: 500;
+      color: var(--text-nav);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .navbar__links a:hover { color: #006a67; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 22px; border-radius: 100px;
+      font-size: 14px; font-weight: 600;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn--teal  { background: #006a67; color: #fff; }
+    .btn--teal:hover { background: #005250; transform: translateY(-1px); }
+    .btn--outline {
+      background: transparent;
+      color: #006a67;
+      border: 2px solid #006a67;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--bg-hero);
+      padding: 80px 40px 72px;
+      transition: background 0.35s;
+    }
+    .hero__inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(0,106,103,0.10);
+      color: #006a67;
+      border: 1px solid rgba(0,106,103,0.22);
+      font-size: 12px; font-weight: 700;
+      padding: 6px 16px; border-radius: 100px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .eyebrow::before {
+      content: ''; width: 6px; height: 6px;
+      background: #006a67; border-radius: 50%;
+    }
+    .hero__title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(32px,4vw,52px); font-weight: 800;
+      color: var(--text-heading);
+      line-height: 1.12; margin-bottom: 20px;
+      letter-spacing: -0.025em;
+      transition: color 0.35s;
+    }
+    .hero__title span { color: #006a67; }
+    .hero__sub {
+      font-size: 16px; line-height: 1.8;
+      color: var(--text-body);
+      margin-bottom: 36px; max-width: 480px;
+      transition: color 0.35s;
+    }
+    .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero__image {
+      border-radius: 20px; overflow: hidden;
+      background: linear-gradient(135deg, rgba(0,33,91,0.12), rgba(0,106,103,0.18));
+      height: 340px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border-card);
+      transition: border-color 0.35s;
+    }
+    .hero__image-placeholder {
+      font-size: 80px; opacity: 0.35;
+    }
+
+    /* ── STATS BAR ── */
+    .stats {
+      background: var(--bg-stats);
+      padding: 0;
+    }
+    .stats__grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .stat-item {
+      padding: 48px 32px;
+      text-align: center;
+      border-right: 1px solid var(--stat-divider);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-icon-box {
+      width: 54px; height: 54px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(0,106,103,0.28);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+      color: #006a67; font-size: 22px;
+    }
+    .stat-item__heading { font-family: 'Outfit',sans-serif; font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .stat-item__desc { font-size: 14px; color: rgba(255,255,255,0.72); line-height: 1.6; }
+
+    /* ── SERVICE CARDS ── */
+    .services {
+      background: var(--section-alt-bg);
+      padding: 80px 40px;
+      transition: background 0.35s;
+    }
+    .services__inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      text-align: center; margin-bottom: 48px;
+    }
+    .section-heading {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(28px,3.5vw,42px); font-weight: 800;
+      color: var(--text-heading);
+      margin-top: 12px; margin-bottom: 8px;
+      line-height: 1.15; letter-spacing: -0.02em;
+      transition: color 0.35s;
+    }
+    .section-heading span { color: #006a67; }
+    .section-sub { font-size: 16px; color: var(--text-muted); max-width: 540px; margin: 0 auto; line-height: 1.7; transition: color 0.35s; }
+    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 16px; padding: 28px 24px;
+      box-shadow: var(--card-shadow);
+      transition: background 0.35s, border-color 0.35s, box-shadow 0.35s;
+    }
+    .card__icon {
+      width: 48px; height: 48px;
+      background: rgba(0,106,103,0.10);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; margin-bottom: 16px;
+      color: #006a67;
+    }
+    .card h3 {
+      font-family: 'Outfit',sans-serif;
+      font-size: 17px; font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 8px;
+      transition: color 0.35s;
+    }
+    .card p {
+      font-size: 14px; line-height: 1.7;
+      color: var(--text-muted);
+      transition: color 0.35s;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      padding: 64px 40px;
+      background: var(--bg-page);
+      transition: background 0.35s;
+    }
+    .cta-inner {
+      max-width: 1100px; margin: 0 auto;
+      background: linear-gradient(135deg,#00215b 0%,#001e55 100%);
+      border-radius: 24px; padding: 56px 48px;
+      text-align: center;
+    }
+    .cta-inner h2 { font-family:'Outfit',sans-serif; font-size:clamp(22px,3vw,34px); font-weight:700; color:#fff; margin-bottom:14px; }
+    .cta-inner p { color:rgba(255,255,255,0.80); font-size:15px; line-height:1.7; max-width:480px; margin:0 auto 32px; }
+    .cta-inner .btn-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--bg-footer);
+      padding: 48px 40px 28px;
+      transition: background 0.35s;
+    }
+    .footer__inner { max-width: 1100px; margin: 0 auto; }
+    .footer__top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 36px; }
+    .footer__brand { font-family:'Outfit',sans-serif; font-size:20px; font-weight:800; color:#fff; margin-bottom:12px; }
+    .footer__desc { font-size:14px; color:rgba(255,255,255,0.70); line-height:1.8; max-width:260px; }
+    .footer__col h4 { font-size:13px; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:14px; }
+    .footer__col ul { list-style:none; display:flex; flex-direction:column; gap:8px; }
+    .footer__col ul a { font-size:14px; color:rgba(255,255,255,0.65); text-decoration:none; }
+    .footer__bottom { border-top:1px solid rgba(255,255,255,0.08); padding-top:20px; font-size:13px; color:rgba(255,255,255,0.50); }
+
+    /* ── PROTOTYPE LABEL ── */
+    .proto-label {
+      position: fixed; bottom: 20px; left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.75);
+      color: #fff; font-size: 12px; font-weight: 600;
+      padding: 8px 18px; border-radius: 100px;
+      letter-spacing: 0.04em; pointer-events: none;
+      z-index: 9999;
+      white-space: nowrap;
+    }
+    .mode-label {
+      position: fixed; top: 22px; right: 88px;
+      font-size: 12px; font-weight: 600;
+      color: var(--text-muted);
+      z-index: 9999;
+      transition: color 0.3s;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toggle -->
+  <div class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">
+    <div class="theme-toggle__icon theme-toggle__sun">☀️</div>
+    <div class="theme-toggle__icon theme-toggle__moon">🌙</div>
+  </div>
+  <div class="mode-label" id="modeLabel">DARK MODE</div>
+  <div class="proto-label">PROTOTYPE — click toggle top-right to switch</div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar__brand">TrustCare</div>
+    <div class="navbar__links">
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">High Intensity</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+    <a href="#" class="btn btn--teal">Book a Consult</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div>
+        <div class="eyebrow">AHPRA Registered Nurse · Perth, WA</div>
+        <h1 class="hero__title">Compassionate Care<br><span>You Can Trust</span></h1>
+        <p class="hero__sub">Providing tailored NDIS support services across Perth to help you live independently and achieve your goals.</p>
+        <div class="hero__actions">
+          <a href="#" class="btn btn--teal">Book a Free Consultation →</a>
+          <a href="#" class="btn btn--outline">View Services</a>
+        </div>
+      </div>
+      <div class="hero__image">
+        <div class="hero__image-placeholder">👨‍⚕️</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats bar — always dark -->
+  <section class="stats">
+    <div class="stats__grid">
+      <div class="stat-item">
+        <div class="stat-icon-box">🛡️</div>
+        <div class="stat-item__heading">AHPRA Registered</div>
+        <div class="stat-item__desc">Publicly verifiable registration for your peace of mind.</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon-box">📍</div>
+        <div class="stat-item__heading">Perth Metro Coverage</div>
+        <div class="stat-item__desc">Serving providers across the entire Perth metro area.</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon-box">📅</div>
+        <div class="stat-item__heading">7 Days Available</div>
+        <div class="stat-item__desc">Flexible scheduling to meet provider and participant needs.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service cards -->
+  <section class="services">
+    <div class="services__inner">
+      <div class="section-label">
+        <div class="eyebrow" style="margin:0 auto 12px;">Our Services</div>
+        <h2 class="section-heading">Clinical Services for <span>NDIS Providers</span></h2>
+        <p class="section-sub">Specialist nursing supports delivered in partnership with registered NDIS providers across Perth.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="card__icon">🩺</div>
+          <h3>Tracheostomy Care</h3>
+          <p>Specialist airway management and ongoing tracheostomy support for high-intensity NDIS participants.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🩹</div>
+          <h3>Wound Care</h3>
+          <p>Evidence-based wound assessment and treatment plans delivered by AHPRA-registered nurses.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">💊</div>
+          <h3>Medication Management</h3>
+          <p>Safe administration and oversight of complex medication regimes for NDIS participants.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA banner — always dark -->
+  <section class="cta-banner">
+    <div class="cta-inner">
+      <h2>Ready to start your care journey?</h2>
+      <p>Our dedicated team is here to help you navigate your clinical requirements with expertise and compassion.</p>
+      <div class="btn-row">
+        <a href="#" class="btn btn--teal">Make a Referral</a>
+        <a href="#" class="btn" style="background:rgba(255,255,255,0.12);color:#fff;border:1.5px solid rgba(255,255,255,0.28);">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer — always dark -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand">TrustCare</div>
+          <p class="footer__desc">AHPRA-registered Registered Nurse providing clinical nursing support in partnership with NDIS providers across Perth, WA.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Clinical Services</h4>
+          <ul>
+            <li><a href="#">Tracheostomy Care</a></li>
+            <li><a href="#">Wound Care</a></li>
+            <li><a href="#">Bowel Care</a></li>
+            <li><a href="#">Catheter Management</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">© 2026 TrustCare Support. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.getElementById('modeLabel').textContent = isDark ? 'LIGHT MODE' : 'DARK MODE';
+    }
+  </script>
+</body>
+</html>
