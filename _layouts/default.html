@@ -426,9 +426,32 @@
 </div>
 
 <!-- ===== LOGO LIGHTBOX ===== -->
-<div id="logo-lightbox" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.82);align-items:center;justify-content:center;flex-direction:column;gap:16px;cursor:zoom-out;" onclick="this.style.display='none'">
-  <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Logo" style="max-width:420px;width:88%;border-radius:18px;box-shadow:0 24px 64px rgba(0,0,0,0.5);background:#fff;padding:24px;"/>
-  <span style="color:#fff;font-size:13px;opacity:0.7;">Click anywhere to close</span>
+<div id="logo-lightbox" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.55);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target===this)closeLogo()">
+  <div style="background:#fff;border-radius:24px;max-width:400px;width:100%;padding:28px 24px 24px;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.25);">
+    <!-- X close -->
+    <button onclick="closeLogo()" aria-label="Close" style="position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:#f1f5f9;border:none;font-size:15px;cursor:pointer;color:#64748b;display:flex;align-items:center;justify-content:center;line-height:1;">✕</button>
+    <!-- Logo in teal-bordered card -->
+    <div style="border:2px solid #0ABAB5;border-radius:16px;padding:20px 24px;margin-bottom:20px;text-align:center;background:#fafffe;">
+      <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Support Logo" style="max-width:200px;width:100%;height:auto;display:block;margin:0 auto;" />
+    </div>
+    <!-- Name -->
+    <p style="text-align:center;font-family:'Outfit',sans-serif;font-size:19px;font-weight:700;color:#1E3A5F;margin:0 0 6px;line-height:1.3;">TRUSTCARE SUPPORT</p>
+    <!-- ABN -->
+    <p style="text-align:center;font-size:13px;color:#94a3b8;margin:0 0 22px;">ABN 18 809 341 867</p>
+    <!-- Phone + Email row -->
+    <div style="display:flex;gap:10px;margin-bottom:12px;">
+      <a href="tel:0432014162" style="flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 8px;background:#eff6ff;border-radius:50px;font-size:14px;font-weight:600;color:#1E3A5F;text-decoration:none;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.22 2.84 2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        0432 014 162
+      </a>
+      <a href="mailto:info@trustcaresupport.com.au" style="flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 8px;background:#f0fdf4;border-radius:50px;font-size:14px;font-weight:600;color:#15803d;text-decoration:none;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email Us
+      </a>
+    </div>
+    <!-- Close button -->
+    <button onclick="closeLogo()" style="width:100%;padding:14px;background:#0ABAB5;border:none;border-radius:50px;color:#fff;font-size:16px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:0.01em;">Close</button>
+  </div>
 </div>
 
 <!-- ===== BACK TO TOP ===== -->
