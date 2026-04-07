@@ -241,8 +241,8 @@
     <div class="footer__top">
       <div>
         <div class="footer__logo">
-          <a href="/" onclick="event.preventDefault();event.stopPropagation();document.getElementById('logo-lightbox').style.display='flex';" style="cursor:zoom-in;">
-          <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="footer__logo-img" style="cursor:zoom-in;" />
+          <a href="/" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});" title="Back to top" style="cursor:pointer;">
+          <img src="/Trustcaremainlogo.jpg.png" alt="TrustCare Support" class="footer__logo-img" style="cursor:pointer;" />
           </a>
           <span>TrustCare</span>
         </div>
@@ -455,7 +455,7 @@
 </div>
 
 <!-- ===== BACK TO TOP ===== -->
-<button id="backToTop" class="back-to-top" aria-label="Back to top">
+<button id="backToTop" class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'});document.documentElement.scrollTop=0;document.body.scrollTop=0;">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
   <span>Back To Top</span>
 </button>

@@ -564,22 +564,12 @@ document.addEventListener('DOMContentLoaded', function() {
 (function () {
   var btn = document.getElementById('backToTop');
   if (!btn) return;
-  function scrolled() {
-    return (window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0);
-  }
   function checkScroll() {
-    if (scrolled() > 1) {
-      btn.classList.add('visible');
-    } else {
-      btn.classList.remove('visible');
-    }
+    var y = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    btn.style.display = y > 10 ? 'flex' : 'none';
   }
   window.addEventListener('scroll', checkScroll, { passive: true });
-  document.addEventListener('scroll', checkScroll, { passive: true });
   checkScroll();
-  btn.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
 })();
 
 // ===== ACCESSIBILITY WIDGET =====
