@@ -566,7 +566,14 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!btn) return;
   function checkScroll() {
     var y = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    btn.style.display = y > 10 ? 'flex' : 'none';
+    if (y > 400) {
+      btn.style.display = 'flex';
+      requestAnimationFrame(function () { btn.style.opacity = '1'; btn.style.transform = 'translateY(0)'; });
+    } else {
+      btn.style.opacity = '0';
+      btn.style.transform = 'translateY(10px)';
+      setTimeout(function () { if ((window.pageYOffset || window.scrollY || 0) <= 400) btn.style.display = 'none'; }, 200);
+    }
   }
   window.addEventListener('scroll', checkScroll, { passive: true });
   checkScroll();
