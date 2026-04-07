@@ -564,18 +564,24 @@ document.addEventListener('DOMContentLoaded', function() {
 (function () {
   var btn = document.getElementById('backToTop');
   if (!btn) return;
+  function getScrollY() {
+    return document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset || window.scrollY || 0;
+  }
   function checkScroll() {
-    var y = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if (y > 400) {
+    if (getScrollY() > 400) {
       btn.style.display = 'flex';
-      requestAnimationFrame(function () { btn.style.opacity = '1'; btn.style.transform = 'translateY(0)'; });
+      setTimeout(function () { btn.style.opacity = '1'; btn.style.transform = 'translateY(0)'; }, 10);
     } else {
       btn.style.opacity = '0';
       btn.style.transform = 'translateY(10px)';
-      setTimeout(function () { if ((window.pageYOffset || window.scrollY || 0) <= 400) btn.style.display = 'none'; }, 200);
+      setTimeout(function () { if (getScrollY() <= 400) btn.style.display = 'none'; }, 220);
     }
   }
+  // Bind to every possible scroll source
   window.addEventListener('scroll', checkScroll, { passive: true });
+  document.addEventListener('scroll', checkScroll, { passive: true });
+  document.addEventListener('touchmove', checkScroll, { passive: true });
+  window.onscroll = checkScroll;
   checkScroll();
 })();
 
