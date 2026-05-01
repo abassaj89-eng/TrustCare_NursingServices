@@ -35,7 +35,21 @@
       "Bash(python3 _ai_studio_design.py)",
       "Bash(python _fix_stats.py)",
       "Bash(python _full_fix.py)",
-      "WebFetch(domain:aistudio.google.com)"
+      "WebFetch(domain:aistudio.google.com)",
+      "Bash(npm --version)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(node generate-docs.js)",
+      "Bash(ls \"C:/Users/Admin/Desktop/TrustCare Project/TrustCare_Documents/\"*.docx)",
+      "Bash(bundle exec:*)",
+      "Read(//usr/local/bin/**)",
+      "Read(//c/Users/Admin/.rbenv/shims/**)",
+      "Read(//usr/bin/**)",
+      "Bash(cmd /c \"ruby --version 2>&1\")",
+      "Bash(cmd /c \"bundle --version 2>&1\")",
+      "Bash(cmd /c \"cd \"\"C:\\\\Users\\\\Admin\\\\Desktop\\\\TrustCare Project\\\\TrustCare_Nursing_Services_Website\"\" && bundle exec jekyll build 2>&1\")",
+      "Bash(cmd /c \"cd /d \"\"C:\\\\Users\\\\Admin\\\\Desktop\\\\TrustCare Project\\\\TrustCare_Nursing_Services_Website\"\" && bundle exec jekyll build\")",
+      "Bash(echo \"exit: $?\")"
     ]
   }
 }

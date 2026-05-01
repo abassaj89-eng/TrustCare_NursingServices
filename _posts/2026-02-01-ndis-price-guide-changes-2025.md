@@ -90,4 +90,4 @@ Services billable under Group 0114 include:
 
 ---
 
-*TrustCare Support delivers community nursing care under Registration Group 0114 for registered NDIS providers in Perth. To discuss how our nursing subcontractor model fits within your participant budgets, contact us at <a href="mailto:referrals@trustcaresupport.com.au" style="color:var(--blue);">referrals@trustcaresupport.com.au</a> or <a href="tel:0432014162" style="color:var(--blue);">0432 014 162</a>.*
+*TrustCare Support delivers community nursing care under Registration Group 0114 for registered NDIS providers in Perth. To discuss how our nursing subcontractor model fits within your participant budgets, contact us at <a href="mailto:referrals@trustcaresupport.com.au" style="color:var(--blue);">referrals@trustcaresupport.com.au</a> or <a href="mailto:info@trustcaresupport.com.au" style="color:var(--blue);">info@trustcaresupport.com.au</a>.*

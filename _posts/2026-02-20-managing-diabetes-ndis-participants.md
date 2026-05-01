@@ -48,6 +48,6 @@ TrustCare Support provides RN-led diabetes management services for registered ND
 
 We work within your service framework — not around it. Our documentation and incident reporting supports your NDIS Commission compliance.
 
-**Refer a participant:** <a href="/referral/" style="color:var(--blue);">submit a referral online</a> or call <a href="tel:0432014162" style="color:var(--blue);">0432 014 162</a>.
+**Refer a participant:** <a href="/referral/" style="color:var(--blue);">submit a referral online</a> or call <a href="mailto:info@trustcaresupport.com.au" style="color:var(--blue);">info@trustcaresupport.com.au</a>.
 
 *See also our in-depth clinical guide: [Diabetes Management for NDIS Participants: What Registered Providers Need to Know →](/blog/)*

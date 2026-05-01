@@ -124,7 +124,7 @@ TrustCare Support provides NDIS-compliant tracheostomy care services as a B2B cl
 
 We attend participants under your service agreement, work within your organisational framework, and do not recruit participants away from your organisation.
 
-**To refer a participant or discuss tracheostomy clinical support:** email <a href="mailto:referrals@trustcaresupport.com.au" style="color:var(--blue);">referrals@trustcaresupport.com.au</a> or call <a href="tel:0432014162" style="color:var(--blue);">0432 014 162</a>.
+**To refer a participant or discuss tracheostomy clinical support:** email <a href="mailto:referrals@trustcaresupport.com.au" style="color:var(--blue);">referrals@trustcaresupport.com.au</a> or call <a href="mailto:info@trustcaresupport.com.au" style="color:var(--blue);">info@trustcaresupport.com.au</a>.
 
 ---
 

@@ -99,7 +99,7 @@ TrustCare Support works as a B2B clinical partner to registered NDIS providers a
 
 We do not recruit participants away from your organisation. We work within your service framework, attending participants under your service agreement, and reporting back to your team.
 
-**To refer a participant or discuss a clinical partnership:** <a href="/referral/" style="color:var(--blue);">submit a referral online</a> or call <a href="tel:0432014162" style="color:var(--blue);">0432 014 162</a>.
+**To refer a participant or discuss a clinical partnership:** <a href="/referral/" style="color:var(--blue);">submit a referral online</a> or call <a href="mailto:info@trustcaresupport.com.au" style="color:var(--blue);">info@trustcaresupport.com.au</a>.
 
 ---
 

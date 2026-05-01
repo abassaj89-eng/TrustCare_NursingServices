@@ -77,7 +77,7 @@ TrustCare Support provides RN-led HIDPA training, competency assessment, and car
 - Deliver direct RN clinical attendance for participants requiring hands-on nursing care
 - Provide clinical governance support for providers building or reviewing their HIDPA compliance frameworks
 
-**To discuss your organisation's HIDPA compliance or refer a participant:** <a href="/referral/" style="color:var(--blue);">submit a referral</a> or contact us at <a href="tel:0432014162" style="color:var(--blue);">0432 014 162</a> / <a href="mailto:referrals@trustcaresupport.com.au" style="color:var(--blue);">referrals@trustcaresupport.com.au</a>.
+**To discuss your organisation's HIDPA compliance or refer a participant:** <a href="/referral/" style="color:var(--blue);">submit a referral</a> or contact us at <a href="mailto:info@trustcaresupport.com.au" style="color:var(--blue);">info@trustcaresupport.com.au</a> / <a href="mailto:referrals@trustcaresupport.com.au" style="color:var(--blue);">referrals@trustcaresupport.com.au</a>.
 
 ---
 

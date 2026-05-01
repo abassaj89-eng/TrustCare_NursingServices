@@ -84,6 +84,6 @@ TrustCare Support provides RN-led wound care services for registered NDIS provid
 
 We work within your service framework and provide 48-hour clinical reporting after every attendance.
 
-**Refer a participant for wound care:** <a href="/referral/" style="color:var(--blue);">submit a referral</a> or call <a href="tel:0432014162" style="color:var(--blue);">0432 014 162</a>.
+**Refer a participant for wound care:** <a href="/referral/" style="color:var(--blue);">submit a referral</a> or call <a href="mailto:info@trustcaresupport.com.au" style="color:var(--blue);">info@trustcaresupport.com.au</a>.
 
 *Sources: NDIS High Intensity Support Skills Descriptors (February 2025); Wounds Australia Best Practice Statement; EPUAP/NPUAP Pressure Injury Guidelines.*

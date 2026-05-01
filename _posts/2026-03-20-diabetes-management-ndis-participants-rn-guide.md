@@ -81,7 +81,7 @@ TrustCare Support provides NDIS-compliant, RN-led diabetes management support fo
 
 We operate as a B2B clinical partner to registered NDIS providers — attending participants under your service framework, contributing to care plans, and ensuring your workforce has the competency evidence it needs for NDIS Commission compliance.
 
-**To refer a participant or discuss a partnership:** email <a href="mailto:referrals@trustcaresupport.com.au" style="color:var(--blue);">referrals@trustcaresupport.com.au</a> or call <a href="tel:0432014162" style="color:var(--blue);">0432 014 162</a>.
+**To refer a participant or discuss a partnership:** email <a href="mailto:referrals@trustcaresupport.com.au" style="color:var(--blue);">referrals@trustcaresupport.com.au</a> or call <a href="mailto:info@trustcaresupport.com.au" style="color:var(--blue);">info@trustcaresupport.com.au</a>.
 
 ---
 

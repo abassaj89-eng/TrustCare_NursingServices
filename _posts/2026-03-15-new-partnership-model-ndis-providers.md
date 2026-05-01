@@ -66,5 +66,5 @@ If you are a registered NDIS provider in Perth with participants who have clinic
 <a href="/referral/" style="color:var(--blue);font-weight:600;">Submit a referral online →</a>
 
 Or contact us directly:
-📞 <a href="tel:0432014162" style="color:var(--blue);">0432 014 162</a>
+✉️ <a href="mailto:info@trustcaresupport.com.au" style="color:var(--blue);">info@trustcaresupport.com.au</a>
 📧 <a href="mailto:referrals@trustcaresupport.com.au" style="color:var(--blue);">referrals@trustcaresupport.com.au</a>

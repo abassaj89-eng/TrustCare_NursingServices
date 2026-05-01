@@ -64,6 +64,6 @@ TrustCare Support currently delivers services across the Perth metropolitan area
 
 For referrals or to discuss a clinical partnership with your organisation:
 
-📞 <a href="tel:0432014162" style="color:var(--blue);">0432 014 162</a>
+✉️ <a href="mailto:info@trustcaresupport.com.au" style="color:var(--blue);">info@trustcaresupport.com.au</a>
 📧 <a href="mailto:referrals@trustcaresupport.com.au" style="color:var(--blue);">referrals@trustcaresupport.com.au</a>
 🌐 <a href="/referral/" style="color:var(--blue);">Submit a referral →</a>
