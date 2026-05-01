@@ -478,5 +478,36 @@
 </div>
 
 <script src="/script.js"></script>
+
+<!-- ===== COOKIE CONSENT BANNER ===== -->
+<div id="cookieBanner" class="cookie-banner" role="alertdialog" aria-live="polite" aria-label="Cookie consent notice" hidden>
+  <div class="cookie-banner__inner">
+    <div class="cookie-banner__text">
+      <strong>🍪 We use cookies</strong>
+      <p>We use cookies to analyse site traffic and improve your experience. Your data stays in Australia. See our <a href="/privacy/">Privacy Policy</a> for details.</p>
+    </div>
+    <div class="cookie-banner__actions">
+      <button id="cookieAccept" class="cookie-banner__btn cookie-banner__btn--accept">Accept</button>
+      <button id="cookieDecline" class="cookie-banner__btn cookie-banner__btn--decline">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+(function() {
+  var consent = localStorage.getItem('cookieConsent');
+  if (!consent) {
+    var banner = document.getElementById('cookieBanner');
+    if (banner) banner.removeAttribute('hidden');
+  }
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    document.getElementById('cookieBanner').setAttribute('hidden', '');
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    localStorage.setItem('cookieConsent', 'declined');
+    document.getElementById('cookieBanner').setAttribute('hidden', '');
+  });
+})();
+</script>
 </body>
 </html>
